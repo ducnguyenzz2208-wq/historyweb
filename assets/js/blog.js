@@ -1,0 +1,111 @@
+/*
+ * blog.js — trang danh sách: tìm kiếm, lọc theo thẻ, render lưới bài viết.
+ */
+(function () {
+  "use strict";
+  let query = "";
+  let activeTag = "__all__";
+  let activeRegion = new URLSearchParams(location.search).get("region") || "__all__";
+  const REGIONS = ["__all__", "vietnam", "world"];
+
+  function fallbackCover(year) {
+    return "data:image/svg+xml;utf8," + encodeURIComponent(
+      `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%234a1520'/><stop offset='1' stop-color='%232b0d12'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/><text x='50%' y='54%' fill='%23c9a227' font-family='Georgia' font-size='120' font-weight='700' text-anchor='middle'>${year || "H"}</text></svg>`
+    );
+  }
+
+  function cardHTML(p, lang) {
+    const title = Store.localized(p.title, lang);
+    const excerpt = Store.localized(p.excerpt, lang);
+    const tags = (p.tags || []).slice(0, 3).map((t) => `<span class="tag">${t}</span>`).join("");
+    return `
+    <article class="card" data-reveal>
+      <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="card__media">
+        ${p.year ? `<span class="card__year">${p.year}</span>` : ""}
+        <img src="${p.cover || fallbackCover(p.year)}" alt="${title}" loading="lazy">
+      </a>
+      <div class="card__body">
+        <div class="card__tags">${tags}</div>
+        <h3 class="card__title"><a href="post.html?slug=${encodeURIComponent(p.slug)}">${title}</a></h3>
+        <p class="card__excerpt">${excerpt}</p>
+        <div class="card__meta"><span>${window.fmtDate(p.date, lang)}</span></div>
+      </div>
+    </article>`;
+  }
+
+  function regionLabel(r) {
+    return r === "__all__" ? window.I18N.t("region.all")
+      : r === "vietnam" ? window.I18N.t("region.vietnam")
+      : window.I18N.t("region.world");
+  }
+
+  async function render() {
+    const lang = window.I18N.lang;
+    const posts = await Store.all();
+
+    // segmented control khu vực
+    const seg = document.getElementById("regionSeg");
+    if (seg) {
+      seg.innerHTML = REGIONS.map((r) =>
+        `<button role="tab" class="${r === activeRegion ? "active" : ""}" data-region="${r}">${regionLabel(r)}</button>`
+      ).join("");
+      if (!seg.dataset.wired) {
+        seg.dataset.wired = "1";
+        seg.addEventListener("click", (e) => {
+          const b = e.target.closest("button[data-region]");
+          if (!b) return;
+          activeRegion = b.dataset.region;
+          seg.querySelectorAll("button").forEach((x) => x.classList.toggle("active", x === b));
+          draw(posts, lang);
+        });
+      }
+    }
+
+    // filters
+    const fbox = document.getElementById("filters");
+    if (fbox && !fbox.dataset.built) {
+      const tags = Store.allTags(posts);
+      fbox.innerHTML =
+        `<button class="chip active" data-tag="__all__">${window.I18N.t("blog.all")}</button>` +
+        tags.map((t) => `<button class="chip" data-tag="${t}">${t}</button>`).join("");
+      fbox.dataset.built = "1";
+      fbox.addEventListener("click", (e) => {
+        const b = e.target.closest(".chip");
+        if (!b) return;
+        activeTag = b.dataset.tag;
+        fbox.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === b));
+        draw(posts, lang);
+      });
+    } else if (fbox) {
+      // cập nhật nhãn "Tất cả" khi đổi ngôn ngữ
+      const allChip = fbox.querySelector('[data-tag="__all__"]');
+      if (allChip) allChip.textContent = window.I18N.t("blog.all");
+    }
+
+    draw(posts, lang);
+  }
+
+  function draw(posts, lang) {
+    const grid = document.getElementById("blogGrid");
+    if (!grid) return;
+    const q = query.trim().toLowerCase();
+    const filtered = posts.filter((p) => {
+      const okRegion = activeRegion === "__all__" || p.region === activeRegion;
+      const okTag = activeTag === "__all__" || (p.tags || []).includes(activeTag);
+      const hay = (Store.localized(p.title, lang) + " " + Store.localized(p.excerpt, lang) + " " + (p.tags || []).join(" ")).toLowerCase();
+      const okQ = !q || hay.includes(q);
+      return okRegion && okTag && okQ;
+    });
+    grid.innerHTML = filtered.length
+      ? filtered.map((p) => cardHTML(p, lang)).join("")
+      : `<p class="empty-state">${window.I18N.t("blog.empty")}</p>`;
+    if (window.hwReveal) window.hwReveal();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const search = document.getElementById("searchInput");
+    if (search) search.addEventListener("input", (e) => { query = e.target.value; render(); });
+    render();
+  });
+  window.addEventListener("langchange", render);
+})();

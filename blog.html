@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài viết — Dòng Chảy Lịch Sử</title>
+  <meta name="description" content="Kho lưu trữ các câu chuyện lịch sử song ngữ Việt–Anh.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232b0d12'/><text x='50' y='72' font-family='Georgia' font-size='64' font-weight='700' fill='%23c9a227' text-anchor='middle'>H</text></svg>">
+</head>
+<body data-page="blog">
+  <div id="header-slot"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap" data-reveal>
+        <span class="kicker" data-i18n="blog.title"></span>
+        <h1 data-i18n="blog.title"></h1>
+        <p data-i18n="blog.subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="center" style="margin-bottom:2rem" data-reveal>
+          <div class="segmented glass" id="regionSeg" role="tablist"></div>
+        </div>
+        <div class="blog-controls">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+            <input type="search" id="searchInput" data-i18n-attr="placeholder:blog.search" placeholder="Tìm kiếm…">
+          </div>
+          <div class="filters" id="filters"></div>
+        </div>
+        <div class="grid" id="blogGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+
+  <script src="config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/md.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/blog.js"></script>
+</body>
+</html>

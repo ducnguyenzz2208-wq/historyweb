@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản trị — Dòng Chảy Lịch Sử</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232b0d12'/><text x='50' y='72' font-family='Georgia' font-size='64' font-weight='700' fill='%23c9a227' text-anchor='middle'>H</text></svg>">
+</head>
+<body data-page="admin">
+  <div id="header-slot"></div>
+
+  <main>
+    <div class="admin-wrap">
+      <div style="margin-bottom:2rem">
+        <span class="kicker" data-i18n="admin.title"></span>
+        <h1 style="font-size:clamp(2rem,5vw,3rem);margin-top:0.6rem" data-i18n="admin.title"></h1>
+        <p style="color:var(--text-soft)" data-i18n="admin.subtitle"></p>
+      </div>
+
+      <!-- Kết nối -->
+      <div class="panel">
+        <div class="field">
+          <label data-i18n="admin.token"></label>
+          <input type="password" id="tokenInput" placeholder="ghp_…" autocomplete="off">
+          <div class="hint" data-i18n="admin.tokenhint"></div>
+        </div>
+        <div class="admin-actions">
+          <button class="btn" id="saveToken" data-i18n="admin.tokensave"></button>
+          <button class="btn btn--ghost" id="connectBtn" data-i18n="admin.connect"></button>
+        </div>
+        <div id="connInfo" style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.5rem"></div>
+      </div>
+
+      <!-- Editor -->
+      <div class="panel">
+        <div class="field">
+          <label data-i18n="admin.load"></label>
+          <select id="loadSelect"></select>
+        </div>
+
+        <div class="field">
+          <label data-i18n="admin.f.title"></label>
+          <input type="text" id="f_title">
+        </div>
+        <div class="field-row">
+          <div class="field"><label data-i18n="admin.f.slug"></label><input type="text" id="f_slug"></div>
+          <div class="field"><label data-i18n="admin.f.lang"></label>
+            <select id="f_lang"><option value="vi">Tiếng Việt</option><option value="en">English</option></select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label data-i18n="admin.f.date"></label><input type="date" id="f_date"></div>
+          <div class="field"><label data-i18n="admin.f.year"></label><input type="text" id="f_year" placeholder="1965"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label data-i18n="admin.f.region"></label>
+            <select id="f_region">
+              <option value="vietnam" data-i18n="region.vietnam"></option>
+              <option value="world" data-i18n="region.world"></option>
+            </select>
+          </div>
+          <div class="field"><label data-i18n="admin.f.tags"></label><input type="text" id="f_tags" placeholder="Việt Nam, chiến tranh"></div>
+        </div>
+        <div class="field"><label data-i18n="admin.f.cover"></label><input type="url" id="f_cover" placeholder="https://…"></div>
+        <div class="field"><label data-i18n="admin.f.excerpt"></label><textarea id="f_excerpt" style="min-height:80px"></textarea></div>
+        <div class="field"><label data-i18n="admin.f.content"></label><textarea id="f_content" placeholder="# Tiêu đề&#10;&#10;Nội dung Markdown…"></textarea></div>
+
+        <div class="admin-actions">
+          <button class="btn" id="publishBtn" data-i18n="admin.publish"></button>
+          <button class="btn btn--ghost" id="previewBtn" data-i18n="admin.preview"></button>
+          <button class="btn btn--ghost" id="newBtn" data-i18n="admin.new"></button>
+          <button class="btn btn--ghost" id="deleteBtn" style="display:none;color:var(--crimson);border-color:var(--crimson)" data-i18n="admin.delete"></button>
+        </div>
+        <div id="statusMsg" class="status-msg"></div>
+        <div id="previewBox" class="preview-box"></div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-slot"></div>
+
+  <script src="config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/md.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

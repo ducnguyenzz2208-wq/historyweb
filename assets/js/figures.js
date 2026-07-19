@@ -1,0 +1,87 @@
+/*
+ * figures.js — trang "Nhân vật Lịch sử": tải figures/index.json,
+ * gom nhóm theo khu vực (Việt Nam / Thế giới) và render thẻ chân dung kính lỏng.
+ */
+(function () {
+  "use strict";
+  let cache = null;
+
+  async function loadFigures() {
+    if (cache) return cache;
+    try {
+      const res = await fetch("figures/index.json?_=" + Date.now());
+      cache = res.ok ? (await res.json()).figures || [] : [];
+    } catch (e) {
+      cache = [];
+    }
+    return cache;
+  }
+  window.loadFigures = loadFigures;
+
+  // Chân dung dự phòng: chữ cái đầu bằng vàng trên nền rượu vang
+  window.figureFallback = function (name) {
+    const initials = (name || "?").trim().split(/\s+/).map((w) => w[0]).slice(-2).join("").toUpperCase();
+    return "data:image/svg+xml;utf8," + encodeURIComponent(
+      `<svg xmlns='http://www.w3.org/2000/svg' width='600' height='680'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%234a1520'/><stop offset='1' stop-color='%232b0d12'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/><text x='50%' y='54%' fill='%23c9a227' font-family='Georgia' font-size='220' font-weight='700' text-anchor='middle'>${initials}</text></svg>`
+    );
+  };
+
+  function cardHTML(f, lang) {
+    const name = Store.localized(f.name, lang);
+    const role = Store.localized(f.role, lang);
+    const excerpt = Store.localized(f.excerpt, lang);
+    const life = `${f.born || "?"} – ${f.died || ""}`;
+    const fb = window.figureFallback(name).replace(/'/g, "&#39;");
+    return `
+    <article class="figure-card glass" data-tilt>
+      <a class="figure-card__media" href="figure.html?slug=${encodeURIComponent(f.slug)}">
+        <span class="figure-card__life">${life}</span>
+        <img src="${f.portrait || fb}" alt="${name}" loading="lazy"
+             onerror="this.onerror=null;this.src='${fb}'">
+        <div class="figure-card__cap">
+          <h3>${name}</h3>
+          <div class="figure-card__role">${role}</div>
+        </div>
+      </a>
+      <div class="figure-card__body">
+        <p class="figure-card__excerpt">${excerpt}</p>
+        <a class="figure-card__link" href="figure.html?slug=${encodeURIComponent(f.slug)}">
+          <span>${window.I18N.t("figures.analyze")}</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>`;
+  }
+
+  function groupHTML(titleKey, list, lang) {
+    if (!list.length) return "";
+    return `
+      <div class="figures-group" data-reveal>
+        <div class="figures-group__head">
+          <h2>${window.I18N.t(titleKey)}</h2>
+          <span class="figures-group__count">${list.length}</span>
+        </div>
+        <div class="figures-grid" data-stagger>
+          ${list.map((f) => cardHTML(f, lang)).join("")}
+        </div>
+      </div>`;
+  }
+
+  async function render() {
+    const root = document.getElementById("figuresRoot");
+    if (!root) return;
+    const lang = window.I18N.lang;
+    const figures = await loadFigures();
+    const vn = figures.filter((f) => f.region === "vietnam");
+    const world = figures.filter((f) => f.region === "world");
+
+    root.innerHTML = figures.length
+      ? groupHTML("figures.group.vn", vn, lang) + groupHTML("figures.group.world", world, lang)
+      : `<p class="empty-state">${window.I18N.t("figures.empty")}</p>`;
+
+    if (window.hwReveal) window.hwReveal();
+  }
+
+  document.addEventListener("DOMContentLoaded", render);
+  window.addEventListener("langchange", render);
+})();

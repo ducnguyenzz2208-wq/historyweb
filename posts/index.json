@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "slug": "cach-mang-thang-tam-1945",
+      "title": { "vi": "Cách mạng Tháng Tám 1945", "en": "The August Revolution of 1945" },
+      "excerpt": { "vi": "Mùa thu năm ấy, cả dân tộc đứng lên giành lại độc lập sau gần một thế kỷ dưới ách đô hộ.", "en": "That autumn, an entire nation rose to reclaim its independence after nearly a century under colonial rule." },
+      "year": "1945",
+      "date": "2026-07-18",
+      "region": "vietnam",
+      "tags": ["Việt Nam", "cách mạng", "độc lập"],
+      "cover": "https://images.unsplash.com/photo-1533826418470-0cef7eb8bdae?auto=format&fit=crop&w=1600&q=80",
+      "lang": "vi",
+      "file": "posts/cach-mang-thang-tam-1945.md",
+      "featured": true
+    },
+    {
+      "slug": "con-duong-to-lua",
+      "title": { "vi": "Con đường Tơ lụa", "en": "The Silk Road" },
+      "excerpt": { "vi": "Mạng lưới thương mại nối liền Đông và Tây, nơi hàng hóa, tư tưởng và tôn giáo cùng du hành.", "en": "The trade network linking East and West, where goods, ideas and religions travelled together." },
+      "year": "130",
+      "date": "2026-07-15",
+      "region": "world",
+      "tags": ["thế giới", "thương mại", "văn hóa"],
+      "cover": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80",
+      "lang": "vi",
+      "file": "posts/con-duong-to-lua.md"
+    },
+    {
+      "slug": "cach-mang-cong-nghiep",
+      "title": { "vi": "Cuộc Cách mạng Công nghiệp", "en": "The Industrial Revolution" },
+      "excerpt": { "vi": "Khi hơi nước và máy móc thay đổi mãi mãi cách con người sống, làm việc và di chuyển.", "en": "When steam and machinery forever changed how humans lived, worked and moved." },
+      "year": "1760",
+      "date": "2026-07-12",
+      "region": "world",
+      "tags": ["thế giới", "công nghệ", "kinh tế"],
+      "cover": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80",
+      "lang": "vi",
+      "file": "posts/cach-mang-cong-nghiep.md"
+    },
+    {
+      "slug": "apollo-11-1969",
+      "title": { "vi": "Apollo 11 và bước chân lên Mặt Trăng", "en": "Apollo 11 and the Step onto the Moon" },
+      "excerpt": { "vi": "\"Một bước chân nhỏ của con người, một bước tiến khổng lồ của nhân loại.\"", "en": "\"That's one small step for man, one giant leap for mankind.\"" },
+      "year": "1969",
+      "date": "2026-07-10",
+      "region": "world",
+      "tags": ["thế giới", "khoa học", "vũ trụ"],
+      "cover": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80",
+      "lang": "vi",
+      "file": "posts/apollo-11-1969.md"
+    }
+  ]
+}
