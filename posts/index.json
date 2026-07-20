@@ -2,67 +2,111 @@
   "posts": [
     {
       "slug": "cach-mang-thang-tam-1945",
-      "title": { "vi": "Cách mạng Tháng Tám 1945", "en": "The August Revolution of 1945" },
-      "excerpt": { "vi": "Mùa thu năm ấy, cả dân tộc đứng lên giành lại độc lập sau gần một thế kỷ dưới ách đô hộ.", "en": "That autumn, an entire nation rose to reclaim its independence after nearly a century under colonial rule." },
+      "title": {
+        "vi": "Cách mạng Tháng Tám 1945",
+        "en": "The August Revolution of 1945"
+      },
+      "excerpt": {
+        "vi": "Mùa thu năm ấy, cả dân tộc đứng lên giành lại độc lập sau gần một thế kỷ dưới ách đô hộ.",
+        "en": "That autumn, an entire nation rose to reclaim its independence after nearly a century under colonial rule."
+      },
       "year": "1945",
-      "date": "2026-07-18",
       "region": "vietnam",
-      "tags": ["Việt Nam", "cách mạng", "độc lập"],
-      "cover": "https://images.unsplash.com/photo-1533826418470-0cef7eb8bdae?auto=format&fit=crop&w=1600&q=80",
+      "date": "2026-07-18",
+      "tags": [
+        "Việt Nam",
+        "cách mạng",
+        "độc lập"
+      ],
+      "cover": "https://hatinh.dcs.vn/cach-mang-thang-tam-va-bai-hoc-van-dong-quan-chung-p2924.html",
       "lang": "vi",
-      "lat": 21.0285,
-      "lng": 105.8542,
-      "place": { "vi": "Hà Nội, Việt Nam", "en": "Hanoi, Vietnam" },
-      "credit": "Unsplash",
-      "verified": true,
       "file": "posts/cach-mang-thang-tam-1945.md",
       "featured": true
     },
     {
       "slug": "con-duong-to-lua",
-      "title": { "vi": "Con đường Tơ lụa", "en": "The Silk Road" },
-      "excerpt": { "vi": "Mạng lưới thương mại nối liền Đông và Tây, nơi hàng hóa, tư tưởng và tôn giáo cùng du hành.", "en": "The trade network linking East and West, where goods, ideas and religions travelled together." },
+      "title": {
+        "vi": "Con đường Tơ lụa",
+        "en": "The Silk Road"
+      },
+      "excerpt": {
+        "vi": "Mạng lưới thương mại nối liền Đông và Tây, nơi hàng hóa, tư tưởng và tôn giáo cùng du hành.",
+        "en": "The trade network linking East and West, where goods, ideas and religions travelled together."
+      },
       "year": "130",
       "date": "2026-07-15",
       "region": "world",
-      "tags": ["thế giới", "thương mại", "văn hóa"],
+      "tags": [
+        "thế giới",
+        "thương mại",
+        "văn hóa"
+      ],
       "cover": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80",
       "lang": "vi",
       "lat": 39.6547,
       "lng": 66.9758,
-      "place": { "vi": "Samarkand, Con đường Tơ lụa", "en": "Samarkand, Silk Road" },
+      "place": {
+        "vi": "Samarkand, Con đường Tơ lụa",
+        "en": "Samarkand, Silk Road"
+      },
       "credit": "Unsplash",
       "file": "posts/con-duong-to-lua.md"
     },
     {
       "slug": "cach-mang-cong-nghiep",
-      "title": { "vi": "Cuộc Cách mạng Công nghiệp", "en": "The Industrial Revolution" },
-      "excerpt": { "vi": "Khi hơi nước và máy móc thay đổi mãi mãi cách con người sống, làm việc và di chuyển.", "en": "When steam and machinery forever changed how humans lived, worked and moved." },
+      "title": {
+        "vi": "Cuộc Cách mạng Công nghiệp",
+        "en": "The Industrial Revolution"
+      },
+      "excerpt": {
+        "vi": "Khi hơi nước và máy móc thay đổi mãi mãi cách con người sống, làm việc và di chuyển.",
+        "en": "When steam and machinery forever changed how humans lived, worked and moved."
+      },
       "year": "1760",
       "date": "2026-07-12",
       "region": "world",
-      "tags": ["thế giới", "công nghệ", "kinh tế"],
+      "tags": [
+        "thế giới",
+        "công nghệ",
+        "kinh tế"
+      ],
       "cover": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80",
       "lang": "vi",
       "lat": 53.4808,
       "lng": -2.2426,
-      "place": { "vi": "Manchester, Anh", "en": "Manchester, England" },
+      "place": {
+        "vi": "Manchester, Anh",
+        "en": "Manchester, England"
+      },
       "credit": "Unsplash",
       "file": "posts/cach-mang-cong-nghiep.md"
     },
     {
       "slug": "apollo-11-1969",
-      "title": { "vi": "Apollo 11 và bước chân lên Mặt Trăng", "en": "Apollo 11 and the Step onto the Moon" },
-      "excerpt": { "vi": "\"Một bước chân nhỏ của con người, một bước tiến khổng lồ của nhân loại.\"", "en": "\"That's one small step for man, one giant leap for mankind.\"" },
+      "title": {
+        "vi": "Apollo 11 và bước chân lên Mặt Trăng",
+        "en": "Apollo 11 and the Step onto the Moon"
+      },
+      "excerpt": {
+        "vi": "\"Một bước chân nhỏ của con người, một bước tiến khổng lồ của nhân loại.\"",
+        "en": "\"That's one small step for man, one giant leap for mankind.\""
+      },
       "year": "1969",
       "date": "2026-07-10",
       "region": "world",
-      "tags": ["thế giới", "khoa học", "vũ trụ"],
+      "tags": [
+        "thế giới",
+        "khoa học",
+        "vũ trụ"
+      ],
       "cover": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80",
       "lang": "vi",
       "lat": 28.5729,
-      "lng": -80.6490,
-      "place": { "vi": "Mũi Canaveral, Hoa Kỳ", "en": "Cape Canaveral, USA" },
+      "lng": -80.649,
+      "place": {
+        "vi": "Mũi Canaveral, Hoa Kỳ",
+        "en": "Cape Canaveral, USA"
+      },
       "credit": "Unsplash",
       "file": "posts/apollo-11-1969.md"
     }
