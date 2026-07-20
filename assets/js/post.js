@@ -47,6 +47,7 @@
         </div>
         <div class="infobox__title">${window.I18N.t("article.infobox")}</div>
         <dl class="infobox__list">
+          ${p.verified ? `<div class="infobox__row"><dt>${window.I18N.t("article.status")}</dt><dd><span class="verified-badge" title="${window.I18N.t("article.verifiedhint")}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>${window.I18N.t("article.verified")}</span></dd></div>` : ""}
           ${row(window.I18N.t("article.region"), regionLabel)}
           ${row(window.I18N.t("article.period"), p.year || "—")}
           ${row(window.I18N.t("article.published"), window.fmtDate(p.date, lang))}
@@ -83,10 +84,19 @@
     const excerpt = Store.localized(p.excerpt, lang);
     const rt = Store.readTime(currentBody, lang);
     document.title = title + " · " + ((window.SITE_CONFIG.siteName || {})[lang] || "History");
+    if (window.hwMeta) window.hwMeta({ title, description: excerpt, image: p.cover || undefined });
 
     const bodyHtml = window.mdToHtml(currentBody);
     const toc = buildToc(bodyHtml);
     const tags = (p.tags || []).map((t) => `<a class="chip" href="blog.html?tag=${encodeURIComponent(t)}">${t}</a>`).join("");
+
+    // Liên kết cộng đồng: lịch sử sửa đổi + góp ý (GitHub)
+    const cfg = window.SITE_CONFIG || {};
+    const repo = `${cfg.repoOwner}/${cfg.repoName}`;
+    const branch = cfg.branch || "main";
+    const author = (cfg.profile && cfg.profile.name) || (cfg.siteName || {})[lang] || "";
+    const historyUrl = `https://github.com/${repo}/commits/${branch}/posts/${p.slug}.md`;
+    const correctionUrl = `https://github.com/${repo}/issues/new?title=${encodeURIComponent("[Góp ý] " + title)}&body=${encodeURIComponent("Trang: " + location.href + "\n\nGóp ý / nguồn tham khảo:\n")}`;
 
     const related = (await Store.all())
       .filter((x) => x.slug !== p.slug && (x.tags || []).some((t) => (p.tags || []).includes(t)))
@@ -113,6 +123,13 @@
       <div class="article-layout">
         ${toc ? `<div class="article-layout__aside">${toc}</div>` : `<div class="article-layout__aside"></div>`}
         <article class="article article--wiki">
+          <div class="article__byline">
+            <a class="article__author" href="profile.html">
+              <span class="article__author-mark">${(author || "H").trim().charAt(0)}</span>
+              <span>${window.I18N.t("article.by")} <b>${author}</b></span>
+            </a>
+            <span class="article__byline-date">${window.fmtDate(p.date, lang)}</span>
+          </div>
           <p class="article__lead">${excerpt}</p>
           <div class="article__toolbar">
             <a class="article__tool" href="admin.html?slug=${encodeURIComponent(p.slug)}">
@@ -127,6 +144,14 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
               <span>${window.I18N.t("post.share")}</span>
             </button>
+            <a class="article__tool" href="${historyUrl}" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v5h5M3.05 13a9 9 0 106-8.5L3 8"/><path d="M12 7v5l3 2"/></svg>
+              <span>${window.I18N.t("article.history")}</span>
+            </a>
+            <a class="article__tool" href="${correctionUrl}" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
+              <span>${window.I18N.t("article.correction")}</span>
+            </a>
           </div>
           ${infobox(p, lang, rt)}
           <div class="prose">${bodyHtml}</div>
@@ -139,6 +164,15 @@
             <a class="btn btn--ghost" href="blog.html">← ${window.I18N.t("post.back")}</a>
             <a class="article__top" href="#">↑ ${window.I18N.t("article.top")}</a>
           </div>
+
+          <section class="comments" id="comments">
+            <h2 class="comments__title">${window.I18N.t("comments.title")}</h2>
+            <div id="giscusMount"></div>
+            <p class="comments__fallback" id="commentsFallback">
+              ${window.I18N.t("comments.setup")}
+              <a href="${correctionUrl}" target="_blank" rel="noopener">${window.I18N.t("article.correction")} →</a>
+            </p>
+          </section>
         </article>
       </div>
 
@@ -167,8 +201,30 @@
     wireShare(title);
     wireCite(title, p, lang);
     wireTocHighlight();
+    wireComments(lang);
     if (window.hwReveal) window.hwReveal();
     window.scrollTo(0, 0);
+  }
+
+  // Bình luận Giscus (chỉ tải khi đã bật & cấu hình trong config.js)
+  function wireComments(lang) {
+    const c = (window.SITE_CONFIG || {}).comments || {};
+    const mount = document.getElementById("giscusMount");
+    const fallback = document.getElementById("commentsFallback");
+    if (!mount || !c.enabled || !c.repoId || !c.categoryId) return;
+    if (fallback) fallback.style.display = "none";
+    const s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    s.async = true; s.crossOrigin = "anonymous";
+    s.setAttribute("data-repo", c.repo);
+    s.setAttribute("data-repo-id", c.repoId);
+    s.setAttribute("data-category", c.category || "Announcements");
+    s.setAttribute("data-category-id", c.categoryId);
+    s.setAttribute("data-mapping", "pathname");
+    s.setAttribute("data-reactions-enabled", "1");
+    s.setAttribute("data-theme", document.documentElement.getAttribute("data-theme") === "dark" ? "dark_dimmed" : "light");
+    s.setAttribute("data-lang", lang === "en" ? "en" : "vi");
+    mount.appendChild(s);
   }
 
   function wireProgress() {

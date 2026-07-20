@@ -6,6 +6,29 @@
   "use strict";
   const cfg = window.SITE_CONFIG || {};
 
+  /* ---------- PWA: đăng ký service worker (đọc offline) ---------- */
+  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+    window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  }
+
+  /* ---------- SEO: cập nhật thẻ meta / Open Graph động ---------- */
+  function upsertMeta(sel, attr, key, val) {
+    let el = document.head.querySelector(sel);
+    if (!el) { el = document.createElement("meta"); el.setAttribute(attr, key); document.head.appendChild(el); }
+    el.setAttribute("content", val);
+  }
+  window.hwMeta = function (m) {
+    if (m.description) upsertMeta('meta[name="description"]', "name", "description", m.description);
+    if (m.title) upsertMeta('meta[property="og:title"]', "property", "og:title", m.title);
+    if (m.description) upsertMeta('meta[property="og:description"]', "property", "og:description", m.description);
+    if (m.image) upsertMeta('meta[property="og:image"]', "property", "og:image", m.image);
+    upsertMeta('meta[property="og:url"]', "property", "og:url", location.href);
+    // canonical
+    let c = document.head.querySelector('link[rel="canonical"]');
+    if (!c) { c = document.createElement("link"); c.rel = "canonical"; document.head.appendChild(c); }
+    c.href = location.href;
+  };
+
   /* ---------- Header ---------- */
   function header(active) {
     return `
@@ -63,6 +86,7 @@
           <a href="gallery.html" data-i18n="nav.gallery"></a>
           <a href="profile.html" data-i18n="nav.profile"></a>
           <a href="admin.html" data-i18n="nav.admin"></a>
+          <a href="rss.xml" target="_blank" rel="noopener">RSS</a>
           <p style="font-size:0.9rem;line-height:1.6;color:rgba(244,237,225,0.7);margin-top:1rem" data-i18n="footer.made"></p>
         </div>
       </div>

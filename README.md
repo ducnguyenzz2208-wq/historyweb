@@ -57,17 +57,32 @@ Xem lộ trình chi tiết trong [`progress.md`](progress.md).
 3. Push code lên nhánh đã cấu hình trong `deploy.yml` → website tự deploy.
 4. Địa chỉ mặc định: `https://<tên-user>.github.io/historyweb/`
 
-## ✍️ Cách đăng bài (trang quản trị)
+## 🔑 Tạo & kích hoạt GitHub Token (để đăng bài)
 
-1. Tạo **Personal Access Token** trên GitHub với quyền **Contents: Read & Write** cho repo này.
-   - *Fine-grained token* (khuyên dùng): Repository access → chọn repo → Permissions → Contents: Read and write.
-   - Hoặc *Classic token* với scope `repo`.
-2. Mở `admin.html`, dán token vào ô và bấm **Lưu token** (token chỉ lưu trong trình duyệt của bạn).
-3. Điền tiêu đề, năm lịch sử, thẻ, ảnh bìa, tóm tắt và nội dung Markdown.
-4. Bấm **Xem trước** để kiểm tra, rồi **Xuất bản lên repo**.
-5. GitHub Pages sẽ tự cập nhật sau ít phút.
+Trang **admin** ghi bài thẳng vào repo qua GitHub API, nên cần một **Personal Access Token**.
+Khuyên dùng **Fine-grained token** (an toàn hơn, chỉ cấp quyền cho đúng 1 repo):
 
-> ⚠️ Token là chìa khoá ghi vào repo. Không chia sẻ token và không commit nó vào code. Trang admin chỉ lưu token trong `localStorage` của trình duyệt và chỉ gọi tới `api.github.com`.
+1. Mở https://github.com/settings/tokens?type=beta → **Generate new token**.
+2. **Token name**: ví dụ `historyweb-admin`. **Expiration**: chọn thời hạn (vd 90 ngày).
+3. **Repository access** → **Only select repositories** → chọn `ducnguyenzz2208-wq/historyweb`.
+4. **Permissions** → **Repository permissions** → **Contents** → chọn **Read and write**.
+   (Chỉ cần quyền này; các quyền khác để mặc định No access.)
+5. **Generate token** → **sao chép ngay** chuỗi `github_pat_…` (chỉ hiện một lần).
+6. Mở trang **Quản trị** của web → dán token vào ô → **Lưu token** → **Kết nối**.
+   Thấy badge `● Đã kết nối: <tên bạn>` là thành công.
+
+> Cách khác — *Classic token*: https://github.com/settings/tokens → Generate new token (classic) → tích scope **`repo`**.
+
+**Đăng bài:** điền tiêu đề, năm, khu vực, thẻ, ảnh bìa, tóm tắt, nội dung (có thanh công cụ Markdown) → **Xem trước** → **Xuất bản lên repo**. Site tự deploy lại sau ít phút.
+
+> ⚠️ Token là chìa khoá ghi vào repo — **không chia sẻ, không commit vào code**. Trang admin chỉ lưu token trong `localStorage` của trình duyệt bạn và chỉ gọi tới `api.github.com`. Nếu lỡ lộ, vào lại trang tokens ở trên và **Revoke**.
+
+## 🔔 Bật bình luận (Giscus — tuỳ chọn)
+
+1. Bật **Discussions** cho repo: Settings → General → Features → tích **Discussions**.
+2. Cài app Giscus: https://github.com/apps/giscus → cấp cho repo `historyweb`.
+3. Vào https://giscus.app, nhập repo → sao chép **`data-repo-id`** và **`data-category-id`**.
+4. Điền vào `config.js` → `comments`: đặt `enabled: true`, dán `repoId`, `categoryId`.
 
 ## 🌐 Chạy thử ở máy
 

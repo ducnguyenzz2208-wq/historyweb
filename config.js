@@ -17,6 +17,20 @@ window.SITE_CONFIG = {
   // Ngôn ngữ mặc định: "vi" hoặc "en"
   defaultLang: "vi",
 
+  // Địa chỉ site (dùng cho sitemap, RSS, Open Graph). Đổi cho khớp domain của bạn.
+  siteUrl: "https://historyweb-1ej8.vercel.app",
+
+  // Bình luận qua Giscus (GitHub Discussions). Để trống repoId/categoryId là TẮT.
+  // Hướng dẫn bật: bật Discussions cho repo → cài https://github.com/apps/giscus
+  // → lấy repoId & categoryId tại https://giscus.app rồi điền vào đây.
+  comments: {
+    enabled: false,
+    repo: "ducnguyenzz2208-wq/historyweb",
+    repoId: "",
+    category: "Announcements",
+    categoryId: "",
+  },
+
   // Trang cá nhân (người biên soạn / chủ trang)
   profile: {
     name: "Đức Nguyễn",

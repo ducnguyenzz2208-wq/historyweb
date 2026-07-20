@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+    <title>Dòng Chảy Lịch Sử</title>
+    <link>https://historyweb-1ej8.vercel.app/</link>
+    <description>Thư viện lịch sử song ngữ Việt–Anh.</description>
+    <language>vi</language>
+    <lastBuildDate>Mon, 20 Jul 2026 10:52:46 GMT</lastBuildDate>
+    <item>
+      <title>Cách mạng Tháng Tám 1945</title>
+      <link>https://historyweb-1ej8.vercel.app/post.html?slug=cach-mang-thang-tam-1945</link>
+      <guid isPermaLink="true">https://historyweb-1ej8.vercel.app/post.html?slug=cach-mang-thang-tam-1945</guid>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Mùa thu năm ấy, cả dân tộc đứng lên giành lại độc lập sau gần một thế kỷ dưới ách đô hộ.</description>
+      <category>Việt Nam</category><category>cách mạng</category><category>độc lập</category>
+    </item>
+    <item>
+      <title>Con đường Tơ lụa</title>
+      <link>https://historyweb-1ej8.vercel.app/post.html?slug=con-duong-to-lua</link>
+      <guid isPermaLink="true">https://historyweb-1ej8.vercel.app/post.html?slug=con-duong-to-lua</guid>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Mạng lưới thương mại nối liền Đông và Tây, nơi hàng hóa, tư tưởng và tôn giáo cùng du hành.</description>
+      <category>thế giới</category><category>thương mại</category><category>văn hóa</category>
+    </item>
+    <item>
+      <title>Cuộc Cách mạng Công nghiệp</title>
+      <link>https://historyweb-1ej8.vercel.app/post.html?slug=cach-mang-cong-nghiep</link>
+      <guid isPermaLink="true">https://historyweb-1ej8.vercel.app/post.html?slug=cach-mang-cong-nghiep</guid>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate>
+      <description>Khi hơi nước và máy móc thay đổi mãi mãi cách con người sống, làm việc và di chuyển.</description>
+      <category>thế giới</category><category>công nghệ</category><category>kinh tế</category>
+    </item>
+    <item>
+      <title>Apollo 11 và bước chân lên Mặt Trăng</title>
+      <link>https://historyweb-1ej8.vercel.app/post.html?slug=apollo-11-1969</link>
+      <guid isPermaLink="true">https://historyweb-1ej8.vercel.app/post.html?slug=apollo-11-1969</guid>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <description>&quot;Một bước chân nhỏ của con người, một bước tiến khổng lồ của nhân loại.&quot;</description>
+      <category>thế giới</category><category>khoa học</category><category>vũ trụ</category>
+    </item>
+</channel></rss>

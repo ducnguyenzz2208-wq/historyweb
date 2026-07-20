@@ -872,11 +872,12 @@ a.tag:hover { background: var(--accent); color: var(--cream); }
 .atlas-map__svg { width: 100%; height: auto; display: block; border-radius: 10px; overflow: visible; }
 .atlas-sea { fill: color-mix(in srgb, var(--gold) 8%, var(--surface)); }
 :root[data-theme="dark"] .atlas-sea { fill: color-mix(in srgb, var(--maroon-900) 60%, #0c0406); }
-.atlas-grid { stroke: var(--accent); stroke-width: 0.2; opacity: 0.18; }
-.atlas-land { fill: color-mix(in srgb, var(--gold) 30%, var(--parchment)); stroke: color-mix(in srgb, var(--maroon-700) 40%, transparent); stroke-width: 0.4; opacity: 0.85; }
-:root[data-theme="dark"] .atlas-land { fill: color-mix(in srgb, var(--maroon-600) 55%, transparent); stroke: rgba(216,183,78,0.3); }
-.atlas-land-label { fill: var(--maroon-800); font-family: "Cinzel", serif; font-size: 5px; text-anchor: middle; opacity: 0.55; letter-spacing: 0.5px; }
-:root[data-theme="dark"] .atlas-land-label { fill: var(--gold-soft); opacity: 0.6; }
+.atlas-graticule { opacity: 0.5; }
+.atlas-grid { stroke: var(--accent); stroke-width: 0.15; opacity: 0.16; }
+.atlas-land { fill: color-mix(in srgb, var(--gold) 34%, var(--parchment)); stroke: color-mix(in srgb, var(--maroon-800) 55%, transparent); stroke-width: 0.15; stroke-linejoin: round; }
+.atlas-lands { filter: drop-shadow(0 0.6px 0.6px rgba(43,13,18,0.25)); }
+:root[data-theme="dark"] .atlas-land { fill: color-mix(in srgb, var(--maroon-600) 62%, #1a0a0e); stroke: rgba(216,183,78,0.35); }
+:root[data-theme="dark"] .atlas-lands { filter: none; }
 .atlas-compass__ring { fill: none; stroke: var(--accent); stroke-width: 0.5; opacity: 0.6; }
 .atlas-compass__needle { fill: var(--crimson); opacity: 0.8; }
 .atlas-compass__n { fill: var(--accent); font-family: "Cinzel", serif; font-size: 5px; text-anchor: middle; }
@@ -937,3 +938,20 @@ a.tag:hover { background: var(--accent); color: var(--cream); }
   .atlas-pin__halo, .tl2__node { animation: none !important; opacity: 1 !important; transform: none !important; }
   .cite-modal { animation: none !important; opacity: 1 !important; }
 }
+
+/* ---------- Phase 3: byline · nhãn kiểm chứng · bình luận ---------- */
+.article__byline { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.article__author { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-soft); }
+.article__author b { color: var(--text); font-weight: 600; }
+.article__author-mark { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(150deg, var(--maroon-700), var(--maroon-900)); color: var(--gold); font-family: var(--font-antique); font-weight: 700; }
+.article__author:hover b { color: var(--accent); }
+.article__byline-date { font-size: 0.85rem; color: var(--text-soft); }
+
+.verified-badge { display: inline-flex; align-items: center; gap: 0.32rem; font-weight: 700; font-size: 0.82rem; color: #1a7a3a; }
+.verified-badge svg { width: 14px; height: 14px; }
+:root[data-theme="dark"] .verified-badge { color: #5fd08a; }
+
+.comments { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); clear: both; }
+.comments__title { font-size: 1.5rem; margin-bottom: 1.2rem; }
+.comments__fallback { font-size: 0.92rem; color: var(--text-soft); line-height: 1.6; }
+.comments__fallback a { color: var(--accent); font-weight: 600; }

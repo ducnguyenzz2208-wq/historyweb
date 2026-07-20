@@ -6,50 +6,66 @@
 (function () {
   "use strict";
   let activeRegion = "__all__";
-  let POSTS = [], FIGS = [];
+  let POSTS = [], FIGS = [], WORLD = null, WORLD_PATHS = "";
 
   async function loadFigures() {
     try { const r = await fetch("figures/index.json?_=" + Date.now()); return r.ok ? (await r.json()).figures || [] : []; }
     catch (e) { return []; }
   }
-
-  // Lục địa cách điệu (ellipse ở toạ độ equirectangular gần đúng)
-  const CONTINENTS = [
-    { lng: -100, lat: 45, rx: 34, ry: 22, label: "Bắc Mỹ" },
-    { lng: -60, lat: -18, rx: 17, ry: 28, label: "Nam Mỹ" },
-    { lng: 16, lat: 50, rx: 19, ry: 12, label: "Âu" },
-    { lng: 20, lat: 2, rx: 26, ry: 34, label: "Phi" },
-    { lng: 92, lat: 46, rx: 46, ry: 26, label: "Á" },
-    { lng: 134, lat: -25, rx: 15, ry: 10, label: "Úc" },
-  ];
+  // Bản đồ thế giới thật (GeoJSON đã rút gọn) — phép chiếu equirectangular
+  async function loadWorld() {
+    if (WORLD) return WORLD;
+    try { const r = await fetch("assets/data/world.geo.json"); WORLD = r.ok ? await r.json() : { features: [] }; }
+    catch (e) { WORLD = { features: [] }; }
+    return WORLD;
+  }
 
   const proj = (lng, lat) => ({ x: +lng + 180, y: 90 - +lat });
 
+  // Chuyển một vòng toạ độ [lng,lat] thành đường SVG, cắt khi vượt kinh tuyến 180
+  function ringToPath(ring) {
+    let d = "", prevLng = null;
+    for (let i = 0; i < ring.length; i++) {
+      const lng = ring[i][0], lat = ring[i][1];
+      const x = (lng + 180).toFixed(2), y = (90 - lat).toFixed(2);
+      if (prevLng !== null && Math.abs(lng - prevLng) > 180) d += `M${x} ${y}`; // ngắt ở antimeridian
+      else d += (d === "" ? "M" : "L") + x + " " + y;
+      prevLng = lng;
+    }
+    return d + "Z";
+  }
+  function featurePath(f) {
+    const polys = f.t === "MultiPolygon" ? f.c : [f.c];
+    return polys.map((poly) => poly.map(ringToPath).join("")).join("");
+  }
+  function buildWorldPaths() {
+    if (WORLD_PATHS) return WORLD_PATHS;
+    WORLD_PATHS = (WORLD.features || []).map((f) => `<path class="atlas-land" d="${featurePath(f)}"/>`).join("");
+    return WORLD_PATHS;
+  }
+
   function mapSVG(events, lang) {
     const grid = [];
-    for (let lng = -180; lng <= 180; lng += 30) { const x = lng + 180; grid.push(`<line x1="${x}" y1="0" x2="${x}" y2="180" class="atlas-grid"/>`); }
+    for (let lng = -150; lng <= 150; lng += 30) { const x = lng + 180; grid.push(`<line x1="${x}" y1="0" x2="${x}" y2="180" class="atlas-grid"/>`); }
     for (let lat = -60; lat <= 60; lat += 30) { const y = 90 - lat; grid.push(`<line x1="0" y1="${y}" x2="360" y2="${y}" class="atlas-grid"/>`); }
-    const conts = CONTINENTS.map((c) => { const p = proj(c.lng, c.lat); return `<ellipse cx="${p.x}" cy="${p.y}" rx="${c.rx}" ry="${c.ry}" class="atlas-land"/>`; }).join("");
-    const contLabels = CONTINENTS.map((c) => { const p = proj(c.lng, c.lat); return `<text x="${p.x}" y="${p.y}" class="atlas-land-label">${c.label}</text>`; }).join("");
     const pins = events.map((e, i) => {
       const p = proj(e.lng, e.lat);
       const place = Store.localized(e.place, lang);
       return `<a href="${e.url}" class="atlas-pin" role="listitem" tabindex="0" style="--d:${i * 0.08}s">
-        <circle cx="${p.x}" cy="${p.y}" r="4.2" class="atlas-pin__halo"/>
-        <circle cx="${p.x}" cy="${p.y}" r="2.1" class="atlas-pin__dot"/>
+        <circle cx="${p.x}" cy="${p.y}" r="3.4" class="atlas-pin__halo"/>
+        <circle cx="${p.x}" cy="${p.y}" r="1.7" class="atlas-pin__dot"/>
         <title>${Store.localized(e.title, lang)}${place ? " — " + place : ""} (${e.year})</title>
       </a>`;
     }).join("");
     return `
       <svg class="atlas-map__svg" viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" role="list" aria-label="${window.I18N.t("atlas.map")}">
         <rect x="0" y="0" width="360" height="180" class="atlas-sea"/>
-        <g>${grid.join("")}</g>
-        <g>${conts}</g>
-        <g>${contLabels}</g>
-        <g class="atlas-compass" transform="translate(26,150)">
-          <circle r="11" class="atlas-compass__ring"/>
-          <path d="M0,-9 L2.4,0 L0,9 L-2.4,0 Z" class="atlas-compass__needle"/>
-          <text y="-13" class="atlas-compass__n">B</text>
+        <g class="atlas-graticule">${grid.join("")}</g>
+        <g class="atlas-lands">${buildWorldPaths()}</g>
+        <g class="atlas-compass" transform="translate(20,158)">
+          <circle r="9" class="atlas-compass__ring"/>
+          <path d="M0,-7 L1.9,0 L0,7 L-1.9,0 Z" class="atlas-compass__needle"/>
+          <text y="-10.5" class="atlas-compass__n">N</text>
         </g>
         <g>${pins}</g>
       </svg>`;
@@ -101,6 +117,7 @@
     const lang = window.I18N.lang;
     POSTS = await Store.all();
     FIGS = await loadFigures();
+    await loadWorld();
     document.title = window.I18N.t("atlas.title") + " · " + ((window.SITE_CONFIG.siteName || {})[lang] || "History");
 
     const regions = [["__all__", window.I18N.t("atlas.all")], ["vietnam", window.I18N.t("region.vietnam")], ["world", window.I18N.t("region.world")]];

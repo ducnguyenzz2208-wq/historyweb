@@ -1,0 +1,17 @@
+{
+  "name": "Dòng Chảy Lịch Sử",
+  "short_name": "Lịch Sử",
+  "description": "Thư viện lịch sử song ngữ Việt–Anh: bài viết, nhân vật, bản đồ và niên biểu — tra cứu được.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#2b0d12",
+  "theme_color": "#2b0d12",
+  "lang": "vi",
+  "categories": ["education", "books", "reference"],
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

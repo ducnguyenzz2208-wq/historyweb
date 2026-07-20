@@ -14,6 +14,7 @@
       "lng": 105.8542,
       "place": { "vi": "Hà Nội, Việt Nam", "en": "Hanoi, Vietnam" },
       "credit": "Unsplash",
+      "verified": true,
       "file": "posts/cach-mang-thang-tam-1945.md",
       "featured": true
     },

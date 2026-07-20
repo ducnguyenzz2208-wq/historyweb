@@ -40,6 +40,7 @@
     const role = Store.localized(f.role, lang);
     const fb = window.figureFallback(name).replace(/'/g, "&#39;");
     document.title = name + " · " + ((window.SITE_CONFIG.siteName || {})[lang] || "History");
+    if (window.hwMeta) window.hwMeta({ title: name, description: Store.localized(f.excerpt, lang), image: f.portrait || undefined });
 
     root.innerHTML = `
       <div class="progress-bar" id="progressBar"></div>

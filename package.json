@@ -1,0 +1,11 @@
+{
+  "name": "historyweb",
+  "version": "1.0.0",
+  "description": "Dòng Chảy Lịch Sử — thư viện lịch sử tĩnh song ngữ Việt–Anh.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-feeds.mjs",
+    "check-links": "node scripts/check-links.mjs"
+  }
+}
