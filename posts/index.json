@@ -10,6 +10,10 @@
       "tags": ["Việt Nam", "cách mạng", "độc lập"],
       "cover": "https://images.unsplash.com/photo-1533826418470-0cef7eb8bdae?auto=format&fit=crop&w=1600&q=80",
       "lang": "vi",
+      "lat": 21.0285,
+      "lng": 105.8542,
+      "place": { "vi": "Hà Nội, Việt Nam", "en": "Hanoi, Vietnam" },
+      "credit": "Unsplash",
       "file": "posts/cach-mang-thang-tam-1945.md",
       "featured": true
     },
@@ -23,6 +27,10 @@
       "tags": ["thế giới", "thương mại", "văn hóa"],
       "cover": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80",
       "lang": "vi",
+      "lat": 39.6547,
+      "lng": 66.9758,
+      "place": { "vi": "Samarkand, Con đường Tơ lụa", "en": "Samarkand, Silk Road" },
+      "credit": "Unsplash",
       "file": "posts/con-duong-to-lua.md"
     },
     {
@@ -35,6 +43,10 @@
       "tags": ["thế giới", "công nghệ", "kinh tế"],
       "cover": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80",
       "lang": "vi",
+      "lat": 53.4808,
+      "lng": -2.2426,
+      "place": { "vi": "Manchester, Anh", "en": "Manchester, England" },
+      "credit": "Unsplash",
       "file": "posts/cach-mang-cong-nghiep.md"
     },
     {
@@ -47,6 +59,10 @@
       "tags": ["thế giới", "khoa học", "vũ trụ"],
       "cover": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80",
       "lang": "vi",
+      "lat": 28.5729,
+      "lng": -80.6490,
+      "place": { "vi": "Mũi Canaveral, Hoa Kỳ", "en": "Cape Canaveral, USA" },
+      "credit": "Unsplash",
       "file": "posts/apollo-11-1969.md"
     }
   ]

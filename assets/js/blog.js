@@ -7,7 +7,19 @@
   let query = "";
   let activeTag = params.get("tag") || "__all__";
   let activeRegion = params.get("region") || "__all__";
+  let activeCentury = params.get("century") || "__all__";
   const REGIONS = ["__all__", "vietnam", "world"];
+
+  // Thế kỷ từ năm (năm dương lịch, dữ liệu hiện tại đều sau CN)
+  function centuryOf(year) {
+    const y = parseInt(year, 10);
+    if (!y) return null;
+    return Math.ceil(y / 100);
+  }
+  function centuryLabel(c) {
+    if (c === "__all__") return window.I18N.t("century.all");
+    return window.I18N.t("century.label") + " " + c;
+  }
 
   function fallbackCover(year) {
     return "data:image/svg+xml;utf8," + encodeURIComponent(
@@ -62,6 +74,19 @@
       }
     }
 
+    // bộ lọc thế kỷ
+    const csel = document.getElementById("centurySelect");
+    if (csel) {
+      const centuries = [...new Set(posts.map((p) => centuryOf(p.year)).filter(Boolean))].sort((a, b) => a - b);
+      csel.innerHTML = `<option value="__all__">${window.I18N.t("century.all")}</option>` +
+        centuries.map((c) => `<option value="${c}" ${String(c) === activeCentury ? "selected" : ""}>${window.I18N.t("century.label")} ${c}</option>`).join("");
+      csel.value = activeCentury;
+      if (!csel.dataset.wired) {
+        csel.dataset.wired = "1";
+        csel.addEventListener("change", () => { activeCentury = csel.value; draw(posts, lang); });
+      }
+    }
+
     // filters
     const fbox = document.getElementById("filters");
     if (fbox && !fbox.dataset.built) {
@@ -93,9 +118,10 @@
     const filtered = posts.filter((p) => {
       const okRegion = activeRegion === "__all__" || p.region === activeRegion;
       const okTag = activeTag === "__all__" || (p.tags || []).includes(activeTag);
+      const okCentury = activeCentury === "__all__" || String(centuryOf(p.year)) === activeCentury;
       const hay = (Store.localized(p.title, lang) + " " + Store.localized(p.excerpt, lang) + " " + (p.tags || []).join(" ")).toLowerCase();
       const okQ = !q || hay.includes(q);
-      return okRegion && okTag && okQ;
+      return okRegion && okTag && okCentury && okQ;
     });
     grid.innerHTML = filtered.length
       ? filtered.map((p) => cardHTML(p, lang)).join("")

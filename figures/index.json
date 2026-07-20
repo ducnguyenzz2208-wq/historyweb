@@ -14,6 +14,8 @@
         "vi": "Người đọc bản Tuyên ngôn Độc lập năm 1945, khai sinh nước Việt Nam Dân chủ Cộng hòa.",
         "en": "He read the Declaration of Independence in 1945, founding the Democratic Republic of Vietnam."
       },
+      "tags": ["Việt Nam", "cách mạng", "độc lập"],
+      "credit": "Wikimedia Commons",
       "file": "figures/ho-chi-minh.md"
     },
     {
@@ -30,6 +32,8 @@
         "vi": "Vị tướng ba lần đánh bại quân Nguyên–Mông, tác giả Hịch tướng sĩ và Binh thư yếu lược.",
         "en": "The general who thrice defeated the Mongol invasions and wrote the famous Proclamation to Officers."
       },
+      "tags": ["Việt Nam", "quân sự"],
+      "credit": "Wikimedia Commons",
       "file": "figures/tran-hung-dao.md"
     },
     {
@@ -46,6 +50,8 @@
         "vi": "Bộ óc chiến lược của khởi nghĩa Lam Sơn, tác giả áng thiên cổ hùng văn Bình Ngô đại cáo.",
         "en": "The strategic mind behind the Lam Sơn uprising and author of the Great Proclamation upon the Pacification of the Ngô."
       },
+      "tags": ["Việt Nam", "văn hóa", "quân sự"],
+      "credit": "Wikimedia Commons",
       "file": "figures/nguyen-trai.md"
     },
     {
@@ -62,6 +68,8 @@
         "vi": "Con người tiêu biểu nhất của thời Phục Hưng: họa sĩ của Mona Lisa và nhà khoa học đi trước thời đại.",
         "en": "The quintessential Renaissance man: painter of the Mona Lisa and a scientist ahead of his time."
       },
+      "tags": ["thế giới", "văn hóa", "khoa học"],
+      "credit": "Wikimedia Commons",
       "file": "figures/leonardo-da-vinci.md"
     },
     {
@@ -78,6 +86,8 @@
         "vi": "Vị tướng từ cách mạng Pháp vươn lên ngôi hoàng đế, để lại Bộ luật Napoléon còn ảnh hưởng đến nay.",
         "en": "A general of the French Revolution who rose to emperor and left the enduring Napoleonic Code."
       },
+      "tags": ["thế giới", "quân sự", "chính trị"],
+      "credit": "Wikimedia Commons",
       "file": "figures/napoleon-bonaparte.md"
     },
     {
@@ -94,6 +104,8 @@
         "vi": "Vị tổng thống giữ vững Liên bang qua Nội chiến và xóa bỏ chế độ nô lệ tại Hoa Kỳ.",
         "en": "The president who preserved the Union through the Civil War and abolished slavery in the United States."
       },
+      "tags": ["thế giới", "chính trị"],
+      "credit": "Wikimedia Commons",
       "file": "figures/abraham-lincoln.md"
     }
   ]

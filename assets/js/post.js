@@ -210,14 +210,58 @@
     });
   }
 
+  // Sinh trích dẫn chuẩn APA / MLA / Chicago
+  function citations(title, p, lang) {
+    const cfg = window.SITE_CONFIG || {};
+    const site = (cfg.siteName || {})[lang] || "History";
+    const author = (cfg.profile && cfg.profile.name) || site;
+    const url = location.href;
+    const d = new Date(p.date);
+    const year = isNaN(d) ? (p.date || "") : d.getFullYear();
+    const monthName = isNaN(d) ? "" : d.toLocaleDateString(lang === "en" ? "en-US" : "vi-VN", { month: "long" });
+    const day = isNaN(d) ? "" : d.getDate();
+    const accessed = window.fmtDate(new Date().toISOString().slice(0, 10), lang);
+    return {
+      APA: `${author}. (${year}). ${title}. ${site}. ${url}`,
+      MLA: `${author}. “${title}.” ${site}, ${day} ${monthName} ${year}, ${url}.`,
+      Chicago: `${author}. “${title}.” ${site}. ${window.fmtDate(p.date, lang)}. ${url}.`,
+    };
+  }
+
   function wireCite(title, p, lang) {
     const btn = document.getElementById("citeBtn");
     if (!btn) return;
-    btn.addEventListener("click", async () => {
-      const site = (window.SITE_CONFIG.siteName || {})[lang] || "History";
-      const citation = `${title}. ${site}. ${window.fmtDate(p.date, lang)}. ${location.href}`;
-      try { await navigator.clipboard.writeText(citation); flash(btn, "✓ " + window.I18N.t("article.citecopied")); } catch (e) {}
-    });
+    btn.addEventListener("click", () => openCiteModal(title, p, lang));
+  }
+
+  function openCiteModal(title, p, lang) {
+    const cites = citations(title, p, lang);
+    document.getElementById("citeModal")?.remove();
+    const el = document.createElement("div");
+    el.id = "citeModal";
+    el.className = "cite-modal open";
+    el.innerHTML = `
+      <div class="cite-modal__panel glass" role="dialog" aria-modal="true" aria-label="${window.I18N.t("cite.title")}">
+        <div class="cite-modal__head">
+          <h3>${window.I18N.t("cite.title")}</h3>
+          <button class="cite-modal__close" aria-label="${window.I18N.t("cite.close")}">✕</button>
+        </div>
+        ${Object.entries(cites).map(([style, text]) => `
+          <div class="cite-row">
+            <div class="cite-row__head"><span class="cite-row__style">${style}</span>
+              <button class="cite-row__copy" data-text="${text.replace(/"/g, "&quot;")}">${window.I18N.t("cite.copy")}</button>
+            </div>
+            <p class="cite-row__text">${text.replace(/</g, "&lt;")}</p>
+          </div>`).join("")}
+      </div>`;
+    document.body.appendChild(el);
+    const close = () => el.remove();
+    el.addEventListener("click", (e) => { if (e.target === el) close(); });
+    el.querySelector(".cite-modal__close").addEventListener("click", close);
+    el.querySelectorAll(".cite-row__copy").forEach((b) => b.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(b.dataset.text); const o = b.textContent; b.textContent = "✓ " + window.I18N.t("cite.copied"); setTimeout(() => (b.textContent = o), 1500); } catch (e) {}
+    }));
+    document.addEventListener("keydown", function esc(e) { if (e.key === "Escape") { close(); document.removeEventListener("keydown", esc); } });
   }
 
   function flash(btn, text) {

@@ -194,7 +194,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .nav__toggle { display: none; }
 
 /* mobile nav */
-@media (max-width: 1000px) {
+@media (max-width: 1120px) {
   .nav__links {
     position: fixed; inset: 0 0 0 auto; width: min(80vw, 320px);
     flex-direction: column; align-items: flex-start; justify-content: center; gap: 1.6rem;
@@ -822,4 +822,118 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   [data-stagger] > * { opacity: 1 !important; transform: none !important; }
   .glass::before { display: none; }
   .search-overlay, .search-overlay__panel { transition: none !important; }
+}
+
+/* =====================================================================
+   ✦ PHASE 1 & 2: Tra cứu sâu · Chủ đề · Bản đồ & Niên biểu · Tư liệu · Trích dẫn
+   ===================================================================== */
+
+/* ---------- Tra cứu: gợi ý & lịch sử ---------- */
+.search-sect { padding: 0.5rem 0.6rem 0.9rem; }
+.search-sect__label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; color: var(--text-soft); margin-bottom: 0.6rem; }
+.search-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.search-chip {
+  border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text);
+  font-family: var(--font-sans); font-size: 0.82rem; font-weight: 500; padding: 0.4rem 0.85rem;
+  border-radius: 999px; transition: color 0.2s, border-color 0.2s, transform 0.2s var(--ease-expo);
+}
+.search-chip:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+
+/* ---------- Bộ lọc thế kỷ (blog) ---------- */
+.century-filter { display: inline-flex; align-items: center; gap: 0.55rem; }
+.century-filter__label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--text-soft); }
+.century-select {
+  appearance: none; -webkit-appearance: none;
+  padding: 0.55rem 2.2rem 0.55rem 1rem; border-radius: 999px;
+  border: 1px solid var(--glass-border); background-color: var(--glass-bg); color: var(--text);
+  font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a11e2c' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.85rem center;
+}
+.century-select:focus { outline: none; border-color: var(--accent); }
+
+/* ---------- Chủ đề (topics hub) ---------- */
+.topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.1rem; }
+.topic-tile {
+  display: flex; flex-direction: column; gap: 0.35rem; padding: 1.5rem 1.5rem 1.3rem; border-radius: var(--radius);
+  transition: transform 0.5s var(--ease-expo), box-shadow 0.5s var(--ease-expo);
+}
+.topic-tile:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.topic-tile__name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--text); }
+.topic-tile__name::before { content: "#"; color: var(--accent); margin-right: 0.15em; }
+.topic-tile__count { font-family: var(--font-antique); color: var(--accent); font-size: 0.95rem; }
+.topic-tile__break { font-size: 0.76rem; color: var(--text-soft); letter-spacing: 0.02em; }
+a.tag { transition: color 0.2s, background 0.2s; }
+a.tag:hover { background: var(--accent); color: var(--cream); }
+
+/* ---------- Bản đồ sự kiện (atlas) ---------- */
+.atlas-map { padding: clamp(0.8rem, 2vw, 1.4rem); border-radius: var(--radius); }
+.atlas-map__svg { width: 100%; height: auto; display: block; border-radius: 10px; overflow: visible; }
+.atlas-sea { fill: color-mix(in srgb, var(--gold) 8%, var(--surface)); }
+:root[data-theme="dark"] .atlas-sea { fill: color-mix(in srgb, var(--maroon-900) 60%, #0c0406); }
+.atlas-grid { stroke: var(--accent); stroke-width: 0.2; opacity: 0.18; }
+.atlas-land { fill: color-mix(in srgb, var(--gold) 30%, var(--parchment)); stroke: color-mix(in srgb, var(--maroon-700) 40%, transparent); stroke-width: 0.4; opacity: 0.85; }
+:root[data-theme="dark"] .atlas-land { fill: color-mix(in srgb, var(--maroon-600) 55%, transparent); stroke: rgba(216,183,78,0.3); }
+.atlas-land-label { fill: var(--maroon-800); font-family: "Cinzel", serif; font-size: 5px; text-anchor: middle; opacity: 0.55; letter-spacing: 0.5px; }
+:root[data-theme="dark"] .atlas-land-label { fill: var(--gold-soft); opacity: 0.6; }
+.atlas-compass__ring { fill: none; stroke: var(--accent); stroke-width: 0.5; opacity: 0.6; }
+.atlas-compass__needle { fill: var(--crimson); opacity: 0.8; }
+.atlas-compass__n { fill: var(--accent); font-family: "Cinzel", serif; font-size: 5px; text-anchor: middle; }
+.atlas-pin { cursor: pointer; }
+.atlas-pin__halo { fill: var(--crimson); opacity: 0.25; transform-box: fill-box; transform-origin: center; animation: pinPulse 2.4s var(--ease) infinite; animation-delay: var(--d); }
+.atlas-pin__dot { fill: var(--crimson); stroke: var(--cream); stroke-width: 0.5; }
+.atlas-pin:hover .atlas-pin__dot, .atlas-pin:focus .atlas-pin__dot { fill: var(--gold); }
+.atlas-pin:hover .atlas-pin__halo { opacity: 0.5; }
+.atlas-pin:focus { outline: none; }
+@keyframes pinPulse { 0%, 100% { transform: scale(1); opacity: 0.25; } 50% { transform: scale(1.5); opacity: 0.12; } }
+
+/* Niên biểu tương tác (tl2) */
+.tl2 { position: relative; display: flex; gap: 1.5rem; overflow-x: auto; padding: 2.5rem 0.5rem 1.5rem; scroll-snap-type: x proximity; }
+.tl2__axis { position: absolute; left: 0; right: 0; top: 3.4rem; height: 2px; background: linear-gradient(90deg, transparent, var(--line) 8%, var(--line) 92%, transparent); }
+.tl2__node { position: relative; flex: 0 0 210px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; opacity: 0; transform: translateY(16px); animation: tl2In 0.6s var(--ease-expo) forwards; animation-delay: var(--d); }
+@keyframes tl2In { to { opacity: 1; transform: none; } }
+.tl2__year { font-family: var(--font-antique); font-size: 1.4rem; font-weight: 700; color: var(--accent); margin-bottom: 0.6rem; }
+.tl2__dot { width: 15px; height: 15px; border-radius: 50%; background: var(--surface); border: 3px solid var(--crimson); position: relative; z-index: 2; transition: transform 0.35s var(--ease-expo), box-shadow 0.3s; }
+.tl2__dot[data-region="world"] { border-color: var(--gold); }
+.tl2__node:hover .tl2__dot { transform: scale(1.35); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 16%, transparent); }
+.tl2__card { margin-top: 1rem; padding: 0.9rem 1rem; border-radius: 12px; display: flex; flex-direction: column; gap: 0.35rem; transition: transform 0.4s var(--ease-expo), box-shadow 0.4s; width: 100%; }
+.tl2__node:hover .tl2__card { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+.tl2__type { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent); }
+.tl2__card b { font-family: var(--font-display); font-size: 1rem; line-height: 1.2; color: var(--text); }
+
+/* ---------- Tư liệu (gallery) ---------- */
+.media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.4rem; }
+.media-tile { overflow: hidden; border-radius: var(--radius); display: flex; flex-direction: column; padding: 0; transition: transform 0.5s var(--ease-expo), box-shadow 0.5s; }
+.media-tile:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.media-tile__img { display: block; aspect-ratio: 4/3; overflow: hidden; }
+.media-tile__img img { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.25) saturate(0.92); transition: transform 0.9s var(--ease-expo), filter 0.5s; }
+.media-tile:hover .media-tile__img img { transform: scale(1.06); filter: sepia(0) saturate(1.05); }
+.media-tile__cap { padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.media-tile__type { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent); }
+.media-tile__cap b { font-family: var(--font-display); font-size: 1.15rem; line-height: 1.2; }
+.media-tile__src { font-size: 0.76rem; color: var(--text-soft); }
+.media-tile__link { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: 0.2rem; }
+
+/* ---------- Trích dẫn (cite modal) ---------- */
+.cite-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1rem;
+  background: color-mix(in srgb, var(--maroon-900) 58%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  opacity: 0; animation: fadeIn 0.28s var(--ease) forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+.cite-modal__panel { width: min(640px, 100%); padding: clamp(1.4rem, 3vw, 2rem); border-radius: 20px; max-height: 88vh; overflow-y: auto; }
+.cite-modal__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; }
+.cite-modal__head h3 { font-size: 1.4rem; }
+.cite-modal__close { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--glass-border); background: transparent; color: var(--text-soft); font-size: 0.9rem; }
+.cite-modal__close:hover { color: var(--accent); border-color: var(--accent); }
+.cite-row { padding: 1rem 0; border-top: 1px solid var(--line); }
+.cite-row:first-of-type { border-top: none; }
+.cite-row__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+.cite-row__style { font-family: var(--font-antique); font-weight: 700; letter-spacing: 0.06em; color: var(--accent); }
+.cite-row__copy { font-size: 0.75rem; font-weight: 600; padding: 0.32rem 0.8rem; border-radius: 999px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-soft); }
+.cite-row__copy:hover { color: var(--accent); border-color: var(--accent); }
+.cite-row__text { margin: 0; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.5; color: var(--text); }
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-pin__halo, .tl2__node { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .cite-modal { animation: none !important; opacity: 1 !important; }
 }

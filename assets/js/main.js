@@ -19,7 +19,8 @@
           <a href="index.html" ${active === "home" ? 'class="active"' : ""} data-i18n="nav.home"></a>
           <a href="blog.html" ${active === "blog" ? 'class="active"' : ""} data-i18n="nav.blog"></a>
           <a href="figures.html" ${active === "figures" ? 'class="active"' : ""} data-i18n="nav.figures"></a>
-          <a href="index.html#timeline" data-i18n="nav.timeline"></a>
+          <a href="topics.html" ${active === "topics" ? 'class="active"' : ""} data-i18n="nav.topics"></a>
+          <a href="atlas.html" ${active === "atlas" ? 'class="active"' : ""} data-i18n="nav.atlas"></a>
           <a href="profile.html" ${active === "profile" ? 'class="active"' : ""} data-i18n="nav.profile"></a>
           <a href="admin.html" ${active === "admin" ? 'class="active"' : ""} data-i18n="nav.admin"></a>
         </nav>
@@ -54,13 +55,15 @@
           <a href="index.html" data-i18n="nav.home"></a>
           <a href="blog.html" data-i18n="nav.blog"></a>
           <a href="figures.html" data-i18n="nav.figures"></a>
-          <a href="index.html#timeline" data-i18n="nav.timeline"></a>
-          <a href="profile.html" data-i18n="nav.profile"></a>
-          <a href="admin.html" data-i18n="nav.admin"></a>
+          <a href="topics.html" data-i18n="nav.topics"></a>
+          <a href="atlas.html" data-i18n="nav.atlas"></a>
         </div>
         <div class="footer-col">
           <h5 data-i18n="footer.nav"></h5>
-          <p style="font-size:0.9rem;line-height:1.6;color:rgba(244,237,225,0.7)" data-i18n="footer.made"></p>
+          <a href="gallery.html" data-i18n="nav.gallery"></a>
+          <a href="profile.html" data-i18n="nav.profile"></a>
+          <a href="admin.html" data-i18n="nav.admin"></a>
+          <p style="font-size:0.9rem;line-height:1.6;color:rgba(244,237,225,0.7);margin-top:1rem" data-i18n="footer.made"></p>
         </div>
       </div>
       <div class="wrap footer-bottom">
@@ -119,27 +122,45 @@
     wireSearch();
   }
 
-  /* ---------- Tra cứu: nạp chỉ mục & lọc ---------- */
+  /* ---------- Tra cứu toàn văn: nạp chỉ mục (gồm nội dung .md) ---------- */
   let searchIndex = null;
+  async function fetchText(url) {
+    try { const r = await fetch(url + "?_=" + Date.now()); return r.ok ? await r.text() : ""; } catch (e) { return ""; }
+  }
   async function buildIndex() {
     if (searchIndex) return searchIndex;
     const idx = [];
     try {
       const posts = await (window.Store ? Store.all() : Promise.resolve([]));
-      posts.forEach((p) => idx.push({
+      const bodies = await Promise.all(posts.map((p) => (p.file ? fetchText(p.file) : Promise.resolve(""))));
+      posts.forEach((p, i) => idx.push({
         type: "post", slug: p.slug, url: `post.html?slug=${encodeURIComponent(p.slug)}`,
-        title: p.title, sub: p.excerpt, year: p.year, region: p.region, tags: p.tags || [],
+        title: p.title, sub: p.excerpt, year: p.year, region: p.region, tags: p.tags || [], body: bodies[i] || "",
       }));
     } catch (e) {}
     try {
       const res = await fetch("figures/index.json?_=" + Date.now());
-      if (res.ok) (await res.json()).figures.forEach((f) => idx.push({
-        type: "figure", slug: f.slug, url: `figure.html?slug=${encodeURIComponent(f.slug)}`,
-        title: f.name, sub: f.role, year: f.born, region: f.region, tags: [],
-      }));
+      if (res.ok) {
+        const figs = (await res.json()).figures || [];
+        const bodies = await Promise.all(figs.map((f) => (f.file ? fetchText(f.file) : Promise.resolve(""))));
+        figs.forEach((f, i) => idx.push({
+          type: "figure", slug: f.slug, url: `figure.html?slug=${encodeURIComponent(f.slug)}`,
+          title: f.name, sub: f.role, year: f.born, region: f.region, tags: f.tags || [], body: bodies[i] || "",
+        }));
+      }
     } catch (e) {}
     searchIndex = idx;
     return idx;
+  }
+
+  /* Lịch sử tra cứu (lưu trong trình duyệt) */
+  const RECENT_KEY = "hw_recent_search";
+  function getRecent() { try { return JSON.parse(localStorage.getItem(RECENT_KEY)) || []; } catch (e) { return []; } }
+  function pushRecent(q) {
+    q = q.trim(); if (!q) return;
+    let list = getRecent().filter((x) => x.toLowerCase() !== q.toLowerCase());
+    list.unshift(q); list = list.slice(0, 6);
+    localStorage.setItem(RECENT_KEY, JSON.stringify(list));
   }
 
   function wireSearch() {
@@ -148,45 +169,78 @@
     const results = document.getElementById("searchResults");
     if (!overlay || !input) return;
 
+    const esc = (s) => (s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
     const open = () => {
       overlay.classList.add("open"); overlay.setAttribute("aria-hidden", "false");
-      buildIndex().then(() => { input.focus(); if (input.value) run(); });
+      buildIndex().then(() => { input.focus(); input.value ? run() : showEmpty(); });
+      if (!input.value) showEmpty();
     };
     const close = () => { overlay.classList.remove("open"); overlay.setAttribute("aria-hidden", "true"); };
 
     const typeLabel = (t) => window.I18N.t(t === "figure" ? "nav.figures" : "nav.blog");
     // Bỏ dấu để tra cứu không phân biệt dấu tiếng Việt & dấu Latin
     const norm = (s) => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d");
+
+    // Trạng thái rỗng: gợi ý chủ đề + lịch sử tra cứu
+    function showEmpty() {
+      const recent = getRecent();
+      const suggested = ["Việt Nam", "cách mạng", "Napoléon", "khoa học"];
+      const chip = (q) => `<button class="search-chip" data-q="${esc(q)}">${esc(q)}</button>`;
+      results.innerHTML = `
+        ${recent.length ? `<div class="search-sect"><div class="search-sect__label">${window.I18N.t("search.recent")}</div><div class="search-chips">${recent.map(chip).join("")}</div></div>` : ""}
+        <div class="search-sect"><div class="search-sect__label">${window.I18N.t("search.suggested")}</div><div class="search-chips">${suggested.map(chip).join("")}</div></div>`;
+      results.querySelectorAll(".search-chip").forEach((b) =>
+        b.addEventListener("click", () => { input.value = b.dataset.q; run(); input.focus(); }));
+    }
+
+    // Trích đoạn quanh từ khoá trong nội dung
+    function snippet(body, q, fallback) {
+      const nb = norm(body); const pos = nb.indexOf(q);
+      if (pos < 0) return esc(fallback || "");
+      const start = Math.max(0, pos - 40), end = Math.min(body.length, pos + q.length + 60);
+      const raw = (start > 0 ? "…" : "") + body.slice(start, end).replace(/\s+/g, " ").trim() + (end < body.length ? "…" : "");
+      // tô đậm đoạn khớp (dựa trên vị trí đã bỏ dấu ~ độ dài tương đương)
+      return esc(raw);
+    }
+
     async function run() {
       const lang = window.I18N.lang;
       const q = norm(input.value.trim());
-      if (!q) { results.innerHTML = ""; return; }
+      if (!q) { showEmpty(); return; }
       const index = await buildIndex();
       if (norm(input.value.trim()) !== q) return; // đã gõ tiếp, bỏ kết quả cũ
       const hits = index.map((it) => {
-        // tra cứu trên cả hai ngôn ngữ để không phụ thuộc ngôn ngữ đang chọn
         const titleAll = [Store.localized(it.title, "vi"), Store.localized(it.title, "en")].join(" ");
         const subAll = [Store.localized(it.sub, "vi"), Store.localized(it.sub, "en")].join(" ");
         const title = Store.localized(it.title, lang);
         const sub = Store.localized(it.sub, lang);
-        const hay = norm(titleAll + " " + subAll + " " + it.tags.join(" ") + " " + (it.year || ""));
-        return { it, title, sub, ok: hay.includes(q) };
-      }).filter((x) => x.ok).slice(0, 8);
+        const inMeta = norm(titleAll + " " + subAll + " " + it.tags.join(" ") + " " + (it.year || "")).includes(q);
+        const inBody = norm(it.body).includes(q);
+        // xếp hạng: khớp tiêu đề > meta > nội dung
+        const score = norm(titleAll).includes(q) ? 3 : inMeta ? 2 : inBody ? 1 : 0;
+        return { it, title, sub, score, inBodyOnly: !inMeta && inBody };
+      }).filter((x) => x.score > 0).sort((a, b) => b.score - a.score).slice(0, 8);
+
       results.innerHTML = hits.length
         ? hits.map((h) => `
           <a class="search-hit" href="${h.it.url}">
             <span class="search-hit__type">${typeLabel(h.it.type)}</span>
             <span class="search-hit__main">
-              <b>${h.title}</b>
-              <small>${h.sub || ""}</small>
+              <b>${esc(h.title)}</b>
+              <small>${h.inBodyOnly ? snippet(h.it.body, q, h.sub) : esc(h.sub || "")}</small>
             </span>
             ${h.it.year ? `<span class="search-hit__year">${h.it.year}</span>` : ""}
           </a>`).join("")
         : `<p class="search-empty">${window.I18N.t("search.none")}</p>`;
+
+      // lưu lịch sử khi có kết quả
+      if (hits.length) pushRecent(input.value.trim());
+      results.querySelectorAll(".search-hit").forEach((a) =>
+        a.addEventListener("click", () => pushRecent(input.value.trim())));
     }
 
     let deb;
-    input.addEventListener("input", () => { clearTimeout(deb); deb = setTimeout(run, 140); });
+    input.addEventListener("input", () => { clearTimeout(deb); deb = setTimeout(run, 180); });
     document.querySelectorAll("#searchToggle").forEach((b) => b.addEventListener("click", open));
     const closeBtn = document.getElementById("searchClose");
     if (closeBtn) closeBtn.addEventListener("click", close);
