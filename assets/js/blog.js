@@ -3,9 +3,10 @@
  */
 (function () {
   "use strict";
+  const params = new URLSearchParams(location.search);
   let query = "";
-  let activeTag = "__all__";
-  let activeRegion = new URLSearchParams(location.search).get("region") || "__all__";
+  let activeTag = params.get("tag") || "__all__";
+  let activeRegion = params.get("region") || "__all__";
   const REGIONS = ["__all__", "vietnam", "world"];
 
   function fallbackCover(year) {
@@ -22,7 +23,7 @@
     <article class="card" data-reveal>
       <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="card__media">
         ${p.year ? `<span class="card__year">${p.year}</span>` : ""}
-        <img src="${p.cover || fallbackCover(p.year)}" alt="${title}" loading="lazy">
+        <img src="${p.cover || fallbackCover(p.year)}" alt="${title}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackCover(p.year)}'">
       </a>
       <div class="card__body">
         <div class="card__tags">${tags}</div>
@@ -66,8 +67,8 @@
     if (fbox && !fbox.dataset.built) {
       const tags = Store.allTags(posts);
       fbox.innerHTML =
-        `<button class="chip active" data-tag="__all__">${window.I18N.t("blog.all")}</button>` +
-        tags.map((t) => `<button class="chip" data-tag="${t}">${t}</button>`).join("");
+        `<button class="chip ${activeTag === "__all__" ? "active" : ""}" data-tag="__all__">${window.I18N.t("blog.all")}</button>` +
+        tags.map((t) => `<button class="chip ${activeTag === t ? "active" : ""}" data-tag="${t}">${t}</button>`).join("");
       fbox.dataset.built = "1";
       fbox.addEventListener("click", (e) => {
         const b = e.target.closest(".chip");

@@ -8,12 +8,13 @@
     const title = Store.localized(p.title, lang);
     const excerpt = Store.localized(p.excerpt, lang);
     const tags = (p.tags || []).slice(0, 2).map((t) => `<span class="tag">${t}</span>`).join("");
-    const cover = p.cover || fallbackCover(p.year);
+    const fb = fallbackCover(p.year);
+    const cover = p.cover || fb;
     return `
     <article class="card" data-reveal>
       <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="card__media">
         ${p.year ? `<span class="card__year">${p.year}</span>` : ""}
-        <img src="${cover}" alt="${title}" loading="lazy">
+        <img src="${cover}" alt="${title}" loading="lazy" onerror="this.onerror=null;this.src='${fb}'">
       </a>
       <div class="card__body">
         <div class="card__tags">${tags}</div>
@@ -59,7 +60,7 @@
         feat.innerHTML = `
         <div class="featured" data-reveal>
           <a class="featured__media" href="post.html?slug=${encodeURIComponent(fp.slug)}">
-            <img src="${fp.cover || fallbackCover(fp.year)}" alt="">
+            <img src="${fp.cover || fallbackCover(fp.year)}" alt="" onerror="this.onerror=null;this.src='${fallbackCover(fp.year)}'">
           </a>
           <div class="featured__body">
             <span class="kicker" data-i18n="featured.kicker">${window.I18N.t("featured.kicker")}</span>

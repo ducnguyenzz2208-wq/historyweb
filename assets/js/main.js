@@ -20,10 +20,13 @@
           <a href="blog.html" ${active === "blog" ? 'class="active"' : ""} data-i18n="nav.blog"></a>
           <a href="figures.html" ${active === "figures" ? 'class="active"' : ""} data-i18n="nav.figures"></a>
           <a href="index.html#timeline" data-i18n="nav.timeline"></a>
-          <a href="about.html" ${active === "about" ? 'class="active"' : ""} data-i18n="nav.about"></a>
+          <a href="profile.html" ${active === "profile" ? 'class="active"' : ""} data-i18n="nav.profile"></a>
           <a href="admin.html" ${active === "admin" ? 'class="active"' : ""} data-i18n="nav.admin"></a>
         </nav>
         <div class="nav__actions">
+          <button class="icon-btn" id="searchToggle" aria-label="Tra cứu" data-i18n-attr="aria-label:search.open">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          </button>
           <button class="lang-btn" data-lang-toggle aria-label="Change language">EN</button>
           <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="themeIcon"></svg>
@@ -52,7 +55,7 @@
           <a href="blog.html" data-i18n="nav.blog"></a>
           <a href="figures.html" data-i18n="nav.figures"></a>
           <a href="index.html#timeline" data-i18n="nav.timeline"></a>
-          <a href="about.html" data-i18n="nav.about"></a>
+          <a href="profile.html" data-i18n="nav.profile"></a>
           <a href="admin.html" data-i18n="nav.admin"></a>
         </div>
         <div class="footer-col">
@@ -77,12 +80,29 @@
     if (icon) icon.innerHTML = t === "dark" ? sun : moon;
   }
 
+  /* ---------- Search overlay (tra cứu toàn trang) ---------- */
+  function searchOverlay() {
+    return `
+    <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+      <div class="search-overlay__panel glass" role="dialog" aria-modal="true">
+        <div class="search-overlay__bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <input type="search" id="globalSearch" autocomplete="off" data-i18n-attr="placeholder:search.placeholder">
+          <button class="search-overlay__close" id="searchClose" aria-label="Đóng">esc</button>
+        </div>
+        <div class="search-overlay__results" id="searchResults"></div>
+        <div class="search-overlay__hint" data-i18n="search.hint"></div>
+      </div>
+    </div>`;
+  }
+
   function injectComponents() {
     const active = document.body.getAttribute("data-page") || "";
     const h = document.getElementById("header-slot");
     const f = document.getElementById("footer-slot");
     if (h) h.innerHTML = header(active);
     if (f) f.innerHTML = footer();
+    document.body.insertAdjacentHTML("beforeend", searchOverlay());
 
     // site name
     const sn = (cfg.siteName && cfg.siteName[window.I18N.lang]) || "History";
@@ -96,6 +116,85 @@
     setTheme(saved);
 
     wireHeader();
+    wireSearch();
+  }
+
+  /* ---------- Tra cứu: nạp chỉ mục & lọc ---------- */
+  let searchIndex = null;
+  async function buildIndex() {
+    if (searchIndex) return searchIndex;
+    const idx = [];
+    try {
+      const posts = await (window.Store ? Store.all() : Promise.resolve([]));
+      posts.forEach((p) => idx.push({
+        type: "post", slug: p.slug, url: `post.html?slug=${encodeURIComponent(p.slug)}`,
+        title: p.title, sub: p.excerpt, year: p.year, region: p.region, tags: p.tags || [],
+      }));
+    } catch (e) {}
+    try {
+      const res = await fetch("figures/index.json?_=" + Date.now());
+      if (res.ok) (await res.json()).figures.forEach((f) => idx.push({
+        type: "figure", slug: f.slug, url: `figure.html?slug=${encodeURIComponent(f.slug)}`,
+        title: f.name, sub: f.role, year: f.born, region: f.region, tags: [],
+      }));
+    } catch (e) {}
+    searchIndex = idx;
+    return idx;
+  }
+
+  function wireSearch() {
+    const overlay = document.getElementById("searchOverlay");
+    const input = document.getElementById("globalSearch");
+    const results = document.getElementById("searchResults");
+    if (!overlay || !input) return;
+
+    const open = () => {
+      overlay.classList.add("open"); overlay.setAttribute("aria-hidden", "false");
+      buildIndex().then(() => { input.focus(); if (input.value) run(); });
+    };
+    const close = () => { overlay.classList.remove("open"); overlay.setAttribute("aria-hidden", "true"); };
+
+    const typeLabel = (t) => window.I18N.t(t === "figure" ? "nav.figures" : "nav.blog");
+    // Bỏ dấu để tra cứu không phân biệt dấu tiếng Việt & dấu Latin
+    const norm = (s) => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d");
+    async function run() {
+      const lang = window.I18N.lang;
+      const q = norm(input.value.trim());
+      if (!q) { results.innerHTML = ""; return; }
+      const index = await buildIndex();
+      if (norm(input.value.trim()) !== q) return; // đã gõ tiếp, bỏ kết quả cũ
+      const hits = index.map((it) => {
+        // tra cứu trên cả hai ngôn ngữ để không phụ thuộc ngôn ngữ đang chọn
+        const titleAll = [Store.localized(it.title, "vi"), Store.localized(it.title, "en")].join(" ");
+        const subAll = [Store.localized(it.sub, "vi"), Store.localized(it.sub, "en")].join(" ");
+        const title = Store.localized(it.title, lang);
+        const sub = Store.localized(it.sub, lang);
+        const hay = norm(titleAll + " " + subAll + " " + it.tags.join(" ") + " " + (it.year || ""));
+        return { it, title, sub, ok: hay.includes(q) };
+      }).filter((x) => x.ok).slice(0, 8);
+      results.innerHTML = hits.length
+        ? hits.map((h) => `
+          <a class="search-hit" href="${h.it.url}">
+            <span class="search-hit__type">${typeLabel(h.it.type)}</span>
+            <span class="search-hit__main">
+              <b>${h.title}</b>
+              <small>${h.sub || ""}</small>
+            </span>
+            ${h.it.year ? `<span class="search-hit__year">${h.it.year}</span>` : ""}
+          </a>`).join("")
+        : `<p class="search-empty">${window.I18N.t("search.none")}</p>`;
+    }
+
+    let deb;
+    input.addEventListener("input", () => { clearTimeout(deb); deb = setTimeout(run, 140); });
+    document.querySelectorAll("#searchToggle").forEach((b) => b.addEventListener("click", open));
+    const closeBtn = document.getElementById("searchClose");
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
+    document.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") { e.preventDefault(); open(); }
+      if (e.key === "Escape" && overlay.classList.contains("open")) close();
+    });
   }
 
   function wireHeader() {
@@ -137,14 +236,24 @@
     document.querySelectorAll("[data-site-name]").forEach((el) => (el.textContent = sn));
   });
 
+  /* Phần tử có đang nằm trong khung nhìn không */
+  function inViewport(el, margin) {
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    return r.top < vh * (1 - (margin || 0)) && r.bottom > 0;
+  }
+
   /* ---------- Scroll reveal (gồm cả data-stagger) ---------- */
   function reveal() {
     const els = document.querySelectorAll("[data-reveal], [data-stagger]");
+    if (!els.length) return;
     if (!("IntersectionObserver" in window)) { els.forEach((e) => e.classList.add("in")); return; }
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     els.forEach((e) => io.observe(e));
+    // Lưới an toàn: nếu IO bị tiết lưu, vẫn hiện phần tử đầu trang sau một nhịp ngắn.
+    setTimeout(() => els.forEach((e) => { if (!e.classList.contains("in") && inViewport(e, 0.04)) e.classList.add("in"); }), 700);
   }
   window.hwReveal = reveal; // cho các module động gọi lại
 
@@ -234,27 +343,31 @@
   function countUp() {
     const els = document.querySelectorAll("[data-count]");
     if (!els.length) return;
-    if (reduced || !("IntersectionObserver" in window)) {
-      els.forEach((e) => (e.textContent = e.getAttribute("data-count")));
-      return;
-    }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        io.unobserve(e.target);
-        const target = parseFloat(e.target.getAttribute("data-count")) || 0;
-        const suffix = e.target.getAttribute("data-count-suffix") || "";
-        const dur = 1400, t0 = performance.now();
-        const tick = (t) => {
-          const p = Math.min(1, (t - t0) / dur);
-          const eased = 1 - Math.pow(1 - p, 3);
-          e.target.textContent = Math.round(target * eased).toLocaleString("vi-VN") + suffix;
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      });
-    }, { threshold: 0.4 });
-    els.forEach((e) => io.observe(e));
+    const animate = (el) => {
+      if (el.dataset.counted) return;
+      el.dataset.counted = "1";
+      const target = parseFloat(el.getAttribute("data-count")) || 0;
+      const suffix = el.getAttribute("data-count-suffix") || "";
+      if (reduced) { el.textContent = target.toLocaleString("vi-VN") + suffix; return; }
+      const dur = 1400, t0 = performance.now();
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased).toLocaleString("vi-VN") + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    if (!("IntersectionObserver" in window)) { els.forEach(animate); return; }
+    els.forEach((el) => {
+      if (inViewport(el, 0.1)) { animate(el); return; } // đã thấy → chạy ngay
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach((e) => { if (e.isIntersecting) { obs.disconnect(); animate(el); } });
+      }, { threshold: 0.35 });
+      io.observe(el);
+    });
+    // Lưới an toàn cho các phần tử đầu trang nếu IO bị tiết lưu
+    setTimeout(() => els.forEach((el) => { if (!el.dataset.counted && inViewport(el, 0.1)) animate(el); }), 800);
   }
   window.hwCountUp = countUp;
 

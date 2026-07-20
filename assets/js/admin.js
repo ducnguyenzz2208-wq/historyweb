@@ -250,10 +250,65 @@
     $("previewBox").innerHTML = `<div class="prose">${window.mdToHtml($("f_content").value)}</div>`;
   }
 
+  /* ---------- thanh công cụ Markdown ---------- */
+  function wrapSelection(before, after, placeholder) {
+    const ta = $("f_content");
+    const s = ta.selectionStart, e = ta.selectionEnd;
+    const sel = ta.value.slice(s, e) || placeholder || "";
+    ta.value = ta.value.slice(0, s) + before + sel + after + ta.value.slice(e);
+    ta.focus();
+    ta.selectionStart = s + before.length;
+    ta.selectionEnd = s + before.length + sel.length;
+  }
+  function prefixLine(prefix) {
+    const ta = $("f_content");
+    const s = ta.selectionStart;
+    const lineStart = ta.value.lastIndexOf("\n", s - 1) + 1;
+    ta.value = ta.value.slice(0, lineStart) + prefix + ta.value.slice(lineStart);
+    ta.focus(); ta.selectionStart = ta.selectionEnd = s + prefix.length;
+  }
+  function insertBlock(text) {
+    const ta = $("f_content");
+    const s = ta.selectionStart;
+    const nl = (ta.value.slice(0, s).endsWith("\n") || s === 0) ? "" : "\n";
+    ta.value = ta.value.slice(0, s) + nl + text + ta.value.slice(s);
+    ta.focus(); ta.selectionStart = ta.selectionEnd = s + nl.length + text.length;
+  }
+  function initToolbar() {
+    const bar = $("mdToolbar");
+    if (!bar) return;
+    bar.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-md]");
+      if (!b) return;
+      const vi = window.I18N.lang !== "en";
+      switch (b.dataset.md) {
+        case "h2": prefixLine("## "); break;
+        case "h3": prefixLine("### "); break;
+        case "bold": wrapSelection("**", "**", vi ? "chữ đậm" : "bold text"); break;
+        case "italic": wrapSelection("*", "*", vi ? "chữ nghiêng" : "italic text"); break;
+        case "quote": prefixLine("> "); break;
+        case "ul": prefixLine("- "); break;
+        case "link": wrapSelection("[", "](https://)", vi ? "nội dung" : "text"); break;
+        case "img": insertBlock(`![${vi ? "mô tả ảnh" : "alt"}](https://...)\n`); break;
+        case "hr": insertBlock("\n---\n"); break;
+        case "ref": insertBlock(`\n## ${vi ? "Nguồn tham khảo" : "References"}\n\n1. \n`); break;
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     initToken();
+    initToolbar();
     resetForm();
     if (token()) connect();
+
+    // Mở sẵn bài để sửa khi vào từ nút "Sửa bài viết" (admin.html?slug=…)
+    const editSlug = new URLSearchParams(location.search).get("slug");
+    if (editSlug) {
+      loadPost(editSlug);
+      const trySelect = () => { const sel = $("loadSelect"); if (sel && [...sel.options].some((o) => o.value === editSlug)) sel.value = editSlug; };
+      setTimeout(trySelect, 400); setTimeout(trySelect, 1200);
+    }
 
     // tự sinh slug từ tiêu đề khi chưa khóa
     $("f_title").addEventListener("input", () => {

@@ -68,7 +68,22 @@
         </div>
         <div class="field"><label data-i18n="admin.f.cover"></label><input type="url" id="f_cover" placeholder="https://…"></div>
         <div class="field"><label data-i18n="admin.f.excerpt"></label><textarea id="f_excerpt" style="min-height:80px"></textarea></div>
-        <div class="field"><label data-i18n="admin.f.content"></label><textarea id="f_content" placeholder="# Tiêu đề&#10;&#10;Nội dung Markdown…"></textarea></div>
+        <div class="field">
+          <label data-i18n="admin.f.content"></label>
+          <div class="md-toolbar" id="mdToolbar">
+            <button type="button" class="md-tool" data-md="h2" title="Tiêu đề mục">H2</button>
+            <button type="button" class="md-tool" data-md="h3" title="Tiêu đề phụ">H3</button>
+            <button type="button" class="md-tool" data-md="bold" title="Đậm"><b>B</b></button>
+            <button type="button" class="md-tool" data-md="italic" title="Nghiêng"><i>I</i></button>
+            <button type="button" class="md-tool" data-md="quote" title="Trích dẫn">❝</button>
+            <button type="button" class="md-tool" data-md="ul" title="Danh sách">• —</button>
+            <button type="button" class="md-tool" data-md="link" title="Liên kết">🔗</button>
+            <button type="button" class="md-tool" data-md="img" title="Ảnh">🖼</button>
+            <button type="button" class="md-tool" data-md="hr" title="Đường kẻ">―</button>
+            <button type="button" class="md-tool" data-md="ref" title="Mục nguồn tham khảo">Tham khảo</button>
+          </div>
+          <textarea id="f_content" placeholder="# Tiêu đề&#10;&#10;Nội dung Markdown…"></textarea>
+        </div>
 
         <div class="admin-actions">
           <button class="btn" id="publishBtn" data-i18n="admin.publish"></button>
