@@ -63,22 +63,15 @@
         "en": "When steam and machinery forever changed how humans lived, worked and moved."
       },
       "year": "1760",
-      "date": "2026-07-12",
       "region": "world",
+      "date": "2026-07-12",
       "tags": [
         "thế giới",
         "công nghệ",
         "kinh tế"
       ],
-      "cover": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80",
+      "cover": "https://vinuni.edu.vn/vi/thanh-tuu-tieu-bieu-nhat-cua-cach-mang-cong-nghiep-anh-la-gi/",
       "lang": "vi",
-      "lat": 53.4808,
-      "lng": -2.2426,
-      "place": {
-        "vi": "Manchester, Anh",
-        "en": "Manchester, England"
-      },
-      "credit": "Unsplash",
       "file": "posts/cach-mang-cong-nghiep.md"
     },
     {
