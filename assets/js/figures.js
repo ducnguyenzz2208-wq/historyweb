@@ -1,22 +1,105 @@
 /*
  * figures.js — trang "Nhân vật Lịch sử": tải figures/index.json,
  * gom nhóm theo khu vực (Việt Nam / Thế giới) và render thẻ chân dung kính lỏng.
+ *
+ * Hỗ trợ bộ nhớ đệm tức thời (optimistic cache) cho nhân vật mới đăng.
  */
 (function () {
   "use strict";
+  const LOCAL_FIGS_KEY = "hw_pending_figures";
+  const LOCAL_FIG_CONTENT_KEY = "hw_pending_fig_content";
+  const LOCAL_FIG_TS_KEY = "hw_pending_fig_ts";
+  const PENDING_TTL = 10 * 60 * 1000;
   let cache = null;
+
+  /* ---------- Optimistic local storage helpers ---------- */
+  function getPending() {
+    try {
+      const ts = parseInt(localStorage.getItem(LOCAL_FIG_TS_KEY) || "0", 10);
+      if (Date.now() - ts > PENDING_TTL) { clearPending(); return []; }
+      return JSON.parse(localStorage.getItem(LOCAL_FIGS_KEY) || "[]");
+    } catch (e) { return []; }
+  }
+  function savePending(items) {
+    try {
+      localStorage.setItem(LOCAL_FIGS_KEY, JSON.stringify(items));
+      localStorage.setItem(LOCAL_FIG_TS_KEY, String(Date.now()));
+    } catch (e) {}
+  }
+  function clearPending() {
+    try {
+      localStorage.removeItem(LOCAL_FIGS_KEY);
+      localStorage.removeItem(LOCAL_FIG_CONTENT_KEY);
+      localStorage.removeItem(LOCAL_FIG_TS_KEY);
+    } catch (e) {}
+  }
+  function getLocalContent() {
+    try { return JSON.parse(localStorage.getItem(LOCAL_FIG_CONTENT_KEY) || "{}"); } catch (e) { return {}; }
+  }
+  function saveLocalContent(map) {
+    try { localStorage.setItem(LOCAL_FIG_CONTENT_KEY, JSON.stringify(map)); } catch (e) {}
+  }
+
+  function mergeWithPending(serverList) {
+    const pending = getPending();
+    if (!pending.length) return serverList;
+    const merged = serverList.slice();
+    for (const p of pending) {
+      const idx = merged.findIndex((x) => x.slug === p.slug);
+      if (idx >= 0) merged[idx] = { ...merged[idx], ...p };
+      else merged.push(p);
+    }
+    return merged;
+  }
 
   async function loadFigures() {
     if (cache) return cache;
     try {
       const res = await fetch("figures/index.json?_=" + Date.now());
-      cache = res.ok ? (await res.json()).figures || [] : [];
+      let list = res.ok ? (await res.json()).figures || [] : [];
+      list = mergeWithPending(list);
+      cache = list;
     } catch (e) {
-      cache = [];
+      const pending = getPending();
+      cache = pending.length ? pending : [];
     }
     return cache;
   }
   window.loadFigures = loadFigures;
+
+  /* API cho admin: thêm nhân vật tức thời */
+  function _addLocalFigure(item) {
+    const pending = getPending();
+    const idx = pending.findIndex((x) => x.slug === item.slug);
+    if (idx >= 0) pending[idx] = { ...pending[idx], ...item };
+    else pending.push(item);
+    savePending(pending);
+    if (cache) {
+      const ci = cache.findIndex((x) => x.slug === item.slug);
+      if (ci >= 0) cache[ci] = { ...cache[ci], ...item };
+      else cache.push(item);
+    }
+  }
+  function _addLocalFigContent(slug, text) {
+    const map = getLocalContent();
+    map[slug] = text;
+    saveLocalContent(map);
+  }
+  function _removeLocalFigure(slug) {
+    const pending = getPending().filter((x) => x.slug !== slug);
+    savePending(pending);
+    const map = getLocalContent();
+    delete map[slug];
+    saveLocalContent(map);
+    if (cache) cache = cache.filter((x) => x.slug !== slug);
+  }
+  function _resetFigures() { cache = null; }
+
+  window._addLocalFigure = _addLocalFigure;
+  window._addLocalFigContent = _addLocalFigContent;
+  window._removeLocalFigure = _removeLocalFigure;
+  window._resetFigures = _resetFigures;
+  window._clearPendingFigures = clearPending;
 
   // Chân dung dự phòng: chữ cái đầu bằng vàng trên nền rượu vang
   window.figureFallback = function (name) {

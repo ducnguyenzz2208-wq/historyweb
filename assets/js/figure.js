@@ -49,7 +49,15 @@
     if (!current) {
       const figures = await (window.loadFigures ? window.loadFigures() : Promise.resolve([]));
       current = figures.find((x) => x.slug === getSlug()) || null;
-      if (current && current.file) { try { body = await (await fetch(current.file + "?_=" + Date.now())).text(); } catch (e) { body = ""; } }
+      if (current) {
+        // Ưu tiên nội dung local (vừa đăng) trước khi fetch server
+        const localMap = (() => { try { return JSON.parse(localStorage.getItem("hw_pending_fig_content") || "{}"); } catch (e) { return {}; } })();
+        if (localMap[current.slug]) {
+          body = localMap[current.slug];
+        } else if (current.file) {
+          try { body = await (await fetch(current.file + "?_=" + Date.now())).text(); } catch (e) { body = ""; }
+        }
+      }
     }
     const f = current;
     if (!f) {
