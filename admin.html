@@ -45,6 +45,13 @@
       <!-- Editor -->
       <div class="panel">
         <div class="field">
+          <label data-i18n="admin.f.type"></label>
+          <div class="type-toggle" id="typeToggle" role="tablist">
+            <button type="button" data-type="event" class="active" data-i18n="admin.type.event"></button>
+            <button type="button" data-type="figure" data-i18n="admin.type.figure"></button>
+          </div>
+        </div>
+        <div class="field">
           <label data-i18n="admin.load"></label>
           <select id="loadSelect"></select>
         </div>
@@ -61,7 +68,7 @@
         </div>
 
         <div class="field">
-          <label data-i18n="admin.f.title"></label>
+          <label id="lbl_title" data-i18n="admin.f.title"></label>
           <input type="text" id="f_title">
         </div>
         <div class="field-row">
@@ -70,9 +77,17 @@
             <select id="f_lang"><option value="vi">Tiếng Việt</option><option value="en">English</option></select>
           </div>
         </div>
-        <div class="field-row">
+        <div class="field-row" data-only="event">
           <div class="field"><label data-i18n="admin.f.date"></label><input type="date" id="f_date"></div>
-          <div class="field"><label data-i18n="admin.f.year"></label><input type="text" id="f_year" placeholder="1965"></div>
+          <div class="field"><label id="lbl_year" data-i18n="admin.f.year"></label><input type="text" id="f_year" placeholder="1965"></div>
+        </div>
+        <div class="field-row" data-only="figure">
+          <div class="field"><label data-i18n="admin.f.born"></label><input type="text" id="f_born" placeholder="1452"></div>
+          <div class="field"><label data-i18n="admin.f.died"></label><input type="text" id="f_died" placeholder="1519"></div>
+        </div>
+        <div class="field-row" data-only="figure">
+          <div class="field"><label data-i18n="admin.f.role"></label><input type="text" id="f_role" placeholder="Họa sĩ · Nhà phát minh"></div>
+          <div class="field"><label data-i18n="admin.f.field"></label><input type="text" id="f_fieldv" placeholder="Nghệ thuật · Khoa học"></div>
         </div>
         <div class="field-row">
           <div class="field"><label data-i18n="admin.f.region"></label>
@@ -81,14 +96,33 @@
               <option value="world" data-i18n="region.world"></option>
             </select>
           </div>
-          <div class="field"><label data-i18n="admin.f.tags"></label><input type="text" id="f_tags" placeholder="Việt Nam, chiến tranh"></div>
+          <div class="field"><label data-i18n="admin.f.era"></label>
+            <input type="text" id="f_era" list="eraList" placeholder="Cổ đại / Trung đại / Cận đại / Hiện đại">
+            <datalist id="eraList">
+              <option value="Cổ đại"></option><option value="Trung đại"></option>
+              <option value="Cận đại"></option><option value="Hiện đại"></option>
+              <option value="Phục Hưng"></option>
+            </datalist>
+          </div>
         </div>
-        <div class="field"><label data-i18n="admin.f.cover"></label>
+        <div class="field"><label data-i18n="admin.f.tags"></label><input type="text" id="f_tags" placeholder="Việt Nam, chiến tranh"></div>
+        <div class="field"><label id="lbl_cover" data-i18n="admin.f.cover"></label>
           <div class="cover-row">
             <input type="url" id="f_cover" placeholder="https://…">
             <button type="button" class="btn btn--ghost" id="coverUploadBtn" data-i18n="admin.uploadcover"></button>
           </div>
           <input type="file" id="coverFileInput" accept="image/*" hidden>
+        </div>
+
+        <div class="field" data-only="event">
+          <label data-i18n="admin.f.location"></label>
+          <div class="hint" data-i18n="admin.locationhint"></div>
+          <div class="map-picker glass" id="mapPicker"></div>
+          <div class="field-row" style="margin-top:0.8rem">
+            <div class="field"><label data-i18n="admin.f.lat">Lat</label><input type="number" step="0.0001" id="f_lat" placeholder="21.0285"></div>
+            <div class="field"><label data-i18n="admin.f.lng">Lng</label><input type="number" step="0.0001" id="f_lng" placeholder="105.8542"></div>
+          </div>
+          <div class="field"><label data-i18n="admin.f.place"></label><input type="text" id="f_place" placeholder="Hà Nội, Việt Nam"></div>
         </div>
         <div class="field"><label data-i18n="admin.f.excerpt"></label><textarea id="f_excerpt" style="min-height:80px"></textarea></div>
         <div class="field">

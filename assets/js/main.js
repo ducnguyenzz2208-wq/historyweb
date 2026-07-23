@@ -44,7 +44,6 @@
           <a href="figures.html" ${active === "figures" ? 'class="active"' : ""} data-i18n="nav.figures"></a>
           <a href="topics.html" ${active === "topics" ? 'class="active"' : ""} data-i18n="nav.topics"></a>
           <a href="atlas.html" ${active === "atlas" ? 'class="active"' : ""} data-i18n="nav.atlas"></a>
-          <a href="profile.html" ${active === "profile" ? 'class="active"' : ""} data-i18n="nav.profile"></a>
           <a href="admin.html" ${active === "admin" ? 'class="active"' : ""} data-i18n="nav.admin"></a>
         </nav>
         <div class="nav__actions">
@@ -55,12 +54,21 @@
           <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="themeIcon"></svg>
           </button>
+          <a class="nav-avatar ${active === "profile" ? "active" : ""}" href="profile.html" aria-label="Trang cá nhân" data-i18n-attr="aria-label:nav.profile">${avatarInner()}</a>
           <button class="icon-btn nav__toggle" id="navToggle" aria-label="Menu">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
           </button>
         </div>
       </div>
     </header>`;
+  }
+
+  // Avatar nhỏ ở góc header → mở trang cá nhân
+  function avatarInner() {
+    const p = cfg.profile || {};
+    if (p.avatar) return `<img src="${p.avatar}" alt="">`;
+    const initials = (p.name || "H").trim().split(/\s+/).map((w) => w[0]).slice(-2).join("").toUpperCase();
+    return `<span class="nav-avatar__mono">${initials}</span>`;
   }
 
   /* ---------- Footer ---------- */

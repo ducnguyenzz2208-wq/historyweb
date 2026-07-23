@@ -49,6 +49,7 @@
         <dl class="infobox__list">
           ${p.verified ? `<div class="infobox__row"><dt>${window.I18N.t("article.status")}</dt><dd><span class="verified-badge" title="${window.I18N.t("article.verifiedhint")}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>${window.I18N.t("article.verified")}</span></dd></div>` : ""}
           ${row(window.I18N.t("article.region"), regionLabel)}
+          ${row(window.I18N.t("figure.era"), p.era ? Store.localized(p.era, lang) : "")}
           ${row(window.I18N.t("article.period"), p.year || "—")}
           ${row(window.I18N.t("article.published"), window.fmtDate(p.date, lang))}
           ${row(window.I18N.t("article.reading"), rt + " " + window.I18N.t("blog.readtime"))}
