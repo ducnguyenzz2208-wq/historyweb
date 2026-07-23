@@ -2,111 +2,233 @@
   "figures": [
     {
       "slug": "ho-chi-minh",
-      "name": { "vi": "Hồ Chí Minh", "en": "Hồ Chí Minh" },
+      "name": {
+        "vi": "Hồ Chí Minh",
+        "en": "Hồ Chí Minh"
+      },
       "region": "vietnam",
       "born": "1890",
       "died": "1969",
-      "role": { "vi": "Lãnh tụ · Nhà cách mạng", "en": "Leader · Revolutionary" },
-      "field": { "vi": "Chính trị", "en": "Politics" },
-      "era": { "vi": "Thế kỷ 20", "en": "20th century" },
+      "role": {
+        "vi": "Lãnh tụ · Nhà cách mạng",
+        "en": "Leader · Revolutionary"
+      },
+      "field": {
+        "vi": "Chính trị",
+        "en": "Politics"
+      },
+      "era": {
+        "vi": "Thế kỷ 20",
+        "en": "20th century"
+      },
       "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Ho%20Chi%20Minh%201946.jpg",
       "excerpt": {
         "vi": "Người đọc bản Tuyên ngôn Độc lập năm 1945, khai sinh nước Việt Nam Dân chủ Cộng hòa.",
         "en": "He read the Declaration of Independence in 1945, founding the Democratic Republic of Vietnam."
       },
-      "tags": ["Việt Nam", "cách mạng", "độc lập"],
+      "tags": [
+        "Việt Nam",
+        "cách mạng",
+        "độc lập"
+      ],
       "credit": "Wikimedia Commons",
       "file": "figures/ho-chi-minh.md"
     },
     {
       "slug": "tran-hung-dao",
-      "name": { "vi": "Trần Hưng Đạo", "en": "Trần Hưng Đạo" },
+      "name": {
+        "vi": "Trần Hưng Đạo",
+        "en": "Trần Hưng Đạo"
+      },
       "region": "vietnam",
       "born": "1228",
       "died": "1300",
-      "role": { "vi": "Danh tướng nhà Trần", "en": "General of the Trần dynasty" },
-      "field": { "vi": "Quân sự", "en": "Military" },
-      "era": { "vi": "Thế kỷ 13", "en": "13th century" },
+      "role": {
+        "vi": "Danh tướng nhà Trần",
+        "en": "General of the Trần dynasty"
+      },
+      "field": {
+        "vi": "Quân sự",
+        "en": "Military"
+      },
+      "era": {
+        "vi": "Thế kỷ 13",
+        "en": "13th century"
+      },
       "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Tran%20Hung%20Dao%20statue.jpg",
       "excerpt": {
         "vi": "Vị tướng ba lần đánh bại quân Nguyên–Mông, tác giả Hịch tướng sĩ và Binh thư yếu lược.",
         "en": "The general who thrice defeated the Mongol invasions and wrote the famous Proclamation to Officers."
       },
-      "tags": ["Việt Nam", "quân sự"],
+      "tags": [
+        "Việt Nam",
+        "quân sự"
+      ],
       "credit": "Wikimedia Commons",
       "file": "figures/tran-hung-dao.md"
     },
     {
       "slug": "nguyen-trai",
-      "name": { "vi": "Nguyễn Trãi", "en": "Nguyễn Trãi" },
+      "name": {
+        "vi": "Nguyễn Trãi",
+        "en": "Nguyễn Trãi"
+      },
       "region": "vietnam",
       "born": "1380",
       "died": "1442",
-      "role": { "vi": "Nhà chiến lược · Danh nhân văn hóa", "en": "Strategist · Man of letters" },
-      "field": { "vi": "Văn hóa · Quân sự", "en": "Culture · Military" },
-      "era": { "vi": "Thế kỷ 15", "en": "15th century" },
+      "role": {
+        "vi": "Nhà chiến lược · Danh nhân văn hóa",
+        "en": "Strategist · Man of letters"
+      },
+      "field": {
+        "vi": "Văn hóa · Quân sự",
+        "en": "Culture · Military"
+      },
+      "era": {
+        "vi": "Thế kỷ 15",
+        "en": "15th century"
+      },
       "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Nguyen%20Trai.jpg",
       "excerpt": {
         "vi": "Bộ óc chiến lược của khởi nghĩa Lam Sơn, tác giả áng thiên cổ hùng văn Bình Ngô đại cáo.",
         "en": "The strategic mind behind the Lam Sơn uprising and author of the Great Proclamation upon the Pacification of the Ngô."
       },
-      "tags": ["Việt Nam", "văn hóa", "quân sự"],
+      "tags": [
+        "Việt Nam",
+        "văn hóa",
+        "quân sự"
+      ],
       "credit": "Wikimedia Commons",
       "file": "figures/nguyen-trai.md"
     },
     {
       "slug": "leonardo-da-vinci",
-      "name": { "vi": "Leonardo da Vinci", "en": "Leonardo da Vinci" },
+      "name": {
+        "vi": "Leonardo da Vinci",
+        "en": "Leonardo da Vinci"
+      },
       "region": "world",
       "born": "1452",
       "died": "1519",
-      "role": { "vi": "Họa sĩ · Nhà phát minh", "en": "Painter · Inventor" },
-      "field": { "vi": "Nghệ thuật · Khoa học", "en": "Art · Science" },
-      "era": { "vi": "Phục Hưng", "en": "Renaissance" },
+      "role": {
+        "vi": "Họa sĩ · Nhà phát minh",
+        "en": "Painter · Inventor"
+      },
+      "field": {
+        "vi": "Nghệ thuật · Khoa học",
+        "en": "Art · Science"
+      },
+      "era": {
+        "vi": "Phục Hưng",
+        "en": "Renaissance"
+      },
       "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo%20self.jpg",
       "excerpt": {
         "vi": "Con người tiêu biểu nhất của thời Phục Hưng: họa sĩ của Mona Lisa và nhà khoa học đi trước thời đại.",
         "en": "The quintessential Renaissance man: painter of the Mona Lisa and a scientist ahead of his time."
       },
-      "tags": ["thế giới", "văn hóa", "khoa học"],
+      "tags": [
+        "thế giới",
+        "văn hóa",
+        "khoa học"
+      ],
       "credit": "Wikimedia Commons",
       "file": "figures/leonardo-da-vinci.md"
     },
     {
       "slug": "napoleon-bonaparte",
-      "name": { "vi": "Napoléon Bonaparte", "en": "Napoleon Bonaparte" },
+      "name": {
+        "vi": "Napoléon Bonaparte",
+        "en": "Napoleon Bonaparte"
+      },
       "region": "world",
       "born": "1769",
       "died": "1821",
-      "role": { "vi": "Hoàng đế · Thống soái", "en": "Emperor · Commander" },
-      "field": { "vi": "Quân sự · Chính trị", "en": "Military · Politics" },
-      "era": { "vi": "Thế kỷ 18–19", "en": "18th–19th century" },
+      "role": {
+        "vi": "Hoàng đế · Thống soái",
+        "en": "Emperor · Commander"
+      },
+      "field": {
+        "vi": "Quân sự · Chính trị",
+        "en": "Military · Politics"
+      },
+      "era": {
+        "vi": "Thế kỷ 18–19",
+        "en": "18th–19th century"
+      },
       "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20The%20Emperor%20Napoleon%20in%20His%20Study%20at%20the%20Tuileries%20-%20Google%20Art%20Project.jpg",
       "excerpt": {
         "vi": "Vị tướng từ cách mạng Pháp vươn lên ngôi hoàng đế, để lại Bộ luật Napoléon còn ảnh hưởng đến nay.",
         "en": "A general of the French Revolution who rose to emperor and left the enduring Napoleonic Code."
       },
-      "tags": ["thế giới", "quân sự", "chính trị"],
+      "tags": [
+        "thế giới",
+        "quân sự",
+        "chính trị"
+      ],
       "credit": "Wikimedia Commons",
       "file": "figures/napoleon-bonaparte.md"
     },
     {
       "slug": "abraham-lincoln",
-      "name": { "vi": "Abraham Lincoln", "en": "Abraham Lincoln" },
+      "name": {
+        "vi": "Abraham Lincoln",
+        "en": "Abraham Lincoln"
+      },
       "region": "world",
       "born": "1809",
       "died": "1865",
-      "role": { "vi": "Tổng thống Hoa Kỳ", "en": "President of the United States" },
-      "field": { "vi": "Chính trị", "en": "Politics" },
-      "era": { "vi": "Thế kỷ 19", "en": "19th century" },
+      "role": {
+        "vi": "Tổng thống Hoa Kỳ",
+        "en": "President of the United States"
+      },
+      "field": {
+        "vi": "Chính trị",
+        "en": "Politics"
+      },
+      "era": {
+        "vi": "Thế kỷ 19",
+        "en": "19th century"
+      },
       "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Abraham%20Lincoln%20O-77%20matte%20collodion%20print.jpg",
       "excerpt": {
         "vi": "Vị tổng thống giữ vững Liên bang qua Nội chiến và xóa bỏ chế độ nô lệ tại Hoa Kỳ.",
         "en": "The president who preserved the Union through the Civil War and abolished slavery in the United States."
       },
-      "tags": ["thế giới", "chính trị"],
+      "tags": [
+        "thế giới",
+        "chính trị"
+      ],
       "credit": "Wikimedia Commons",
       "file": "figures/abraham-lincoln.md"
+    },
+    {
+      "slug": "vi-lenin",
+      "name": {
+        "vi": "V.I. Lenin"
+      },
+      "region": "vietnam",
+      "born": "1870",
+      "died": "1924",
+      "role": {
+        "vi": "Nhà cách mạng, Chính trị gia"
+      },
+      "field": {
+        "vi": "Chính trị"
+      },
+      "era": {
+        "vi": "Cận đại"
+      },
+      "portrait": "",
+      "excerpt": {
+        "vi": ""
+      },
+      "tags": [
+        "Nga",
+        "Liên Xô"
+      ],
+      "lang": "vi",
+      "file": "figures/vi-lenin.md"
     }
   ]
 }
