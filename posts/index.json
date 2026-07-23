@@ -1,26 +1,6 @@
 {
   "posts": [
     {
-      "slug": "vi-lenin",
-      "title": {
-        "vi": "V.I. Lenin"
-      },
-      "excerpt": {
-        "vi": ""
-      },
-      "year": "",
-      "region": "world",
-      "date": "2026-07-23",
-      "tags": [
-        "Nga",
-        "Liên Xô",
-        "Thế giới"
-      ],
-      "cover": "assets/uploads/1784816300163-vi-lenin.jpg",
-      "lang": "vi",
-      "file": "posts/vi-lenin.md"
-    },
-    {
       "slug": "cach-mang-thang-tam-1945",
       "title": {
         "vi": "Cách mạng Tháng Tám 1945",
