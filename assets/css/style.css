@@ -802,6 +802,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .md-toolbar { display: flex; flex-wrap: wrap; gap: 0.35rem; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid var(--line); border-radius: 10px 10px 0 0; background: var(--glass-bg); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .md-tool { min-width: 34px; height: 32px; padding: 0 0.6rem; border-radius: 7px; border: 1px solid transparent; background: transparent; color: var(--text-soft); font-size: 0.82rem; font-weight: 600; font-family: var(--font-sans); transition: all 0.2s; }
 .md-tool:hover { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); border-color: var(--glass-border); }
+.md-tool--accent { color: var(--accent); border-color: var(--glass-border); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+
+/* Nhập tệp + tải ảnh bìa (admin) */
+.import-row .import-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+.import-row .hint { flex: 1; min-width: 200px; }
+.import-actions .btn { padding: 0.55rem 1rem; font-size: 0.82rem; }
+.cover-row { display: flex; gap: 0.6rem; align-items: stretch; }
+.cover-row input { flex: 1; }
+.cover-row .btn { white-space: nowrap; padding: 0.55rem 1rem; font-size: 0.82rem; }
+@media (max-width: 560px) { .cover-row { flex-direction: column; } }
 
 /* ---------- Liquid glass mở rộng toàn site ---------- */
 /* Ô tìm kiếm trang blog → glass */

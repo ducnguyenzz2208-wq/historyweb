@@ -49,6 +49,17 @@
           <select id="loadSelect"></select>
         </div>
 
+        <div class="field import-row">
+          <label data-i18n="admin.import"></label>
+          <div class="import-actions">
+            <button type="button" class="btn btn--ghost" id="importDocxBtn" data-i18n="admin.importdocx"></button>
+            <button type="button" class="btn btn--ghost" id="importMdBtn" data-i18n="admin.importmd"></button>
+            <span class="hint" data-i18n="admin.importhint"></span>
+          </div>
+          <input type="file" id="docxFileInput" accept=".docx" hidden>
+          <input type="file" id="mdFileInput" accept=".md,.markdown,.txt" hidden>
+        </div>
+
         <div class="field">
           <label data-i18n="admin.f.title"></label>
           <input type="text" id="f_title">
@@ -72,7 +83,13 @@
           </div>
           <div class="field"><label data-i18n="admin.f.tags"></label><input type="text" id="f_tags" placeholder="Việt Nam, chiến tranh"></div>
         </div>
-        <div class="field"><label data-i18n="admin.f.cover"></label><input type="url" id="f_cover" placeholder="https://…"></div>
+        <div class="field"><label data-i18n="admin.f.cover"></label>
+          <div class="cover-row">
+            <input type="url" id="f_cover" placeholder="https://…">
+            <button type="button" class="btn btn--ghost" id="coverUploadBtn" data-i18n="admin.uploadcover"></button>
+          </div>
+          <input type="file" id="coverFileInput" accept="image/*" hidden>
+        </div>
         <div class="field"><label data-i18n="admin.f.excerpt"></label><textarea id="f_excerpt" style="min-height:80px"></textarea></div>
         <div class="field">
           <label data-i18n="admin.f.content"></label>
@@ -84,11 +101,13 @@
             <button type="button" class="md-tool" data-md="quote" title="Trích dẫn">❝</button>
             <button type="button" class="md-tool" data-md="ul" title="Danh sách">• —</button>
             <button type="button" class="md-tool" data-md="link" title="Liên kết">🔗</button>
-            <button type="button" class="md-tool" data-md="img" title="Ảnh">🖼</button>
+            <button type="button" class="md-tool" data-md="img" title="Ảnh (URL)">🖼</button>
+            <button type="button" class="md-tool md-tool--accent" data-md="upload" title="Tải ảnh lên (hoặc dán ảnh vào ô)" data-i18n="admin.uploadimg">Tải ảnh</button>
             <button type="button" class="md-tool" data-md="hr" title="Đường kẻ">―</button>
             <button type="button" class="md-tool" data-md="ref" title="Mục nguồn tham khảo">Tham khảo</button>
           </div>
-          <textarea id="f_content" placeholder="# Tiêu đề&#10;&#10;Nội dung Markdown…"></textarea>
+          <textarea id="f_content" placeholder="# Tiêu đề&#10;&#10;Nội dung Markdown… (mẹo: dán ảnh trực tiếp vào đây để tải lên)"></textarea>
+          <input type="file" id="imgFileInput" accept="image/*" hidden>
         </div>
 
         <div class="admin-actions">

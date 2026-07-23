@@ -21,6 +21,7 @@
   async function gh(path, opts = {}) {
     const res = await fetch(API + path, {
       ...opts,
+      cache: "no-store", // luôn lấy sha mới nhất, tránh lỗi 409 do trình duyệt cache
       headers: {
         Authorization: "token " + token(),
         Accept: "application/vnd.github+json",
@@ -31,26 +32,40 @@
     if (!res.ok) {
       let msg = res.status + " " + res.statusText;
       try { const j = await res.json(); if (j.message) msg = j.message; } catch (e) {}
-      throw new Error(msg);
+      const err = new Error(msg); err.status = res.status; throw err;
     }
     return res.status === 204 ? null : res.json();
   }
 
+  const apiPath = (p) => `/repos/${REPO}/contents/${encodeURIComponent(p).replace(/%2F/g, "/")}`;
+
   async function getFile(filePath) {
     try {
-      return await gh(`/repos/${REPO}/contents/${encodeURIComponent(filePath).replace(/%2F/g, "/")}?ref=${BRANCH}`);
+      return await gh(apiPath(filePath) + `?ref=${BRANCH}&_=${Date.now()}`);
     } catch (e) {
       return null; // chưa tồn tại
     }
   }
 
-  async function putFile(filePath, contentStr, message, sha) {
-    const body = { message, content: b64encode(contentStr), branch: BRANCH };
+  // Ghi tệp (base64 sẵn) + tự thử lại 1 lần nếu 409 (sha cũ) bằng sha mới nhất
+  async function putRaw(filePath, base64, message, sha) {
+    const body = { message, content: base64, branch: BRANCH };
     if (sha) body.sha = sha;
-    return gh(`/repos/${REPO}/contents/${encodeURIComponent(filePath).replace(/%2F/g, "/")}`, {
-      method: "PUT",
-      body: JSON.stringify(body),
-    });
+    try {
+      return await gh(apiPath(filePath), { method: "PUT", body: JSON.stringify(body) });
+    } catch (e) {
+      if (e.status === 409) {
+        const fresh = await getFile(filePath);
+        const body2 = { message, content: base64, branch: BRANCH };
+        if (fresh && fresh.sha) body2.sha = fresh.sha;
+        return gh(apiPath(filePath), { method: "PUT", body: JSON.stringify(body2) });
+      }
+      throw e;
+    }
+  }
+
+  async function putFile(filePath, contentStr, message, sha) {
+    return putRaw(filePath, b64encode(contentStr), message, sha);
   }
 
   async function deleteFile(filePath, message, sha) {
@@ -245,9 +260,137 @@
     }
   }
 
-  /* ---------- preview ---------- */
+  /* ---------- preview (đổi ảnh vừa tải lên → xem trước ngay) ---------- */
+  const localImages = {}; // { "assets/uploads/x.png": "data:..." } cho phiên hiện tại
   function preview() {
-    $("previewBox").innerHTML = `<div class="prose">${window.mdToHtml($("f_content").value)}</div>`;
+    let html = window.mdToHtml($("f_content").value);
+    Object.keys(localImages).forEach((path) => {
+      html = html.split(`src="${path}"`).join(`src="${localImages[path]}"`);
+    });
+    $("previewBox").innerHTML = `<div class="prose">${html}</div>`;
+  }
+
+  /* ---------- Tải ảnh lên repo (local file / dán clipboard) ---------- */
+  const readAs = (file, how) => new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result); r.onerror = rej;
+    how === "buf" ? r.readAsArrayBuffer(file) : r.readAsDataURL(file);
+  });
+  function b64FromBuffer(buf) {
+    const bytes = new Uint8Array(buf); let bin = "";
+    for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin);
+  }
+  async function uploadImage(file) {
+    if (!token()) { setStatus(window.I18N.t("admin.needtoken"), "err"); throw new Error("no token"); }
+    if (!/^image\//.test(file.type)) throw new Error("not an image");
+    const ext = (file.name.split(".").pop() || file.type.split("/")[1] || "png").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const base = (($("f_slug").value.trim() || "img")).slice(0, 30);
+    const path = `assets/uploads/${Date.now()}-${base}.${ext}`;
+    setStatus(window.I18N.t("admin.uploading"), "");
+    const [dataURL, buf] = await Promise.all([readAs(file, "data"), readAs(file, "buf")]);
+    await putRaw(path, b64FromBuffer(buf), `Thêm ảnh: ${path}`, null);
+    localImages[path] = dataURL;
+    setStatus(window.I18N.t("admin.uploaded"), "ok");
+    return path;
+  }
+  function initImageUpload() {
+    const fileInput = $("imgFileInput");
+    const coverInput = $("coverFileInput");
+    if (fileInput) fileInput.addEventListener("change", async (e) => {
+      const f = e.target.files[0]; if (!f) return;
+      try { const p = await uploadImage(f); insertBlock(`![](${p})\n`); preview(); }
+      catch (err) { if (err.message !== "no token") setStatus(window.I18N.t("admin.error") + " " + err.message, "err"); }
+      finally { e.target.value = ""; }
+    });
+    if (coverInput) coverInput.addEventListener("change", async (e) => {
+      const f = e.target.files[0]; if (!f) return;
+      try { const p = await uploadImage(f); $("f_cover").value = p; }
+      catch (err) { if (err.message !== "no token") setStatus(window.I18N.t("admin.error") + " " + err.message, "err"); }
+      finally { e.target.value = ""; }
+    });
+    // Dán ảnh trực tiếp vào ô nội dung
+    const ta = $("f_content");
+    if (ta) ta.addEventListener("paste", async (e) => {
+      const item = [...(e.clipboardData.items || [])].find((it) => it.type.startsWith("image/"));
+      if (!item) return;
+      e.preventDefault();
+      try { const p = await uploadImage(item.getAsFile()); insertBlock(`![](${p})\n`); }
+      catch (err) { if (err.message !== "no token") setStatus(window.I18N.t("admin.error") + " " + err.message, "err"); }
+    });
+  }
+
+  /* ---------- Nhập bài từ .md / .docx ---------- */
+  let mammothLoading = null;
+  function loadMammoth() {
+    if (window.mammoth) return Promise.resolve(window.mammoth);
+    if (mammothLoading) return mammothLoading;
+    mammothLoading = new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = "https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js";
+      s.onload = () => res(window.mammoth); s.onerror = () => rej(new Error("Không tải được bộ chuyển .docx"));
+      document.head.appendChild(s);
+    });
+    return mammothLoading;
+  }
+  // HTML → Markdown gọn nhẹ (đủ cho nội dung docx thông thường)
+  function htmlToMd(html) {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    let imgCount = 0;
+    const walk = (node) => {
+      let out = "";
+      node.childNodes.forEach((n) => {
+        if (n.nodeType === 3) { out += n.textContent.replace(/\s+/g, " "); return; }
+        if (n.nodeType !== 1) return;
+        const tag = n.tagName.toLowerCase();
+        const inner = walk(n).trim();
+        if (/^h[1-6]$/.test(tag)) out += `\n\n${"#".repeat(+tag[1])} ${inner}\n\n`;
+        else if (tag === "p") out += `\n\n${inner}\n\n`;
+        else if (tag === "br") out += "\n";
+        else if (tag === "strong" || tag === "b") out += `**${inner}**`;
+        else if (tag === "em" || tag === "i") out += `*${inner}*`;
+        else if (tag === "a") out += `[${inner}](${n.getAttribute("href") || ""})`;
+        else if (tag === "blockquote") out += `\n\n> ${inner}\n\n`;
+        else if (tag === "li") out += `- ${inner}\n`;
+        else if (tag === "ul" || tag === "ol") out += `\n${inner}\n`;
+        else if (tag === "img") { imgCount++; /* bỏ ảnh nhúng, người dùng tải lại bằng nút Ảnh */ }
+        else out += inner;
+      });
+      return out;
+    };
+    let md = walk(doc.body).replace(/\n{3,}/g, "\n\n").trim();
+    return { md, imgCount };
+  }
+  function initImport() {
+    const mdInput = $("mdFileInput");
+    const docxInput = $("docxFileInput");
+    if (mdInput) mdInput.addEventListener("change", async (e) => {
+      const f = e.target.files[0]; if (!f) return;
+      const text = await f.text();
+      $("f_content").value = text;
+      if (!$("f_title").value && !$("f_slug").dataset.locked) {
+        const h1 = text.match(/^#\s+(.+)$/m); if (h1) { $("f_title").value = h1[1]; $("f_slug").value = slugify(h1[1]); }
+      }
+      setStatus(window.I18N.t("admin.imported"), "ok"); preview(); e.target.value = "";
+    });
+    if (docxInput) docxInput.addEventListener("change", async (e) => {
+      const f = e.target.files[0]; if (!f) return;
+      setStatus(window.I18N.t("admin.converting"), "");
+      try {
+        const mammoth = await loadMammoth();
+        const buf = await readAs(f, "buf");
+        const { value: html } = await mammoth.convertToHtml({ arrayBuffer: buf });
+        const { md, imgCount } = htmlToMd(html);
+        $("f_content").value = md;
+        // tự lấy tiêu đề từ dòng H1 đầu tiên
+        const h1 = md.match(/^#\s+(.+)$/m);
+        if (h1 && !$("f_title").value) { $("f_title").value = h1[1]; if (!$("f_slug").dataset.locked) $("f_slug").value = slugify(h1[1]); }
+        setStatus(window.I18N.t("admin.imported") + (imgCount ? ` (${imgCount} ảnh bị bỏ qua — hãy chèn lại bằng nút Ảnh)` : ""), "ok");
+        preview();
+      } catch (err) {
+        setStatus(window.I18N.t("admin.error") + " " + err.message, "err");
+      } finally { e.target.value = ""; }
+    });
   }
 
   /* ---------- thanh công cụ Markdown ---------- */
@@ -290,6 +433,7 @@
         case "ul": prefixLine("- "); break;
         case "link": wrapSelection("[", "](https://)", vi ? "nội dung" : "text"); break;
         case "img": insertBlock(`![${vi ? "mô tả ảnh" : "alt"}](https://...)\n`); break;
+        case "upload": $("imgFileInput").click(); break;
         case "hr": insertBlock("\n---\n"); break;
         case "ref": insertBlock(`\n## ${vi ? "Nguồn tham khảo" : "References"}\n\n1. \n`); break;
       }
@@ -299,6 +443,8 @@
   document.addEventListener("DOMContentLoaded", () => {
     initToken();
     initToolbar();
+    initImageUpload();
+    initImport();
     resetForm();
     if (token()) connect();
 
@@ -321,5 +467,10 @@
     $("deleteBtn").addEventListener("click", removePost);
     $("newBtn").addEventListener("click", resetForm);
     if ($("loadSelect")) $("loadSelect").addEventListener("change", (e) => loadPost(e.target.value));
+
+    // nút nhập tệp & tải ảnh bìa
+    if ($("importDocxBtn")) $("importDocxBtn").addEventListener("click", () => $("docxFileInput").click());
+    if ($("importMdBtn")) $("importMdBtn").addEventListener("click", () => $("mdFileInput").click());
+    if ($("coverUploadBtn")) $("coverUploadBtn").addEventListener("click", () => $("coverFileInput").click());
   });
 })();
