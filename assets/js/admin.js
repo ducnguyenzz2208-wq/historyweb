@@ -184,14 +184,12 @@
     if (!sel) return;
     let opts = `<option value="">— ${window.I18N.t("admin.new")} —</option>`;
     try {
-      const pd = await (await fetch("posts/index.json?_=" + Date.now())).json();
-      const posts = pd.posts || [];
+      const posts = await Store.all();
       if (posts.length) opts += `<optgroup label="${window.I18N.t("admin.type.event")}">` +
         posts.map((p) => `<option value="event:${p.slug}">${(p.year ? p.year + " · " : "")}${Store.localized(p.title, window.I18N.lang)}</option>`).join("") + `</optgroup>`;
     } catch (e) {}
     try {
-      const fd = await (await fetch("figures/index.json?_=" + Date.now())).json();
-      const figs = fd.figures || [];
+      const figs = await (window.loadFigures ? window.loadFigures() : Promise.resolve([]));
       if (figs.length) opts += `<optgroup label="${window.I18N.t("admin.type.figure")}">` +
         figs.map((f) => `<option value="figure:${f.slug}">${(f.born ? f.born + " · " : "")}${Store.localized(f.name, window.I18N.lang)}</option>`).join("") + `</optgroup>`;
     } catch (e) {}
@@ -206,8 +204,14 @@
     setStatus("…");
     try {
       const lang = window.I18N.lang;
-      const data = await (await fetch(META[TYPE].index + "?_=" + Date.now())).json();
-      const item = (data[META[TYPE].key] || []).find((x) => x.slug === slug);
+      let item = null;
+      if (isFig()) {
+        const figures = await (window.loadFigures ? window.loadFigures() : Promise.resolve([]));
+        item = figures.find((x) => x.slug === slug);
+      } else {
+        item = await Store.bySlug(slug);
+      }
+      
       if (!item) { setStatus("?", "err"); return; }
       $("f_slug").value = item.slug; $("f_slug").dataset.locked = "1";
       $("f_region").value = item.region || "vietnam";
@@ -230,7 +234,15 @@
         $("f_place").value = typeof item.place === "object" ? Store.localized(item.place, lang) : (item.place || "");
         if (window._pickerSync) window._pickerSync();
       }
-      $("f_content").value = await (await fetch(item.file + "?_=" + Date.now())).text();
+      
+      if (isFig()) {
+        const localMap = (() => { try { return JSON.parse(localStorage.getItem("hw_pending_fig_content") || "{}"); } catch (e) { return {}; } })();
+        if (localMap[slug]) $("f_content").value = localMap[slug];
+        else $("f_content").value = await (await fetch(item.file + "?_=" + Date.now())).text();
+      } else {
+        $("f_content").value = await Store.content(item);
+      }
+      
       setStatus("", "");
       $("deleteBtn").style.display = "inline-flex";
     } catch (e) {
