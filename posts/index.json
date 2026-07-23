@@ -20,6 +20,13 @@
       ],
       "cover": "https://hatinh.dcs.vn/cach-mang-thang-tam-va-bai-hoc-van-dong-quan-chung-p2924.html",
       "lang": "vi",
+      "lat": 21.0285,
+      "lng": 105.8542,
+      "place": {
+        "vi": "Hà Nội, Việt Nam",
+        "en": "Hanoi, Vietnam"
+      },
+      "verified": true,
       "file": "posts/cach-mang-thang-tam-1945.md",
       "featured": true
     },
@@ -72,6 +79,12 @@
       ],
       "cover": "https://vinuni.edu.vn/vi/thanh-tuu-tieu-bieu-nhat-cua-cach-mang-cong-nghiep-anh-la-gi/",
       "lang": "vi",
+      "lat": 53.4808,
+      "lng": -2.2426,
+      "place": {
+        "vi": "Manchester, Anh",
+        "en": "Manchester, England"
+      },
       "file": "posts/cach-mang-cong-nghiep.md"
     },
     {

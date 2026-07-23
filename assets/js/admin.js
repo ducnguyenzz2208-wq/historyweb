@@ -211,12 +211,12 @@
       if (!Array.isArray(index.posts)) index.posts = [];
       const i = index.posts.findIndex((p) => p.slug === slug);
       if (i >= 0) {
-        // gộp title/excerpt đa ngôn ngữ đã có
+        // GIỮ LẠI mọi trường cũ (lat/lng/place/credit/verified/featured…) rồi ghi đè bằng dữ liệu form
         const prev = index.posts[i];
-        post.title = { ...(typeof prev.title === "object" ? prev.title : {}), ...post.title };
-        post.excerpt = { ...(typeof prev.excerpt === "object" ? prev.excerpt : {}), ...post.excerpt };
-        post.featured = prev.featured;
-        index.posts[i] = post;
+        const merged = { ...prev, ...post };
+        merged.title = { ...(typeof prev.title === "object" ? prev.title : {}), ...post.title };
+        merged.excerpt = { ...(typeof prev.excerpt === "object" ? prev.excerpt : {}), ...post.excerpt };
+        index.posts[i] = merged;
       } else {
         index.posts.push(post);
       }
