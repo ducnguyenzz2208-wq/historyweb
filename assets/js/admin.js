@@ -403,11 +403,31 @@
     for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
     return btoa(bin);
   }
+  /* Định dạng ảnh chấp nhận. Nhận diện theo phần mở rộng HOẶC MIME
+     (một số nguồn — ảnh dán từ clipboard, tệp tải từ web — không có MIME chuẩn). */
+  const IMAGE_EXT = {
+    jpg: "jpg", jpeg: "jpg", jpe: "jpg", jfif: "jpg", pjpeg: "jpg",
+    png: "png", apng: "png", gif: "gif", webp: "webp", avif: "avif",
+    bmp: "bmp", ico: "ico", svg: "svg", tif: "tif", tiff: "tif", heic: "heic", heif: "heif",
+  };
+  const MAX_UPLOAD_BYTES = 20 * 1024 * 1024; // giới hạn an toàn cho GitHub Contents API
+
+  /** Suy ra phần mở rộng chuẩn hoá từ tên tệp / MIME; null nếu không phải ảnh. */
+  function imageExtOf(file) {
+    const byName = (file.name || "").split(".").pop().toLowerCase().replace(/[^a-z0-9]/g, "");
+    if (IMAGE_EXT[byName]) return IMAGE_EXT[byName];
+    const byMime = (file.type || "").toLowerCase().replace(/^image\//, "").replace(/[^a-z0-9]/g, "");
+    if (IMAGE_EXT[byMime]) return IMAGE_EXT[byMime];
+    if (/^image\//.test(file.type || "")) return "png"; // ảnh lạ nhưng vẫn là ảnh
+    return null;
+  }
+
   async function uploadImage(file) {
     if (!token()) { setStatus(window.I18N.t("admin.needtoken"), "err"); throw new Error("no token"); }
-    if (!/^image\//.test(file.type)) throw new Error("not an image");
-    const ext = (file.name.split(".").pop() || file.type.split("/")[1] || "png").toLowerCase().replace(/[^a-z0-9]/g, "");
-    const base = (($("f_slug").value.trim() || "img")).slice(0, 30);
+    const ext = imageExtOf(file);
+    if (!ext) throw new Error(window.I18N.t("admin.badformat"));
+    if (file.size > MAX_UPLOAD_BYTES) throw new Error(window.I18N.t("admin.toobig"));
+    const base = slugify($("f_slug").value.trim() || "img").slice(0, 30);
     const path = `assets/uploads/${Date.now()}-${base}.${ext}`;
     setStatus(window.I18N.t("admin.uploading"), "");
 

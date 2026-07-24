@@ -27,7 +27,7 @@
     return `
       <aside class="infobox glass" data-reveal>
         <div class="infobox__figure infobox__figure--portrait">
-          <img src="${f.portrait || fb}" alt="${Store.localized(f.name, lang)}" onerror="this.onerror=null;this.src='${fb}'">
+          <img src="${f.portrait || fb}" alt="${Store.localized(f.name, lang)}" data-fallback="${window.hwFallback(f.portrait, fb)}">
         </div>
         <div class="infobox__title">${window.I18N.t("article.infobox")}</div>
         <dl class="infobox__list">
@@ -69,7 +69,7 @@
     const name = Store.localized(f.name, lang);
     const role = Store.localized(f.role, lang);
     const excerpt = Store.localized(f.excerpt, lang);
-    const fb = window.figureFallback(name).replace(/'/g, "&#39;");
+    const fb = window.figureFallback(name);
     document.title = name + " · " + ((window.SITE_CONFIG.siteName || {})[lang] || "History");
     if (window.hwMeta) window.hwMeta({ title: name, description: excerpt, image: f.portrait || undefined });
 
@@ -89,7 +89,7 @@
     root.innerHTML = `
       <div class="progress-bar" id="progressBar"></div>
       <section class="post-hero figure-hero2">
-        <div class="post-hero__bg"><img src="${f.portrait || fb}" alt="" onerror="this.onerror=null;this.src='${fb}'"></div>
+        <div class="post-hero__bg"><img src="${f.portrait || fb}" alt="" data-fallback="${window.hwFallback(f.portrait, fb)}"></div>
         <div class="aurora" aria-hidden="true"><span class="aurora__blob aurora__blob--1"></span><span class="aurora__blob aurora__blob--2"></span></div>
         <div class="wrap post-hero__inner">
           <a href="figures.html" class="kicker" style="color:var(--gold-soft);margin-bottom:1rem">← ${window.I18N.t("figure.back")}</a>
@@ -145,10 +145,10 @@
         <div class="section-head"><span class="kicker">${window.I18N.t("post.related")}</span></div>
         <div class="figures-grid">
           ${related.map((r) => {
-            const rn = Store.localized(r.name, lang); const rfb = window.figureFallback(rn).replace(/'/g, "&#39;");
+            const rn = Store.localized(r.name, lang); const rfb = window.figureFallback(rn);
             return `<article class="figure-card glass"><a class="figure-card__media" href="figure.html?slug=${encodeURIComponent(r.slug)}">
               <span class="figure-card__life">${r.born || "?"} – ${r.died || ""}</span>
-              <img src="${r.portrait || rfb}" alt="${rn}" loading="lazy" onerror="this.onerror=null;this.src='${rfb}'">
+              <img src="${r.portrait || rfb}" alt="${rn}" loading="lazy" data-fallback="${window.hwFallback(r.portrait, rfb)}">
               <div class="figure-card__cap"><h3>${rn}</h3><div class="figure-card__role">${Store.localized(r.role, lang)}</div></div></a>
               <div class="figure-card__body"><p class="figure-card__excerpt">${Store.localized(r.excerpt, lang)}</p>
               <a class="figure-card__link" href="figure.html?slug=${encodeURIComponent(r.slug)}"><span>${window.I18N.t("figures.analyze")}</span>

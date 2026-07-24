@@ -818,6 +818,27 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .md-tool:hover { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); border-color: var(--glass-border); }
 .md-tool--accent { color: var(--accent); border-color: var(--glass-border); background: color-mix(in srgb, var(--accent) 10%, transparent); }
 
+/* ---------- Nút nổi "Đăng bài" (góc dưới phải) ---------- */
+.fab-compose {
+  position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 900;
+  display: inline-flex; align-items: center; gap: 0; overflow: hidden;
+  height: 56px; min-width: 56px; padding: 0 16px; border-radius: 999px;
+  background: var(--crimson); color: var(--cream);
+  border: 1px solid rgba(216, 183, 78, 0.45);
+  box-shadow: 0 14px 34px -12px rgba(43, 13, 18, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: transform 0.35s var(--ease-expo), box-shadow 0.35s var(--ease-expo), background 0.3s;
+}
+.fab-compose svg { width: 24px; height: 24px; flex: none; }
+.fab-compose__label {
+  max-width: 0; opacity: 0; white-space: nowrap; font-weight: 600; font-size: 0.9rem;
+  transition: max-width 0.4s var(--ease-expo), opacity 0.3s, margin-left 0.4s var(--ease-expo);
+}
+.fab-compose:hover { transform: translateY(-3px); background: var(--crimson-bright); box-shadow: 0 20px 44px -14px rgba(43, 13, 18, 0.8); }
+.fab-compose:hover .fab-compose__label { max-width: 140px; opacity: 1; margin-left: 10px; }
+.fab-compose:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (max-width: 600px) { .fab-compose { height: 52px; min-width: 52px; padding: 0 14px; } }
+@media (prefers-reduced-motion: reduce) { .fab-compose, .fab-compose__label { transition: none; } }
+
 /* Loại nội dung (event/figure toggle) */
 .type-toggle { display: inline-flex; gap: 0.3rem; padding: 0.3rem; border-radius: 999px; border: 1px solid var(--line); background: var(--glass-bg); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .type-toggle button { border: none; background: transparent; color: var(--text-soft); font-family: var(--font-sans); font-weight: 600; font-size: 0.86rem; padding: 0.55rem 1.2rem; border-radius: 999px; transition: color 0.25s, background 0.35s var(--ease-expo); }

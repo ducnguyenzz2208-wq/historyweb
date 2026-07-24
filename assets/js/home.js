@@ -14,7 +14,7 @@
     <article class="card" data-reveal>
       <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="card__media">
         ${p.year ? `<span class="card__year">${p.year}</span>` : ""}
-        <img src="${cover}" alt="${title}" loading="lazy" onerror="this.onerror=null;this.src='${fb}'">
+        <img src="${cover}" alt="${title}" loading="lazy" data-fallback="${window.hwFallback(p.cover, fb)}">
       </a>
       <div class="card__body">
         <div class="card__tags">${tags}</div>
@@ -25,12 +25,7 @@
     </article>`;
   }
 
-  function fallbackCover(year) {
-    // ảnh nền giấy da SVG khi chưa có cover
-    return "data:image/svg+xml;utf8," + encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%234a1520'/><stop offset='1' stop-color='%232b0d12'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/><text x='50%' y='54%' fill='%23c9a227' font-family='Georgia' font-size='120' font-weight='700' text-anchor='middle'>${year || "H"}</text></svg>`
-    );
-  }
+  const fallbackCover = (year) => window.hwPlaceholder(year || "H", 800, 500);
 
   async function render() {
     const lang = window.I18N.lang;
@@ -60,7 +55,7 @@
         feat.innerHTML = `
         <div class="featured" data-reveal>
           <a class="featured__media" href="post.html?slug=${encodeURIComponent(fp.slug)}">
-            <img src="${fp.cover || fallbackCover(fp.year)}" alt="" onerror="this.onerror=null;this.src='${fallbackCover(fp.year)}'">
+            <img src="${fp.cover || fallbackCover(fp.year)}" alt="" data-fallback="${window.hwFallback(fp.cover, fallbackCover(fp.year))}">
           </a>
           <div class="featured__body">
             <span class="kicker" data-i18n="featured.kicker">${window.I18N.t("featured.kicker")}</span>

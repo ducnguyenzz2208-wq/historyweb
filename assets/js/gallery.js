@@ -16,7 +16,7 @@
     return `
     <figure class="media-tile glass" data-reveal>
       <a class="media-tile__img" href="${item.url}">
-        <img src="${item.src}" alt="${title}" loading="lazy" onerror="this.closest('.media-tile').style.display='none'">
+        <img src="${item.src}" alt="${title}" loading="lazy" data-fallback="${window.hwFallback(item.src, window.hwPlaceholder((title || "H").slice(0, 2), 800, 600))}">
       </a>
       <figcaption class="media-tile__cap">
         <span class="media-tile__type">${item.type === "figure" ? window.I18N.t("nav.figures") : window.I18N.t("nav.blog")}</span>

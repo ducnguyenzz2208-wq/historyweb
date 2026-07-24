@@ -17,14 +17,13 @@
     const title = Store.localized(p.title, lang);
     const excerpt = Store.localized(p.excerpt, lang);
     const tags = (p.tags || []).slice(0, 2).map((t) => `<span class="tag">${t}</span>`).join("");
-    const fb = "data:image/svg+xml;utf8," + encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%232b0d12'/><text x='50%' y='54%' fill='%23c9a227' font-family='Georgia' font-size='120' font-weight='700' text-anchor='middle'>${p.year || "H"}</text></svg>`);
+    const fb = window.hwPlaceholder(p.year || "H", 800, 500);
     const cover = p.cover || fb;
     return `
     <article class="card" data-reveal>
       <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="card__media">
         ${p.year ? `<span class="card__year">${p.year}</span>` : ""}
-        <img src="${cover}" alt="${title}" loading="lazy" onerror="this.onerror=null;this.src='${fb}'">
+        <img src="${cover}" alt="${title}" loading="lazy" data-fallback="${window.hwFallback(p.cover, fb)}">
       </a>
       <div class="card__body">
         <div class="card__tags">${tags}</div>

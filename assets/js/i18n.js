@@ -18,6 +18,7 @@
       "nav.admin": "Quản trị",
       "nav.menu": "Menu",
 
+      "fab.compose": "Đăng bài",
       "search.open": "Tra cứu",
       "search.placeholder": "Tra cứu bài viết, nhân vật, nội dung…",
       "search.hint": "Nhấn Ctrl / ⌘ + K để tra cứu nhanh · Esc để đóng",
@@ -227,6 +228,8 @@
       "admin.uploadimg": "Tải ảnh",
       "admin.uploadcover": "Tải ảnh bìa",
       "admin.uploading": "Đang tải ảnh lên…",
+      "admin.badformat": "Tệp không phải ảnh hợp lệ. Hỗ trợ: JPG, PNG, WEBP, AVIF, GIF, SVG, BMP, TIFF, HEIC.",
+      "admin.toobig": "Ảnh quá lớn (tối đa 20MB). Hãy nén hoặc giảm kích thước rồi thử lại.",
       "admin.uploaded": "Đã tải ảnh lên (hiển thị sau khi deploy; xem trước ngay bằng nút Xem trước).",
       "admin.success": "Đã xuất bản! Pages sẽ cập nhật sau ít phút.",
       "admin.needtoken": "Vui lòng nhập và lưu GitHub token trước.",
@@ -254,6 +257,7 @@
       "nav.admin": "Admin",
       "nav.menu": "Menu",
 
+      "fab.compose": "New post",
       "search.open": "Search",
       "search.placeholder": "Search articles, figures, full text…",
       "search.hint": "Press Ctrl / ⌘ + K to search · Esc to close",
@@ -462,6 +466,8 @@
       "admin.uploadimg": "Upload image",
       "admin.uploadcover": "Upload cover",
       "admin.uploading": "Uploading image…",
+      "admin.badformat": "Not a valid image file. Supported: JPG, PNG, WEBP, AVIF, GIF, SVG, BMP, TIFF, HEIC.",
+      "admin.toobig": "Image too large (20MB max). Please compress it and try again.",
       "admin.uploaded": "Image uploaded (shows after deploy; use Preview to see it now).",
       "admin.success": "Published! Pages will update in a few minutes.",
       "admin.needtoken": "Please enter and save a GitHub token first.",

@@ -12,13 +12,9 @@
   }
   function figFallback(name) {
     const initials = (name || "?").trim().split(/\s+/).map((w) => w[0]).slice(-2).join("").toUpperCase();
-    return "data:image/svg+xml;utf8," + encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='600' height='680'><rect width='100%' height='100%' fill='%232b0d12'/><text x='50%' y='54%' fill='%23c9a227' font-family='Georgia' font-size='200' font-weight='700' text-anchor='middle'>${initials}</text></svg>`);
+    return window.hwPlaceholder(initials, 600, 680);
   }
-  function postFallback(year) {
-    return "data:image/svg+xml;utf8," + encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%232b0d12'/><text x='50%' y='54%' fill='%23c9a227' font-family='Georgia' font-size='120' font-weight='700' text-anchor='middle'>${year || "H"}</text></svg>`);
-  }
+  const postFallback = (year) => window.hwPlaceholder(year || "H", 800, 500);
 
   function postCard(p, lang) {
     const title = Store.localized(p.title, lang);
@@ -27,7 +23,7 @@
     <article class="card" data-reveal>
       <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="card__media">
         ${p.year ? `<span class="card__year">${p.year}</span>` : ""}
-        <img src="${p.cover || fb}" alt="${title}" loading="lazy" onerror="this.onerror=null;this.src='${fb}'">
+        <img src="${p.cover || fb}" alt="${title}" loading="lazy" data-fallback="${window.hwFallback(p.cover, fb)}">
       </a>
       <div class="card__body">
         <div class="card__tags">${(p.tags || []).slice(0, 3).map((t) => `<a class="tag" href="topics.html?tag=${encodeURIComponent(t)}">${t}</a>`).join("")}</div>
@@ -39,12 +35,12 @@
   }
   function figCard(f, lang) {
     const name = Store.localized(f.name, lang);
-    const fb = figFallback(name).replace(/'/g, "&#39;");
+    const fb = figFallback(name);
     return `
     <article class="figure-card glass" data-tilt>
       <a class="figure-card__media" href="figure.html?slug=${encodeURIComponent(f.slug)}">
         <span class="figure-card__life">${f.born || "?"} – ${f.died || ""}</span>
-        <img src="${f.portrait || fb}" alt="${name}" loading="lazy" onerror="this.onerror=null;this.src='${fb}'">
+        <img src="${f.portrait || fb}" alt="${name}" loading="lazy" data-fallback="${window.hwFallback(f.portrait, fb)}">
         <div class="figure-card__cap"><h3>${name}</h3><div class="figure-card__role">${Store.localized(f.role, lang)}</div></div>
       </a>
       <div class="figure-card__body">

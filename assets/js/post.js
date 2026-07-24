@@ -8,11 +8,7 @@
 
   function getSlug() { return new URLSearchParams(location.search).get("slug"); }
 
-  function fallbackCover(year) {
-    return "data:image/svg+xml;utf8," + encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%234a1520'/><stop offset='1' stop-color='%232b0d12'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/><text x='50%' y='55%' fill='%23c9a227' font-family='Georgia' font-size='240' font-weight='700' text-anchor='middle'>${year || "H"}</text></svg>`
-    );
-  }
+  const fallbackCover = (year) => window.hwPlaceholder(year || "H", 1600, 900);
 
   let currentPost = null;
   let currentBody = "";
@@ -43,7 +39,7 @@
     return `
       <aside class="infobox glass" data-reveal>
         <div class="infobox__figure">
-          <img src="${p.cover || fb}" alt="${Store.localized(p.title, lang)}" onerror="this.onerror=null;this.src='${fb}'">
+          <img src="${p.cover || fb}" alt="${Store.localized(p.title, lang)}" data-fallback="${window.hwFallback(p.cover, fb)}">
         </div>
         <div class="infobox__title">${window.I18N.t("article.infobox")}</div>
         <dl class="infobox__list">
@@ -106,7 +102,7 @@
     root.innerHTML = `
       <div class="progress-bar" id="progressBar"></div>
       <section class="post-hero">
-        <div class="post-hero__bg"><img src="${p.cover || fallbackCover(p.year)}" alt="" onerror="this.onerror=null;this.src='${fallbackCover(p.year)}'"></div>
+        <div class="post-hero__bg"><img src="${p.cover || fallbackCover(p.year)}" alt="" data-fallback="${window.hwFallback(p.cover, fallbackCover(p.year))}"></div>
         <div class="aurora" aria-hidden="true"><span class="aurora__blob aurora__blob--1"></span><span class="aurora__blob aurora__blob--2"></span></div>
         <div class="wrap post-hero__inner">
           <a href="blog.html" class="kicker" style="color:var(--gold-soft);margin-bottom:1rem">← ${window.I18N.t("post.back")}</a>
@@ -186,7 +182,7 @@
               <article class="card" data-reveal>
                 <a href="post.html?slug=${encodeURIComponent(r.slug)}" class="card__media">
                   ${r.year ? `<span class="card__year">${r.year}</span>` : ""}
-                  <img src="${r.cover || fallbackCover(r.year)}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${fallbackCover(r.year)}'">
+                  <img src="${r.cover || fallbackCover(r.year)}" alt="" loading="lazy" data-fallback="${window.hwFallback(r.cover, fallbackCover(r.year))}">
                 </a>
                 <div class="card__body">
                   <h3 class="card__title"><a href="post.html?slug=${encodeURIComponent(r.slug)}">${Store.localized(r.title, lang)}</a></h3>

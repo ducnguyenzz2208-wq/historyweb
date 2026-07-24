@@ -11,6 +11,51 @@
     window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
   }
 
+  /* =====================================================================
+     Ảnh: ảnh dự phòng dùng chung + xử lý lỗi tải (thay cho onerror nội tuyến)
+     Lý do: data URI của SVG chứa dấu nháy đơn, nếu nhúng vào onerror="…'…'"
+     sẽ làm hỏng cú pháp JS. Ở đây ta mã hoá an toàn và xử lý bằng một
+     listener uỷ quyền duy nhất.
+     ===================================================================== */
+  const escapeXml = (s) => String(s == null ? "" : s).replace(/[&<>"']/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" }[c]));
+
+  /** Ảnh SVG dự phòng (an toàn khi đặt trong mọi thuộc tính HTML). */
+  window.hwPlaceholder = function (text, w, h) {
+    const width = w || 800, height = h || 500;
+    const svg =
+      `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+      `<rect width="100%" height="100%" fill="#2b0d12"/>` +
+      `<text x="50%" y="54%" fill="#c9a227" font-family="Georgia,serif" ` +
+      `font-size="${Math.round(height * 0.3)}" font-weight="700" text-anchor="middle">${escapeXml(text || "H")}</text></svg>`;
+    // encodeURIComponent không mã hoá dấu ' → mã hoá thủ công để tránh vỡ thuộc tính
+    return "data:image/svg+xml," + encodeURIComponent(svg).replace(/'/g, "%27");
+  };
+
+  /**
+   * Chuỗi nguồn dự phòng cho một ảnh, ngăn cách bằng xuống dòng:
+   * ảnh vừa tải lên repo (chưa deploy xong) → lấy tạm từ GitHub → ảnh SVG.
+   */
+  window.hwFallback = function (src, placeholder) {
+    const chain = [];
+    if (src && /^assets\/uploads\//.test(src) && cfg.repoOwner && cfg.repoName) {
+      chain.push(`https://raw.githubusercontent.com/${cfg.repoOwner}/${cfg.repoName}/${cfg.branch || "main"}/${src}`);
+    }
+    if (placeholder) chain.push(placeholder);
+    return chain.join("\n");
+  };
+
+  // Sự kiện error của <img> không nổi bọt → phải bắt ở pha capture
+  document.addEventListener("error", (e) => {
+    const img = e.target;
+    if (!img || img.tagName !== "IMG") return;
+    const chain = (img.getAttribute("data-fallback") || "").split("\n").filter(Boolean);
+    const next = +(img.dataset.fbIndex || 0);
+    if (next >= chain.length) return;
+    img.dataset.fbIndex = String(next + 1);
+    img.src = chain[next];
+  }, true);
+
   /* ---------- SEO: cập nhật thẻ meta / Open Graph động ---------- */
   function upsertMeta(sel, attr, key, val) {
     let el = document.head.querySelector(sel);
@@ -131,6 +176,17 @@
     </div>`;
   }
 
+  /* ---------- Nút nổi "Đăng bài" (góc dưới bên phải) ---------- */
+  function composeButton() {
+    return `
+    <a class="fab-compose" href="admin.html" aria-label="Đăng bài" data-i18n-attr="aria-label:fab.compose|title:fab.compose">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/>
+      </svg>
+      <span class="fab-compose__label" data-i18n="fab.compose"></span>
+    </a>`;
+  }
+
   function injectComponents() {
     const active = document.body.getAttribute("data-page") || "";
     const h = document.getElementById("header-slot");
@@ -138,6 +194,7 @@
     if (h) h.innerHTML = header(active);
     if (f) f.innerHTML = footer();
     document.body.insertAdjacentHTML("beforeend", searchOverlay());
+    if (active !== "admin") document.body.insertAdjacentHTML("beforeend", composeButton());
 
     // site name
     const sn = (cfg.siteName && cfg.siteName[window.I18N.lang]) || "History";

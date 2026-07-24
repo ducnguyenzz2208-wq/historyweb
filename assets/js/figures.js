@@ -104,9 +104,7 @@
   // Chân dung dự phòng: chữ cái đầu bằng vàng trên nền rượu vang
   window.figureFallback = function (name) {
     const initials = (name || "?").trim().split(/\s+/).map((w) => w[0]).slice(-2).join("").toUpperCase();
-    return "data:image/svg+xml;utf8," + encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='600' height='680'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%234a1520'/><stop offset='1' stop-color='%232b0d12'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/><text x='50%' y='54%' fill='%23c9a227' font-family='Georgia' font-size='220' font-weight='700' text-anchor='middle'>${initials}</text></svg>`
-    );
+    return window.hwPlaceholder(initials, 600, 680);
   };
 
   function cardHTML(f, lang) {
@@ -114,13 +112,13 @@
     const role = Store.localized(f.role, lang);
     const excerpt = Store.localized(f.excerpt, lang);
     const life = `${f.born || "?"} – ${f.died || ""}`;
-    const fb = window.figureFallback(name).replace(/'/g, "&#39;");
+    const fb = window.figureFallback(name);
     return `
     <article class="figure-card glass" data-tilt>
       <a class="figure-card__media" href="figure.html?slug=${encodeURIComponent(f.slug)}">
         <span class="figure-card__life">${life}</span>
         <img src="${f.portrait || fb}" alt="${name}" loading="lazy"
-             onerror="this.onerror=null;this.src='${fb}'">
+             data-fallback="${window.hwFallback(f.portrait, fb)}">
         <div class="figure-card__cap">
           <h3>${name}</h3>
           <div class="figure-card__role">${role}</div>
