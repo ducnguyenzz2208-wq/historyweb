@@ -1,6 +1,181 @@
 {
   "posts": [
     {
+      "slug": "khoi-nghia-hai-ba-trung",
+      "title": {
+        "vi": "Khởi nghĩa Hai Bà Trưng",
+        "en": "The Trung Sisters' Uprising"
+      },
+      "excerpt": {
+        "vi": "Năm 40, hai người con gái Lạc tướng đất Mê Linh dựng cờ, giành lại quyền tự chủ trong ba năm giữa nghìn năm Bắc thuộc.",
+        "en": "In AD 40, two daughters of a Me Linh chieftain raised the banner and won three years of self-rule amid a millennium of Chinese domination."
+      },
+      "year": "40",
+      "region": "vietnam",
+      "era": {
+        "vi": "Cổ đại",
+        "en": "Ancient"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Việt Nam",
+        "Bắc thuộc",
+        "khởi nghĩa",
+        "phụ nữ"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_Hai_B%C3%A0_Tr%C6%B0ng.jpg?width=1600",
+      "credit": "Wikimedia Commons — Guerinf (CC BY-SA 4.0)",
+      "lang": "vi",
+      "lat": 21.1583,
+      "lng": 105.7167,
+      "place": {
+        "vi": "Mê Linh, Hà Nội",
+        "en": "Me Linh, Hanoi"
+      },
+      "verified": true,
+      "file": "posts/khoi-nghia-hai-ba-trung.md"
+    },
+    {
+      "slug": "chien-thang-ngoc-hoi-dong-da-1789",
+      "title": {
+        "vi": "Chiến thắng Ngọc Hồi – Đống Đa",
+        "en": "The Victory at Ngoc Hoi – Dong Da"
+      },
+      "excerpt": {
+        "vi": "Quang Trung hẹn ăn Tết ở Thăng Long vào mùng 7; ông về sớm hơn hai ngày, sau một cuộc hành quân thần tốc hơn 600 km.",
+        "en": "Quang Trung promised his troops a Lunar New Year feast in Thang Long by the seventh day; he arrived two days early."
+      },
+      "year": "1789",
+      "region": "vietnam",
+      "era": {
+        "vi": "Cận đại",
+        "en": "Early modern"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Việt Nam",
+        "Tây Sơn",
+        "Quang Trung",
+        "quân sự"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Quang_Trung_Nguy%E1%BB%85n_Hu%E1%BB%87%2C_G%C3%B2_%C4%90%E1%BB%91ng_%C4%90a.JPG?width=1600",
+      "credit": "Wikimedia Commons — Nguyễn Thanh Quang (CC BY-SA 3.0)",
+      "lang": "vi",
+      "lat": 21.0189,
+      "lng": 105.8262,
+      "place": {
+        "vi": "Gò Đống Đa, Thăng Long (Hà Nội)",
+        "en": "Dong Da Mound, Thang Long (Hanoi)"
+      },
+      "verified": true,
+      "file": "posts/chien-thang-ngoc-hoi-dong-da-1789.md"
+    },
+    {
+      "slug": "ngay-30-4-1975",
+      "title": {
+        "vi": "Ngày 30 tháng 4 năm 1975",
+        "en": "30 April 1975"
+      },
+      "excerpt": {
+        "vi": "Chiếc xe tăng qua cổng Dinh Độc Lập khép lại ba mươi năm chiến tranh và hai mươi mốt năm chia cắt hai miền.",
+        "en": "A tank through the gates of Independence Palace closed thirty years of war and twenty-one years of partition."
+      },
+      "year": "1975",
+      "region": "vietnam",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Việt Nam",
+        "thống nhất",
+        "Thế kỷ 20",
+        "chiến tranh Việt Nam"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Dinh_%C4%90%E1%BB%99c_L%E1%BA%ADp.jpg?width=1600",
+      "credit": "Wikimedia Commons — Theodor (CC BY-SA 4.0)",
+      "lang": "vi",
+      "lat": 10.7772,
+      "lng": 106.6958,
+      "place": {
+        "vi": "Dinh Độc Lập, Sài Gòn",
+        "en": "Independence Palace, Saigon"
+      },
+      "verified": true,
+      "file": "posts/ngay-30-4-1975.md"
+    },
+    {
+      "slug": "may-in-gutenberg",
+      "title": {
+        "vi": "Máy in của Gutenberg",
+        "en": "Gutenberg's Printing Press"
+      },
+      "excerpt": {
+        "vi": "Một khuôn đúc chữ ở Mainz đã hạ chi phí sao chép tri thức xuống gần bằng không — và làm rung chuyển tôn giáo lẫn khoa học châu Âu.",
+        "en": "A type mould in Mainz drove the cost of copying knowledge towards zero, and shook European religion and science."
+      },
+      "year": "1450",
+      "region": "world",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "thế giới",
+        "công nghệ",
+        "văn hóa",
+        "truyền thông"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg?width=1600",
+      "credit": "Wikimedia Commons — NYC Wanderer / Kevin Eng (CC BY-SA 2.0)",
+      "lang": "vi",
+      "lat": 49.9929,
+      "lng": 8.2473,
+      "place": {
+        "vi": "Mainz, Đức",
+        "en": "Mainz, Germany"
+      },
+      "verified": true,
+      "file": "posts/may-in-gutenberg.md"
+    },
+    {
+      "slug": "cai-chet-den-1347",
+      "title": {
+        "vi": "Cái chết Đen",
+        "en": "The Black Death"
+      },
+      "excerpt": {
+        "vi": "Mười hai chiếc thuyền cập cảng Messina năm 1347 đã mở đầu thảm họa nhân khẩu lớn nhất lịch sử thành văn.",
+        "en": "Twelve ships docking at Messina in 1347 began the largest demographic catastrophe in recorded history."
+      },
+      "year": "1347",
+      "region": "world",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "thế giới",
+        "dịch bệnh",
+        "xã hội",
+        "kinh tế"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg?width=1600",
+      "credit": "Wikimedia Commons — Pieter Bruegel the Elder (PD)",
+      "lang": "vi",
+      "lat": 38.1938,
+      "lng": 15.554,
+      "place": {
+        "vi": "Messina, Sicilia",
+        "en": "Messina, Sicily"
+      },
+      "verified": true,
+      "file": "posts/cai-chet-den-1347.md"
+    },
+    {
       "slug": "chien-thang-dien-bien-phu-1954",
       "title": {
         "vi": "Chiến thắng Điện Biên Phủ",
