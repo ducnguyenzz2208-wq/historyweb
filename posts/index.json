@@ -9,7 +9,7 @@
         "vi": "Cuộc cách mạng vô sản vĩ đại nổ ra vào năm 1917 tại Nga do V. I. Lênin và Đảng Bolshevik lãnh đạo. Sự kiện này đã lật đổ Chính phủ lâm thời tư sản, thiết lập chính quyền Xô-viết và đánh dấu sự ra đời của Nhà nước Xã hội Chủ nghĩa đầu tiên trên thế giới."
       },
       "year": "1917",
-      "region": "vietnam",
+      "region": "world",
       "era": {
         "vi": "Hiện đại"
       },
@@ -21,7 +21,7 @@
         "Liên Xô",
         "Lịch sử thế giới"
       ],
-      "cover": "assets/uploads/1784871391398-cach-mang-thang-muoi-nga.jpg",
+      "cover": "assets/uploads/1784872334114-cach-mang-thang-muoi-nga.jpg",
       "lang": "vi",
       "file": "posts/cach-mang-thang-muoi-nga.md",
       "lat": 59.9343,
