@@ -78,7 +78,7 @@
         "thương mại",
         "văn hóa"
       ],
-      "cover": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80",
+      "cover": "assets/uploads/1784902536455-con-duong-to-lua.jpg",
       "lang": "vi",
       "lat": 39.6547,
       "lng": 66.9758,
@@ -87,7 +87,13 @@
         "en": "Samarkand, Silk Road"
       },
       "credit": "Unsplash",
-      "file": "posts/con-duong-to-lua.md"
+      "file": "posts/con-duong-to-lua.vi.md",
+      "era": {
+        "vi": ""
+      },
+      "files": {
+        "vi": "posts/con-duong-to-lua.vi.md"
+      }
     },
     {
       "slug": "cach-mang-cong-nghiep",
