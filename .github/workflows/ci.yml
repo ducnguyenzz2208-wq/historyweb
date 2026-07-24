@@ -17,4 +17,4 @@ jobs:
       - name: Kiểm tra liên kết nội bộ
         run: node scripts/check-links.mjs
       - name: Dựng lại sitemap/RSS (kiểm tra script chạy được)
-        run: node scripts/build-feeds.mjs
+        run: node scripts/build-feeds.mjs && node scripts/prerender.mjs

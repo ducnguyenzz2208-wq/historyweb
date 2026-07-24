@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "check-links": "node scripts/check-links.mjs",
-    "feeds": "node scripts/build-feeds.mjs"
+    "feeds": "node scripts/build-feeds.mjs",
+    "prerender": "node scripts/prerender.mjs",
+    "build:seo": "node scripts/build-feeds.mjs && node scripts/prerender.mjs"
   }
 }

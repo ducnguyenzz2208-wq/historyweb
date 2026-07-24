@@ -20,8 +20,8 @@ const today = new Date().toISOString().slice(0, 10);
 
 const urls = [
   ...staticPages.map((p) => ({ loc: `${base}/${p}`, lastmod: today, priority: p === "index.html" ? "1.0" : "0.7" })),
-  ...posts.map((p) => ({ loc: `${base}/post.html?slug=${encodeURIComponent(p.slug)}`, lastmod: p.date || today, priority: "0.8" })),
-  ...figures.map((f) => ({ loc: `${base}/figure.html?slug=${encodeURIComponent(f.slug)}`, lastmod: today, priority: "0.6" })),
+  ...posts.map((p) => ({ loc: `${base}/post/${p.slug}.html`, lastmod: p.date || today, priority: "0.8" })),
+  ...figures.map((f) => ({ loc: `${base}/figure/${f.slug}.html`, lastmod: today, priority: "0.6" })),
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -32,7 +32,7 @@ ${urls.map((u) => `  <url><loc>${esc(u.loc)}</loc><lastmod>${u.lastmod}</lastmod
 writeFileSync("sitemap.xml", sitemap);
 
 const items = posts.slice().sort((a, b) => (a.date < b.date ? 1 : -1)).map((p) => {
-  const link = `${base}/post.html?slug=${encodeURIComponent(p.slug)}`;
+  const link = `${base}/post/${p.slug}.html`;
   const pub = p.date ? new Date(p.date).toUTCString() : new Date().toUTCString();
   return `    <item>
       <title>${esc(loc(p.title, "vi"))}</title>

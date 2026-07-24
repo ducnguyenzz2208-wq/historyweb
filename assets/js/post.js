@@ -127,6 +127,11 @@
             </a>
             <span class="article__byline-date">${window.fmtDate(p.date, lang)}</span>
           </div>
+          ${window.hwBreadcrumb([
+            { label: window.I18N.t("nav.home"), href: "index.html" },
+            { label: window.hwRegionLabel(p.region), href: `blog.html?region=${encodeURIComponent(p.region || "")}` },
+            { label: title },
+          ])}
           <p class="article__lead">${excerpt}</p>
           <div class="article__toolbar">
             <a class="article__tool" href="admin.html?slug=${encodeURIComponent(p.slug)}">
@@ -199,6 +204,7 @@
     wireCite(title, p, lang);
     wireTocHighlight();
     wireComments(lang);
+    autoLinkArticle(p, lang);
     if (window.hwReveal) window.hwReveal();
     window.scrollTo(0, 0);
   }
@@ -222,6 +228,29 @@
     s.setAttribute("data-theme", document.documentElement.getAttribute("data-theme") === "dark" ? "dark_dimmed" : "light");
     s.setAttribute("data-lang", lang === "en" ? "en" : "vi");
     mount.appendChild(s);
+  }
+
+  /* Liên kết chéo tự động tới sự kiện & nhân vật khác (mỗi mục 1 lần) */
+  async function autoLinkArticle(p, lang) {
+    const prose = document.querySelector(".article--wiki .prose");
+    if (!prose || !window.hwAutoLink) return;
+    const entries = [];
+    try {
+      (await Store.all())
+        .filter((x) => x.slug !== p.slug)
+        .forEach((x) => entries.push({
+          title: Store.localized(x.title, lang),
+          url: `post.html?slug=${encodeURIComponent(x.slug)}`,
+        }));
+    } catch (e) {}
+    try {
+      const r = await fetch("figures/index.json?_=" + Date.now());
+      if (r.ok) ((await r.json()).figures || []).forEach((f) => entries.push({
+        title: Store.localized(f.name, lang),
+        url: `figure.html?slug=${encodeURIComponent(f.slug)}`,
+      }));
+    } catch (e) {}
+    window.hwAutoLink(prose, entries);
   }
 
   function wireProgress() {

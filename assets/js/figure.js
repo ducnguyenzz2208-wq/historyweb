@@ -111,6 +111,12 @@
               <span>${window.I18N.t("article.by")} <b>${author}</b></span>
             </a>
           </div>
+          ${window.hwBreadcrumb([
+            { label: window.I18N.t("nav.home"), href: "index.html" },
+            { label: window.I18N.t("nav.figures"), href: "figures.html" },
+            { label: window.hwRegionLabel(f.region), href: "figures.html" },
+            { label: name },
+          ])}
           <p class="article__lead">${excerpt}</p>
           <div class="article__toolbar">
             <a class="article__tool" href="admin.html?type=figure&slug=${encodeURIComponent(f.slug)}">
@@ -160,8 +166,31 @@
     wireProgress();
     wireShare(name);
     wireTocHighlight();
+    autoLinkArticle(f, lang);
     if (window.hwReveal) window.hwReveal();
     window.scrollTo(0, 0);
+  }
+
+  /* Liên kết chéo tự động tới nhân vật & sự kiện khác (mỗi mục 1 lần) */
+  async function autoLinkArticle(f, lang) {
+    const prose = document.querySelector(".article--wiki .prose");
+    if (!prose || !window.hwAutoLink) return;
+    const entries = [];
+    try {
+      (await (window.loadFigures ? window.loadFigures() : Promise.resolve([])))
+        .filter((x) => x.slug !== f.slug)
+        .forEach((x) => entries.push({
+          title: Store.localized(x.name, lang),
+          url: `figure.html?slug=${encodeURIComponent(x.slug)}`,
+        }));
+    } catch (e) {}
+    try {
+      (await Store.all()).forEach((p) => entries.push({
+        title: Store.localized(p.title, lang),
+        url: `post.html?slug=${encodeURIComponent(p.slug)}`,
+      }));
+    } catch (e) {}
+    window.hwAutoLink(prose, entries);
   }
 
   function wireProgress() {

@@ -1,5 +1,7 @@
 Vào những ngày cuối cùng của mùa hè năm 1945, một làn sóng chưa từng có đã lan khắp đất nước. Sau gần một thế kỷ dưới ách đô hộ và những năm tháng chiến tranh khốc liệt, thời khắc lịch sử đã điểm.
 
+Sự kiện này gắn liền với Hồ Chí Minh[^1] và Cách mạng Tháng Mười Nga.
+
 ## Bối cảnh
 
 Cuối Thế chiến thứ hai, phát xít Nhật đầu hàng Đồng minh, để lại một khoảng trống quyền lực. Trong khoảnh khắc mong manh ấy, cả một dân tộc đã nắm bắt cơ hội để tự định đoạt vận mệnh của mình.
@@ -20,3 +22,5 @@ Cách mạng Tháng Tám không chỉ là một sự kiện, mà là bước ngo
 
 Ngày nay, khi lật lại những trang sử ấy, ta không chỉ đọc về quá khứ — ta hiểu hơn về giá trị của những gì đang có.
 ![](assets/uploads/1784817227571-cach-mang-thang-tam-1945.jpg)
+
+[^1]: Hồ Chí Minh toàn tập, NXB Chính trị Quốc gia, tập 3, tr. 557.

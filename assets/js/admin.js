@@ -166,6 +166,42 @@
     }
   }
 
+  /* ---------- Nội dung song ngữ: soạn VI và EN trong cùng một biểu mẫu ----------
+     Lưu thành hai tệp Markdown riêng (slug.vi.md / slug.en.md) — giữ được
+     Markdown thuần, dễ sửa trên GitHub, không phải escape như nhét vào JSON. */
+  const LANGS = ["vi", "en"];
+  const draft = { vi: "", en: "" };
+  let curLang = "vi";
+
+  /** Ghi nội dung đang gõ vào bản nháp của ngôn ngữ hiện tại. */
+  function flushDraft() { draft[curLang] = $("f_content").value; }
+
+  function markLangTabs() {
+    document.querySelectorAll("#langTabs button").forEach((b) => {
+      b.classList.toggle("active", b.dataset.lang === curLang);
+      b.classList.toggle("has-content", !!(draft[b.dataset.lang] || "").trim());
+    });
+  }
+
+  function setLang(lang) {
+    if (!LANGS.includes(lang) || lang === curLang) return;
+    flushDraft();
+    curLang = lang;
+    $("f_content").value = draft[curLang] || "";
+    markLangTabs();
+    preview();
+  }
+
+  function initLangTabs() {
+    const tabs = $("langTabs");
+    if (!tabs) return;
+    tabs.addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-lang]");
+      if (b) setLang(b.dataset.lang);
+    });
+    $("f_content").addEventListener("input", () => { draft[curLang] = $("f_content").value; markLangTabs(); });
+  }
+
   /* ---------- Loại nội dung: sự kiện (posts) / nhân vật (figures) ---------- */
   let TYPE = "event";
   const META = {
@@ -278,10 +314,10 @@
       
       if (isFig()) {
         const localMap = (() => { try { return JSON.parse(localStorage.getItem("hw_pending_fig_content") || "{}"); } catch (e) { return {}; } })();
-        if (localMap[slug]) $("f_content").value = localMap[slug];
-        else $("f_content").value = await (await fetch(item.file + "?_=" + Date.now())).text();
+        if (localMap[slug]) { draft.vi = localMap[slug]; draft.en = ""; curLang = "vi"; $("f_content").value = draft.vi; markLangTabs(); }
+        else await loadDrafts(item);
       } else {
-        $("f_content").value = await Store.content(item);
+        await loadDrafts(item);
       }
       
       setStatus("", "");
@@ -291,8 +327,28 @@
     }
   }
 
+  /** Tải nội dung của cả hai ngôn ngữ vào bản nháp. */
+  async function loadDrafts(item) {
+    const get = async (path) => {
+      if (!path) return "";
+      try { const r = await fetch(path + "?_=" + Date.now()); return r.ok ? await r.text() : ""; }
+      catch (e) { return ""; }
+    };
+    const files = item.files && typeof item.files === "object" ? item.files : null;
+    if (files) {
+      const [vi, en] = await Promise.all([get(files.vi), get(files.en)]);
+      draft.vi = vi; draft.en = en;
+    } else {
+      draft.vi = await get(item.file); draft.en = "";
+    }
+    curLang = draft.vi.trim() || !draft.en.trim() ? "vi" : "en";
+    $("f_content").value = draft[curLang] || "";
+    markLangTabs();
+  }
+
   function resetForm(keepType) {
     ["f_title", "f_slug", "f_year", "f_born", "f_died", "f_role", "f_fieldv", "f_era", "f_tags", "f_cover", "f_excerpt", "f_content", "f_lat", "f_lng", "f_place"].forEach((id) => { if ($(id)) $(id).value = ""; });
+    draft.vi = ""; draft.en = ""; curLang = "vi"; markLangTabs();
     $("f_date").value = new Date().toISOString().slice(0, 10);
     $("f_region").value = "vietnam";
     $("f_slug").dataset.locked = "";
@@ -307,12 +363,18 @@
   async function publish() {
     if (!token()) { setStatus(window.I18N.t("admin.needtoken"), "err"); return; }
     const title = $("f_title").value.trim();
-    const content = $("f_content").value.trim();
+    flushDraft();
+    const content = (draft[curLang] || "").trim();
     if (!title || !content) { setStatus(window.I18N.t("admin.needfields"), "err"); return; }
     const slug = $("f_slug").value.trim() || slugify(title);
     const lang = $("f_lang").value || "vi";
     const meta = META[TYPE];
-    const mdPath = `${meta.dir}/${slug}.md`;
+    // Ngôn ngữ nào có nội dung thì ghi tệp riêng cho ngôn ngữ đó
+    const filled = LANGS.filter((l) => (draft[l] || "").trim());
+    const mdFiles = {};
+    filled.forEach((l) => (mdFiles[l] = `${meta.dir}/${slug}.${l}.md`));
+    const primary = filled.includes("vi") ? "vi" : filled[0] || "vi";
+    const mdPath = mdFiles[primary] || `${meta.dir}/${slug}.md`;
 
     let item;
     if (isFig()) {
@@ -323,7 +385,7 @@
         era: { [lang]: $("f_era").value.trim() }, portrait: $("f_cover").value.trim(),
         excerpt: { [lang]: $("f_excerpt").value.trim() },
         tags: $("f_tags").value.split(",").map((t) => t.trim()).filter(Boolean),
-        lang, file: mdPath,
+        lang, file: mdPath, files: mdFiles,
       };
     } else {
       item = {
@@ -332,7 +394,7 @@
         era: { [lang]: $("f_era").value.trim() },
         date: $("f_date").value || new Date().toISOString().slice(0, 10),
         tags: $("f_tags").value.split(",").map((t) => t.trim()).filter(Boolean),
-        cover: $("f_cover").value.trim(), lang, file: mdPath,
+        cover: $("f_cover").value.trim(), lang, file: mdPath, files: mdFiles,
       };
       const lat = parseFloat($("f_lat").value), lng = parseFloat($("f_lng").value);
       if (!isNaN(lat) && !isNaN(lng)) { item.lat = lat; item.lng = lng; }
@@ -367,7 +429,7 @@
         .filter((p) => content.includes(p) || $("f_cover").value.trim() === p);
       const files = [
         ...usedImages.map((p) => ({ path: p, content: stagedImages[p].base64, encoding: "base64" })),
-        { path: mdPath, content: content + "\n", encoding: "utf-8" },
+        ...filled.map((l) => ({ path: mdFiles[l], content: (draft[l] || "").trim() + "\n", encoding: "utf-8" })),
         { path: meta.index, content: JSON.stringify(index, null, 2) + "\n", encoding: "utf-8" },
       ];
       const verb = existingMd ? "Cập nhật" : "Thêm";
@@ -403,9 +465,10 @@
     setStatus("…");
     const meta = META[TYPE];
     try {
-      const mdPath = `${meta.dir}/${slug}.md`;
-      const md = await getFile(mdPath);
-      if (md) await deleteFile(mdPath, `Xóa ${meta.label}: ${slug}`, md.sha);
+      for (const path of [`${meta.dir}/${slug}.md`, `${meta.dir}/${slug}.vi.md`, `${meta.dir}/${slug}.en.md`]) {
+        const md = await getFile(path);
+        if (md) await deleteFile(path, `Xóa ${meta.label}: ${slug}`, md.sha);
+      }
       const idxFile = await getFile(meta.index);
       if (idxFile) {
         let index = JSON.parse(b64decode(idxFile.content));
@@ -686,6 +749,7 @@
     initImageUpload();
     initImport();
     initTypeToggle();
+    initLangTabs();
     initMapPicker();
     resetForm();
     applyType();
