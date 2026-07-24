@@ -839,6 +839,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 @media (max-width: 600px) { .fab-compose { height: 52px; min-width: 52px; padding: 0 14px; } }
 @media (prefers-reduced-motion: reduce) { .fab-compose, .fab-compose__label { transition: none; } }
 
+/* Vùng thả ảnh (kéo-thả vào ô nội dung / ảnh bìa) */
+.drop-active {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent) !important;
+}
+
 /* Loại nội dung (event/figure toggle) */
 .type-toggle { display: inline-flex; gap: 0.3rem; padding: 0.3rem; border-radius: 999px; border: 1px solid var(--line); background: var(--glass-bg); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .type-toggle button { border: none; background: transparent; color: var(--text-soft); font-family: var(--font-sans); font-weight: 600; font-size: 0.86rem; padding: 0.55rem 1.2rem; border-radius: 999px; transition: color 0.25s, background 0.35s var(--ease-expo); }

@@ -73,6 +73,47 @@
     return putRaw(filePath, b64encode(contentStr), message, sha);
   }
 
+  /**
+   * Ghi NHIỀU tệp trong MỘT commit duy nhất (Git Data API).
+   * Vì sao: mỗi commit đẩy lên GitHub kích hoạt một lượt deploy. Trước đây một
+   * lần đăng bài tạo 3 commit (ảnh → .md → index.json) ⇒ 3 lượt deploy, dễ chạm
+   * giới hạn của Vercel và khiến ảnh/bài "lệch nhau" nếu một commit lỗi.
+   * files: [{ path, content, encoding: "utf-8" | "base64" }]
+   */
+  async function commitFiles(files, message) {
+    if (!files.length) return null;
+    const ref = await gh(`/repos/${REPO}/git/ref/heads/${BRANCH}`);
+    const baseSha = ref.object.sha;
+    const baseCommit = await gh(`/repos/${REPO}/git/commits/${baseSha}`);
+
+    // Tạo blob cho từng tệp (song song)
+    const blobs = await Promise.all(files.map((f) =>
+      gh(`/repos/${REPO}/git/blobs`, {
+        method: "POST",
+        body: JSON.stringify({ content: f.content, encoding: f.encoding || "utf-8" }),
+      })
+    ));
+
+    const tree = await gh(`/repos/${REPO}/git/trees`, {
+      method: "POST",
+      body: JSON.stringify({
+        base_tree: baseCommit.tree.sha,
+        tree: files.map((f, i) => ({ path: f.path, mode: "100644", type: "blob", sha: blobs[i].sha })),
+      }),
+    });
+
+    const commit = await gh(`/repos/${REPO}/git/commits`, {
+      method: "POST",
+      body: JSON.stringify({ message, tree: tree.sha, parents: [baseSha] }),
+    });
+
+    await gh(`/repos/${REPO}/git/refs/heads/${BRANCH}`, {
+      method: "PATCH",
+      body: JSON.stringify({ sha: commit.sha }),
+    });
+    return commit.sha;
+  }
+
   async function deleteFile(filePath, message, sha) {
     return gh(`/repos/${REPO}/contents/${encodeURIComponent(filePath).replace(/%2F/g, "/")}`, {
       method: "DELETE",
@@ -301,16 +342,9 @@
     const btn = $("publishBtn"); btn.disabled = true;
     setStatus(window.I18N.t("admin.publishing"), "");
     try {
-      /* ★ TỐI ƯU 1: Lấy sha của cả MD lẫn index.json SONG SONG (tiết kiệm ~1-3 giây) */
-      const [existingMd, idxFile] = await Promise.all([
-        getFile(mdPath),
-        getFile(meta.index),
-      ]);
+      const [existingMd, idxFile] = await Promise.all([getFile(mdPath), getFile(meta.index)]);
 
-      /* Ghi file .md */
-      await putFile(mdPath, content + "\n", `${existingMd ? "Cập nhật" : "Thêm"} ${meta.label}: ${title}`, existingMd && existingMd.sha);
-
-      /* Cập nhật index.json */
+      /* Dựng index.json mới */
       let index = {}; index[meta.key] = [];
       if (idxFile) { try { index = JSON.parse(b64decode(idxFile.content)); } catch (e) {} }
       if (!Array.isArray(index[meta.key])) index[meta.key] = [];
@@ -326,7 +360,20 @@
       const mergedItem = i >= 0 ? mergeBilingual(list[i]) : item;
       if (i >= 0) list[i] = mergedItem; else list.push(item);
       if (!isFig()) list.sort((a, b) => (a.date < b.date ? 1 : -1));
-      await putFile(meta.index, JSON.stringify(index, null, 2) + "\n", `Cập nhật mục lục ${meta.label}: ${title}`, idxFile && idxFile.sha);
+
+      /* MỘT commit duy nhất: ảnh đang chờ + .md + index.json.
+         Ảnh và bài luôn lên cùng lúc ⇒ không còn ảnh 404, và chỉ tốn 1 lượt deploy. */
+      const usedImages = Object.keys(stagedImages)
+        .filter((p) => content.includes(p) || $("f_cover").value.trim() === p);
+      const files = [
+        ...usedImages.map((p) => ({ path: p, content: stagedImages[p].base64, encoding: "base64" })),
+        { path: mdPath, content: content + "\n", encoding: "utf-8" },
+        { path: meta.index, content: JSON.stringify(index, null, 2) + "\n", encoding: "utf-8" },
+      ];
+      const verb = existingMd ? "Cập nhật" : "Thêm";
+      const imgNote = usedImages.length ? ` (+${usedImages.length} ảnh)` : "";
+      await commitFiles(files, `${verb} ${meta.label}: ${title}${imgNote}`);
+      usedImages.forEach((p) => delete stagedImages[p]); // đã lên repo
 
       /* ★ TỐI ƯU 2: Optimistic cache — bài hiện ngay không cần chờ deploy */
       const finalItem = i >= 0 ? mergedItem : item;
@@ -422,50 +469,84 @@
     return null;
   }
 
-  async function uploadImage(file) {
-    if (!token()) { setStatus(window.I18N.t("admin.needtoken"), "err"); throw new Error("no token"); }
+  /* Ảnh đang chờ: hiển thị ngay bằng data URL, được commit CÙNG bài khi Xuất bản.
+     { "assets/uploads/x.jpg": { base64, dataURL } } */
+  const stagedImages = {};
+
+  /**
+   * Nhận một ảnh: kiểm tra định dạng, đọc nội dung, hiển thị ngay và xếp hàng
+   * chờ commit cùng bài viết. Trả về đường dẫn để chèn vào nội dung / ảnh bìa.
+   */
+  async function stageImage(file) {
     const ext = imageExtOf(file);
     if (!ext) throw new Error(window.I18N.t("admin.badformat"));
     if (file.size > MAX_UPLOAD_BYTES) throw new Error(window.I18N.t("admin.toobig"));
+
     const base = slugify($("f_slug").value.trim() || "img").slice(0, 30);
     const path = `assets/uploads/${Date.now()}-${base}.${ext}`;
-    setStatus(window.I18N.t("admin.uploading"), "");
-
-    /* ★ TỐI ƯU 3: Đọc file song song + hiển thị preview ngay */
     const [dataURL, buf] = await Promise.all([readAs(file, "data"), readAs(file, "buf")]);
-    localImages[path] = dataURL; // hiển thị preview cục bộ ngay lập tức
 
-    /* Upload lên GitHub ở nền — không chặn giao diện */
-    putRaw(path, b64FromBuffer(buf), `Thêm ảnh: ${path}`, null)
-      .then(() => setStatus(window.I18N.t("admin.uploaded"), "ok"))
-      .catch((err) => setStatus(window.I18N.t("admin.error") + " " + err.message, "err"));
-
-    /* Trả path ngay để chèn vào nội dung — không chờ upload xong */
+    stagedImages[path] = { base64: b64FromBuffer(buf), dataURL };
+    localImages[path] = dataURL; // xem trước tức thì
+    setStatus(window.I18N.t("admin.imgstaged"), "ok");
     return path;
   }
+
+  /** Nhận ảnh rồi chèn vào nội dung (dùng chung cho chọn tệp / dán / kéo-thả). */
+  async function acceptImage(file, target) {
+    try {
+      const path = await stageImage(file);
+      if (target === "cover") $("f_cover").value = path;
+      else { insertBlock(`![](${path})\n`); preview(); }
+    } catch (err) {
+      setStatus(window.I18N.t("admin.error") + " " + err.message, "err");
+    }
+  }
+
+  /** Lấy tệp ảnh đầu tiên từ clipboard hoặc thao tác kéo-thả. */
+  function imageFrom(dataTransfer) {
+    if (!dataTransfer) return null;
+    const files = [...(dataTransfer.files || [])];
+    const byFile = files.find((f) => imageExtOf(f));
+    if (byFile) return byFile;
+    const item = [...(dataTransfer.items || [])].find((it) => it.kind === "file" && /^image\//.test(it.type));
+    return item ? item.getAsFile() : null;
+  }
+
   function initImageUpload() {
     const fileInput = $("imgFileInput");
     const coverInput = $("coverFileInput");
     if (fileInput) fileInput.addEventListener("change", async (e) => {
-      const f = e.target.files[0]; if (!f) return;
-      try { const p = await uploadImage(f); insertBlock(`![](${p})\n`); preview(); }
-      catch (err) { if (err.message !== "no token") setStatus(window.I18N.t("admin.error") + " " + err.message, "err"); }
-      finally { e.target.value = ""; }
+      const f = e.target.files[0];
+      if (f) await acceptImage(f, "content");
+      e.target.value = "";
     });
     if (coverInput) coverInput.addEventListener("change", async (e) => {
-      const f = e.target.files[0]; if (!f) return;
-      try { const p = await uploadImage(f); $("f_cover").value = p; }
-      catch (err) { if (err.message !== "no token") setStatus(window.I18N.t("admin.error") + " " + err.message, "err"); }
-      finally { e.target.value = ""; }
+      const f = e.target.files[0];
+      if (f) await acceptImage(f, "cover");
+      e.target.value = "";
     });
-    // Dán ảnh trực tiếp vào ô nội dung
-    const ta = $("f_content");
-    if (ta) ta.addEventListener("paste", async (e) => {
-      const item = [...(e.clipboardData.items || [])].find((it) => it.type.startsWith("image/"));
-      if (!item) return;
+
+    /* Dán ảnh (Ctrl+V) ở bất kỳ đâu trong trang quản trị:
+       đang ở ô Ảnh bìa → đặt làm ảnh bìa; còn lại → chèn vào nội dung. */
+    document.addEventListener("paste", async (e) => {
+      const file = imageFrom(e.clipboardData);
+      if (!file) return;
       e.preventDefault();
-      try { const p = await uploadImage(item.getAsFile()); insertBlock(`![](${p})\n`); }
-      catch (err) { if (err.message !== "no token") setStatus(window.I18N.t("admin.error") + " " + err.message, "err"); }
+      await acceptImage(file, document.activeElement === $("f_cover") ? "cover" : "content");
+    });
+
+    /* Kéo-thả ảnh vào ô nội dung hoặc ô ảnh bìa */
+    [["f_content", "content"], ["f_cover", "cover"]].forEach(([id, target]) => {
+      const el = $(id);
+      if (!el) return;
+      el.addEventListener("dragover", (e) => { e.preventDefault(); el.classList.add("drop-active"); });
+      el.addEventListener("dragleave", () => el.classList.remove("drop-active"));
+      el.addEventListener("drop", async (e) => {
+        e.preventDefault(); el.classList.remove("drop-active");
+        const file = imageFrom(e.dataTransfer);
+        if (file) await acceptImage(file, target);
+      });
     });
   }
 
