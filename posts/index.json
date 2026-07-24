@@ -138,7 +138,7 @@
         "khoa học",
         "vũ trụ"
       ],
-      "cover": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80",
+      "cover": "assets/uploads/1784902461795-apollo-11-1969.jpg",
       "lang": "vi",
       "lat": 28.5729,
       "lng": -80.649,
@@ -147,7 +147,13 @@
         "en": "Cape Canaveral, USA"
       },
       "credit": "Unsplash",
-      "file": "posts/apollo-11-1969.md"
+      "file": "posts/apollo-11-1969.vi.md",
+      "era": {
+        "vi": ""
+      },
+      "files": {
+        "vi": "posts/apollo-11-1969.vi.md"
+      }
     }
   ]
 }
