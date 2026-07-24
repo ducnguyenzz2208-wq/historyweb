@@ -262,6 +262,40 @@
       "files": {
         "vi": "figures/conor-mcgregor.vi.md"
       }
+    },
+    {
+      "slug": "lionel-messi",
+      "name": {
+        "vi": "Lionel Messi"
+      },
+      "region": "vietnam",
+      "born": "1987",
+      "died": "",
+      "role": {
+        "vi": "Cầu thủ bóng đá"
+      },
+      "field": {
+        "vi": "Thể thao"
+      },
+      "era": {
+        "vi": "Hiện đại"
+      },
+      "portrait": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
+      "excerpt": {
+        "vi": "Lionel Messi là một trong những cầu thủ bóng đá vĩ đại nhất mọi thời đại. Với kỷ lục 8 lần giành Quả bóng vàng và chức vô địch World Cup 2022 cùng đội tuyển Argentina, anh đã chinh phục mọi đỉnh cao của bóng đá thế giới, để lại di sản không thể phai mờ trong lịch sử thể thao."
+      },
+      "tags": [
+        "Bóng đá",
+        "World Cup",
+        "Quả bóng vàng",
+        "Barcelona",
+        "Argentina"
+      ],
+      "lang": "vi",
+      "file": "figures/lionel-messi.vi.md",
+      "files": {
+        "vi": "figures/lionel-messi.vi.md"
+      }
     }
   ]
 }
