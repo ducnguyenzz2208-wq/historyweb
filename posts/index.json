@@ -77,7 +77,7 @@
         "công nghệ",
         "kinh tế"
       ],
-      "cover": "https://vinuni.edu.vn/vi/thanh-tuu-tieu-bieu-nhat-cua-cach-mang-cong-nghiep-anh-la-gi/",
+      "cover": "assets/uploads/1784870693899-cach-mang-cong-nghiep.jpg",
       "lang": "vi",
       "lat": 53.4808,
       "lng": -2.2426,
@@ -85,7 +85,10 @@
         "vi": "Manchester, Anh",
         "en": "Manchester, England"
       },
-      "file": "posts/cach-mang-cong-nghiep.md"
+      "file": "posts/cach-mang-cong-nghiep.md",
+      "era": {
+        "vi": ""
+      }
     },
     {
       "slug": "apollo-11-1969",
