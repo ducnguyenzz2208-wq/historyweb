@@ -21,3 +21,4 @@ Di sản của Lenin gắn liền với cả thành tựu lẫn tranh cãi. Ông
 ---
 
 *← Quay lại danh sách nhân vật*
+![](assets/uploads/1784870326014-vi-lenin.jpg)
