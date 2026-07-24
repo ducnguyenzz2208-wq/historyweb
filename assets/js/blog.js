@@ -10,6 +10,10 @@
   let activeCentury = params.get("century") || "__all__";
   const REGIONS = ["__all__", "vietnam", "world"];
 
+  // Năm lịch sử (số nguyên) — dùng để sắp xếp theo dòng thời gian.
+  const historicalYear = (x) =>
+    parseInt(x && (x.historical_year != null ? x.historical_year : (x.year != null ? x.year : x.born)), 10) || 0;
+
   // Thế kỷ từ năm (năm dương lịch, dữ liệu hiện tại đều sau CN)
   function centuryOf(year) {
     const y = parseInt(year, 10);
@@ -119,6 +123,8 @@
       const okQ = !q || hay.includes(q);
       return okRegion && okTag && okCentury && okQ;
     });
+    // TASK 2: sắp xếp theo dòng thời gian lịch sử (năm tăng dần) trước khi render.
+    filtered.sort((a, b) => historicalYear(a) - historicalYear(b));
     grid.innerHTML = filtered.length
       ? filtered.map((p) => cardHTML(p, lang)).join("")
       : `<p class="empty-state">${window.I18N.t("blog.empty")}</p>`;

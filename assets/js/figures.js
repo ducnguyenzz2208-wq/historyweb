@@ -58,6 +58,9 @@
       const res = await fetch("figures/index.json?_=" + Date.now());
       let list = res.ok ? (await res.json()).figures || [] : [];
       list = mergeWithPending(list);
+      // TASK 2: sắp xếp theo năm lịch sử (năm sinh) ngay sau khi fetch, trước khi render.
+      const hy = (x) => parseInt(x && (x.historical_year != null ? x.historical_year : (x.born != null ? x.born : x.year)), 10) || 0;
+      list.sort((a, b) => hy(a) - hy(b));
       cache = list;
     } catch (e) {
       const pending = getPending();
