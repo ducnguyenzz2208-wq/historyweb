@@ -1,172 +1,39 @@
 {
   "posts": [
     {
-      "slug": "su-ra-doi-va-troi-day-cua-nvidia",
+      "slug": "chien-thang-dien-bien-phu-1954",
       "title": {
-        "vi": "Sự ra đời và trỗi dậy của NVIDIA"
+        "vi": "Chiến thắng Điện Biên Phủ",
+        "en": "The Battle of Dien Bien Phu"
       },
       "excerpt": {
-        "vi": "Được thành lập vào năm 1993, NVIDIA ban đầu được biết đến là công ty tiên phong trong lĩnh vực đồ họa máy tính và trò chơi điện tử (GPU). Tuy nhiên, nhờ những quyết định chiến lược xuất sắc, NVIDIA đã chuyển mình trở thành thế lực thống trị tuyệt đối trong kỷ nguyên Trí tuệ nhân tạo (AI), trở thành một trong những công ty giá trị nhất thế giới."
+        "vi": "Năm mươi sáu ngày đêm khoét núi, ngủ hầm đã chấm dứt gần một thế kỷ thống trị của thực dân Pháp ở Đông Dương.",
+        "en": "Fifty-six days and nights in the trenches ended nearly a century of French colonial rule in Indochina."
       },
-      "year": "1993",
-      "region": "world",
-      "era": {
-        "vi": "Hiện đại"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "NVIDIA",
-        "Công ty công nghệ",
-        "GPU",
-        "AI",
-        "Bán dẫn"
-      ],
-      "cover": "https://upload.wikimedia.org/wikipedia/commons/2/21/Nvidia_logo.svg",
-      "lang": "vi",
-      "file": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md",
-      "files": {
-        "vi": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md"
-      },
-      "lat": 37.3541,
-      "lng": -121.9552,
-      "place": {
-        "vi": "Santa Clara, California, Hoa Kỳ"
-      }
-    },
-    {
-      "slug": "cach-mang-thang-muoi-nga",
-      "title": {
-        "vi": "Cách mạng Tháng Mười Nga"
-      },
-      "excerpt": {
-        "vi": "Cuộc cách mạng vô sản vĩ đại nổ ra vào năm 1917 tại Nga do V. I. Lênin và Đảng Bolshevik lãnh đạo. Sự kiện này đã lật đổ Chính phủ lâm thời tư sản, thiết lập chính quyền Xô-viết và đánh dấu sự ra đời của Nhà nước Xã hội Chủ nghĩa đầu tiên trên thế giới."
-      },
-      "year": "1917",
-      "region": "world",
-      "era": {
-        "vi": "Hiện đại"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "Cách mạng vô sản",
-        "V. I. Lênin",
-        "Bolshevik",
-        "Liên Xô",
-        "Lịch sử thế giới"
-      ],
-      "cover": "assets/uploads/1784872334114-cach-mang-thang-muoi-nga.jpg",
-      "lang": "vi",
-      "file": "posts/cach-mang-thang-muoi-nga.md",
-      "lat": 59.9343,
-      "lng": 30.3351,
-      "place": {
-        "vi": "Petrograd (nay là Saint Petersburg), Nga"
-      }
-    },
-    {
-      "slug": "chieu-doi-do-va-thang-long-1010",
-      "title": {
-        "vi": "Chiếu dời đô và sự ra đời của Thăng Long",
-        "en": "The Edict on Transferring the Capital and the Birth of Thang Long"
-      },
-      "excerpt": {
-        "vi": "Mùa thu năm 1010, một tờ chiếu ngắn đã đưa trung tâm quyền lực Đại Việt từ thung lũng đá vôi ra vùng châu thổ mở.",
-        "en": "In the autumn of 1010, a short edict moved the seat of Dai Viet power from a limestone valley to the open delta."
-      },
-      "year": "1010",
+      "year": "1954",
       "region": "vietnam",
       "era": {
-        "vi": "Trung đại",
-        "en": "Medieval"
+        "vi": "Hiện đại",
+        "en": "Modern"
       },
       "date": "2026-07-24",
       "tags": [
         "Việt Nam",
-        "nhà Lý",
-        "Thăng Long",
-        "chính trị"
+        "kháng chiến chống Pháp",
+        "quân sự",
+        "Thế kỷ 20"
       ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Doan%20Mon%20Gate%201.jpg?width=1600",
-      "credit": "Wikimedia Commons — Christophe95 (CC BY-SA 4.0)",
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Victory%20in%20Battle%20of%20Dien%20Bien%20Phu.jpg?width=1600",
+      "credit": "Wikimedia Commons — Quân đội Nhân dân Việt Nam (PD)",
       "lang": "vi",
-      "lat": 21.0352,
-      "lng": 105.8355,
+      "lat": 21.3833,
+      "lng": 103.0167,
       "place": {
-        "vi": "Thành Đại La – Thăng Long (Hà Nội ngày nay)",
-        "en": "Dai La – Thang Long Citadel (present-day Hanoi)"
+        "vi": "Điện Biên Phủ, tỉnh Điện Biên, Việt Nam",
+        "en": "Dien Bien Phu, Dien Bien Province, Vietnam"
       },
       "verified": true,
-      "file": "posts/chieu-doi-do-va-thang-long-1010.md"
-    },
-    {
-      "slug": "chien-thang-bach-dang-1288",
-      "title": {
-        "vi": "Chiến thắng Bạch Đằng năm 1288",
-        "en": "The Battle of Bach Dang, 1288"
-      },
-      "excerpt": {
-        "vi": "Một bãi cọc ngầm, một con nước ròng và toàn bộ thủy quân Nguyên Mông nằm lại trên dòng sông cửa biển.",
-        "en": "A field of hidden stakes, a falling tide, and the entire Mongol fleet left behind on an estuary river."
-      },
-      "year": "1288",
-      "region": "vietnam",
-      "era": {
-        "vi": "Trung đại",
-        "en": "Medieval"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "Việt Nam",
-        "nhà Trần",
-        "kháng chiến chống Nguyên Mông",
-        "quân sự"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Wood%20Stakes%20Used%20to%20Destroy%20Mongol%20Fleet%20at%20Bach%20Dang%2C%201288%20(9732100161).jpg?width=1600",
-      "credit": "Wikimedia Commons — Gary Todd (CC0)",
-      "lang": "vi",
-      "lat": 20.9269,
-      "lng": 106.7803,
-      "place": {
-        "vi": "Sông Bạch Đằng, Quảng Yên, Quảng Ninh",
-        "en": "Bach Dang River, Quang Yen, Quang Ninh"
-      },
-      "verified": true,
-      "file": "posts/chien-thang-bach-dang-1288.md"
-    },
-    {
-      "slug": "cach-mang-phap-1789",
-      "title": {
-        "vi": "Cách mạng Pháp 1789",
-        "en": "The French Revolution of 1789"
-      },
-      "excerpt": {
-        "vi": "Từ một cuộc khủng hoảng ngân sách, nước Pháp bước sang một trật tự mới nơi chủ quyền thuộc về quốc dân chứ không thuộc về nhà vua.",
-        "en": "Out of a budget crisis, France crossed into a new order where sovereignty belonged to the nation, not the king."
-      },
-      "year": "1789",
-      "region": "world",
-      "era": {
-        "vi": "Cận đại",
-        "en": "Early modern"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "thế giới",
-        "cách mạng tư sản",
-        "Pháp",
-        "chính trị"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Prise%20de%20la%20Bastille.jpg?width=1600",
-      "credit": "Wikimedia Commons — Jean-Pierre Houël (PD)",
-      "lang": "vi",
-      "lat": 48.8532,
-      "lng": 2.3692,
-      "place": {
-        "vi": "Paris, Pháp",
-        "en": "Paris, France"
-      },
-      "verified": true,
-      "file": "posts/cach-mang-phap-1789.md"
+      "file": "posts/chien-thang-dien-bien-phu-1954.md"
     },
     {
       "slug": "buc-tuong-berlin-sup-do-1989",
@@ -204,39 +71,172 @@
       "file": "posts/buc-tuong-berlin-sup-do-1989.md"
     },
     {
-      "slug": "chien-thang-dien-bien-phu-1954",
+      "slug": "cach-mang-phap-1789",
       "title": {
-        "vi": "Chiến thắng Điện Biên Phủ",
-        "en": "The Battle of Dien Bien Phu"
+        "vi": "Cách mạng Pháp 1789",
+        "en": "The French Revolution of 1789"
       },
       "excerpt": {
-        "vi": "Năm mươi sáu ngày đêm khoét núi, ngủ hầm đã chấm dứt gần một thế kỷ thống trị của thực dân Pháp ở Đông Dương.",
-        "en": "Fifty-six days and nights in the trenches ended nearly a century of French colonial rule in Indochina."
+        "vi": "Từ một cuộc khủng hoảng ngân sách, nước Pháp bước sang một trật tự mới nơi chủ quyền thuộc về quốc dân chứ không thuộc về nhà vua.",
+        "en": "Out of a budget crisis, France crossed into a new order where sovereignty belonged to the nation, not the king."
       },
-      "year": "1954",
+      "year": "1789",
+      "region": "world",
+      "era": {
+        "vi": "Cận đại",
+        "en": "Early modern"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "thế giới",
+        "cách mạng tư sản",
+        "Pháp",
+        "chính trị"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Prise%20de%20la%20Bastille.jpg?width=1600",
+      "credit": "Wikimedia Commons — Jean-Pierre Houël (PD)",
+      "lang": "vi",
+      "lat": 48.8532,
+      "lng": 2.3692,
+      "place": {
+        "vi": "Paris, Pháp",
+        "en": "Paris, France"
+      },
+      "verified": true,
+      "file": "posts/cach-mang-phap-1789.md"
+    },
+    {
+      "slug": "chien-thang-bach-dang-1288",
+      "title": {
+        "vi": "Chiến thắng Bạch Đằng năm 1288",
+        "en": "The Battle of Bach Dang, 1288"
+      },
+      "excerpt": {
+        "vi": "Một bãi cọc ngầm, một con nước ròng và toàn bộ thủy quân Nguyên Mông nằm lại trên dòng sông cửa biển.",
+        "en": "A field of hidden stakes, a falling tide, and the entire Mongol fleet left behind on an estuary river."
+      },
+      "year": "1288",
       "region": "vietnam",
       "era": {
-        "vi": "Hiện đại",
-        "en": "Modern"
+        "vi": "Trung đại",
+        "en": "Medieval"
       },
       "date": "2026-07-24",
       "tags": [
         "Việt Nam",
-        "kháng chiến chống Pháp",
-        "quân sự",
-        "Thế kỷ 20"
+        "nhà Trần",
+        "kháng chiến chống Nguyên Mông",
+        "quân sự"
       ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Victory%20in%20Battle%20of%20Dien%20Bien%20Phu.jpg?width=1600",
-      "credit": "Wikimedia Commons — Quân đội Nhân dân Việt Nam (PD)",
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Wood%20Stakes%20Used%20to%20Destroy%20Mongol%20Fleet%20at%20Bach%20Dang%2C%201288%20(9732100161).jpg?width=1600",
+      "credit": "Wikimedia Commons — Gary Todd (CC0)",
       "lang": "vi",
-      "lat": 21.3833,
-      "lng": 103.0167,
+      "lat": 20.9269,
+      "lng": 106.7803,
       "place": {
-        "vi": "Điện Biên Phủ, tỉnh Điện Biên, Việt Nam",
-        "en": "Dien Bien Phu, Dien Bien Province, Vietnam"
+        "vi": "Sông Bạch Đằng, Quảng Yên, Quảng Ninh",
+        "en": "Bach Dang River, Quang Yen, Quang Ninh"
       },
       "verified": true,
-      "file": "posts/chien-thang-dien-bien-phu-1954.md"
+      "file": "posts/chien-thang-bach-dang-1288.md"
+    },
+    {
+      "slug": "chieu-doi-do-va-thang-long-1010",
+      "title": {
+        "vi": "Chiếu dời đô và sự ra đời của Thăng Long",
+        "en": "The Edict on Transferring the Capital and the Birth of Thang Long"
+      },
+      "excerpt": {
+        "vi": "Mùa thu năm 1010, một tờ chiếu ngắn đã đưa trung tâm quyền lực Đại Việt từ thung lũng đá vôi ra vùng châu thổ mở.",
+        "en": "In the autumn of 1010, a short edict moved the seat of Dai Viet power from a limestone valley to the open delta."
+      },
+      "year": "1010",
+      "region": "vietnam",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Việt Nam",
+        "nhà Lý",
+        "Thăng Long",
+        "chính trị"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Doan%20Mon%20Gate%201.jpg?width=1600",
+      "credit": "Wikimedia Commons — Christophe95 (CC BY-SA 4.0)",
+      "lang": "vi",
+      "lat": 21.0352,
+      "lng": 105.8355,
+      "place": {
+        "vi": "Thành Đại La – Thăng Long (Hà Nội ngày nay)",
+        "en": "Dai La – Thang Long Citadel (present-day Hanoi)"
+      },
+      "verified": true,
+      "file": "posts/chieu-doi-do-va-thang-long-1010.md"
+    },
+    {
+      "slug": "cach-mang-thang-muoi-nga",
+      "title": {
+        "vi": "Cách mạng Tháng Mười Nga"
+      },
+      "excerpt": {
+        "vi": "Cuộc cách mạng vô sản vĩ đại nổ ra vào năm 1917 tại Nga do V. I. Lênin và Đảng Bolshevik lãnh đạo. Sự kiện này đã lật đổ Chính phủ lâm thời tư sản, thiết lập chính quyền Xô-viết và đánh dấu sự ra đời của Nhà nước Xã hội Chủ nghĩa đầu tiên trên thế giới."
+      },
+      "year": "1917",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Cách mạng vô sản",
+        "V. I. Lênin",
+        "Bolshevik",
+        "Liên Xô",
+        "Lịch sử thế giới"
+      ],
+      "cover": "assets/uploads/1784872334114-cach-mang-thang-muoi-nga.jpg",
+      "lang": "vi",
+      "file": "posts/cach-mang-thang-muoi-nga.md",
+      "lat": 59.9343,
+      "lng": 30.3351,
+      "place": {
+        "vi": "Petrograd (nay là Saint Petersburg), Nga"
+      }
+    },
+    {
+      "slug": "su-ra-doi-va-troi-day-cua-nvidia",
+      "title": {
+        "vi": "Sự ra đời và trỗi dậy của NVIDIA"
+      },
+      "excerpt": {
+        "vi": "Được thành lập vào năm 1993, NVIDIA ban đầu được biết đến là công ty tiên phong trong lĩnh vực đồ họa máy tính và trò chơi điện tử (GPU). Tuy nhiên, nhờ những quyết định chiến lược xuất sắc, NVIDIA đã chuyển mình trở thành thế lực thống trị tuyệt đối trong kỷ nguyên Trí tuệ nhân tạo (AI), trở thành một trong những công ty giá trị nhất thế giới."
+      },
+      "year": "1993",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "NVIDIA",
+        "Công ty công nghệ",
+        "GPU",
+        "AI",
+        "Bán dẫn"
+      ],
+      "cover": "assets/uploads/1784904465447-su-ra-doi-va-troi-day-cua-nvid.jpg",
+      "lang": "vi",
+      "file": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md",
+      "files": {
+        "vi": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md"
+      },
+      "lat": 37.3541,
+      "lng": -121.9552,
+      "place": {
+        "vi": "Santa Clara, California, Hoa Kỳ"
+      }
     },
     {
       "slug": "cach-mang-thang-tam-1945",
