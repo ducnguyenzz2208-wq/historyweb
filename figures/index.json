@@ -229,6 +229,39 @@
       ],
       "lang": "vi",
       "file": "figures/vi-lenin.md"
+    },
+    {
+      "slug": "conor-mcgregor",
+      "name": {
+        "vi": "Conor McGregor"
+      },
+      "region": "world",
+      "born": "1988",
+      "died": "",
+      "role": {
+        "vi": "Võ sĩ MMA chuyên nghiệp, Doanh nhân"
+      },
+      "field": {
+        "vi": "Thể thao, Kinh doanh"
+      },
+      "era": {
+        "vi": "Hiện đại"
+      },
+      "portrait": "assets/uploads/1784903873603-conor-mcgregor.jpg",
+      "excerpt": {
+        "vi": "Conor McGregor là võ sĩ võ thuật tổng hợp (MMA) nổi tiếng nhất lịch sử UFC. Anh là người đầu tiên cùng lúc giữ đai vô địch ở hai hạng cân khác nhau. Phong cách thi đấu bùng nổ, khả năng \"trash-talk\" đỉnh cao và sự nhạy bén trong kinh doanh đã biến anh thành một biểu tượng văn hóa đại chúng toàn cầu."
+      },
+      "tags": [
+        "MMA",
+        "UFC",
+        "Quyền Anh",
+        "Thể thao đối kháng"
+      ],
+      "lang": "vi",
+      "file": "figures/conor-mcgregor.vi.md",
+      "files": {
+        "vi": "figures/conor-mcgregor.vi.md"
+      }
     }
   ]
 }
