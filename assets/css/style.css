@@ -973,6 +973,24 @@ a.tag:hover { background: var(--accent); color: var(--cream); }
 .atlas-lands { filter: drop-shadow(0 0.6px 0.6px rgba(43,13,18,0.25)); }
 :root[data-theme="dark"] .atlas-land { fill: color-mix(in srgb, var(--maroon-600) 62%, #1a0a0e); stroke: rgba(216,183,78,0.35); }
 :root[data-theme="dark"] .atlas-lands { filter: none; }
+
+/* Bản đồ Việt Nam: láng giềng mờ, Việt Nam nổi bật, đảo & nhãn */
+.atlas-land--dim { fill: color-mix(in srgb, var(--maroon-800) 55%, transparent); stroke: color-mix(in srgb, var(--maroon-900) 60%, transparent); stroke-width: 0.1; opacity: 0.55; }
+:root[data-theme="dark"] .atlas-land--dim { fill: color-mix(in srgb, #2a1017 70%, transparent); stroke: rgba(216,183,78,0.14); opacity: 0.7; }
+.atlas-land--vn { fill: color-mix(in srgb, var(--gold) 46%, var(--parchment)); stroke: var(--maroon-800); stroke-width: 0.18; }
+:root[data-theme="dark"] .atlas-land--vn { fill: color-mix(in srgb, var(--gold) 30%, var(--maroon-700)); stroke: rgba(216,183,78,0.55); }
+.atlas-lands--vn { filter: drop-shadow(0 0.5px 1px rgba(43,13,18,0.4)); }
+.atlas-islet { fill: color-mix(in srgb, var(--gold) 55%, var(--parchment)); stroke: var(--maroon-800); stroke-width: 0.1; }
+:root[data-theme="dark"] .atlas-islet { fill: var(--gold-soft); stroke: rgba(0,0,0,0.4); }
+.atlas-island-zone { fill: color-mix(in srgb, var(--crimson) 8%, transparent); stroke: var(--crimson); stroke-width: 0.25; stroke-dasharray: 1.6 1.4; opacity: 0.7; }
+:root[data-theme="dark"] .atlas-island-zone { stroke: var(--gold-soft); fill: color-mix(in srgb, var(--gold) 7%, transparent); }
+.atlas-label { fill: var(--maroon-900); font-family: "Be Vietnam Pro", sans-serif; font-size: 2.6px; font-weight: 600; }
+:root[data-theme="dark"] .atlas-label { fill: var(--cream); }
+.atlas-label--island { fill: var(--crimson); font-family: "Cinzel", serif; font-size: 3.4px; font-weight: 700; text-anchor: middle; letter-spacing: 0.1px; }
+:root[data-theme="dark"] .atlas-label--island { fill: var(--gold-soft); }
+.atlas-place__dot { fill: var(--crimson); stroke: var(--cream); stroke-width: 0.12; }
+:root[data-theme="dark"] .atlas-place__dot { stroke: var(--maroon-900); }
+.atlas-map__svg--vn { max-height: min(74vh, 640px); }
 .atlas-compass__ring { fill: none; stroke: var(--accent); stroke-width: 0.5; opacity: 0.6; }
 .atlas-compass__needle { fill: var(--crimson); opacity: 0.8; }
 .atlas-compass__n { fill: var(--accent); font-family: "Cinzel", serif; font-size: 5px; text-anchor: middle; }
