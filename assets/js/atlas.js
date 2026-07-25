@@ -6,6 +6,8 @@
  *             Hoàng Sa, Trường Sa, Phú Quốc, Côn Đảo… Hộp hiển thị
  *             Lng 101°–118°E, Lat 6.5°–23.8°N → x=(lng-101)*10, y=(23.8-lat)*10.
  * Bản đồ được HOÁN ĐỔI theo bộ lọc khu vực; pin luôn khớp phép chiếu đang dùng.
+ * Chuyển world⇄vietnam có hiệu ứng zoom mượt (WAAPI) hướng vào vị trí Việt Nam.
+ * Bản đồ Việt Nam KHÔNG hiển thị nhãn tên địa điểm (giữ đường bờ & quần đảo sạch).
  */
 (function () {
   "use strict";
@@ -87,18 +89,11 @@
       const a = vnProj(z[0], z[3]), b = vnProj(z[2], z[1]);
       const cx = (a.x + b.x) / 2, cy = (a.y + b.y) / 2, rx = Math.abs(b.x - a.x) / 2, ry = Math.abs(b.y - a.y) / 2;
       const dots = is.pts.map((p) => { const q = vnProj(p[0], p[1]); return `<circle cx="${q.x.toFixed(2)}" cy="${q.y.toFixed(2)}" r="0.85" class="atlas-islet"/>`; }).join("");
-      const lb = vnProj(is.label[0], is.label[1]);
+      // Nhãn tên quần đảo được lược bỏ theo yêu cầu — giữ vùng & đảo, bỏ chữ.
       return `<g class="atlas-arch">
         <ellipse cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" rx="${(rx + 1).toFixed(1)}" ry="${(ry + 1).toFixed(1)}" class="atlas-island-zone"/>
         ${dots}
-        <text x="${lb.x.toFixed(1)}" y="${lb.y.toFixed(1)}" class="atlas-label atlas-label--island">${is.name}</text>
       </g>`;
-    }).join("");
-  }
-  function vnPlaces() {
-    return (VN.places || []).map((p) => {
-      const q = vnProj(p.at[0], p.at[1]);
-      return `<g class="atlas-place"><circle cx="${q.x.toFixed(2)}" cy="${q.y.toFixed(2)}" r="0.7" class="atlas-place__dot"/><text x="${(q.x + 1.6).toFixed(1)}" y="${(q.y + 1).toFixed(1)}" class="atlas-label">${p.name}</text></g>`;
     }).join("");
   }
   function vnSVG(events, lang) {
@@ -109,7 +104,6 @@
       <g class="atlas-neighbors">${VN.neighbors.map((poly) => `<path class="atlas-land atlas-land--dim" d="${poly.map((r) => ringToPath(r, vnProj)).join("")}"/>`).join("")}</g>
       <g class="atlas-lands atlas-lands--vn">${vnPolyPaths(VN.mainland, "atlas-land atlas-land--vn")}</g>
       <g class="atlas-islands">${vnIslands()}</g>
-      <g class="atlas-places">${vnPlaces()}</g>
       <g class="atlas-compass" transform="translate(14,160)"><circle r="7" class="atlas-compass__ring"/><path d="M0,-5.5 L1.5,0 L0,5.5 L-1.5,0 Z" class="atlas-compass__needle"/><text y="-8.5" class="atlas-compass__n">N</text></g>
       <g>${pins}</g></svg>`;
   }
@@ -150,7 +144,66 @@
     return { evPosts, tl };
   }
 
-  function draw() {
+  /* ---------- Chuyển cảnh bản đồ (zoom mượt) ----------
+   * direction: "in"  = world → vietnam (lao vào Việt Nam)
+   *            "out" = vietnam → world (kéo lùi ra thế giới)
+   *            "fade"= cùng phép chiếu (world ⇄ tất cả) — chỉ hoà mờ
+   *            null  = vẽ tức thời (lần đầu / đổi ngôn ngữ)
+   * Điểm neo phóng ~ vị trí Việt Nam trên bản đồ thế giới (lng≈106, lat≈16). */
+  const VN_FOCUS = "79% 41%";
+  const SVG_RESET = ["position", "top", "left", "width", "height", "willChange", "transformOrigin", "opacity", "transform"];
+  function paintMap(mapWrap, html, direction) {
+    // Gộp mọi chuyển cảnh còn treo (bấm nhanh liên tục): chỉ giữ svg mới nhất làm nền.
+    const stale = mapWrap.querySelectorAll(".atlas-map__svg");
+    for (let i = 0; i < stale.length - 1; i++) stale[i].remove();
+    const oldSvg = mapWrap.querySelector(".atlas-map__svg");
+    if (oldSvg) for (const k of SVG_RESET) oldSvg.style[k] = "";
+    mapWrap.style.position = "";
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!oldSvg || !direction || reduce || typeof oldSvg.animate !== "function") {
+      mapWrap.innerHTML = html;
+      return;
+    }
+    mapWrap.insertAdjacentHTML("beforeend", html);
+    const newSvg = mapWrap.lastElementChild;
+    mapWrap.style.position = "relative";
+    for (const s of [oldSvg, newSvg]) {
+      s.style.position = "absolute"; s.style.top = "0"; s.style.left = "0";
+      s.style.width = "100%"; s.style.height = "100%";
+      s.style.willChange = "transform, opacity"; s.style.transformOrigin = "center";
+    }
+    let oldKF, newKF;
+    if (direction === "fade") {
+      oldKF = [{ opacity: 1 }, { opacity: 0 }];
+      newKF = [{ opacity: 0 }, { opacity: 1 }];
+    } else if (direction === "in") {
+      oldSvg.style.transformOrigin = VN_FOCUS;      // thế giới phóng về phía Việt Nam
+      oldKF = [{ transform: "scale(1)", opacity: 1 }, { transform: "scale(1.7)", opacity: 0 }];
+      newKF = [{ transform: "scale(0.62)", opacity: 0 }, { transform: "scale(1)", opacity: 1 }];
+    } else { // "out"
+      newSvg.style.transformOrigin = VN_FOCUS;      // thế giới hiện ra từ khu vực Việt Nam
+      oldKF = [{ transform: "scale(1)", opacity: 1 }, { transform: "scale(0.62)", opacity: 0 }];
+      newKF = [{ transform: "scale(1.7)", opacity: 0 }, { transform: "scale(1)", opacity: 1 }];
+    }
+    newSvg.style.opacity = "0";
+    const opts = { duration: 760, easing: "cubic-bezier(0.66, 0, 0.34, 1)" };
+    oldSvg.animate(oldKF, Object.assign({ fill: "forwards" }, opts));
+    const a = newSvg.animate(newKF, opts);
+    let done = false;
+    const cleanup = () => {
+      if (done) return; done = true;
+      if (oldSvg.parentNode) oldSvg.remove();
+      for (const k of SVG_RESET) newSvg.style[k] = "";
+      mapWrap.style.position = "";
+    };
+    a.onfinish = cleanup;
+    a.oncancel = cleanup;
+    // Bảo hiểm: dọn dẹp kể cả khi animation bị tab ẩn/tiết lưu (onfinish không kích hoạt).
+    setTimeout(cleanup, opts.duration + 150);
+  }
+
+  function draw(direction) {
     const lang = window.I18N.lang;
     const { evPosts, tl } = collect(lang);
     const isVN = activeRegion === "vietnam" && VN;
@@ -158,7 +211,7 @@
     const tlItems = activeRegion === "__all__" ? tl : tl.filter((e) => e.region === activeRegion);
     const mapWrap = document.getElementById("atlasMap");
     const tlWrap = document.getElementById("atlasTimeline");
-    if (mapWrap) mapWrap.innerHTML = isVN ? vnSVG(mapEvents, lang) : worldSVG(mapEvents, lang);
+    if (mapWrap) paintMap(mapWrap, isVN ? vnSVG(mapEvents, lang) : worldSVG(mapEvents, lang), direction);
     if (tlWrap) tlWrap.innerHTML = timelineHTML(tlItems, lang);
   }
 
@@ -202,9 +255,13 @@
     const seg = document.getElementById("atlasSeg");
     if (seg) seg.addEventListener("click", (e) => {
       const b = e.target.closest("button[data-region]"); if (!b) return;
-      activeRegion = b.dataset.region;
+      const next = b.dataset.region;
+      if (next === activeRegion) return;
+      const prev = activeRegion;
+      activeRegion = next;
       seg.querySelectorAll("button").forEach((x) => x.classList.toggle("active", x === b));
-      draw();
+      const direction = next === "vietnam" ? "in" : prev === "vietnam" ? "out" : "fade";
+      draw(direction);
     });
     if (window.hwReveal) window.hwReveal();
   }

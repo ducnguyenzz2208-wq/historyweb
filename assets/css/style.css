@@ -963,8 +963,9 @@ a.tag { transition: color 0.2s, background 0.2s; }
 a.tag:hover { background: var(--accent); color: var(--cream); }
 
 /* ---------- Bản đồ sự kiện (atlas) ---------- */
-.atlas-map { padding: clamp(0.8rem, 2vw, 1.4rem); border-radius: var(--radius); }
-.atlas-map__svg { width: 100%; height: auto; display: block; border-radius: 10px; overflow: visible; }
+/* Sân khấu bản đồ có chiều cao cố định → hoán đổi world/vietnam không giật layout */
+.atlas-map { padding: clamp(0.8rem, 2vw, 1.4rem); border-radius: var(--radius); height: min(70vh, 560px); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.atlas-map__svg { width: 100%; height: 100%; display: block; border-radius: 10px; overflow: visible; backface-visibility: hidden; }
 .atlas-sea { fill: color-mix(in srgb, var(--gold) 8%, var(--surface)); }
 :root[data-theme="dark"] .atlas-sea { fill: color-mix(in srgb, var(--maroon-900) 60%, #0c0406); }
 .atlas-graticule { opacity: 0.5; }
@@ -990,7 +991,6 @@ a.tag:hover { background: var(--accent); color: var(--cream); }
 :root[data-theme="dark"] .atlas-label--island { fill: var(--gold-soft); }
 .atlas-place__dot { fill: var(--crimson); stroke: var(--cream); stroke-width: 0.12; }
 :root[data-theme="dark"] .atlas-place__dot { stroke: var(--maroon-900); }
-.atlas-map__svg--vn { max-height: min(74vh, 640px); }
 .atlas-compass__ring { fill: none; stroke: var(--accent); stroke-width: 0.5; opacity: 0.6; }
 .atlas-compass__needle { fill: var(--crimson); opacity: 0.8; }
 .atlas-compass__n { fill: var(--accent); font-family: "Cinzel", serif; font-size: 5px; text-anchor: middle; }
