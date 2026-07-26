@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin.html
-Sitemap: https://historyweb-1ej8.vercel.app/sitemap.xml
+Disallow: /historyweb/admin.html
+Sitemap: https://ducnguyenzz2208-wq.github.io/historyweb/sitemap.xml

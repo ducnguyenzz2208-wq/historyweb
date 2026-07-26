@@ -8,6 +8,8 @@ import { readFileSync, writeFileSync } from "node:fs";
 const cfg = readFileSync("config.js", "utf8");
 const siteUrl = (cfg.match(/siteUrl:\s*["']([^"']+)["']/) || [])[1] || "https://example.com";
 const base = siteUrl.replace(/\/$/, "");
+// Đường dẫn con của site (vd "/historyweb" trên GitHub Pages project site) — dùng cho robots.
+const basePath = (() => { try { return new URL(base).pathname.replace(/\/$/, ""); } catch (e) { return ""; } })();
 const siteName = (cfg.match(/vi:\s*["']([^"']+)["']/) || [])[1] || "Dòng Chảy Lịch Sử";
 
 const posts = JSON.parse(readFileSync("posts/index.json", "utf8")).posts || [];
@@ -58,7 +60,7 @@ writeFileSync("rss.xml", rss);
 
 writeFileSync("robots.txt", `User-agent: *
 Allow: /
-Disallow: /admin.html
+Disallow: ${basePath}/admin.html
 Sitemap: ${base}/sitemap.xml
 `);
 

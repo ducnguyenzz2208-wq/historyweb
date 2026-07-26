@@ -75,9 +75,9 @@
 
   /**
    * Ghi NHIỀU tệp trong MỘT commit duy nhất (Git Data API).
-   * Vì sao: mỗi commit đẩy lên GitHub kích hoạt một lượt deploy. Trước đây một
-   * lần đăng bài tạo 3 commit (ảnh → .md → index.json) ⇒ 3 lượt deploy, dễ chạm
-   * giới hạn của Vercel và khiến ảnh/bài "lệch nhau" nếu một commit lỗi.
+   * Vì sao: mỗi commit đẩy lên GitHub kích hoạt một lượt deploy (GitHub Pages).
+   * Trước đây một lần đăng bài tạo 3 commit (ảnh → .md → index.json) ⇒ 3 lượt
+   * deploy, và khiến ảnh/bài "lệch nhau" nếu một commit lỗi.
    * files: [{ path, content, encoding: "utf-8" | "base64" }]
    */
   async function commitFiles(files, message) {

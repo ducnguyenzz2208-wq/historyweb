@@ -3,14 +3,14 @@
  * Mỗi bài: { slug, title{vi,en}, excerpt{vi,en}, year, date, tags[], cover, lang, file, featured }
  *
  * Hỗ trợ bộ nhớ đệm tức thời (optimistic cache): sau khi đăng bài trên admin,
- * bài mới xuất hiện ngay trên blog/trang chủ mà không cần chờ Vercel deploy lại.
+ * bài mới xuất hiện ngay trên blog/trang chủ mà không cần chờ GitHub Pages deploy lại.
  */
 window.Store = (function () {
   "use strict";
   const LOCAL_POSTS_KEY = "hw_pending_posts";
   const LOCAL_CONTENT_KEY = "hw_pending_content";
   const LOCAL_TS_KEY = "hw_pending_ts";
-  const PENDING_TTL = 10 * 60 * 1000; // 10 phút — đủ thời gian cho Vercel deploy
+  const PENDING_TTL = 10 * 60 * 1000; // 10 phút — đủ thời gian cho GitHub Pages deploy
   let cache = null;
 
   /* ---------- Optimistic local storage helpers ---------- */
