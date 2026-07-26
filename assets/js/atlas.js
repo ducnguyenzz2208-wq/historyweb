@@ -150,57 +150,101 @@
    *            "fade"= cùng phép chiếu (world ⇄ tất cả) — chỉ hoà mờ
    *            null  = vẽ tức thời (lần đầu / đổi ngôn ngữ)
    * Điểm neo phóng ~ vị trí Việt Nam trên bản đồ thế giới (lng≈106, lat≈16). */
-  const VN_FOCUS = "79% 41%";
+  /* Khung Việt Nam trên bản đồ THẾ GIỚI — khớp GEO tuyệt đối với bản đồ VN chi tiết:
+     lng 101–118°E, lat 6.5–23.8°N  →  world viewBox [281, 66.2, 17, 17.3].
+     Bản đồ VN dùng đúng khung geo đó (viewBox 170×173), cùng tỉ lệ khung (≈0.983)
+     và cùng preserveAspectRatio → khi "máy quay" world dolly tới đây rồi hoà mờ sang
+     bản đồ VN, đường bờ biển TRÙNG vị trí ⇒ cảm giác zoom liên tục, không "lật slide". */
+  const WORLD_BOX = [0, 0, 360, 180];
+  const VN_BOX = [281, 66.2, 17, 17.3];
   const SVG_RESET = ["position", "top", "left", "width", "height", "willChange", "transformOrigin", "opacity", "transform"];
+  const clamp01 = (v) => (v < 0 ? 0 : v > 1 ? 1 : v);
+  const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  const lerpBox = (a, b, t) => `${a[0] + (b[0] - a[0]) * t} ${a[1] + (b[1] - a[1]) * t} ${a[2] + (b[2] - a[2]) * t} ${a[3] + (b[3] - a[3]) * t}`;
+
+  let tweenToken = 0;
+  function runTween(dur, onFrame, onDone) {
+    const token = ++tweenToken;
+    let t0 = null;
+    function step(now) {
+      if (token !== tweenToken) return;           // bị huỷ bởi chuyển cảnh mới
+      if (t0 === null) t0 = now;
+      const p = dur <= 0 ? 1 : clamp01((now - t0) / dur);
+      onFrame(p);
+      if (p < 1) requestAnimationFrame(step);
+      else if (onDone) onDone();
+    }
+    requestAnimationFrame(step);
+  }
+
   function paintMap(mapWrap, html, direction) {
-    // Gộp mọi chuyển cảnh còn treo (bấm nhanh liên tục): chỉ giữ svg mới nhất làm nền.
+    // Huỷ tween đang chạy + gộp chuyển cảnh treo: giữ 1 svg nền, trả viewBox về gốc.
+    tweenToken++;
     const stale = mapWrap.querySelectorAll(".atlas-map__svg");
     for (let i = 0; i < stale.length - 1; i++) stale[i].remove();
     const oldSvg = mapWrap.querySelector(".atlas-map__svg");
-    if (oldSvg) for (const k of SVG_RESET) oldSvg.style[k] = "";
+    if (oldSvg) {
+      for (const k of SVG_RESET) oldSvg.style[k] = "";
+      oldSvg.setAttribute("viewBox", oldSvg.classList.contains("atlas-map__svg--vn") ? "0 0 170 173" : "0 0 360 180");
+    }
     mapWrap.style.position = "";
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!oldSvg || !direction || reduce || typeof oldSvg.animate !== "function") {
+    if (!oldSvg || !direction || reduce || typeof requestAnimationFrame !== "function") {
       mapWrap.innerHTML = html;
       return;
     }
+
     mapWrap.insertAdjacentHTML("beforeend", html);
     const newSvg = mapWrap.lastElementChild;
     mapWrap.style.position = "relative";
     for (const s of [oldSvg, newSvg]) {
       s.style.position = "absolute"; s.style.top = "0"; s.style.left = "0";
-      s.style.width = "100%"; s.style.height = "100%";
-      s.style.willChange = "transform, opacity"; s.style.transformOrigin = "center";
+      s.style.width = "100%"; s.style.height = "100%"; s.style.transformOrigin = "center";
     }
-    let oldKF, newKF;
-    if (direction === "fade") {
-      oldKF = [{ opacity: 1 }, { opacity: 0 }];
-      newKF = [{ opacity: 0 }, { opacity: 1 }];
-    } else if (direction === "in") {
-      oldSvg.style.transformOrigin = VN_FOCUS;      // thế giới phóng về phía Việt Nam
-      oldKF = [{ transform: "scale(1)", opacity: 1 }, { transform: "scale(1.7)", opacity: 0 }];
-      newKF = [{ transform: "scale(0.62)", opacity: 0 }, { transform: "scale(1)", opacity: 1 }];
-    } else { // "out"
-      newSvg.style.transformOrigin = VN_FOCUS;      // thế giới hiện ra từ khu vực Việt Nam
-      oldKF = [{ transform: "scale(1)", opacity: 1 }, { transform: "scale(0.62)", opacity: 0 }];
-      newKF = [{ transform: "scale(1.7)", opacity: 0 }, { transform: "scale(1)", opacity: 1 }];
-    }
-    newSvg.style.opacity = "0";
-    const opts = { duration: 760, easing: "cubic-bezier(0.66, 0, 0.34, 1)" };
-    oldSvg.animate(oldKF, Object.assign({ fill: "forwards" }, opts));
-    const a = newSvg.animate(newKF, opts);
+
     let done = false;
-    const cleanup = () => {
+    const finish = () => {
       if (done) return; done = true;
       if (oldSvg.parentNode) oldSvg.remove();
       for (const k of SVG_RESET) newSvg.style[k] = "";
+      // Chuẩn hoá viewBox về gốc (phòng khi rAF bị tiết lưu do tab ẩn giữa chừng).
+      newSvg.setAttribute("viewBox", newSvg.classList.contains("atlas-map__svg--vn") ? "0 0 170 173" : "0 0 360 180");
       mapWrap.style.position = "";
     };
-    a.onfinish = cleanup;
-    a.oncancel = cleanup;
-    // Bảo hiểm: dọn dẹp kể cả khi animation bị tab ẩn/tiết lưu (onfinish không kích hoạt).
-    setTimeout(cleanup, opts.duration + 150);
+
+    if (direction === "fade") {                   // cùng phép chiếu → hoà mờ nhanh
+      newSvg.style.opacity = "0";
+      runTween(300, (p) => { newSvg.style.opacity = p; oldSvg.style.opacity = 1 - p; }, finish);
+      setTimeout(finish, 500);
+    } else if (direction === "in") {
+      // world (oldSvg) = máy quay: dolly viewBox toàn cầu → khung VN.
+      // bản đồ VN (newSvg) hiện dần ở 45% cuối + hạ cánh nhẹ (scale 1.04→1).
+      newSvg.style.opacity = "0"; newSvg.style.transform = "scale(1.04)"; newSvg.style.willChange = "opacity, transform";
+      const DUR = 950;
+      runTween(DUR, (p) => {
+        oldSvg.setAttribute("viewBox", lerpBox(WORLD_BOX, VN_BOX, easeInOutCubic(p)));
+        const f = clamp01((p - 0.55) / 0.45);
+        newSvg.style.opacity = f;
+        newSvg.style.transform = `scale(${(1.04 - 0.04 * f).toFixed(4)})`;
+        oldSvg.style.opacity = 1 - clamp01((p - 0.72) / 0.28);
+      }, finish);
+      setTimeout(finish, DUR + 200);
+    } else {                                       // "out": kéo lùi VN → thế giới
+      // world (newSvg) bắt đầu ở khung VN, dolly viewBox → toàn cầu.
+      // bản đồ VN (oldSvg) mờ dần + đẩy nhẹ (scale 1→1.04) ở 45% đầu.
+      newSvg.setAttribute("viewBox", lerpBox(VN_BOX, WORLD_BOX, 0));
+      newSvg.style.opacity = "0"; oldSvg.style.willChange = "opacity, transform";
+      const DUR = 820;
+      runTween(DUR, (p) => {
+        newSvg.setAttribute("viewBox", lerpBox(VN_BOX, WORLD_BOX, easeInOutCubic(p)));
+        newSvg.style.opacity = clamp01(p / 0.45);
+        const g = clamp01(p / 0.45);
+        oldSvg.style.opacity = 1 - g;
+        oldSvg.style.transform = `scale(${(1 + 0.04 * g).toFixed(4)})`;
+      }, finish);
+      setTimeout(finish, DUR + 200);
+    }
   }
 
   function draw(direction) {
