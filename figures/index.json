@@ -576,7 +576,7 @@
       "era": {
         "vi": "Hiện đại"
       },
-      "portrait": "assets/uploads/1784870330731-vi-lenin.jpg",
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Lenin_in_1920.jpg",
       "excerpt": {
         "vi": "Lãnh tụ kiệt xuất của Cách mạng Tháng Mười Nga, người khai sinh Nhà nước Xô-viết và phát triển hệ tư tưởng Mác-Lênin."
       },
@@ -585,7 +585,8 @@
         "Liên Xô"
       ],
       "lang": "vi",
-      "file": "figures/vi-lenin.md"
+      "file": "figures/vi-lenin.md",
+      "credit": "Wikimedia Commons — Ảnh chính thức của Lenin, 1920 (Public domain)"
     },
     {
       "slug": "conor-mcgregor",
@@ -604,7 +605,7 @@
       "era": {
         "vi": "Hiện đại"
       },
-      "portrait": "assets/uploads/1784903873603-conor-mcgregor.jpg",
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Conor_McGregor_in_2015.jpg",
       "excerpt": {
         "vi": "Siêu sao MMA nổi tiếng nhất lịch sử UFC, võ sĩ đầu tiên thống trị hai hạng cân cùng lúc và là biểu tượng văn hóa đại chúng toàn cầu."
       },
@@ -618,7 +619,8 @@
       "file": "figures/conor-mcgregor.vi.md",
       "files": {
         "vi": "figures/conor-mcgregor.vi.md"
-      }
+      },
+      "credit": "Wikimedia Commons — Andrius Petrucenia (CC BY-SA 2.0)"
     },
     {
       "slug": "lionel-messi",
@@ -652,7 +654,8 @@
       "file": "figures/lionel-messi.vi.md",
       "files": {
         "vi": "figures/lionel-messi.vi.md"
-      }
+      },
+      "credit": "Wikimedia Commons — Hossein Zohrevand (CC BY 4.0)"
     }
   ]
 }

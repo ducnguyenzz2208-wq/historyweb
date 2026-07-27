@@ -26,3 +26,5 @@ Chính phủ mới mang tên Hội đồng các Ủy viên Nhân dân được t
 * **Đối với Thế giới:** Cách mạng Tháng Mười đã phá vỡ mảng lớn nhất trong hệ thống chủ nghĩa tư bản, mở ra một thời đại mới trong lịch sử nhân loại – thời đại quá độ từ chủ nghĩa tư bản lên chủ nghĩa xã hội trên phạm vi toàn cầu. Sự kiện này đã cổ vũ mạnh mẽ phong trào giải phóng dân tộc ở các nước thuộc địa và phụ thuộc, trong đó có Việt Nam.
 
 ---
+
+*Nguồn ảnh bìa: Wikimedia Commons — Ảnh tư liệu Hồng vệ binh Petrograd, mùa thu 1917 (Public domain).*

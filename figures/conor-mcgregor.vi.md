@@ -22,3 +22,5 @@ Sự nghiệp của McGregor về sau bị ảnh hưởng bởi những chấn t
 
 ---
 *Tham khảo: UFC, ESPN, Tạp chí Forbes.*
+
+*Nguồn chân dung: Wikimedia Commons — Andrius Petrucenia (CC BY-SA 2.0).*

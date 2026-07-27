@@ -721,14 +721,15 @@
         "Liên Xô",
         "Lịch sử thế giới"
       ],
-      "cover": "assets/uploads/1784872334114-cach-mang-thang-muoi-nga.jpg",
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/First_Red_Guards_in_Petrograd%2C_fall_1917_cropped.jpg?width=1600",
       "lang": "vi",
       "file": "posts/cach-mang-thang-muoi-nga.md",
       "lat": 59.9343,
       "lng": 30.3351,
       "place": {
         "vi": "Petrograd (nay là Saint Petersburg), Nga"
-      }
+      },
+      "credit": "Wikimedia Commons — Ảnh tư liệu Hồng vệ binh Petrograd 1917 (Public domain)"
     },
     {
       "slug": "su-ra-doi-va-troi-day-cua-nvidia",
@@ -751,7 +752,7 @@
         "AI",
         "Bán dẫn"
       ],
-      "cover": "assets/uploads/1784904465447-su-ra-doi-va-troi-day-cua-nvid.jpg",
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/NVIDIA_Headquarters.jpg?width=1600",
       "lang": "vi",
       "file": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md",
       "files": {
@@ -761,7 +762,8 @@
       "lng": -121.9552,
       "place": {
         "vi": "Santa Clara, California, Hoa Kỳ"
-      }
+      },
+      "credit": "Wikimedia Commons — Coolcaesar (CC BY-SA 4.0)"
     },
     {
       "slug": "cach-mang-thang-tam-1945",
@@ -781,7 +783,7 @@
         "cách mạng",
         "độc lập"
       ],
-      "cover": "assets/uploads/1784817223797-cach-mang-thang-tam-1945.jpg",
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Pr%C3%A9sident_Ho-chi-Minh_lit_la_Proclamation-d'ind%C3%A9pendance_sur_la_place_Ba-dinh_le_2nd_Sep_1945.jpg?width=1600",
       "lang": "vi",
       "lat": 21.0285,
       "lng": 105.8542,
@@ -791,7 +793,8 @@
       },
       "verified": true,
       "file": "posts/cach-mang-thang-tam-1945.md",
-      "featured": true
+      "featured": true,
+      "credit": "Wikimedia Commons — Mặt trận Việt Minh, ảnh ngày 2/9/1945 (Public domain)"
     },
     {
       "slug": "con-duong-to-lua",
@@ -846,7 +849,7 @@
         "công nghệ",
         "kinh tế"
       ],
-      "cover": "assets/uploads/1784870693899-cach-mang-cong-nghiep.jpg",
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Philipp_Jakob_Loutherbourg_d._J._002.jpg?width=1600",
       "lang": "vi",
       "lat": 53.4808,
       "lng": -2.2426,
@@ -857,7 +860,8 @@
       "file": "posts/cach-mang-cong-nghiep.md",
       "era": {
         "vi": ""
-      }
+      },
+      "credit": "Wikimedia Commons — Philip James de Loutherbourg, “Coalbrookdale by Night” (1801, Public domain)"
     },
     {
       "slug": "apollo-11-1969",

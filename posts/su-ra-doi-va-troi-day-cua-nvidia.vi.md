@@ -24,3 +24,5 @@ Từ một công ty chuyên làm card đồ họa cho game thủ, NVIDIA đã v�
 
 ---
 *Tham khảo: NVIDIA History, Tạp chí Wired, Bloomberg.*
+
+*Nguồn ảnh bìa: Wikimedia Commons — Coolcaesar (CC BY-SA 4.0).*

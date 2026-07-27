@@ -20,5 +20,12 @@ Di sản của Lenin gắn liền với cả thành tựu lẫn tranh cãi. Ông
 
 ---
 
+![V. I. Lenin năm 1920](https://commons.wikimedia.org/wiki/Special:FilePath/Lenin%20in%201920.jpg?width=1000)
+
+*Ảnh: chân dung chính thức của V. I. Lenin, 1920 — Wikimedia Commons (Public domain).*
+
+---
+
 *← Quay lại danh sách nhân vật*
-![](assets/uploads/1784870326014-vi-lenin.jpg)
+
+*Nguồn chân dung: Wikimedia Commons — Ảnh chính thức của Lenin, 1920 (Public domain).*

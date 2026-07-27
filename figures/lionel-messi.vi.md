@@ -27,3 +27,5 @@ Sở hữu 8 Quả bóng vàng (Ballon d'Or) – một kỷ lục tuyệt đối
 
 ---
 *Tham khảo: FIFA, FC Barcelona, Các số liệu thống kê bóng đá quốc tế.*
+
+*Nguồn chân dung: Wikimedia Commons — Hossein Zohrevand (CC BY 4.0).*

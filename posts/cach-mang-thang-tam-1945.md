@@ -21,6 +21,11 @@ Từ thành thị đến nông thôn, hàng triệu người đã xuống đư�
 Cách mạng Tháng Tám không chỉ là một sự kiện, mà là bước ngoặt mở ra một chương hoàn toàn mới. Nó nhắc nhở chúng ta rằng lịch sử không phải điều được ban phát, mà là điều được giành lấy bằng ý chí của con người.
 
 Ngày nay, khi lật lại những trang sử ấy, ta không chỉ đọc về quá khứ — ta hiểu hơn về giá trị của những gì đang có.
-![](assets/uploads/1784817227571-cach-mang-thang-tam-1945.jpg)
+
+![Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình, ngày 2/9/1945](https://commons.wikimedia.org/wiki/Special:FilePath/Pr%C3%A9sident%20Ho-chi-Minh%20lit%20la%20Proclamation-d'ind%C3%A9pendance%20sur%20la%20place%20Ba-dinh%20le%202nd%20Sep%201945.jpg?width=1200)
+
+*Ảnh: Mặt trận Việt Minh, 2/9/1945 — Wikimedia Commons (Public domain).*
 
 [^1]: Hồ Chí Minh toàn tập, NXB Chính trị Quốc gia, tập 3, tr. 557.
+
+*Nguồn ảnh bìa: Wikimedia Commons — Ảnh tư liệu ngày 2/9/1945 (Public domain).*

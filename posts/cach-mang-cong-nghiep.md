@@ -17,3 +17,7 @@ Nhưng mỗi bước tiến đều có cái giá của nó. Những thành phố
 ## Từ quá khứ đến hiện tại
 
 Thế giới hiện đại — với các nhà máy, đô thị và công nghệ — là con đẻ trực tiếp của cuộc cách mạng này. Hiểu về nó là hiểu về chính thời đại chúng ta đang sống.
+
+---
+
+*Nguồn ảnh bìa: Wikimedia Commons — Philip James de Loutherbourg, “Coalbrookdale by Night” (1801, Public domain).*
