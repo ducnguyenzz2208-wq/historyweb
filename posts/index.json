@@ -1,6 +1,181 @@
 {
   "posts": [
     {
+      "slug": "khoi-nghia-lam-son",
+      "title": {
+        "vi": "Khởi nghĩa Lam Sơn",
+        "en": "The Lam Son Uprising"
+      },
+      "excerpt": {
+        "vi": "Mười năm nếm mật nằm gai, từ một hào trưởng đất Thanh Hóa đến bản Bình Ngô đại cáo tuyên bố độc lập.",
+        "en": "Ten years of hardship, from a Thanh Hoa chieftain to the great proclamation of independence."
+      },
+      "year": "1418",
+      "region": "vietnam",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "tags": [
+        "Việt Nam",
+        "nhà Lê",
+        "kháng chiến chống Minh",
+        "quân sự"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Lam_Kinh.jpg?width=1600",
+      "credit": "Wikimedia Commons — Bùi Lê Việt Cường (CC BY-SA 4.0)",
+      "lat": 19.9167,
+      "lng": 105.45,
+      "place": {
+        "vi": "Lam Sơn, Thanh Hóa",
+        "en": "Lam Son, Thanh Hoa"
+      },
+      "file": "posts/khoi-nghia-lam-son.md",
+      "lang": "vi",
+      "verified": true,
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "nan-doi-at-dau-1945",
+      "title": {
+        "vi": "Nạn đói Ất Dậu 1945",
+        "en": "The Vietnamese Famine of 1945"
+      },
+      "excerpt": {
+        "vi": "Khoảng hai triệu người chết đói ngay trên vùng đồng bằng vốn xuất khẩu gạo — thảm họa nhân đạo lớn nhất lịch sử Việt Nam hiện đại.",
+        "en": "Some two million died of starvation in a rice-exporting delta — modern Vietnam's greatest humanitarian catastrophe."
+      },
+      "year": "1945",
+      "region": "vietnam",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "tags": [
+        "Việt Nam",
+        "nạn đói",
+        "Thế kỷ 20",
+        "xã hội"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Famine_in_Vietnam%2C_1945.jpg?width=1600",
+      "credit": "Wikimedia Commons — Võ An Ninh (PD)",
+      "lat": 21,
+      "lng": 105.85,
+      "place": {
+        "vi": "Đồng bằng Bắc Bộ",
+        "en": "Red River Delta, Northern Vietnam"
+      },
+      "file": "posts/nan-doi-at-dau-1945.md",
+      "lang": "vi",
+      "verified": true,
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "tuyen-ngon-doc-lap-hoa-ky-1776",
+      "title": {
+        "vi": "Tuyên ngôn Độc lập Hoa Kỳ",
+        "en": "The United States Declaration of Independence"
+      },
+      "excerpt": {
+        "vi": "Bản văn năm 1776 khẳng định mọi người sinh ra đều bình đẳng — câu chữ về sau vọng tới tận Ba Đình 1945.",
+        "en": "The 1776 text held that all men are created equal — words that would echo as far as Hanoi in 1945."
+      },
+      "year": "1776",
+      "region": "world",
+      "era": {
+        "vi": "Cận đại",
+        "en": "Early modern"
+      },
+      "tags": [
+        "thế giới",
+        "cách mạng",
+        "Hoa Kỳ",
+        "chính trị"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Declaration_of_Independence_(1819)%2C_by_John_Trumbull.jpg?width=1600",
+      "credit": "Wikimedia Commons — John Trumbull (PD)",
+      "lat": 39.9489,
+      "lng": -75.15,
+      "place": {
+        "vi": "Philadelphia, Hoa Kỳ",
+        "en": "Philadelphia, USA"
+      },
+      "file": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.md",
+      "lang": "vi",
+      "verified": true,
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "columbus-den-chau-my-1492",
+      "title": {
+        "vi": "Columbus đến châu Mỹ",
+        "en": "Columbus Reaches the Americas"
+      },
+      "excerpt": {
+        "vi": "Năm 1492, một sai lầm về địa lý mở ra cuộc tiếp xúc thường trực đầu tiên giữa hai nửa thế giới — với cả của cải lẫn thảm họa.",
+        "en": "In 1492, a geographic error opened the first lasting contact between two halves of the world — wealth and catastrophe alike."
+      },
+      "year": "1492",
+      "region": "world",
+      "era": {
+        "vi": "Cận đại",
+        "en": "Early modern"
+      },
+      "tags": [
+        "thế giới",
+        "phát kiến địa lý",
+        "thuộc địa",
+        "toàn cầu hóa"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Landing_of_Columbus_(2).jpg?width=1600",
+      "credit": "Wikimedia Commons — John Vanderlyn (PD)",
+      "lat": 24,
+      "lng": -74.5,
+      "place": {
+        "vi": "San Salvador, Bahamas",
+        "en": "San Salvador, Bahamas"
+      },
+      "file": "posts/columbus-den-chau-my-1492.md",
+      "lang": "vi",
+      "verified": true,
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "d-day-normandy-1944",
+      "title": {
+        "vi": "Cuộc đổ bộ Normandy (D-Day)",
+        "en": "The Normandy Landings (D-Day)"
+      },
+      "excerpt": {
+        "vi": "Ngày 6/6/1944, hạm đội lớn nhất lịch sử đổ bộ Normandy, mở mặt trận thứ hai ở Tây Âu chống phát xít Đức.",
+        "en": "On 6 June 1944, the largest fleet in history landed at Normandy, opening a second front against Nazi Germany."
+      },
+      "year": "1944",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "tags": [
+        "thế giới",
+        "Thế chiến thứ hai",
+        "quân sự",
+        "Thế kỷ 20"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Into_the_Jaws_of_Death_23-0455M_edit.jpg?width=1600",
+      "credit": "Wikimedia Commons — Robert F. Sargent, US Coast Guard (PD)",
+      "lat": 49.37,
+      "lng": -0.86,
+      "place": {
+        "vi": "Bãi biển Normandy, Pháp",
+        "en": "Normandy beaches, France"
+      },
+      "file": "posts/d-day-normandy-1944.md",
+      "lang": "vi",
+      "verified": true,
+      "date": "2026-07-27"
+    },
+    {
       "slug": "khoi-nghia-hai-ba-trung",
       "title": {
         "vi": "Khởi nghĩa Hai Bà Trưng",

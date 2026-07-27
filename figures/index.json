@@ -1,6 +1,185 @@
 {
   "figures": [
     {
+      "slug": "le-loi",
+      "name": {
+        "vi": "Lê Lợi",
+        "en": "Lê Lợi"
+      },
+      "region": "vietnam",
+      "born": "1385",
+      "died": "1433",
+      "role": {
+        "vi": "Vua sáng lập nhà Lê",
+        "en": "Founding emperor of the Lê dynasty"
+      },
+      "field": {
+        "vi": "Quân sự · Chính trị",
+        "en": "Military · Politics"
+      },
+      "era": {
+        "vi": "Thế kỷ 15",
+        "en": "15th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/L%C3%AA_L%E1%BB%A3i.jpg",
+      "excerpt": {
+        "vi": "Người lãnh đạo khởi nghĩa Lam Sơn mười năm đánh đuổi quân Minh, sáng lập triều Lê.",
+        "en": "Leader of the ten-year Lam Son uprising against the Ming and founder of the Lê dynasty."
+      },
+      "tags": [
+        "Việt Nam",
+        "quân sự",
+        "nhà Lê"
+      ],
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "file": "figures/le-loi.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "quang-trung",
+      "name": {
+        "vi": "Quang Trung (Nguyễn Huệ)",
+        "en": "Quang Trung (Nguyễn Huệ)"
+      },
+      "region": "vietnam",
+      "born": "1753",
+      "died": "1792",
+      "role": {
+        "vi": "Hoàng đế · Thống soái Tây Sơn",
+        "en": "Emperor · Tây Sơn commander"
+      },
+      "field": {
+        "vi": "Quân sự · Chính trị",
+        "en": "Military · Politics"
+      },
+      "era": {
+        "vi": "Thế kỷ 18",
+        "en": "18th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Quang_Trung_statue_02.jpg",
+      "excerpt": {
+        "vi": "Nhà quân sự bách chiến bách thắng, người đại phá quân Thanh trong năm ngày Tết Kỷ Dậu 1789.",
+        "en": "An undefeated commander who crushed the Qing army in five days of Tet, 1789."
+      },
+      "tags": [
+        "Việt Nam",
+        "quân sự",
+        "Tây Sơn"
+      ],
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "file": "figures/quang-trung.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "vo-nguyen-giap",
+      "name": {
+        "vi": "Võ Nguyên Giáp",
+        "en": "Võ Nguyên Giáp"
+      },
+      "region": "vietnam",
+      "born": "1911",
+      "died": "2013",
+      "role": {
+        "vi": "Đại tướng",
+        "en": "General"
+      },
+      "field": {
+        "vi": "Quân sự",
+        "en": "Military"
+      },
+      "era": {
+        "vi": "Thế kỷ 20",
+        "en": "20th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Vo_Nguyen_Giap_2008.jpg",
+      "excerpt": {
+        "vi": "Vị đại tướng đầu tiên của Quân đội Nhân dân Việt Nam, gắn tên với chiến thắng Điện Biên Phủ.",
+        "en": "The first general of the Vietnam People's Army, associated with the victory at Dien Bien Phu."
+      },
+      "tags": [
+        "Việt Nam",
+        "quân sự"
+      ],
+      "credit": "Wikimedia Commons (CC BY 3.0 BR)",
+      "file": "figures/vo-nguyen-giap.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "marie-curie",
+      "name": {
+        "vi": "Marie Curie",
+        "en": "Marie Curie"
+      },
+      "region": "world",
+      "born": "1867",
+      "died": "1934",
+      "role": {
+        "vi": "Nhà vật lý · Hóa học",
+        "en": "Physicist · Chemist"
+      },
+      "field": {
+        "vi": "Khoa học",
+        "en": "Science"
+      },
+      "era": {
+        "vi": "Thế kỷ 19–20",
+        "en": "19th–20th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Marie_Curie_c._1920s.jpg",
+      "excerpt": {
+        "vi": "Người tiên phong nghiên cứu phóng xạ và là người đầu tiên giành hai giải Nobel ở hai lĩnh vực khác nhau.",
+        "en": "A pioneer of radioactivity and the first person to win two Nobel Prizes in different sciences."
+      },
+      "tags": [
+        "thế giới",
+        "khoa học",
+        "phụ nữ"
+      ],
+      "credit": "Wikimedia Commons (PD)",
+      "file": "figures/marie-curie.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "mahatma-gandhi",
+      "name": {
+        "vi": "Mahatma Gandhi",
+        "en": "Mahatma Gandhi"
+      },
+      "region": "world",
+      "born": "1869",
+      "died": "1948",
+      "role": {
+        "vi": "Nhà lãnh đạo phong trào độc lập",
+        "en": "Independence movement leader"
+      },
+      "field": {
+        "vi": "Chính trị · Xã hội",
+        "en": "Politics · Society"
+      },
+      "era": {
+        "vi": "Thế kỷ 20",
+        "en": "20th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Mahatma-Gandhi%2C_studio%2C_1931.jpg",
+      "excerpt": {
+        "vi": "Người dẫn dắt Ấn Độ giành độc lập bằng con đường bất bạo động, truyền cảm hứng cho các phong trào dân quyền toàn cầu.",
+        "en": "He led India to independence through nonviolence, inspiring civil-rights movements worldwide."
+      },
+      "tags": [
+        "thế giới",
+        "chính trị",
+        "bất bạo động"
+      ],
+      "credit": "Wikimedia Commons — Elliott & Fry (PD)",
+      "file": "figures/mahatma-gandhi.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
       "slug": "ho-chi-minh",
       "name": {
         "vi": "Hồ Chí Minh",
