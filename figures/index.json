@@ -1,6 +1,184 @@
 {
   "figures": [
     {
+      "slug": "ngo-quyen",
+      "name": {
+        "vi": "Ngô Quyền",
+        "en": "Ngô Quyền"
+      },
+      "region": "vietnam",
+      "born": "897",
+      "died": "944",
+      "role": {
+        "vi": "Vua · Người mở nền độc lập",
+        "en": "King · Founder of independence"
+      },
+      "field": {
+        "vi": "Quân sự · Chính trị",
+        "en": "Military · Politics"
+      },
+      "era": {
+        "vi": "Thế kỷ 10",
+        "en": "10th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/T%C6%B0%E1%BB%A3ng_Ng%C3%B4_Quy%E1%BB%81n.jpg",
+      "excerpt": {
+        "vi": "Người đánh tan quân Nam Hán ở Bạch Đằng năm 938, kết thúc hơn một nghìn năm Bắc thuộc.",
+        "en": "He crushed the Southern Han at Bach Dang in 938, ending over a thousand years of Chinese rule."
+      },
+      "tags": [
+        "Việt Nam",
+        "quân sự"
+      ],
+      "credit": "Wikimedia Commons — Bùi Thụy Đào Nguyên (CC BY-SA 3.0)",
+      "file": "figures/ngo-quyen.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "ly-thuong-kiet",
+      "name": {
+        "vi": "Lý Thường Kiệt",
+        "en": "Lý Thường Kiệt"
+      },
+      "region": "vietnam",
+      "born": "1019",
+      "died": "1105",
+      "role": {
+        "vi": "Danh tướng nhà Lý",
+        "en": "General of the Lý dynasty"
+      },
+      "field": {
+        "vi": "Quân sự",
+        "en": "Military"
+      },
+      "era": {
+        "vi": "Thế kỷ 11",
+        "en": "11th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Ly_Thuong_Kiet_(1019-1105)_Defeated_Song_China_Invasion_of_1077_(9732106811).jpg",
+      "excerpt": {
+        "vi": "Vị tướng chống Tống, gắn với bài thơ Nam quốc sơn hà — tuyên ngôn độc lập đầu tiên.",
+        "en": "The general who resisted the Song, tied to the poem Nam quoc son ha — the first declaration of independence."
+      },
+      "tags": [
+        "Việt Nam",
+        "quân sự",
+        "nhà Lý"
+      ],
+      "credit": "Wikimedia Commons — Gary Todd (CC0)",
+      "file": "figures/ly-thuong-kiet.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "nguyen-du",
+      "name": {
+        "vi": "Nguyễn Du",
+        "en": "Nguyễn Du"
+      },
+      "region": "vietnam",
+      "born": "1765",
+      "died": "1820",
+      "role": {
+        "vi": "Đại thi hào · Danh nhân văn hóa",
+        "en": "Great poet · Cultural figure"
+      },
+      "field": {
+        "vi": "Văn học",
+        "en": "Literature"
+      },
+      "era": {
+        "vi": "Thế kỷ 18–19",
+        "en": "18th–19th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/T%C6%B0%E1%BB%A3ng_%C4%90%E1%BA%A1i_thi_h%C3%A0o_Nguy%E1%BB%85n_Du.jpg",
+      "excerpt": {
+        "vi": "Tác giả Truyện Kiều, đỉnh cao văn học cổ điển Việt Nam, được UNESCO vinh danh Danh nhân văn hóa thế giới.",
+        "en": "Author of The Tale of Kieu, the summit of Vietnamese classical literature, honoured by UNESCO."
+      },
+      "tags": [
+        "Việt Nam",
+        "văn hóa",
+        "văn học"
+      ],
+      "credit": "Wikimedia Commons — Long Phan (CC BY-SA 4.0)",
+      "file": "figures/nguyen-du.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "albert-einstein",
+      "name": {
+        "vi": "Albert Einstein",
+        "en": "Albert Einstein"
+      },
+      "region": "world",
+      "born": "1879",
+      "died": "1955",
+      "role": {
+        "vi": "Nhà vật lý lý thuyết",
+        "en": "Theoretical physicist"
+      },
+      "field": {
+        "vi": "Khoa học",
+        "en": "Science"
+      },
+      "era": {
+        "vi": "Thế kỷ 20",
+        "en": "20th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Einstein_1921_by_F_Schmutzer_-_restoration.jpg",
+      "excerpt": {
+        "vi": "Cha đẻ thuyết tương đối, người thay đổi tận gốc hiểu biết về không gian, thời gian và vũ trụ.",
+        "en": "Father of relativity, who fundamentally reshaped our understanding of space, time and the universe."
+      },
+      "tags": [
+        "thế giới",
+        "khoa học"
+      ],
+      "credit": "Wikimedia Commons — F. Schmutzer (PD)",
+      "file": "figures/albert-einstein.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
+      "slug": "nelson-mandela",
+      "name": {
+        "vi": "Nelson Mandela",
+        "en": "Nelson Mandela"
+      },
+      "region": "world",
+      "born": "1918",
+      "died": "2013",
+      "role": {
+        "vi": "Nhà cách mạng · Tổng thống Nam Phi",
+        "en": "Revolutionary · President of South Africa"
+      },
+      "field": {
+        "vi": "Chính trị · Xã hội",
+        "en": "Politics · Society"
+      },
+      "era": {
+        "vi": "Thế kỷ 20",
+        "en": "20th century"
+      },
+      "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Nelson_Mandela-2008_(edit).jpg",
+      "excerpt": {
+        "vi": "Người đấu tranh xóa bỏ apartheid, sau 27 năm tù trở thành tổng thống da đen đầu tiên của Nam Phi.",
+        "en": "He fought to end apartheid and, after 27 years in prison, became South Africa's first black president."
+      },
+      "tags": [
+        "thế giới",
+        "chính trị",
+        "nhân quyền"
+      ],
+      "credit": "Wikimedia Commons — South Africa The Good News (CC BY 2.0)",
+      "file": "figures/nelson-mandela.md",
+      "lang": "vi",
+      "date": "2026-07-27"
+    },
+    {
       "slug": "le-loi",
       "name": {
         "vi": "Lê Lợi",

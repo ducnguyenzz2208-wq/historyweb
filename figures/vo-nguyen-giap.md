@@ -14,7 +14,7 @@ Sau 1954, ông tiếp tục giữ vai trò trong lãnh đạo quân sự suốt 
 
 ## Phân tích
 
-Điều khiến Võ Nguyên Giáp được nghiên cứu ở các học viện quân sự phương Tây không chỉ là những chiến thắng, mà là cách ông vận dụng chiến tranh nhân dân: gắn quân sự với chính trị, hậu cần và ý chí của quần chúng, biến điểm yếu về trang bị thành thế mạnh về sự bền bỉ. Ông cũng là minh chứng cho luận điểm rằng trong chiến tranh giải phóng, bên yếu hơn về vật chất không cần thắng về quân sự — chỉ cần không thua và kéo dài cho đến khi cái giá trở nên quá lớn với đối phương. Chiến dịch làm nên tên tuổi ông được kể trong [[chien-thang-dien-bien-phu-1954]].
+Điều khiến Võ Nguyên Giáp được nghiên cứu ở các học viện quân sự phương Tây không chỉ là những chiến thắng, mà là cách ông vận dụng chiến tranh nhân dân: gắn quân sự với chính trị, hậu cần và ý chí của quần chúng, biến điểm yếu về trang bị thành thế mạnh về sự bền bỉ. Ông cũng là minh chứng cho luận điểm rằng trong chiến tranh giải phóng, bên yếu hơn về vật chất không cần thắng về quân sự — chỉ cần không thua và kéo dài cho đến khi cái giá trở nên quá lớn với đối phương. Chiến dịch làm nên tên tuổi ông được kể trong Chiến thắng Điện Biên Phủ.
 
 [^1]: Cecil B. Currey, *Victory at Any Cost: The Genius of Viet Nam's Gen. Vo Nguyen Giap*, Brassey's, 1997.
 [^2]: Võ Nguyên Giáp, *Điện Biên Phủ – Điểm hẹn lịch sử* (hồi ký), NXB Quân đội Nhân dân, Hà Nội, 2000.

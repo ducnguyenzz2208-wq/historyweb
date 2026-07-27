@@ -14,7 +14,7 @@ Trong thời gian ngắn ở ngôi, Quang Trung cho thấy tầm nhìn của m�
 
 ## Phân tích
 
-Quang Trung thường được nhớ tới trước hết như một thiên tài quân sự với biệt tài hành quân nhanh, giữ bí mật và đánh hợp đồng nhiều mũi. Nhưng điều khiến giới sử học tiếc nuối lại là khía cạnh cải cách: những chính sách đề cao chữ Nôm và thực học của ông đi trước thời đại, và nếu có thêm thời gian, có thể đã đưa đất nước sang một quỹ đạo khác. Cái chết sớm biến ông thành một trong những "giả định lịch sử" lớn nhất của Việt Nam — câu hỏi "nếu Quang Trung sống thêm hai mươi năm". Chiến công tiêu biểu của ông được kể trong [[chien-thang-ngoc-hoi-dong-da-1789]].
+Quang Trung thường được nhớ tới trước hết như một thiên tài quân sự với biệt tài hành quân nhanh, giữ bí mật và đánh hợp đồng nhiều mũi. Nhưng điều khiến giới sử học tiếc nuối lại là khía cạnh cải cách: những chính sách đề cao chữ Nôm và thực học của ông đi trước thời đại, và nếu có thêm thời gian, có thể đã đưa đất nước sang một quỹ đạo khác. Cái chết sớm biến ông thành một trong những "giả định lịch sử" lớn nhất của Việt Nam — câu hỏi "nếu Quang Trung sống thêm hai mươi năm". Chiến công tiêu biểu của ông được kể trong Chiến thắng Ngọc Hồi – Đống Đa.
 
 [^1]: George Dutton, *The Tây Sơn Uprising: Society and Rebellion in Eighteenth-Century Vietnam*, University of Hawai'i Press, 2006.
 [^2]: Ngô gia văn phái, *Hoàng Lê nhất thống chí*, bản dịch NXB Văn học, Hà Nội.

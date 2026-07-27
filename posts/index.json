@@ -1,6 +1,181 @@
 {
   "posts": [
     {
+      "slug": "ngo-quyen-bach-dang-938",
+      "title": {
+        "vi": "Chiến thắng Bạch Đằng năm 938",
+        "en": "The Battle of Bach Dang, 938"
+      },
+      "excerpt": {
+        "vi": "Ngô Quyền dùng bãi cọc ngầm nhấn chìm thủy quân Nam Hán, kết thúc hơn một nghìn năm Bắc thuộc.",
+        "en": "Ngo Quyen's hidden stakes sank the Southern Han fleet, ending over a thousand years of Chinese rule."
+      },
+      "year": "938",
+      "region": "vietnam",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "tags": [
+        "Việt Nam",
+        "Ngô Quyền",
+        "Bắc thuộc",
+        "quân sự"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngo_Quyen_(897-944)_Defeated_Southern_Han_Invasion_at_Bach_Dang_River%2C_938%2C_Led_to_Viet_Independence_(9732108093).jpg?width=1600",
+      "credit": "Wikimedia Commons — Gary Todd (CC0)",
+      "lat": 20.9269,
+      "lng": 106.7803,
+      "place": {
+        "vi": "Cửa sông Bạch Đằng, Quảng Ninh – Hải Phòng",
+        "en": "Bach Dang estuary, Quang Ninh – Hai Phong"
+      },
+      "file": "posts/ngo-quyen-bach-dang-938.md",
+      "lang": "vi",
+      "date": "2026-07-27",
+      "verified": true
+    },
+    {
+      "slug": "hoi-nghi-dien-hong-1284",
+      "title": {
+        "vi": "Hội nghị Diên Hồng",
+        "en": "The Dien Hong Conference"
+      },
+      "excerpt": {
+        "vi": "Triều đình nhà Trần mời phụ lão cả nước về hỏi nên hòa hay nên đánh trước họa Nguyên Mông — và nhận về một tiếng \"Đánh!\".",
+        "en": "The Tran court summoned the nation's elders to ask peace or war against the Mongols — and heard one answer: \"Fight!\""
+      },
+      "year": "1284",
+      "region": "vietnam",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "tags": [
+        "Việt Nam",
+        "nhà Trần",
+        "kháng chiến chống Nguyên Mông",
+        "chính trị"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Den_Tran_Nam_Dinh.jpg?width=1600",
+      "credit": "Wikimedia Commons — Hoangvantoanajc (CC0)",
+      "lat": 21.0245,
+      "lng": 105.8412,
+      "place": {
+        "vi": "Điện Diên Hồng, Thăng Long (Hà Nội)",
+        "en": "Dien Hong Hall, Thang Long (Hanoi)"
+      },
+      "file": "posts/hoi-nghi-dien-hong-1284.md",
+      "lang": "vi",
+      "date": "2026-07-27",
+      "verified": true
+    },
+    {
+      "slug": "vu-am-sat-sarajevo-1914",
+      "title": {
+        "vi": "Vụ ám sát Sarajevo",
+        "en": "The Assassination at Sarajevo"
+      },
+      "excerpt": {
+        "vi": "Một phát súng ở Sarajevo tháng 6/1914 châm ngòi cho Thế chiến thứ nhất chỉ sau năm tuần.",
+        "en": "A single shot at Sarajevo in June 1914 ignited the First World War within five weeks."
+      },
+      "year": "1914",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "tags": [
+        "thế giới",
+        "Thế chiến thứ nhất",
+        "Thế kỷ 20",
+        "chính trị"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Gavrilo_Princip's_Arrest2.jpg?width=1600",
+      "credit": "Wikimedia Commons (CC0)",
+      "lat": 43.8586,
+      "lng": 18.4286,
+      "place": {
+        "vi": "Sarajevo, Bosnia (Áo-Hung)",
+        "en": "Sarajevo, Bosnia (Austria-Hungary)"
+      },
+      "file": "posts/vu-am-sat-sarajevo-1914.md",
+      "lang": "vi",
+      "date": "2026-07-27",
+      "verified": true
+    },
+    {
+      "slug": "nem-bom-nguyen-tu-hiroshima-1945",
+      "title": {
+        "vi": "Ném bom nguyên tử Hiroshima và Nagasaki",
+        "en": "The Atomic Bombings of Hiroshima and Nagasaki"
+      },
+      "excerpt": {
+        "vi": "Tháng 8/1945, hai quả bom nguyên tử san phẳng hai thành phố Nhật và đưa nhân loại vào kỷ nguyên hạt nhân.",
+        "en": "In August 1945, two atomic bombs levelled two Japanese cities and ushered humanity into the nuclear age."
+      },
+      "year": "1945",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "tags": [
+        "thế giới",
+        "Thế chiến thứ hai",
+        "vũ khí hạt nhân",
+        "Thế kỷ 20"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Atomic_cloud_over_Hiroshima.jpg?width=1600",
+      "credit": "Wikimedia Commons — George R. Caron / US Army (PD)",
+      "lat": 34.3955,
+      "lng": 132.4536,
+      "place": {
+        "vi": "Hiroshima, Nhật Bản",
+        "en": "Hiroshima, Japan"
+      },
+      "file": "posts/nem-bom-nguyen-tu-hiroshima-1945.md",
+      "lang": "vi",
+      "date": "2026-07-27",
+      "verified": true
+    },
+    {
+      "slug": "cach-mang-tan-hoi-1911",
+      "title": {
+        "vi": "Cách mạng Tân Hợi",
+        "en": "The Xinhai Revolution"
+      },
+      "excerpt": {
+        "vi": "Khởi nghĩa Vũ Xương năm 1911 lật đổ nhà Thanh, chấm dứt hơn hai nghìn năm quân chủ và lập nên Trung Hoa Dân Quốc.",
+        "en": "The 1911 Wuchang uprising toppled the Qing, ending two millennia of monarchy and founding the Republic of China."
+      },
+      "year": "1911",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "tags": [
+        "thế giới",
+        "cách mạng",
+        "Trung Quốc",
+        "Thế kỷ 20"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubei_Military_Government.jpg?width=1600",
+      "credit": "Wikimedia Commons (PD)",
+      "lat": 30.5551,
+      "lng": 114.3055,
+      "place": {
+        "vi": "Vũ Xương, Vũ Hán, Trung Quốc",
+        "en": "Wuchang, Wuhan, China"
+      },
+      "file": "posts/cach-mang-tan-hoi-1911.md",
+      "lang": "vi",
+      "date": "2026-07-27",
+      "verified": true
+    },
+    {
       "slug": "khoi-nghia-lam-son",
       "title": {
         "vi": "Khởi nghĩa Lam Sơn",

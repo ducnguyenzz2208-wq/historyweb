@@ -14,7 +14,7 @@ Năm 1428, Lê Lợi lên ngôi, tức Lê Thái Tổ, đặt quốc hiệu Đ�
 
 ## Phân tích
 
-Điểm đặc biệt ở Lê Lợi là sự chuyển vai thành công từ một thủ lĩnh nghĩa quân sang một người xây dựng thể chế. Nhiều lãnh tụ khởi nghĩa giỏi cầm quân nhưng thất bại khi cầm quyền; Lê Lợi, với sự phò tá của tầng lớp trí thức Nho học, đặt nền cho một nhà nước tập quyền quy củ. Cách ông kết thúc chiến tranh — mở đường cho kẻ thù rút lui trong danh dự — cũng cho thấy tư duy chiến lược dài hạn: giữ độc lập nhưng không gây thù truyền kiếp với một nước lớn láng giềng. Đó là bài học ngoại giao được các triều đại sau tiếp nối. Sự nghiệp của ông gắn liền với [[khoi-nghia-lam-son]] và với mưu sĩ [[nguyen-trai]].
+Điểm đặc biệt ở Lê Lợi là sự chuyển vai thành công từ một thủ lĩnh nghĩa quân sang một người xây dựng thể chế. Nhiều lãnh tụ khởi nghĩa giỏi cầm quân nhưng thất bại khi cầm quyền; Lê Lợi, với sự phò tá của tầng lớp trí thức Nho học, đặt nền cho một nhà nước tập quyền quy củ. Cách ông kết thúc chiến tranh — mở đường cho kẻ thù rút lui trong danh dự — cũng cho thấy tư duy chiến lược dài hạn: giữ độc lập nhưng không gây thù truyền kiếp với một nước lớn láng giềng. Đó là bài học ngoại giao được các triều đại sau tiếp nối. Sự nghiệp của ông gắn liền với Khởi nghĩa Lam Sơn và với mưu sĩ Nguyễn Trãi.
 
 [^1]: Ngô Sĩ Liên và các sử thần triều Lê, *Đại Việt sử ký toàn thư*, Bản kỷ, quyển X, bản dịch NXB Khoa học Xã hội, Hà Nội, 1993.
 [^2]: Phan Huy Lê – Phan Đại Doãn, *Khởi nghĩa Lam Sơn (1418–1427)*, NXB Khoa học Xã hội, Hà Nội, 1977.
