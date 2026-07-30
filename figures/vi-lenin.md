@@ -6,6 +6,8 @@
 
 Đêm 25 tháng 10 năm 1917 (lịch Julius), tại Petrograd, những người Bolshevik dưới sự chỉ đạo của Lenin chiếm Cung điện Mùa Đông, lật đổ Chính phủ Lâm thời, khai sinh nhà nước Xô viết đầu tiên trên thế giới. Khoảnh khắc ấy là đỉnh điểm của hơn hai thập kỷ hoạt động cách mạng bí mật, lưu vong và tranh luận lý luận không ngừng nghỉ.
 
+![V. I. Lenin năm 1920](https://commons.wikimedia.org/wiki/Special:FilePath/Lenin%20in%201920.jpg?width=800 "V. I. Lenin, 1920. Chân dung chính thức — Wikimedia Commons (Public domain). |left")
+
 ## Hành trình tìm đường
 
 Sinh năm 1870 tại Simbirsk trong một gia đình trung lưu, Vladimir Ilyich Ulyanov — sau này lấy bí danh Lenin — bước vào con đường cách mạng sau khi anh trai Aleksandr bị xử tử vì âm mưu ám sát Sa hoàng năm 1887. Bị đuổi khỏi đại học vì tham gia biểu tình sinh viên, ông tự học luật và chủ nghĩa Marx, rồi bị lưu đày sang Siberia. Những năm tháng sống lưu vong ở châu Âu — Munich, London, Genève, Zürich — định hình tư tưởng cốt lõi của ông: cần một đảng cách mạng chuyên nghiệp, kỷ luật chặt chẽ, đủ sức lãnh đạo giai cấp công nhân lật đổ chế độ Sa hoàng.
@@ -17,12 +19,6 @@ Trở về Petrograd tháng 4 năm 1917 sau Cách mạng Tháng Hai, Lenin công
 ## Phân tích
 
 Di sản của Lenin gắn liền với cả thành tựu lẫn tranh cãi. Ông là người đầu tiên hiện thực hóa lý thuyết của Marx thành một nhà nước cụ thể, đặt nền móng cho Liên Xô và truyền cảm hứng cho các phong trào cộng sản trên toàn thế giới, trong đó có Việt Nam. Nhưng giai đoạn ông cầm quyền cũng chứng kiến chính sách Cộng sản thời chiến khắc nghiệt, việc trấn áp các đảng đối lập, và sự ra đời của Cheka — cơ quan mật vụ tiền thân của KGB. Ông qua đời năm 1924 sau nhiều lần đột quỵ, để lại một cuộc tranh giành quyền lực trong nội bộ đảng dẫn đến sự trỗi dậy của Stalin. Cho đến nay, cách nhìn nhận về Lenin vẫn còn chia rẽ sâu sắc giữa các quan điểm chính trị và học thuật khác nhau.
-
----
-
-![V. I. Lenin năm 1920](https://commons.wikimedia.org/wiki/Special:FilePath/Lenin%20in%201920.jpg?width=1000)
-
-*Ảnh: chân dung chính thức của V. I. Lenin, 1920 — Wikimedia Commons (Public domain).*
 
 ---
 

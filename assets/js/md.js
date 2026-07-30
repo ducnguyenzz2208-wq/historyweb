@@ -19,6 +19,7 @@ window.mdSlug = function (s) {
 
 window.mdToHtml = function (src) {
   if (!src) return "";
+  src = src.replace(/\r\n?/g, "\n"); // chuẩn hóa CRLF/CR → LF (bài đăng qua admin thường là CRLF)
   window.mdSlug._used = {}; // đặt lại bộ đếm trùng id cho mỗi bài
   const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -95,6 +96,24 @@ window.mdToHtml = function (src) {
     if ((m = line.match(/^\s*\d+\.\s+(.*)$/))) {
       if (!inOl) { closeLists(); html += "<ol>"; inOl = true; }
       html += `<li>${inline(esc(m[1]))}</li>`;
+      i++; continue;
+    }
+
+    // Khung ảnh kiểu Wikipedia: dòng chỉ gồm 1 ảnh CÓ caption (title) → figure nổi.
+    // Cú pháp: ![alt](url "Chú thích |left")  — hướng |left hoặc |right (mặc định phải).
+    // Ảnh không có caption vẫn giữ hành vi cũ (rơi xuống xử lý đoạn văn).
+    if ((m = line.trim().match(/^!\[([^\]]*)\]\(([^)\s]+)\s+"([^"]*)"\)$/))) {
+      closeLists();
+      const url = m[2];
+      const alt = m[1] || "";
+      let caption = m[3] || "";
+      let dir = "right";
+      const dm = caption.match(/^(.*?)\s*\|\s*(left|right)\s*$/i);
+      if (dm) { caption = dm[1].trim(); dir = dm[2].toLowerCase(); }
+      html += `<figure class="wiki-figure wiki-figure--${dir}">`
+        + `<img class="wiki-figure__img" src="${url}" alt="${esc(alt)}" loading="lazy">`
+        + `<figcaption class="wiki-figure__caption">${inline(esc(caption))}</figcaption>`
+        + `</figure>`;
       i++; continue;
     }
 

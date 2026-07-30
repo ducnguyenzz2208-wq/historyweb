@@ -403,6 +403,43 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .prose h3 { font-family: var(--font-display); font-size: 1.5rem; margin: 2rem 0 0.8rem; }
 .prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 .prose img { border-radius: var(--radius); margin: 2rem 0; box-shadow: var(--shadow-sm); width: 100%; }
+
+/* ---------- Khung ảnh nổi kiểu Wikipedia (.wiki-figure) ----------
+   Cú pháp Markdown: ![alt](url "Chú thích |left")  — hướng |left / |right (mặc định phải). */
+.wiki-figure {
+  float: right; clear: right;
+  width: 320px; max-width: 100%;
+  margin: 0.4rem 0 1.2rem 1.8rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 5px;
+  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+}
+.wiki-figure--left { float: left; clear: left; margin: 0.4rem 1.8rem 1.2rem 0; }
+.wiki-figure .wiki-figure__img {
+  display: block; width: 100%; height: auto;
+  margin: 0; box-shadow: none;
+  border-radius: calc(var(--radius) - 3px);
+}
+.wiki-figure__caption {
+  margin-top: 5px; padding: 7px 10px;
+  font-family: var(--font-sans);
+  font-size: 0.83rem; line-height: 1.5;
+  color: var(--text-soft);
+  background: color-mix(in srgb, var(--gold) 9%, transparent);
+  border-top: 1px solid var(--line);
+  border-radius: 0 0 calc(var(--radius) - 3px) calc(var(--radius) - 3px);
+}
+.wiki-figure__caption a { color: var(--accent); text-decoration: none; }
+.wiki-figure__caption a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .wiki-figure, .wiki-figure--left {
+    float: none; clear: both; width: 100%;
+    margin: 1.6rem auto;
+  }
+}
 .prose blockquote {
   border-left: 3px solid var(--gold); padding: 0.4rem 0 0.4rem 1.6rem; margin: 2rem 0;
   font-style: italic; color: var(--text-soft); font-size: 1.5rem;

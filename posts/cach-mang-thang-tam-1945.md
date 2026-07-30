@@ -2,6 +2,8 @@ Vào những ngày cuối cùng của mùa hè năm 1945, một làn sóng chưa
 
 Sự kiện này gắn liền với Hồ Chí Minh[^1] và Cách mạng Tháng Mười Nga.
 
+![Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình, ngày 2/9/1945](https://commons.wikimedia.org/wiki/Special:FilePath/Pr%C3%A9sident%20Ho-chi-Minh%20lit%20la%20Proclamation-d'ind%C3%A9pendance%20sur%20la%20place%20Ba-dinh%20le%202nd%20Sep%201945.jpg?width=800 "Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình, 2/9/1945. Ảnh: Mặt trận Việt Minh — Wikimedia Commons (Public domain). |right")
+
 ## Bối cảnh
 
 Cuối Thế chiến thứ hai, phát xít Nhật đầu hàng Đồng minh, để lại một khoảng trống quyền lực. Trong khoảnh khắc mong manh ấy, cả một dân tộc đã nắm bắt cơ hội để tự định đoạt vận mệnh của mình.
@@ -21,10 +23,6 @@ Từ thành thị đến nông thôn, hàng triệu người đã xuống đư�
 Cách mạng Tháng Tám không chỉ là một sự kiện, mà là bước ngoặt mở ra một chương hoàn toàn mới. Nó nhắc nhở chúng ta rằng lịch sử không phải điều được ban phát, mà là điều được giành lấy bằng ý chí của con người.
 
 Ngày nay, khi lật lại những trang sử ấy, ta không chỉ đọc về quá khứ — ta hiểu hơn về giá trị của những gì đang có.
-
-![Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình, ngày 2/9/1945](https://commons.wikimedia.org/wiki/Special:FilePath/Pr%C3%A9sident%20Ho-chi-Minh%20lit%20la%20Proclamation-d'ind%C3%A9pendance%20sur%20la%20place%20Ba-dinh%20le%202nd%20Sep%201945.jpg?width=1200)
-
-*Ảnh: Mặt trận Việt Minh, 2/9/1945 — Wikimedia Commons (Public domain).*
 
 [^1]: Hồ Chí Minh toàn tập, NXB Chính trị Quốc gia, tập 3, tr. 557.
 
