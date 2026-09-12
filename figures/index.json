@@ -1,6 +1,213 @@
 {
   "figures": [
     {
+      "slug": "alan-turing",
+      "name": {
+        "vi": "Alan Turing",
+        "en": "Alan Turing"
+      },
+      "role": {
+        "vi": "Cha đẻ của khoa học máy tính, nhà mật mã học giải mã Enigma",
+        "en": "Father of theoretical computer science, Enigma codebreaker"
+      },
+      "field": {
+        "vi": "Khoa học máy tính, Toán học, Trí tuệ nhân tạo",
+        "en": "Computer Science, Mathematics, Artificial Intelligence"
+      },
+      "born": "1912",
+      "died": "1954",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Contemporary"
+      },
+      "region": "world",
+      "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/800px-Alan_Turing_Aged_16.jpg",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "excerpt": {
+        "vi": "Thiên tài toán học phá giải mật mã Enigma cứu hàng triệu người, đề xuất Cỗ máy Turing và đặt nền móng cho Trí tuệ Nhân tạo.",
+        "en": "Genius codebreaker who cracked Enigma, conceived the Turing Machine, and laid the foundations of Artificial Intelligence."
+      },
+      "tags": [
+        "Thế giới",
+        "Alan Turing",
+        "máy tính",
+        "Enigma",
+        "AI",
+        "Thế chiến II"
+      ],
+      "file": "figures/alan-turing.vi.md",
+      "lang": "vi",
+      "files": {
+        "vi": "figures/alan-turing.vi.md",
+        "en": "figures/alan-turing.en.md"
+      }
+    },
+    {
+      "slug": "alexander-dai-de",
+      "name": {
+        "vi": "Alexander Đại Đế",
+        "en": "Alexander the Great"
+      },
+      "role": {
+        "vi": "Vua xứ Macedonia, nhà chinh phạt bách chiến bách thắng",
+        "en": "King of Macedonia, undefeated conqueror of the ancient world"
+      },
+      "field": {
+        "vi": "Quân sự, Chính trị",
+        "en": "Military, Politics"
+      },
+      "born": "356 TCN",
+      "died": "323 TCN",
+      "era": {
+        "vi": "Cổ đại",
+        "en": "Ancient"
+      },
+      "region": "world",
+      "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Alexander_the_Great_mosaic_%28cropped%29.jpg/800px-Alexander_the_Great_mosaic_%28cropped%29.jpg",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "excerpt": {
+        "vi": "Vị vua trẻ bất bại đã chinh phục Đế chế Ba Tư, mở mang cương thổ tới Ấn Độ và khai sinh Thời kỳ Hy Lạp hóa rực rỡ.",
+        "en": "The undefeated conqueror who overthrew the Persian Empire, expanded to India, and inaugurated the Hellenistic Era."
+      },
+      "tags": [
+        "Thế giới",
+        "Alexander",
+        "Macedonia",
+        "Hy Lạp",
+        "quân sự",
+        "cổ đại"
+      ],
+      "file": "figures/alexander-dai-de.vi.md",
+      "lang": "vi",
+      "files": {
+        "vi": "figures/alexander-dai-de.vi.md",
+        "en": "figures/alexander-dai-de.en.md"
+      }
+    },
+    {
+      "slug": "isaac-newton",
+      "name": {
+        "vi": "Sir Isaac Newton",
+        "en": "Sir Isaac Newton"
+      },
+      "role": {
+        "vi": "Nhà vật lý, toán học, thiên văn học lỗi lạc",
+        "en": "Physicist, mathematician, and astronomer"
+      },
+      "field": {
+        "vi": "Vật lý học, Toán học, Thiên văn học",
+        "en": "Physics, Mathematics, Astronomy"
+      },
+      "born": "1643",
+      "died": "1727",
+      "era": {
+        "vi": "Cận đại",
+        "en": "Early Modern"
+      },
+      "region": "world",
+      "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/GodfreyKneller-IsaacNewton-1689.jpg/800px-GodfreyKneller-IsaacNewton-1689.jpg",
+      "credit": "Sir Godfrey Kneller — Wikimedia Commons (Public Domain)",
+      "excerpt": {
+        "vi": "Bộ óc vĩ đại khai sinh cơ học cổ điển với ba định luật chuyển động và lực hấp dẫn vũ trụ, kiến tạo nền móng khoa học hiện đại.",
+        "en": "One of the greatest minds in history, who formulated the laws of motion and universal gravitation, founding modern physics."
+      },
+      "tags": [
+        "Thế giới",
+        "Newton",
+        "vật lý",
+        "khoa học",
+        "toán học"
+      ],
+      "file": "figures/isaac-newton.vi.md",
+      "lang": "vi",
+      "files": {
+        "vi": "figures/isaac-newton.vi.md",
+        "en": "figures/isaac-newton.en.md"
+      }
+    },
+    {
+      "slug": "ba-trieu",
+      "name": {
+        "vi": "Bà Triệu (Triệu Thị Trinh)",
+        "en": "Lady Trieu (Trieu Thi Trinh)"
+      },
+      "role": {
+        "vi": "Nữ anh hùng dân tộc, thủ lĩnh khởi nghĩa chống Đông Ngô",
+        "en": "National heroine, leader of the anti-Eastern Wu uprising"
+      },
+      "field": {
+        "vi": "Quân sự, Khởi nghĩa",
+        "en": "Military, Resistance"
+      },
+      "born": "225",
+      "died": "248",
+      "era": {
+        "vi": "Cổ đại",
+        "en": "Ancient"
+      },
+      "region": "vietnam",
+      "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg",
+      "credit": "Tranh dân gian Đông Hồ — Wikimedia Commons (Public Domain)",
+      "excerpt": {
+        "vi": "Nữ tướng kiệt xuất cưỡi voi xung trận làm rung chuyển chính quyền đô hộ phương Bắc với chí khí đạp sóng biển Đông ngút trời.",
+        "en": "Fearless warrior who led elephant-mounted legions against foreign invaders with the immortal vow to ride the storm."
+      },
+      "tags": [
+        "Việt Nam",
+        "Bà Triệu",
+        "khởi nghĩa",
+        "nữ anh hùng",
+        "Bắc thuộc"
+      ],
+      "file": "figures/ba-trieu.vi.md",
+      "lang": "vi",
+      "files": {
+        "vi": "figures/ba-trieu.vi.md",
+        "en": "figures/ba-trieu.en.md"
+      }
+    },
+    {
+      "slug": "dinh-tien-hoang",
+      "name": {
+        "vi": "Đinh Tiên Hoàng",
+        "en": "Dinh Tien Hoang"
+      },
+      "role": {
+        "vi": "Hoàng đế khai sáng triều Đinh, người dẹp loạn 12 sứ quân",
+        "en": "Founding Emperor of the Dinh Dynasty, unifier of the realm"
+      },
+      "field": {
+        "vi": "Chính trị, Quân sự",
+        "en": "Politics, Military"
+      },
+      "born": "924",
+      "died": "979",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "region": "vietnam",
+      "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Statue_of_King_Dinh_Tien_Hoang.jpg/800px-Statue_of_King_Dinh_Tien_Hoang.jpg",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "excerpt": {
+        "vi": "Vị hoàng đế dẹp yên loạn 12 sứ quân, xưng Hoàng đế và đặt quốc hiệu Đại Cồ Việt, mở nền chính thống độc lập cho dân tộc.",
+        "en": "The legendary emperor who suppressed the Twelve Warlords, proclaimed himself Emperor, and founded independent Dai Co Viet."
+      },
+      "tags": [
+        "Việt Nam",
+        "Đinh Tiên Hoàng",
+        "Hoa Lư",
+        "quân sự",
+        "vua chúa"
+      ],
+      "file": "figures/dinh-tien-hoang.vi.md",
+      "lang": "vi",
+      "files": {
+        "vi": "figures/dinh-tien-hoang.vi.md",
+        "en": "figures/dinh-tien-hoang.en.md"
+      }
+    },
+    {
       "slug": "ngo-quyen",
       "name": {
         "vi": "Ngô Quyền",

@@ -1,6 +1,207 @@
 {
   "posts": [
     {
+      "slug": "su-ra-doi-cua-internet",
+      "title": {
+        "vi": "Sự ra đời của Internet",
+        "en": "The Birth of the Internet"
+      },
+      "excerpt": {
+        "vi": "Từ nút mạng thử nghiệm ARPANET năm 1969 đến World Wide Web của Tim Berners-Lee, xa lộ thông tin đã kết nối toàn thể nhân loại.",
+        "en": "From the first ARPANET nodes in 1969 to Tim Berners-Lee's World Wide Web, the global network reshaped human civilization."
+      },
+      "year": "1969",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Contemporary"
+      },
+      "tags": [
+        "Thế giới",
+        "công nghệ",
+        "Internet",
+        "khoa học",
+        "World Wide Web"
+      ],
+      "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ARPANET_logical_map%2C_march_1977.png/1024px-ARPANET_logical_map%2C_march_1977.png",
+      "credit": "DARPA — Wikimedia Commons (Public Domain)",
+      "lat": 34.0689,
+      "lng": -118.4452,
+      "place": {
+        "vi": "UCLA, California, Hoa Kỳ và CERN, Thụy Sĩ",
+        "en": "UCLA, California, USA and CERN, Switzerland"
+      },
+      "file": "posts/su-ra-doi-cua-internet.vi.md",
+      "lang": "vi",
+      "date": "2026-08-05",
+      "verified": true,
+      "files": {
+        "vi": "posts/su-ra-doi-cua-internet.vi.md",
+        "en": "posts/su-ra-doi-cua-internet.en.md"
+      }
+    },
+    {
+      "slug": "khung-hoang-ten-lua-cuba-1962",
+      "title": {
+        "vi": "Khủng hoảng tên lửa Cuba năm 1962",
+        "en": "The Cuban Missile Crisis, 1962"
+      },
+      "excerpt": {
+        "vi": "13 ngày cân não giữa Kennedy và Khrushchev đưa nhân loại tới sát bờ vực một cuộc chiến tranh hủy diệt hạt nhân toàn cầu.",
+        "en": "Thirteen days of tense standoff between Kennedy and Khrushchev brought humanity to the brink of nuclear war."
+      },
+      "year": "1962",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Contemporary"
+      },
+      "tags": [
+        "Thế giới",
+        "Chiến tranh Lạnh",
+        "Mỹ",
+        "Liên Xô",
+        "Cuba",
+        "hạt nhân"
+      ],
+      "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cuban_crisis_map_missile_range.jpg/1024px-Cuban_crisis_map_missile_range.jpg",
+      "credit": "US Department of Defense — Wikimedia Commons (Public Domain)",
+      "lat": 23.1136,
+      "lng": -82.3666,
+      "place": {
+        "vi": "Havana, Cuba và Washington D.C., Hoa Kỳ",
+        "en": "Havana, Cuba and Washington D.C., USA"
+      },
+      "file": "posts/khung-hoang-ten-lua-cuba-1962.vi.md",
+      "lang": "vi",
+      "date": "2026-08-04",
+      "verified": true,
+      "files": {
+        "vi": "posts/khung-hoang-ten-lua-cuba-1962.vi.md",
+        "en": "posts/khung-hoang-ten-lua-cuba-1962.en.md"
+      }
+    },
+    {
+      "slug": "phong-trao-can-vuong-1885",
+      "title": {
+        "vi": "Phong trào Cần Vương và Chiếu Cần Vương 1885",
+        "en": "The Can Vuong Movement and Edict, 1885"
+      },
+      "excerpt": {
+        "vi": "Vua Hàm Nghi và Tôn Thất Thuyết xuất bôn ban Chiếu Cần Vương, dấy lên phong trào kháng Pháp sôi sục của sĩ phu yêu nước.",
+        "en": "Emperor Ham Nghi and Ton That Thuyet proclaimed the Can Vuong Edict, igniting a fierce nationwide anti-colonial movement."
+      },
+      "year": "1885",
+      "region": "vietnam",
+      "era": {
+        "vi": "Cận đại",
+        "en": "Modern"
+      },
+      "tags": [
+        "Việt Nam",
+        "Hàm Nghi",
+        "kháng Pháp",
+        "Cần Vương",
+        "Huế"
+      ],
+      "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/King_Ham_Nghi.jpg/800px-King_Ham_Nghi.jpg",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "lat": 16.4698,
+      "lng": 107.5796,
+      "place": {
+        "vi": "Kinh thành Huế và Sơn phòng Tân Sở, Quảng Trị",
+        "en": "Hue Imperial Citadel and Tan So, Quang Tri"
+      },
+      "file": "posts/phong-trao-can-vuong-1885.vi.md",
+      "lang": "vi",
+      "date": "2026-08-03",
+      "verified": true,
+      "files": {
+        "vi": "posts/phong-trao-can-vuong-1885.vi.md",
+        "en": "posts/phong-trao-can-vuong-1885.en.md"
+      }
+    },
+    {
+      "slug": "khoi-nghia-ba-trieu-248",
+      "title": {
+        "vi": "Khởi nghĩa Bà Triệu năm 248",
+        "en": "Lady Trieu's Uprising, 248"
+      },
+      "excerpt": {
+        "vi": "Nữ tướng Triệu Thị Trinh cưỡi voi vàng xung trận chống quân Đông Ngô: 'Tôi muốn cưỡi cơn gió mạnh, đạp luồng sóng dữ'.",
+        "en": "Warrior Lady Trieu rode a war elephant against Eastern Wu forces with the vow to ride the storm and tread giant waves."
+      },
+      "year": "248",
+      "region": "vietnam",
+      "era": {
+        "vi": "Cổ đại",
+        "en": "Ancient"
+      },
+      "tags": [
+        "Việt Nam",
+        "Bà Triệu",
+        "Bắc thuộc",
+        "khởi nghĩa",
+        "nữ anh hùng"
+      ],
+      "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg",
+      "credit": "Tranh dân gian Đông Hồ — Wikimedia Commons (Public Domain)",
+      "lat": 19.9208,
+      "lng": 105.7744,
+      "place": {
+        "vi": "Núi Tùng, Hậu Lộc, Thanh Hóa",
+        "en": "Tung Mountain, Hau Loc, Thanh Hoa"
+      },
+      "file": "posts/khoi-nghia-ba-trieu-248.vi.md",
+      "lang": "vi",
+      "date": "2026-08-02",
+      "verified": true,
+      "files": {
+        "vi": "posts/khoi-nghia-ba-trieu-248.vi.md",
+        "en": "posts/khoi-nghia-ba-trieu-248.en.md"
+      }
+    },
+    {
+      "slug": "tran-nhu-nguyet-1077",
+      "title": {
+        "vi": "Trận Như Nguyệt năm 1077",
+        "en": "The Battle of Nhu Nguyet, 1077"
+      },
+      "excerpt": {
+        "vi": "Thái úy Lý Thường Kiệt chặn đứng đại quân Tống bên bờ sông Cầu và cất cao bài thơ thần Nam quốc sơn hà.",
+        "en": "Supreme Commander Ly Thuong Kiet halted the massive Song invasion and immortalized the divine poem Nam quoc son ha."
+      },
+      "year": "1077",
+      "region": "vietnam",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "tags": [
+        "Việt Nam",
+        "Lý Thường Kiệt",
+        "nhà Lý",
+        "quân sự",
+        "thơ thần"
+      ],
+      "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Song_Cau_%28Nhu_Nguyet%29.jpg/1280px-Song_Cau_%28Nhu_Nguyet%29.jpg",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "lat": 21.2292,
+      "lng": 106.0594,
+      "place": {
+        "vi": "Sông Như Nguyệt (sông Cầu), Bắc Ninh – Bắc Giang",
+        "en": "Nhu Nguyet River (Cau River), Bac Ninh – Bac Giang"
+      },
+      "file": "posts/tran-nhu-nguyet-1077.vi.md",
+      "lang": "vi",
+      "date": "2026-08-01",
+      "verified": true,
+      "files": {
+        "vi": "posts/tran-nhu-nguyet-1077.vi.md",
+        "en": "posts/tran-nhu-nguyet-1077.en.md"
+      }
+    },
+    {
       "slug": "d-day-normandy-1944",
       "title": {
         "vi": "Cuộc đổ bộ Normandy (D-Day)",

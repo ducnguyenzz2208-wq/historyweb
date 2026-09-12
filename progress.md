@@ -78,6 +78,10 @@ Một **thư viện lịch sử mở**, nơi mỗi sự kiện và nhân vật �
 - [x] **Song ngữ toàn diện cho thân bài (100%)**: lưu `content.vi` + `content.en` (tệp `.vi.md` và `.en.md`), hỗ trợ chuyển đổi ngôn ngữ tức thì, nạp đúng bản dịch.
 - [x] **Bộ dịch thuật tự động thông minh (Auto-Translate)**: tích hợp công cụ dịch client-side `translator.js` (Google Translate + MyMemory fallback) bảo toàn tuyệt đối cú pháp Markdown, link, ảnh và footnote `[^1]`.
 - [x] **Dịch tự động toàn bộ 26 sự kiện & 19 nhân vật**: kho dữ liệu đạt 100% song ngữ với đầy đủ bản dịch tiếng Anh chất lượng cao.
+- [x] **Sáng tác & mở rộng 10 bài viết mới (31 sự kiện + 24 nhân vật)**:
+  - 5 sự kiện lịch sử tiêu biểu: Trận Như Nguyệt 1077, Khởi nghĩa Bà Triệu 248, Phong trào Cần Vương 1885, Khủng hoảng tên lửa Cuba 1962, Sự ra đời của Internet.
+  - 5 nhân vật lịch sử kiệt xuất: Đinh Tiên Hoàng, Bà Triệu, Sir Isaac Newton, Alexander Đại Đế, Alan Turing.
+  - Chuẩn văn phong bách khoa, có khung ảnh Wikipedia, chú thích nguồn học thuật và 100% song ngữ VI–EN.
 - [x] **Tải & Chèn nhiều ảnh thông minh**:
   - Hỗ trợ chọn/kéo-thả/dán nhiều file ảnh cùng lúc vào Khay ảnh đính kèm (Staged Images Tray).
   - Modal chèn ảnh hỗ trợ căn lề chuẩn Wikipedia (nổi phải `|right`, nổi trái `|left`, toàn khổ), kèm chú thích (caption).
