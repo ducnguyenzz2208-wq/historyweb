@@ -2,7 +2,6 @@
 
 Vào lúc 22 giờ 30 đêm ngày 29 tháng 10 năm 1969, hai chiếc máy tính đặt cách nhau gần 600 cây số tại Đại học California ở Los Angeles (UCLA) và Viện Nghiên cứu Stanford đã truyền đi thông điệp đầu tiên qua mạng ARPANET: hai ký tự "LO" trước khi toàn hệ thống bị sập vì nghẽn mạng. Sự kiện tưởng chừng nhỏ bé đó chính là phát súng mở màn cho cuộc cách mạng công nghệ vĩ đại nhất lịch sử hiện đại — sự ra đời của mạng Internet, công trình đã làm phẳng thế giới và kết nối toàn thể nhân loại.[^1]
 
-![Bản đồ ARPANET 1977](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ARPANET_logical_map%2C_march_1977.png/1024px-ARPANET_logical_map%2C_march_1977.png "Sơ đồ các nút mạng kết nối sơ khai của ARPANET vào tháng 3 năm 1977 |right")
 
 ## Nguồn gốc Chiến tranh Lạnh: Nhu cầu về một mạng lưới không thể bị phá hủy
 
@@ -11,12 +10,14 @@ Năm 1957, việc Liên Xô phóng thành công vệ tinh Sputnik 1 vào quỹ �
 Nỗi lo sợ lớn nhất của Lầu Năm Góc trong thời kỳ Chiến tranh Lạnh là một đòn tấn công hạt nhân phủ đầu có thể phá hủy hoàn toàn hệ thống liên lạc chỉ huy tập trung. Để giải quyết bài toán này, các nhà khoa học máy tính lỗi lạc như Paul Baran và Donald Davies đã phát triển ý tưởng đột phá: **kỹ thuật chuyển mạch gói** (packet switching). Dữ liệu thay vì truyền liên tục trên một đường dây cố định sẽ được chia nhỏ thành các gói độc lập, tự động tìm tuyến đường tối ưu qua các nút mạng phân tán để tới đích. Ngay cả khi nhiều mắt xích bị bom đạn phá hủy, mạng lưới vẫn tự thích ứng và duy trì liên lạc thông suốt.[^2]
 
 ## TCP/IP: Ngôn ngữ chung cho thế giới máy tính
+![hình ảnh](https://miro.medium.com/1*Jv7aptjpW_PrTKAB-_eXlA.png " |right")
 
 Bước sang thập niên 1970, hàng loạt mạng máy tính độc lập xuất hiện nhưng không thể giao tiếp với nhau do khác biệt về phần cứng và cấu trúc mạng.
 
 Năm 1974, hai nhà khoa học Vint Cerf và Bob Kahn đã công bố kiến trúc giao thức truyền thông TCP/IP (Transmission Control Protocol / Internet Protocol). TCP/IP đóng vai trò như một "người phiên dịch toàn cầu", đặt ra quy chuẩn chung cho phép mọi mạng lưới máy tính dù khác biệt đến đâu cũng có thể bắt tay và trao đổi dữ liệu với nhau. Ngày 1 tháng 1 năm 1983 — được ghi nhận là "Ngày sinh chính thức của Internet" — khi ARPANET chính thức chuyển đổi hoàn toàn sang chuẩn giao thức TCP/IP, khai sinh ra mạng của các mạng lưới (inter-network).[^3]
 
 ## Cú hích World Wide Web và bước ngoặt mở rộng đại chúng
+![hình ảnh](https://tariqaustralia.wordpress.com/wp-content/uploads/2013/04/14821565-internet-world-wide-web-concept-earth-globe-with-www-text-and-computer-hand-cursor-isolated-on-white.jpg " |left")
 
 Internet ban đầu vẫn là lãnh địa khép kín dành riêng cho giới quân sự và các trường đại học vì giao diện dòng lệnh đen trắng vô cùng phức tạp.
 
