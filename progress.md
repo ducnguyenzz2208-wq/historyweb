@@ -74,8 +74,14 @@ Một **thư viện lịch sử mở**, nơi mỗi sự kiện và nhân vật �
 
 ## 🚧 Đang / nên làm tiếp (ưu tiên gần)
 
-- [ ] **Chú thích nguồn kiểu Wikipedia** `[^1]`: footnote đánh số tự động + danh sách tham khảo ở cuối (nâng cấp `md.js`).
-- [ ] **Song ngữ cho thân bài**: hiện tiêu đề/tóm tắt đã song ngữ, nội dung Markdown mới một ngôn ngữ — cho phép lưu `content.vi` + `content.en`.
+- [x] **Chú thích nguồn kiểu Wikipedia** `[^1]`: footnote đánh số tự động + danh sách tham khảo ở cuối (hỗ trợ bởi `md.js` và CSS Wikipedia footnote).
+- [x] **Song ngữ toàn diện cho thân bài (100%)**: lưu `content.vi` + `content.en` (tệp `.vi.md` và `.en.md`), hỗ trợ chuyển đổi ngôn ngữ tức thì, nạp đúng bản dịch.
+- [x] **Bộ dịch thuật tự động thông minh (Auto-Translate)**: tích hợp công cụ dịch client-side `translator.js` (Google Translate + MyMemory fallback) bảo toàn tuyệt đối cú pháp Markdown, link, ảnh và footnote `[^1]`.
+- [x] **Dịch tự động toàn bộ 26 sự kiện & 19 nhân vật**: kho dữ liệu đạt 100% song ngữ với đầy đủ bản dịch tiếng Anh chất lượng cao.
+- [x] **Tải & Chèn nhiều ảnh thông minh**:
+  - Hỗ trợ chọn/kéo-thả/dán nhiều file ảnh cùng lúc vào Khay ảnh đính kèm (Staged Images Tray).
+  - Modal chèn ảnh hỗ trợ căn lề chuẩn Wikipedia (nổi phải `|right`, nổi trái `|left`, toàn khổ), kèm chú thích (caption).
+  - Tối ưu 1 commit duy nhất cho toàn bộ ảnh + bài viết song ngữ.
 - [x] **Ảnh trong admin**: tải ảnh từ máy + **dán ảnh** thẳng vào ô nội dung → tự upload vào `assets/uploads/` và chèn Markdown; nút **Tải ảnh bìa**.
 - [x] **Nhập bài từ `.docx` / `.md`**: chuyển Word (mammoth) & Markdown thành bài viết, tự lấy tiêu đề.
 - [x] **Sửa lỗi 409** khi xuất bản (cache `no-store` + tự thử lại với sha mới).

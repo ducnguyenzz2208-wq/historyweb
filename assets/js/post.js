@@ -60,11 +60,13 @@
     const root = document.getElementById("postRoot");
     if (!root) return;
 
-    if (!currentPost) {
+    if (!currentPost || currentPost.slug !== slug) {
       currentPost = await Store.bySlug(slug);
-      if (currentPost) currentBody = await Store.content(currentPost);
     }
     const p = currentPost;
+    if (p) {
+      currentBody = await Store.content(p, lang);
+    }
 
     if (!p) {
       document.title = window.I18N.t("post.notfound");
@@ -154,6 +156,11 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
               <span>${window.I18N.t("article.correction")}</span>
             </a>
+            ${(!p.files || !p.files[lang]) && (lang === "en" || (p.lang && p.lang !== lang)) ? `
+            <button class="article__tool article__tool--accent" id="liveTranslateBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              <span>${window.I18N.t("post.translatebtn")}</span>
+            </button>` : ""}
           </div>
           ${infobox(p, lang, rt)}
           <div class="prose">${bodyHtml}</div>
@@ -204,9 +211,38 @@
     wireCite(title, p, lang);
     wireTocHighlight();
     wireComments(lang);
+    wireLiveTranslate(p, lang);
     autoLinkArticle(p, lang);
     if (window.hwReveal) window.hwReveal();
     window.scrollTo(0, 0);
+  }
+
+  function wireLiveTranslate(p, lang) {
+    const btn = document.getElementById("liveTranslateBtn");
+    if (!btn) return;
+    btn.addEventListener("click", async () => {
+      if (!window.Translator) return;
+      const span = btn.querySelector("span");
+      const old = span ? span.textContent : "";
+      if (span) span.textContent = window.I18N.t("post.translating");
+      btn.disabled = true;
+      try {
+        const from = lang === "en" ? "vi" : "en";
+        const trans = await window.Translator.translateMarkdown(currentBody, from, lang);
+        const prose = document.querySelector(".article--wiki .prose");
+        if (prose) {
+          prose.innerHTML = window.mdToHtml(trans) + `
+            <div class="trans-notice mt-2" style="font-size:0.85rem;color:var(--text-soft);font-style:italic;border-top:1px solid var(--line);padding-top:0.8rem">
+              ℹ️ ${window.I18N.t("post.translatednotice")}
+            </div>`;
+        }
+        btn.style.display = "none";
+      } catch (e) {
+        if (span) span.textContent = old;
+        btn.disabled = false;
+        alert("Lỗi dịch: " + e.message);
+      }
+    });
   }
 
   // Bình luận Giscus (chỉ tải khi đã bật & cấu hình trong config.js)

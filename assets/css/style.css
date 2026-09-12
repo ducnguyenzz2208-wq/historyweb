@@ -1105,3 +1105,123 @@ a.tag:hover { background: var(--accent); color: var(--cream); }
 .comments__title { font-size: 1.5rem; margin-bottom: 1.2rem; }
 .comments__fallback { font-size: 0.92rem; color: var(--text-soft); line-height: 1.6; }
 .comments__fallback a { color: var(--accent); font-weight: 600; }
+
+/* ---------- Chú thích nguồn kiểu Wikipedia (Footnotes) ---------- */
+.fn-ref { font-size: 0.75rem; vertical-align: super; line-height: 0; padding: 0 0.15rem; font-weight: 700; }
+.fn-ref a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+.fn-ref a:hover { color: var(--gold-soft); text-decoration: none; }
+.footnotes { font-size: 0.9rem; color: var(--text-soft); line-height: 1.6; margin-top: 2rem; }
+.footnotes ol { padding-left: 1.5rem; }
+.footnotes li { margin-bottom: 0.5rem; word-break: break-word; }
+.footnotes .fn-back { color: var(--accent); text-decoration: none; font-weight: bold; margin-left: 0.35rem; }
+.footnotes .fn-back:hover { text-decoration: underline; }
+
+/* ---------- Auto-Translate button ---------- */
+.btn--gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+  color: #1a080a !important; font-weight: 700; border: 1px solid var(--gold);
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--gold) 25%, transparent);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+.btn--gold:hover { transform: translateY(-1px); filter: brightness(1.08); }
+.btn--gold.translating {
+  pointer-events: none; opacity: 0.85;
+  animation: pulseGold 1.2s infinite ease-in-out;
+}
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--gold) 40%, transparent); }
+  50% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--gold) 0%, transparent); }
+}
+
+/* ---------- Staged Images Tray (Khay ảnh trong bài) ---------- */
+.staged-tray {
+  margin-top: 1rem; padding: 1rem; border-radius: var(--radius);
+  border: 1px solid var(--glass-border); background: var(--glass-bg);
+}
+.staged-tray__head {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem;
+}
+.staged-tray__title { font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; }
+.staged-tray__grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.8rem;
+}
+.staged-item {
+  border: 1px solid var(--line); border-radius: calc(var(--radius) - 4px);
+  background: var(--bg-alt); padding: 6px; display: flex; flex-direction: column; gap: 6px;
+  position: relative; transition: transform 0.2s, box-shadow 0.2s;
+}
+.staged-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.staged-item__img {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: calc(var(--radius) - 6px);
+  background: var(--bg); display: block;
+}
+.staged-item__meta {
+  font-size: 0.72rem; color: var(--text-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.staged-item__actions {
+  display: flex; flex-wrap: wrap; gap: 3px;
+}
+.staged-item__btn {
+  font-size: 0.68rem; font-weight: 600; padding: 3px 6px; border-radius: 4px;
+  border: 1px solid var(--line); background: var(--bg); color: var(--text);
+  cursor: pointer; transition: background 0.15s, color 0.15s;
+}
+.staged-item__btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.staged-item__btn--del { color: var(--crimson); }
+.staged-item__btn--del:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); }
+
+/* ---------- Image Insertion Modal ---------- */
+.img-modal {
+  position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center;
+  padding: 1rem; background: color-mix(in srgb, var(--maroon-900) 65%, transparent);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  opacity: 0; visibility: hidden; transition: opacity 0.25s var(--ease), visibility 0.25s;
+}
+.img-modal.open { opacity: 1; visibility: visible; }
+.img-modal__panel {
+  width: min(560px, 100%); padding: 1.5rem; border-radius: 18px; max-height: 90vh; overflow-y: auto;
+  border: 1px solid var(--glass-border);
+}
+.img-modal__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; }
+.img-modal__head h3 { font-size: 1.3rem; margin: 0; }
+.img-modal__close {
+  width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--glass-border);
+  background: transparent; color: var(--text-soft); cursor: pointer; display: grid; place-items: center;
+}
+.img-modal__close:hover { color: var(--accent); border-color: var(--accent); }
+.img-source-tabs { display: flex; gap: 0.4rem; margin-bottom: 1rem; }
+.img-source-tabs button {
+  flex: 1; padding: 0.5rem; font-size: 0.85rem; font-weight: 600; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--bg); color: var(--text-soft); cursor: pointer;
+}
+.img-source-tabs button.active {
+  background: var(--accent); color: var(--cream); border-color: var(--accent);
+}
+.img-dropzone {
+  border: 2px dashed var(--line); border-radius: 12px; padding: 1.8rem 1rem; text-align: center;
+  background: color-mix(in srgb, var(--bg-alt) 40%, transparent); cursor: pointer;
+  transition: border-color 0.2s, background 0.2s; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+}
+.img-dropzone:hover, .img-dropzone.drop-active {
+  border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.img-dropzone svg { color: var(--accent); opacity: 0.8; }
+.img-dropzone p { margin: 0; font-size: 0.92rem; font-weight: 500; }
+.img-preview-box {
+  margin: 0.8rem 0; border-radius: 10px; overflow: hidden; max-height: 180px;
+  border: 1px solid var(--line); background: #000; text-align: center;
+}
+.img-preview-box img { max-height: 180px; width: auto; max-width: 100%; object-fit: contain; }
+.pos-selector { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.6rem; margin-top: 0.4rem; }
+.pos-opt {
+  display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.8rem; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--bg-alt); cursor: pointer; font-size: 0.82rem; font-weight: 600;
+  transition: border-color 0.2s, background 0.2s;
+}
+.pos-opt:has(input:checked) {
+  border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent);
+}
+.img-modal__foot {
+  display: flex; align-items: center; justify-content: flex-end; gap: 0.8rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line);
+}
+

@@ -127,9 +127,14 @@
         <div class="field"><label data-i18n="admin.f.excerpt"></label><textarea id="f_excerpt" style="min-height:80px"></textarea></div>
         <div class="field">
           <label data-i18n="admin.f.content"></label>
-          <div class="lang-tabs" id="langTabs" role="tablist">
-            <button type="button" data-lang="vi" class="active">Nội dung (VI)<span class="dot"></span></button>
-            <button type="button" data-lang="en">Nội dung (EN)<span class="dot"></span></button>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:0.75rem">
+            <div class="lang-tabs" id="langTabs" role="tablist">
+              <button type="button" data-lang="vi" class="active">Nội dung (VI)<span class="dot"></span></button>
+              <button type="button" data-lang="en">Nội dung (EN)<span class="dot"></span></button>
+            </div>
+            <button type="button" class="btn btn--sm btn--gold" id="autoTranslateBtn" title="Dịch tự động nội dung & các trường thông tin">
+              <span id="transIcon">🌐</span> <span id="transLabel" data-i18n="admin.autotranslate">Dịch tự động sang EN</span>
+            </button>
           </div>
           <div class="md-toolbar" id="mdToolbar">
             <button type="button" class="md-tool" data-md="h2" title="Tiêu đề mục">H2</button>
@@ -139,13 +144,22 @@
             <button type="button" class="md-tool" data-md="quote" title="Trích dẫn">❝</button>
             <button type="button" class="md-tool" data-md="ul" title="Danh sách">• —</button>
             <button type="button" class="md-tool" data-md="link" title="Liên kết">🔗</button>
-            <button type="button" class="md-tool" data-md="img" title="Ảnh (URL)">🖼</button>
-            <button type="button" class="md-tool md-tool--accent" data-md="upload" title="Tải ảnh lên (hoặc dán ảnh vào ô)" data-i18n="admin.uploadimg">Tải ảnh</button>
+            <button type="button" class="md-tool md-tool--accent" id="openImgModalBtn" title="Tải / chèn ảnh với chú thích & căn lề">🖼 <span data-i18n="admin.insertimg">Chèn ảnh</span></button>
+            <button type="button" class="md-tool" data-md="upload" title="Tải nhanh một hoặc nhiều ảnh từ máy" data-i18n="admin.uploadimg">Tải ảnh</button>
             <button type="button" class="md-tool" data-md="hr" title="Đường kẻ">―</button>
             <button type="button" class="md-tool" data-md="ref" title="Mục nguồn tham khảo">Tham khảo</button>
           </div>
-          <textarea id="f_content" placeholder="# Tiêu đề&#10;&#10;Nội dung Markdown… (mẹo: dán ảnh trực tiếp vào đây để tải lên)"></textarea>
-          <input type="file" id="imgFileInput" accept="image/*,.jpg,.jpeg,.png,.webp,.avif,.gif,.svg,.bmp,.tif,.tiff,.heic,.heif" hidden>
+          <textarea id="f_content" placeholder="# Tiêu đề&#10;&#10;Nội dung Markdown… (mẹo: dán ảnh trực tiếp vào đây để tải lên, hoặc bấm nút 'Chèn ảnh')"></textarea>
+          <input type="file" id="imgFileInput" accept="image/*,.jpg,.jpeg,.png,.webp,.avif,.gif,.svg,.bmp,.tif,.tiff,.heic,.heif" multiple hidden>
+
+          <!-- Khay ảnh đính kèm / đang chờ trong bài -->
+          <div id="stagedTray" class="staged-tray glass" style="display:none">
+            <div class="staged-tray__head">
+              <span class="staged-tray__title">🖼 <b data-i18n="admin.stagedtray">Khay ảnh đính kèm</b> (<span id="stagedCount">0</span>)</span>
+              <button type="button" class="btn btn--sm btn--ghost" id="addMoreImagesBtn">+ Thêm ảnh từ máy</button>
+            </div>
+            <div id="stagedList" class="staged-tray__grid"></div>
+          </div>
         </div>
 
         <div class="admin-actions">
@@ -160,10 +174,66 @@
     </div>
   </main>
 
+  <!-- Modal Tải & Chèn Ảnh Thông Minh -->
+  <div class="img-modal" id="imageModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="img-modal__panel glass">
+      <div class="img-modal__head">
+        <h3 data-i18n="admin.modal.title">Tải & Chèn Ảnh Thông Minh</h3>
+        <button type="button" class="img-modal__close" id="closeImgModal" aria-label="Đóng">✕</button>
+      </div>
+      <div class="img-modal__body">
+        <div class="img-source-tabs" id="imgSourceTabs">
+          <button type="button" class="active" data-tab="upload" data-i18n="admin.modal.choosefile">Chọn từ máy tính</button>
+          <button type="button" data-tab="url" data-i18n="admin.modal.fromurl">Nhập URL ảnh ngoài</button>
+        </div>
+        <div id="srcUploadArea" class="img-dropzone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="40" height="40"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242M12 12v9m-4-4 4-4 4 4"/></svg>
+          <p>Kéo-thả ảnh vào đây hoặc <b>nhấp để chọn ảnh</b></p>
+          <span class="hint" style="font-size:0.78rem">Hỗ trợ JPG, PNG, WEBP, AVIF, GIF, SVG… (chọn nhiều ảnh cùng lúc)</span>
+        </div>
+        <div id="srcUrlArea" class="field" style="display:none">
+          <input type="url" id="modalImgUrl" placeholder="https://commons.wikimedia.org/... hoặc https://images.unsplash.com/...">
+        </div>
+
+        <div class="img-preview-box" id="modalImgPreview" style="display:none">
+          <img id="modalImgTag" alt="">
+        </div>
+
+        <div class="field" style="margin-top:1rem">
+          <label data-i18n="admin.caption">Chú thích ảnh (Caption)</label>
+          <input type="text" id="modalCaption" placeholder="Ví dụ: Bãi cọc gỗ lim trên dòng sông Bạch Đằng năm 938">
+        </div>
+
+        <div class="field">
+          <label data-i18n="admin.position">Vị trí căn lề</label>
+          <div class="pos-selector" id="posSelector">
+            <label class="pos-opt">
+              <input type="radio" name="imgPos" value="right" checked>
+              <span>👉 <b data-i18n="admin.pos.right">Nổi phải (Wikipedia)</b></span>
+            </label>
+            <label class="pos-opt">
+              <input type="radio" name="imgPos" value="left">
+              <span>👈 <b data-i18n="admin.pos.left">Nổi trái (Wikipedia)</b></span>
+            </label>
+            <label class="pos-opt">
+              <input type="radio" name="imgPos" value="center">
+              <span>↔ <b data-i18n="admin.pos.center">Toàn chiều rộng</b></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="img-modal__foot">
+        <button type="button" class="btn btn--ghost" id="cancelImgModal" data-i18n="admin.modal.close">Đóng</button>
+        <button type="button" class="btn" id="confirmInsertImgBtn" data-i18n="admin.modal.insert">Chèn ảnh vào bài</button>
+      </div>
+    </div>
+  </div>
+
   <div id="footer-slot"></div>
 
   <script src="config.js"></script>
   <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/translator.js"></script>
   <script src="assets/js/md.js"></script>
   <script src="assets/js/store.js"></script>
   <script src="assets/js/figures.js"></script>

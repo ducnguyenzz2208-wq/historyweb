@@ -40,26 +40,28 @@
         </dl>
       </aside>`;
   }
-
   async function render() {
     const root = document.getElementById("figureRoot");
     if (!root) return;
     const lang = window.I18N.lang;
 
-    if (!current) {
+    if (!current || current.slug !== getSlug()) {
       const figures = await (window.loadFigures ? window.loadFigures() : Promise.resolve([]));
       current = figures.find((x) => x.slug === getSlug()) || null;
-      if (current) {
-        // Ưu tiên nội dung local (vừa đăng) trước khi fetch server
-        const localMap = (() => { try { return JSON.parse(localStorage.getItem("hw_pending_fig_content") || "{}"); } catch (e) { return {}; } })();
-        if (localMap[current.slug]) {
-          body = localMap[current.slug];
-        } else if (current.file) {
-          try { body = await (await fetch(current.file + "?_=" + Date.now())).text(); } catch (e) { body = ""; }
+    }
+    const f = current;
+    if (f) {
+      // Ưu tiên nội dung local (vừa đăng) trước khi fetch server
+      const localMap = (() => { try { return JSON.parse(localStorage.getItem("hw_pending_fig_content") || "{}"); } catch (e) { return {}; } })();
+      if (localMap[f.slug]) {
+        body = localMap[f.slug];
+      } else {
+        const path = (f.files && f.files[lang]) || (f.files && (f.files.vi || f.files.en)) || f.file;
+        if (path) {
+          try { body = await (await fetch(path + "?_=" + Date.now())).text(); } catch (e) { body = ""; }
         }
       }
     }
-    const f = current;
     if (!f) {
       document.title = window.I18N.t("figure.notfound");
       root.innerHTML = `<section class="page-hero"><div class="wrap"><h1>${window.I18N.t("figure.notfound")}</h1><a class="btn mt-2" href="figures.html">${window.I18N.t("figure.back")}</a></div></section>`;
@@ -135,6 +137,11 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
               <span>${window.I18N.t("article.correction")}</span>
             </a>
+            ${(!f.files || !f.files[lang]) && (lang === "en" || (f.lang && f.lang !== lang)) ? `
+            <button class="article__tool article__tool--accent" id="liveTranslateBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              <span>${window.I18N.t("post.translatebtn")}</span>
+            </button>` : ""}
           </div>
           ${infobox(f, lang, fb)}
           <div class="prose">${bodyHtml}</div>
@@ -166,9 +173,38 @@
     wireProgress();
     wireShare(name);
     wireTocHighlight();
+    wireLiveTranslate(f, lang);
     autoLinkArticle(f, lang);
     if (window.hwReveal) window.hwReveal();
     window.scrollTo(0, 0);
+  }
+
+  function wireLiveTranslate(f, lang) {
+    const btn = document.getElementById("liveTranslateBtn");
+    if (!btn) return;
+    btn.addEventListener("click", async () => {
+      if (!window.Translator) return;
+      const span = btn.querySelector("span");
+      const old = span ? span.textContent : "";
+      if (span) span.textContent = window.I18N.t("post.translating");
+      btn.disabled = true;
+      try {
+        const from = lang === "en" ? "vi" : "en";
+        const trans = await window.Translator.translateMarkdown(body, from, lang);
+        const prose = document.querySelector(".article--wiki .prose");
+        if (prose) {
+          prose.innerHTML = window.mdToHtml(trans) + `
+            <div class="trans-notice mt-2" style="font-size:0.85rem;color:var(--text-soft);font-style:italic;border-top:1px solid var(--line);padding-top:0.8rem">
+              ℹ️ ${window.I18N.t("post.translatednotice")}
+            </div>`;
+        }
+        btn.style.display = "none";
+      } catch (e) {
+        if (span) span.textContent = old;
+        btn.disabled = false;
+        alert("Lỗi dịch: " + e.message);
+      }
+    });
   }
 
   /* Liên kết chéo tự động tới nhân vật & sự kiện khác (mỗi mục 1 lần) */

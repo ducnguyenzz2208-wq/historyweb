@@ -33,7 +33,11 @@
       "credit": "Wikimedia Commons — Bùi Thụy Đào Nguyên (CC BY-SA 3.0)",
       "file": "figures/ngo-quyen.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/ngo-quyen.md",
+        "en": "figures/ngo-quyen.en.md"
+      }
     },
     {
       "slug": "ly-thuong-kiet",
@@ -69,7 +73,11 @@
       "credit": "Wikimedia Commons — Gary Todd (CC0)",
       "file": "figures/ly-thuong-kiet.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/ly-thuong-kiet.md",
+        "en": "figures/ly-thuong-kiet.en.md"
+      }
     },
     {
       "slug": "nguyen-du",
@@ -105,7 +113,11 @@
       "credit": "Wikimedia Commons — Long Phan (CC BY-SA 4.0)",
       "file": "figures/nguyen-du.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/nguyen-du.md",
+        "en": "figures/nguyen-du.en.md"
+      }
     },
     {
       "slug": "albert-einstein",
@@ -140,7 +152,11 @@
       "credit": "Wikimedia Commons — F. Schmutzer (PD)",
       "file": "figures/albert-einstein.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/albert-einstein.md",
+        "en": "figures/albert-einstein.en.md"
+      }
     },
     {
       "slug": "nelson-mandela",
@@ -176,7 +192,11 @@
       "credit": "Wikimedia Commons — South Africa The Good News (CC BY 2.0)",
       "file": "figures/nelson-mandela.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/nelson-mandela.md",
+        "en": "figures/nelson-mandela.en.md"
+      }
     },
     {
       "slug": "le-loi",
@@ -212,7 +232,11 @@
       "credit": "Wikimedia Commons (CC BY-SA 3.0)",
       "file": "figures/le-loi.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/le-loi.md",
+        "en": "figures/le-loi.en.md"
+      }
     },
     {
       "slug": "quang-trung",
@@ -248,7 +272,11 @@
       "credit": "Wikimedia Commons (CC BY-SA 3.0)",
       "file": "figures/quang-trung.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/quang-trung.md",
+        "en": "figures/quang-trung.en.md"
+      }
     },
     {
       "slug": "vo-nguyen-giap",
@@ -283,7 +311,11 @@
       "credit": "Wikimedia Commons (CC BY 3.0 BR)",
       "file": "figures/vo-nguyen-giap.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/vo-nguyen-giap.md",
+        "en": "figures/vo-nguyen-giap.en.md"
+      }
     },
     {
       "slug": "marie-curie",
@@ -319,7 +351,11 @@
       "credit": "Wikimedia Commons (PD)",
       "file": "figures/marie-curie.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/marie-curie.md",
+        "en": "figures/marie-curie.en.md"
+      }
     },
     {
       "slug": "mahatma-gandhi",
@@ -355,7 +391,11 @@
       "credit": "Wikimedia Commons — Elliott & Fry (PD)",
       "file": "figures/mahatma-gandhi.md",
       "lang": "vi",
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "figures/mahatma-gandhi.md",
+        "en": "figures/mahatma-gandhi.en.md"
+      }
     },
     {
       "slug": "ho-chi-minh",
@@ -389,7 +429,11 @@
         "độc lập"
       ],
       "credit": "Wikimedia Commons",
-      "file": "figures/ho-chi-minh.md"
+      "file": "figures/ho-chi-minh.md",
+      "files": {
+        "vi": "figures/ho-chi-minh.md",
+        "en": "figures/ho-chi-minh.en.md"
+      }
     },
     {
       "slug": "tran-hung-dao",
@@ -422,7 +466,11 @@
         "quân sự"
       ],
       "credit": "Wikimedia Commons",
-      "file": "figures/tran-hung-dao.md"
+      "file": "figures/tran-hung-dao.md",
+      "files": {
+        "vi": "figures/tran-hung-dao.md",
+        "en": "figures/tran-hung-dao.en.md"
+      }
     },
     {
       "slug": "nguyen-trai",
@@ -456,7 +504,11 @@
         "quân sự"
       ],
       "credit": "Wikimedia Commons",
-      "file": "figures/nguyen-trai.md"
+      "file": "figures/nguyen-trai.md",
+      "files": {
+        "vi": "figures/nguyen-trai.md",
+        "en": "figures/nguyen-trai.en.md"
+      }
     },
     {
       "slug": "leonardo-da-vinci",
@@ -490,7 +542,11 @@
         "khoa học"
       ],
       "credit": "Wikimedia Commons",
-      "file": "figures/leonardo-da-vinci.md"
+      "file": "figures/leonardo-da-vinci.md",
+      "files": {
+        "vi": "figures/leonardo-da-vinci.md",
+        "en": "figures/leonardo-da-vinci.en.md"
+      }
     },
     {
       "slug": "napoleon-bonaparte",
@@ -524,7 +580,11 @@
         "chính trị"
       ],
       "credit": "Wikimedia Commons",
-      "file": "figures/napoleon-bonaparte.md"
+      "file": "figures/napoleon-bonaparte.md",
+      "files": {
+        "vi": "figures/napoleon-bonaparte.md",
+        "en": "figures/napoleon-bonaparte.en.md"
+      }
     },
     {
       "slug": "abraham-lincoln",
@@ -557,28 +617,37 @@
         "chính trị"
       ],
       "credit": "Wikimedia Commons",
-      "file": "figures/abraham-lincoln.md"
+      "file": "figures/abraham-lincoln.md",
+      "files": {
+        "vi": "figures/abraham-lincoln.md",
+        "en": "figures/abraham-lincoln.en.md"
+      }
     },
     {
       "slug": "vi-lenin",
       "name": {
-        "vi": "V.I. Lenin"
+        "vi": "V.I. Lenin",
+        "en": "V.I. Lenin"
       },
       "region": "world",
       "born": "1870",
       "died": "1924",
       "role": {
-        "vi": "Chính trị gia, Nhà cách mạng"
+        "vi": "Chính trị gia, Nhà cách mạng",
+        "en": "Politician, Revolutionary"
       },
       "field": {
-        "vi": "Chính Trị"
+        "vi": "Chính Trị",
+        "en": "Politics"
       },
       "era": {
-        "vi": "Hiện đại"
+        "vi": "Hiện đại",
+        "en": "Modern"
       },
       "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Lenin_in_1920.jpg",
       "excerpt": {
-        "vi": "Lãnh tụ kiệt xuất của Cách mạng Tháng Mười Nga, người khai sinh Nhà nước Xô-viết và phát triển hệ tư tưởng Mác-Lênin."
+        "vi": "Lãnh tụ kiệt xuất của Cách mạng Tháng Mười Nga, người khai sinh Nhà nước Xô-viết và phát triển hệ tư tưởng Mác-Lênin.",
+        "en": "Outstanding leader of the Russian October Revolution, who founded the Soviet State and developed the Marxist-Leninist ideology."
       },
       "tags": [
         "Nga",
@@ -586,28 +655,37 @@
       ],
       "lang": "vi",
       "file": "figures/vi-lenin.md",
-      "credit": "Wikimedia Commons — Ảnh chính thức của Lenin, 1920 (Public domain)"
+      "credit": "Wikimedia Commons — Ảnh chính thức của Lenin, 1920 (Public domain)",
+      "files": {
+        "vi": "figures/vi-lenin.md",
+        "en": "figures/vi-lenin.en.md"
+      }
     },
     {
       "slug": "conor-mcgregor",
       "name": {
-        "vi": "Conor McGregor"
+        "vi": "Conor McGregor",
+        "en": "Conor McGregor"
       },
       "region": "world",
       "born": "1988",
       "died": "",
       "role": {
-        "vi": "Võ sĩ MMA chuyên nghiệp, Doanh nhân"
+        "vi": "Võ sĩ MMA chuyên nghiệp, Doanh nhân",
+        "en": "Professional MMA fighter, Businessman"
       },
       "field": {
-        "vi": "Thể thao, Kinh doanh"
+        "vi": "Thể thao, Kinh doanh",
+        "en": "Sports, Business"
       },
       "era": {
-        "vi": "Hiện đại"
+        "vi": "Hiện đại",
+        "en": "Modern"
       },
       "portrait": "https://commons.wikimedia.org/wiki/Special:FilePath/Conor_McGregor_in_2015.jpg",
       "excerpt": {
-        "vi": "Siêu sao MMA nổi tiếng nhất lịch sử UFC, võ sĩ đầu tiên thống trị hai hạng cân cùng lúc và là biểu tượng văn hóa đại chúng toàn cầu."
+        "vi": "Siêu sao MMA nổi tiếng nhất lịch sử UFC, võ sĩ đầu tiên thống trị hai hạng cân cùng lúc và là biểu tượng văn hóa đại chúng toàn cầu.",
+        "en": "The most famous MMA superstar in UFC history, the first fighter to dominate two weight classes at the same time and a global pop culture icon."
       },
       "tags": [
         "MMA",
@@ -618,30 +696,36 @@
       "lang": "vi",
       "file": "figures/conor-mcgregor.vi.md",
       "files": {
-        "vi": "figures/conor-mcgregor.vi.md"
+        "vi": "figures/conor-mcgregor.vi.md",
+        "en": "figures/conor-mcgregor.en.md"
       },
       "credit": "Wikimedia Commons — Andrius Petrucenia (CC BY-SA 2.0)"
     },
     {
       "slug": "lionel-messi",
       "name": {
-        "vi": "Lionel Messi"
+        "vi": "Lionel Messi",
+        "en": "Lionel Messi"
       },
       "region": "world",
       "born": "1987",
       "died": "",
       "role": {
-        "vi": "Cầu thủ bóng đá"
+        "vi": "Cầu thủ bóng đá",
+        "en": "Football player"
       },
       "field": {
-        "vi": "Thể thao"
+        "vi": "Thể thao",
+        "en": "Sport"
       },
       "era": {
-        "vi": "Hiện đại"
+        "vi": "Hiện đại",
+        "en": "Modern"
       },
       "portrait": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
       "excerpt": {
-        "vi": "Huyền thoại bóng đá vĩ đại nhất mọi thời đại, chủ nhân kỷ lục 8 Quả bóng vàng và chức vô địch World Cup 2022 lịch sử."
+        "vi": "Huyền thoại bóng đá vĩ đại nhất mọi thời đại, chủ nhân kỷ lục 8 Quả bóng vàng và chức vô địch World Cup 2022 lịch sử.",
+        "en": "The greatest football legend of all time, owner of a record of 8 Golden Balls and the historic 2022 World Cup championship."
       },
       "tags": [
         "Bóng đá",
@@ -653,7 +737,8 @@
       "lang": "vi",
       "file": "figures/lionel-messi.vi.md",
       "files": {
-        "vi": "figures/lionel-messi.vi.md"
+        "vi": "figures/lionel-messi.vi.md",
+        "en": "figures/lionel-messi.en.md"
       },
       "credit": "Wikimedia Commons — Hossein Zohrevand (CC BY 4.0)"
     }

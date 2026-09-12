@@ -11,7 +11,7 @@ const htmlFiles = readdirSync(".").filter((f) => f.endsWith(".html"));
 
 for (const file of htmlFiles) {
   const html = readFileSync(file, "utf8");
-  const refs = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map((m) => m[1]);
+  const refs = [...html.matchAll(/(?:\bhref|\bsrc)="([^"]+)"/g)].map((m) => m[1]);
   for (let ref of refs) {
     if (/^(https?:|data:|mailto:|#|\/\/)/.test(ref)) continue; // bỏ liên kết ngoài/anchor
     const path = ref.split("?")[0].split("#")[0];
@@ -26,6 +26,10 @@ for (const [idx, key] of [["posts/index.json", "posts"], ["figures/index.json", 
   const data = JSON.parse(readFileSync(idx, "utf8"))[key] || [];
   for (const item of data) {
     if (item.file && !existsSync(item.file)) errors.push(`${idx}: thiếu tệp → ${item.file} (${item.slug})`);
+    if (item.files) {
+      if (item.files.vi && !existsSync(item.files.vi)) errors.push(`${idx}: thiếu tệp tiếng Việt → ${item.files.vi} (${item.slug})`);
+      if (item.files.en && !existsSync(item.files.en)) errors.push(`${idx}: thiếu tệp tiếng Anh → ${item.files.en} (${item.slug})`);
+    }
   }
 }
 

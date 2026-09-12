@@ -33,7 +33,11 @@
       "file": "posts/ngo-quyen-bach-dang-938.md",
       "lang": "vi",
       "date": "2026-07-27",
-      "verified": true
+      "verified": true,
+      "files": {
+        "vi": "posts/ngo-quyen-bach-dang-938.md",
+        "en": "posts/ngo-quyen-bach-dang-938.en.md"
+      }
     },
     {
       "slug": "hoi-nghi-dien-hong-1284",
@@ -68,7 +72,11 @@
       "file": "posts/hoi-nghi-dien-hong-1284.md",
       "lang": "vi",
       "date": "2026-07-27",
-      "verified": true
+      "verified": true,
+      "files": {
+        "vi": "posts/hoi-nghi-dien-hong-1284.md",
+        "en": "posts/hoi-nghi-dien-hong-1284.en.md"
+      }
     },
     {
       "slug": "vu-am-sat-sarajevo-1914",
@@ -103,7 +111,11 @@
       "file": "posts/vu-am-sat-sarajevo-1914.md",
       "lang": "vi",
       "date": "2026-07-27",
-      "verified": true
+      "verified": true,
+      "files": {
+        "vi": "posts/vu-am-sat-sarajevo-1914.md",
+        "en": "posts/vu-am-sat-sarajevo-1914.en.md"
+      }
     },
     {
       "slug": "nem-bom-nguyen-tu-hiroshima-1945",
@@ -138,7 +150,11 @@
       "file": "posts/nem-bom-nguyen-tu-hiroshima-1945.md",
       "lang": "vi",
       "date": "2026-07-27",
-      "verified": true
+      "verified": true,
+      "files": {
+        "vi": "posts/nem-bom-nguyen-tu-hiroshima-1945.md",
+        "en": "posts/nem-bom-nguyen-tu-hiroshima-1945.en.md"
+      }
     },
     {
       "slug": "cach-mang-tan-hoi-1911",
@@ -173,7 +189,11 @@
       "file": "posts/cach-mang-tan-hoi-1911.md",
       "lang": "vi",
       "date": "2026-07-27",
-      "verified": true
+      "verified": true,
+      "files": {
+        "vi": "posts/cach-mang-tan-hoi-1911.md",
+        "en": "posts/cach-mang-tan-hoi-1911.en.md"
+      }
     },
     {
       "slug": "khoi-nghia-lam-son",
@@ -208,7 +228,11 @@
       "file": "posts/khoi-nghia-lam-son.md",
       "lang": "vi",
       "verified": true,
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "posts/khoi-nghia-lam-son.md",
+        "en": "posts/khoi-nghia-lam-son.en.md"
+      }
     },
     {
       "slug": "nan-doi-at-dau-1945",
@@ -243,7 +267,11 @@
       "file": "posts/nan-doi-at-dau-1945.md",
       "lang": "vi",
       "verified": true,
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "posts/nan-doi-at-dau-1945.md",
+        "en": "posts/nan-doi-at-dau-1945.en.md"
+      }
     },
     {
       "slug": "tuyen-ngon-doc-lap-hoa-ky-1776",
@@ -278,7 +306,11 @@
       "file": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.md",
       "lang": "vi",
       "verified": true,
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.md",
+        "en": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.en.md"
+      }
     },
     {
       "slug": "columbus-den-chau-my-1492",
@@ -313,7 +345,11 @@
       "file": "posts/columbus-den-chau-my-1492.md",
       "lang": "vi",
       "verified": true,
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "posts/columbus-den-chau-my-1492.md",
+        "en": "posts/columbus-den-chau-my-1492.en.md"
+      }
     },
     {
       "slug": "d-day-normandy-1944",
@@ -348,7 +384,11 @@
       "file": "posts/d-day-normandy-1944.md",
       "lang": "vi",
       "verified": true,
-      "date": "2026-07-27"
+      "date": "2026-07-27",
+      "files": {
+        "vi": "posts/d-day-normandy-1944.md",
+        "en": "posts/d-day-normandy-1944.en.md"
+      }
     },
     {
       "slug": "khoi-nghia-hai-ba-trung",
@@ -383,7 +423,11 @@
         "en": "Me Linh, Hanoi"
       },
       "verified": true,
-      "file": "posts/khoi-nghia-hai-ba-trung.md"
+      "file": "posts/khoi-nghia-hai-ba-trung.md",
+      "files": {
+        "vi": "posts/khoi-nghia-hai-ba-trung.md",
+        "en": "posts/khoi-nghia-hai-ba-trung.en.md"
+      }
     },
     {
       "slug": "chien-thang-ngoc-hoi-dong-da-1789",
@@ -418,7 +462,11 @@
         "en": "Dong Da Mound, Thang Long (Hanoi)"
       },
       "verified": true,
-      "file": "posts/chien-thang-ngoc-hoi-dong-da-1789.md"
+      "file": "posts/chien-thang-ngoc-hoi-dong-da-1789.md",
+      "files": {
+        "vi": "posts/chien-thang-ngoc-hoi-dong-da-1789.md",
+        "en": "posts/chien-thang-ngoc-hoi-dong-da-1789.en.md"
+      }
     },
     {
       "slug": "ngay-30-4-1975",
@@ -453,7 +501,11 @@
         "en": "Independence Palace, Saigon"
       },
       "verified": true,
-      "file": "posts/ngay-30-4-1975.md"
+      "file": "posts/ngay-30-4-1975.md",
+      "files": {
+        "vi": "posts/ngay-30-4-1975.md",
+        "en": "posts/ngay-30-4-1975.en.md"
+      }
     },
     {
       "slug": "may-in-gutenberg",
@@ -488,7 +540,11 @@
         "en": "Mainz, Germany"
       },
       "verified": true,
-      "file": "posts/may-in-gutenberg.md"
+      "file": "posts/may-in-gutenberg.md",
+      "files": {
+        "vi": "posts/may-in-gutenberg.md",
+        "en": "posts/may-in-gutenberg.en.md"
+      }
     },
     {
       "slug": "cai-chet-den-1347",
@@ -523,7 +579,11 @@
         "en": "Messina, Sicily"
       },
       "verified": true,
-      "file": "posts/cai-chet-den-1347.md"
+      "file": "posts/cai-chet-den-1347.md",
+      "files": {
+        "vi": "posts/cai-chet-den-1347.md",
+        "en": "posts/cai-chet-den-1347.en.md"
+      }
     },
     {
       "slug": "chien-thang-dien-bien-phu-1954",
@@ -558,7 +618,11 @@
         "en": "Dien Bien Phu, Dien Bien Province, Vietnam"
       },
       "verified": true,
-      "file": "posts/chien-thang-dien-bien-phu-1954.md"
+      "file": "posts/chien-thang-dien-bien-phu-1954.md",
+      "files": {
+        "vi": "posts/chien-thang-dien-bien-phu-1954.md",
+        "en": "posts/chien-thang-dien-bien-phu-1954.en.md"
+      }
     },
     {
       "slug": "buc-tuong-berlin-sup-do-1989",
@@ -593,7 +657,11 @@
         "en": "Berlin, German Democratic Republic"
       },
       "verified": true,
-      "file": "posts/buc-tuong-berlin-sup-do-1989.md"
+      "file": "posts/buc-tuong-berlin-sup-do-1989.md",
+      "files": {
+        "vi": "posts/buc-tuong-berlin-sup-do-1989.md",
+        "en": "posts/buc-tuong-berlin-sup-do-1989.en.md"
+      }
     },
     {
       "slug": "cach-mang-phap-1789",
@@ -628,7 +696,11 @@
         "en": "Paris, France"
       },
       "verified": true,
-      "file": "posts/cach-mang-phap-1789.md"
+      "file": "posts/cach-mang-phap-1789.md",
+      "files": {
+        "vi": "posts/cach-mang-phap-1789.md",
+        "en": "posts/cach-mang-phap-1789.en.md"
+      }
     },
     {
       "slug": "chien-thang-bach-dang-1288",
@@ -663,7 +735,11 @@
         "en": "Bach Dang River, Quang Yen, Quang Ninh"
       },
       "verified": true,
-      "file": "posts/chien-thang-bach-dang-1288.md"
+      "file": "posts/chien-thang-bach-dang-1288.md",
+      "files": {
+        "vi": "posts/chien-thang-bach-dang-1288.md",
+        "en": "posts/chien-thang-bach-dang-1288.en.md"
+      }
     },
     {
       "slug": "chieu-doi-do-va-thang-long-1010",
@@ -698,20 +774,27 @@
         "en": "Dai La – Thang Long Citadel (present-day Hanoi)"
       },
       "verified": true,
-      "file": "posts/chieu-doi-do-va-thang-long-1010.md"
+      "file": "posts/chieu-doi-do-va-thang-long-1010.md",
+      "files": {
+        "vi": "posts/chieu-doi-do-va-thang-long-1010.md",
+        "en": "posts/chieu-doi-do-va-thang-long-1010.en.md"
+      }
     },
     {
       "slug": "cach-mang-thang-muoi-nga",
       "title": {
-        "vi": "Cách mạng Tháng Mười Nga"
+        "vi": "Cách mạng Tháng Mười Nga",
+        "en": "Russian October Revolution"
       },
       "excerpt": {
-        "vi": "Cuộc cách mạng vô sản vĩ đại nổ ra vào năm 1917 tại Nga do V. I. Lênin và Đảng Bolshevik lãnh đạo. Sự kiện này đã lật đổ Chính phủ lâm thời tư sản, thiết lập chính quyền Xô-viết và đánh dấu sự ra đời của Nhà nước Xã hội Chủ nghĩa đầu tiên trên thế giới."
+        "vi": "Cuộc cách mạng vô sản vĩ đại nổ ra vào năm 1917 tại Nga do V. I. Lênin và Đảng Bolshevik lãnh đạo. Sự kiện này đã lật đổ Chính phủ lâm thời tư sản, thiết lập chính quyền Xô-viết và đánh dấu sự ra đời của Nhà nước Xã hội Chủ nghĩa đầu tiên trên thế giới.",
+        "en": "The great proletarian revolution broke out in 1917 in Russia led by V. I. Lenin and the Bolshevik Party. This event overthrew the bourgeois Provisional Government, established the Soviet government and marked the birth of the world's first Socialist State."
       },
       "year": "1917",
       "region": "world",
       "era": {
-        "vi": "Hiện đại"
+        "vi": "Hiện đại",
+        "en": "Modern"
       },
       "date": "2026-07-24",
       "tags": [
@@ -727,22 +810,30 @@
       "lat": 59.9343,
       "lng": 30.3351,
       "place": {
-        "vi": "Petrograd (nay là Saint Petersburg), Nga"
+        "vi": "Petrograd (nay là Saint Petersburg), Nga",
+        "en": "Petrograd (now Saint Petersburg), Russia"
       },
-      "credit": "Wikimedia Commons — Ảnh tư liệu Hồng vệ binh Petrograd 1917 (Public domain)"
+      "credit": "Wikimedia Commons — Ảnh tư liệu Hồng vệ binh Petrograd 1917 (Public domain)",
+      "files": {
+        "vi": "posts/cach-mang-thang-muoi-nga.md",
+        "en": "posts/cach-mang-thang-muoi-nga.en.md"
+      }
     },
     {
       "slug": "su-ra-doi-va-troi-day-cua-nvidia",
       "title": {
-        "vi": "Sự ra đời và trỗi dậy của NVIDIA"
+        "vi": "Sự ra đời và trỗi dậy của NVIDIA",
+        "en": "The birth and rise of NVIDIA"
       },
       "excerpt": {
-        "vi": "Được thành lập vào năm 1993, NVIDIA ban đầu được biết đến là công ty tiên phong trong lĩnh vực đồ họa máy tính và trò chơi điện tử (GPU). Tuy nhiên, nhờ những quyết định chiến lược xuất sắc, NVIDIA đã chuyển mình trở thành thế lực thống trị tuyệt đối trong kỷ nguyên Trí tuệ nhân tạo (AI), trở thành một trong những công ty giá trị nhất thế giới."
+        "vi": "Được thành lập vào năm 1993, NVIDIA ban đầu được biết đến là công ty tiên phong trong lĩnh vực đồ họa máy tính và trò chơi điện tử (GPU). Tuy nhiên, nhờ những quyết định chiến lược xuất sắc, NVIDIA đã chuyển mình trở thành thế lực thống trị tuyệt đối trong kỷ nguyên Trí tuệ nhân tạo (AI), trở thành một trong những công ty giá trị nhất thế giới.",
+        "en": "Founded in 1993, NVIDIA was initially known as a pioneer in the field of computer graphics and video games (GPU). However, thanks to excellent strategic decisions, NVIDIA has transformed itself into an absolute dominant force in the era of Artificial Intelligence (AI), becoming one of the most valuable companies in the world."
       },
       "year": "1993",
       "region": "world",
       "era": {
-        "vi": "Hiện đại"
+        "vi": "Hiện đại",
+        "en": "Modern"
       },
       "date": "2026-07-24",
       "tags": [
@@ -756,12 +847,14 @@
       "lang": "vi",
       "file": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md",
       "files": {
-        "vi": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md"
+        "vi": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md",
+        "en": "posts/su-ra-doi-va-troi-day-cua-nvidia.en.md"
       },
       "lat": 37.3541,
       "lng": -121.9552,
       "place": {
-        "vi": "Santa Clara, California, Hoa Kỳ"
+        "vi": "Santa Clara, California, Hoa Kỳ",
+        "en": "Santa Clara, California, USA"
       },
       "credit": "Wikimedia Commons — Coolcaesar (CC BY-SA 4.0)"
     },
@@ -794,7 +887,11 @@
       "verified": true,
       "file": "posts/cach-mang-thang-tam-1945.md",
       "featured": true,
-      "credit": "Wikimedia Commons — Mặt trận Việt Minh, ảnh ngày 2/9/1945 (Public domain)"
+      "credit": "Wikimedia Commons — Mặt trận Việt Minh, ảnh ngày 2/9/1945 (Public domain)",
+      "files": {
+        "vi": "posts/cach-mang-thang-tam-1945.md",
+        "en": "posts/cach-mang-thang-tam-1945.en.md"
+      }
     },
     {
       "slug": "con-duong-to-lua",
@@ -825,10 +922,12 @@
       "credit": "Unsplash",
       "file": "posts/con-duong-to-lua.vi.md",
       "era": {
-        "vi": ""
+        "vi": "",
+        "en": ""
       },
       "files": {
-        "vi": "posts/con-duong-to-lua.vi.md"
+        "vi": "posts/con-duong-to-lua.vi.md",
+        "en": "posts/con-duong-to-lua.en.md"
       }
     },
     {
@@ -859,9 +958,14 @@
       },
       "file": "posts/cach-mang-cong-nghiep.md",
       "era": {
-        "vi": ""
+        "vi": "",
+        "en": ""
       },
-      "credit": "Wikimedia Commons — Philip James de Loutherbourg, “Coalbrookdale by Night” (1801, Public domain)"
+      "credit": "Wikimedia Commons — Philip James de Loutherbourg, “Coalbrookdale by Night” (1801, Public domain)",
+      "files": {
+        "vi": "posts/cach-mang-cong-nghiep.md",
+        "en": "posts/cach-mang-cong-nghiep.en.md"
+      }
     },
     {
       "slug": "apollo-11-1969",
@@ -892,10 +996,12 @@
       "credit": "Unsplash",
       "file": "posts/apollo-11-1969.vi.md",
       "era": {
-        "vi": ""
+        "vi": "",
+        "en": ""
       },
       "files": {
-        "vi": "posts/apollo-11-1969.vi.md"
+        "vi": "posts/apollo-11-1969.vi.md",
+        "en": "posts/apollo-11-1969.en.md"
       }
     }
   ]
