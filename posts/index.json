@@ -144,7 +144,7 @@
         "khởi nghĩa",
         "nữ anh hùng"
       ],
-      "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg",
+      "cover": "https://luocsutocviet.com/wp-content/uploads/2018/09/ba_trieu1-2.jpg",
       "credit": "Tranh dân gian Đông Hồ — Wikimedia Commons (Public Domain)",
       "lat": 19.9208,
       "lng": 105.7744,
@@ -202,133 +202,16 @@
       }
     },
     {
-      "slug": "ngo-quyen-bach-dang-938",
+      "slug": "d-day-normandy-1944",
       "title": {
-        "vi": "Chiến thắng Bạch Đằng năm 938",
-        "en": "The Battle of Bach Dang, 938"
+        "vi": "Cuộc đổ bộ Normandy (D-Day)",
+        "en": "The Normandy Landings (D-Day)"
       },
       "excerpt": {
-        "vi": "Ngô Quyền dùng bãi cọc ngầm nhấn chìm thủy quân Nam Hán, kết thúc hơn một nghìn năm Bắc thuộc.",
-        "en": "Ngo Quyen's hidden stakes sank the Southern Han fleet, ending over a thousand years of Chinese rule."
+        "vi": "Ngày 6/6/1944, hạm đội lớn nhất lịch sử đổ bộ Normandy, mở mặt trận thứ hai ở Tây Âu chống phát xít Đức.",
+        "en": "On 6 June 1944, the largest fleet in history landed at Normandy, opening a second front against Nazi Germany."
       },
-      "year": "938",
-      "region": "vietnam",
-      "era": {
-        "vi": "Trung đại",
-        "en": "Medieval"
-      },
-      "tags": [
-        "Việt Nam",
-        "Ngô Quyền",
-        "Bắc thuộc",
-        "quân sự"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngo_Quyen_(897-944)_Defeated_Southern_Han_Invasion_at_Bach_Dang_River%2C_938%2C_Led_to_Viet_Independence_(9732108093).jpg?width=1600",
-      "credit": "Wikimedia Commons — Gary Todd (CC0)",
-      "lat": 20.9269,
-      "lng": 106.7803,
-      "place": {
-        "vi": "Cửa sông Bạch Đằng, Quảng Ninh – Hải Phòng",
-        "en": "Bach Dang estuary, Quang Ninh – Hai Phong"
-      },
-      "file": "posts/ngo-quyen-bach-dang-938.md",
-      "lang": "vi",
-      "date": "2026-07-27",
-      "verified": true,
-      "files": {
-        "vi": "posts/ngo-quyen-bach-dang-938.md",
-        "en": "posts/ngo-quyen-bach-dang-938.en.md"
-      }
-    },
-    {
-      "slug": "hoi-nghi-dien-hong-1284",
-      "title": {
-        "vi": "Hội nghị Diên Hồng",
-        "en": "The Dien Hong Conference"
-      },
-      "excerpt": {
-        "vi": "Triều đình nhà Trần mời phụ lão cả nước về hỏi nên hòa hay nên đánh trước họa Nguyên Mông — và nhận về một tiếng \"Đánh!\".",
-        "en": "The Tran court summoned the nation's elders to ask peace or war against the Mongols — and heard one answer: \"Fight!\""
-      },
-      "year": "1284",
-      "region": "vietnam",
-      "era": {
-        "vi": "Trung đại",
-        "en": "Medieval"
-      },
-      "tags": [
-        "Việt Nam",
-        "nhà Trần",
-        "kháng chiến chống Nguyên Mông",
-        "chính trị"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Den_Tran_Nam_Dinh.jpg?width=1600",
-      "credit": "Wikimedia Commons — Hoangvantoanajc (CC0)",
-      "lat": 21.0245,
-      "lng": 105.8412,
-      "place": {
-        "vi": "Điện Diên Hồng, Thăng Long (Hà Nội)",
-        "en": "Dien Hong Hall, Thang Long (Hanoi)"
-      },
-      "file": "posts/hoi-nghi-dien-hong-1284.md",
-      "lang": "vi",
-      "date": "2026-07-27",
-      "verified": true,
-      "files": {
-        "vi": "posts/hoi-nghi-dien-hong-1284.md",
-        "en": "posts/hoi-nghi-dien-hong-1284.en.md"
-      }
-    },
-    {
-      "slug": "vu-am-sat-sarajevo-1914",
-      "title": {
-        "vi": "Vụ ám sát Sarajevo",
-        "en": "The Assassination at Sarajevo"
-      },
-      "excerpt": {
-        "vi": "Một phát súng ở Sarajevo tháng 6/1914 châm ngòi cho Thế chiến thứ nhất chỉ sau năm tuần.",
-        "en": "A single shot at Sarajevo in June 1914 ignited the First World War within five weeks."
-      },
-      "year": "1914",
-      "region": "world",
-      "era": {
-        "vi": "Hiện đại",
-        "en": "Modern"
-      },
-      "tags": [
-        "thế giới",
-        "Thế chiến thứ nhất",
-        "Thế kỷ 20",
-        "chính trị"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Gavrilo_Princip's_Arrest2.jpg?width=1600",
-      "credit": "Wikimedia Commons (CC0)",
-      "lat": 43.8586,
-      "lng": 18.4286,
-      "place": {
-        "vi": "Sarajevo, Bosnia (Áo-Hung)",
-        "en": "Sarajevo, Bosnia (Austria-Hungary)"
-      },
-      "file": "posts/vu-am-sat-sarajevo-1914.md",
-      "lang": "vi",
-      "date": "2026-07-27",
-      "verified": true,
-      "files": {
-        "vi": "posts/vu-am-sat-sarajevo-1914.md",
-        "en": "posts/vu-am-sat-sarajevo-1914.en.md"
-      }
-    },
-    {
-      "slug": "nem-bom-nguyen-tu-hiroshima-1945",
-      "title": {
-        "vi": "Ném bom nguyên tử Hiroshima và Nagasaki",
-        "en": "The Atomic Bombings of Hiroshima and Nagasaki"
-      },
-      "excerpt": {
-        "vi": "Tháng 8/1945, hai quả bom nguyên tử san phẳng hai thành phố Nhật và đưa nhân loại vào kỷ nguyên hạt nhân.",
-        "en": "In August 1945, two atomic bombs levelled two Japanese cities and ushered humanity into the nuclear age."
-      },
-      "year": "1945",
+      "year": "1944",
       "region": "world",
       "era": {
         "vi": "Hiện đại",
@@ -337,180 +220,24 @@
       "tags": [
         "thế giới",
         "Thế chiến thứ hai",
-        "vũ khí hạt nhân",
+        "quân sự",
         "Thế kỷ 20"
       ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Atomic_cloud_over_Hiroshima.jpg?width=1600",
-      "credit": "Wikimedia Commons — George R. Caron / US Army (PD)",
-      "lat": 34.3955,
-      "lng": 132.4536,
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Into_the_Jaws_of_Death_23-0455M_edit.jpg?width=1600",
+      "credit": "Wikimedia Commons — Robert F. Sargent, US Coast Guard (PD)",
+      "lat": 49.37,
+      "lng": -0.86,
       "place": {
-        "vi": "Hiroshima, Nhật Bản",
-        "en": "Hiroshima, Japan"
+        "vi": "Bãi biển Normandy, Pháp",
+        "en": "Normandy beaches, France"
       },
-      "file": "posts/nem-bom-nguyen-tu-hiroshima-1945.md",
-      "lang": "vi",
-      "date": "2026-07-27",
-      "verified": true,
-      "files": {
-        "vi": "posts/nem-bom-nguyen-tu-hiroshima-1945.md",
-        "en": "posts/nem-bom-nguyen-tu-hiroshima-1945.en.md"
-      }
-    },
-    {
-      "slug": "cach-mang-tan-hoi-1911",
-      "title": {
-        "vi": "Cách mạng Tân Hợi",
-        "en": "The Xinhai Revolution"
-      },
-      "excerpt": {
-        "vi": "Khởi nghĩa Vũ Xương năm 1911 lật đổ nhà Thanh, chấm dứt hơn hai nghìn năm quân chủ và lập nên Trung Hoa Dân Quốc.",
-        "en": "The 1911 Wuchang uprising toppled the Qing, ending two millennia of monarchy and founding the Republic of China."
-      },
-      "year": "1911",
-      "region": "world",
-      "era": {
-        "vi": "Hiện đại",
-        "en": "Modern"
-      },
-      "tags": [
-        "thế giới",
-        "cách mạng",
-        "Trung Quốc",
-        "Thế kỷ 20"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubei_Military_Government.jpg?width=1600",
-      "credit": "Wikimedia Commons (PD)",
-      "lat": 30.5551,
-      "lng": 114.3055,
-      "place": {
-        "vi": "Vũ Xương, Vũ Hán, Trung Quốc",
-        "en": "Wuchang, Wuhan, China"
-      },
-      "file": "posts/cach-mang-tan-hoi-1911.md",
-      "lang": "vi",
-      "date": "2026-07-27",
-      "verified": true,
-      "files": {
-        "vi": "posts/cach-mang-tan-hoi-1911.md",
-        "en": "posts/cach-mang-tan-hoi-1911.en.md"
-      }
-    },
-    {
-      "slug": "khoi-nghia-lam-son",
-      "title": {
-        "vi": "Khởi nghĩa Lam Sơn",
-        "en": "The Lam Son Uprising"
-      },
-      "excerpt": {
-        "vi": "Mười năm nếm mật nằm gai, từ một hào trưởng đất Thanh Hóa đến bản Bình Ngô đại cáo tuyên bố độc lập.",
-        "en": "Ten years of hardship, from a Thanh Hoa chieftain to the great proclamation of independence."
-      },
-      "year": "1418",
-      "region": "vietnam",
-      "era": {
-        "vi": "Trung đại",
-        "en": "Medieval"
-      },
-      "tags": [
-        "Việt Nam",
-        "nhà Lê",
-        "kháng chiến chống Minh",
-        "quân sự"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Lam_Kinh.jpg?width=1600",
-      "credit": "Wikimedia Commons — Bùi Lê Việt Cường (CC BY-SA 4.0)",
-      "lat": 19.9167,
-      "lng": 105.45,
-      "place": {
-        "vi": "Lam Sơn, Thanh Hóa",
-        "en": "Lam Son, Thanh Hoa"
-      },
-      "file": "posts/khoi-nghia-lam-son.md",
+      "file": "posts/d-day-normandy-1944.vi.md",
       "lang": "vi",
       "verified": true,
       "date": "2026-07-27",
       "files": {
-        "vi": "posts/khoi-nghia-lam-son.md",
-        "en": "posts/khoi-nghia-lam-son.en.md"
-      }
-    },
-    {
-      "slug": "nan-doi-at-dau-1945",
-      "title": {
-        "vi": "Nạn đói Ất Dậu 1945",
-        "en": "The Vietnamese Famine of 1945"
-      },
-      "excerpt": {
-        "vi": "Khoảng hai triệu người chết đói ngay trên vùng đồng bằng vốn xuất khẩu gạo — thảm họa nhân đạo lớn nhất lịch sử Việt Nam hiện đại.",
-        "en": "Some two million died of starvation in a rice-exporting delta — modern Vietnam's greatest humanitarian catastrophe."
-      },
-      "year": "1945",
-      "region": "vietnam",
-      "era": {
-        "vi": "Hiện đại",
-        "en": "Modern"
-      },
-      "tags": [
-        "Việt Nam",
-        "nạn đói",
-        "Thế kỷ 20",
-        "xã hội"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Famine_in_Vietnam%2C_1945.jpg?width=1600",
-      "credit": "Wikimedia Commons — Võ An Ninh (PD)",
-      "lat": 21,
-      "lng": 105.85,
-      "place": {
-        "vi": "Đồng bằng Bắc Bộ",
-        "en": "Red River Delta, Northern Vietnam"
-      },
-      "file": "posts/nan-doi-at-dau-1945.md",
-      "lang": "vi",
-      "verified": true,
-      "date": "2026-07-27",
-      "files": {
-        "vi": "posts/nan-doi-at-dau-1945.md",
-        "en": "posts/nan-doi-at-dau-1945.en.md"
-      }
-    },
-    {
-      "slug": "tuyen-ngon-doc-lap-hoa-ky-1776",
-      "title": {
-        "vi": "Tuyên ngôn Độc lập Hoa Kỳ",
-        "en": "The United States Declaration of Independence"
-      },
-      "excerpt": {
-        "vi": "Bản văn năm 1776 khẳng định mọi người sinh ra đều bình đẳng — câu chữ về sau vọng tới tận Ba Đình 1945.",
-        "en": "The 1776 text held that all men are created equal — words that would echo as far as Hanoi in 1945."
-      },
-      "year": "1776",
-      "region": "world",
-      "era": {
-        "vi": "Cận đại",
-        "en": "Early modern"
-      },
-      "tags": [
-        "thế giới",
-        "cách mạng",
-        "Hoa Kỳ",
-        "chính trị"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Declaration_of_Independence_(1819)%2C_by_John_Trumbull.jpg?width=1600",
-      "credit": "Wikimedia Commons — John Trumbull (PD)",
-      "lat": 39.9489,
-      "lng": -75.15,
-      "place": {
-        "vi": "Philadelphia, Hoa Kỳ",
-        "en": "Philadelphia, USA"
-      },
-      "file": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.md",
-      "lang": "vi",
-      "verified": true,
-      "date": "2026-07-27",
-      "files": {
-        "vi": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.md",
-        "en": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.en.md"
+        "vi": "posts/d-day-normandy-1944.vi.md",
+        "en": "posts/d-day-normandy-1944.en.md"
       }
     },
     {
@@ -553,16 +280,172 @@
       }
     },
     {
-      "slug": "d-day-normandy-1944",
+      "slug": "tuyen-ngon-doc-lap-hoa-ky-1776",
       "title": {
-        "vi": "Cuộc đổ bộ Normandy (D-Day)",
-        "en": "The Normandy Landings (D-Day)"
+        "vi": "Tuyên ngôn Độc lập Hoa Kỳ",
+        "en": "The United States Declaration of Independence"
       },
       "excerpt": {
-        "vi": "Ngày 6/6/1944, hạm đội lớn nhất lịch sử đổ bộ Normandy, mở mặt trận thứ hai ở Tây Âu chống phát xít Đức.",
-        "en": "On 6 June 1944, the largest fleet in history landed at Normandy, opening a second front against Nazi Germany."
+        "vi": "Bản văn năm 1776 khẳng định mọi người sinh ra đều bình đẳng — câu chữ về sau vọng tới tận Ba Đình 1945.",
+        "en": "The 1776 text held that all men are created equal — words that would echo as far as Hanoi in 1945."
       },
-      "year": "1944",
+      "year": "1776",
+      "region": "world",
+      "era": {
+        "vi": "Cận đại",
+        "en": "Early modern"
+      },
+      "tags": [
+        "thế giới",
+        "cách mạng",
+        "Hoa Kỳ",
+        "chính trị"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Declaration_of_Independence_(1819)%2C_by_John_Trumbull.jpg?width=1600",
+      "credit": "Wikimedia Commons — John Trumbull (PD)",
+      "lat": 39.9489,
+      "lng": -75.15,
+      "place": {
+        "vi": "Philadelphia, Hoa Kỳ",
+        "en": "Philadelphia, USA"
+      },
+      "file": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.md",
+      "lang": "vi",
+      "verified": true,
+      "date": "2026-07-27",
+      "files": {
+        "vi": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.md",
+        "en": "posts/tuyen-ngon-doc-lap-hoa-ky-1776.en.md"
+      }
+    },
+    {
+      "slug": "nan-doi-at-dau-1945",
+      "title": {
+        "vi": "Nạn đói Ất Dậu 1945",
+        "en": "The Vietnamese Famine of 1945"
+      },
+      "excerpt": {
+        "vi": "Khoảng hai triệu người chết đói ngay trên vùng đồng bằng vốn xuất khẩu gạo — thảm họa nhân đạo lớn nhất lịch sử Việt Nam hiện đại.",
+        "en": "Some two million died of starvation in a rice-exporting delta — modern Vietnam's greatest humanitarian catastrophe."
+      },
+      "year": "1945",
+      "region": "vietnam",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "tags": [
+        "Việt Nam",
+        "nạn đói",
+        "Thế kỷ 20",
+        "xã hội"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Famine_in_Vietnam%2C_1945.jpg?width=1600",
+      "credit": "Wikimedia Commons — Võ An Ninh (PD)",
+      "lat": 21,
+      "lng": 105.85,
+      "place": {
+        "vi": "Đồng bằng Bắc Bộ",
+        "en": "Red River Delta, Northern Vietnam"
+      },
+      "file": "posts/nan-doi-at-dau-1945.md",
+      "lang": "vi",
+      "verified": true,
+      "date": "2026-07-27",
+      "files": {
+        "vi": "posts/nan-doi-at-dau-1945.md",
+        "en": "posts/nan-doi-at-dau-1945.en.md"
+      }
+    },
+    {
+      "slug": "khoi-nghia-lam-son",
+      "title": {
+        "vi": "Khởi nghĩa Lam Sơn",
+        "en": "The Lam Son Uprising"
+      },
+      "excerpt": {
+        "vi": "Mười năm nếm mật nằm gai, từ một hào trưởng đất Thanh Hóa đến bản Bình Ngô đại cáo tuyên bố độc lập.",
+        "en": "Ten years of hardship, from a Thanh Hoa chieftain to the great proclamation of independence."
+      },
+      "year": "1418",
+      "region": "vietnam",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "tags": [
+        "Việt Nam",
+        "nhà Lê",
+        "kháng chiến chống Minh",
+        "quân sự"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Lam_Kinh.jpg?width=1600",
+      "credit": "Wikimedia Commons — Bùi Lê Việt Cường (CC BY-SA 4.0)",
+      "lat": 19.9167,
+      "lng": 105.45,
+      "place": {
+        "vi": "Lam Sơn, Thanh Hóa",
+        "en": "Lam Son, Thanh Hoa"
+      },
+      "file": "posts/khoi-nghia-lam-son.md",
+      "lang": "vi",
+      "verified": true,
+      "date": "2026-07-27",
+      "files": {
+        "vi": "posts/khoi-nghia-lam-son.md",
+        "en": "posts/khoi-nghia-lam-son.en.md"
+      }
+    },
+    {
+      "slug": "cach-mang-tan-hoi-1911",
+      "title": {
+        "vi": "Cách mạng Tân Hợi",
+        "en": "The Xinhai Revolution"
+      },
+      "excerpt": {
+        "vi": "Khởi nghĩa Vũ Xương năm 1911 lật đổ nhà Thanh, chấm dứt hơn hai nghìn năm quân chủ và lập nên Trung Hoa Dân Quốc.",
+        "en": "The 1911 Wuchang uprising toppled the Qing, ending two millennia of monarchy and founding the Republic of China."
+      },
+      "year": "1911",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "tags": [
+        "thế giới",
+        "cách mạng",
+        "Trung Quốc",
+        "Thế kỷ 20"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Hubei_Military_Government.jpg?width=1600",
+      "credit": "Wikimedia Commons (PD)",
+      "lat": 30.5551,
+      "lng": 114.3055,
+      "place": {
+        "vi": "Vũ Xương, Vũ Hán, Trung Quốc",
+        "en": "Wuchang, Wuhan, China"
+      },
+      "file": "posts/cach-mang-tan-hoi-1911.md",
+      "lang": "vi",
+      "date": "2026-07-27",
+      "verified": true,
+      "files": {
+        "vi": "posts/cach-mang-tan-hoi-1911.md",
+        "en": "posts/cach-mang-tan-hoi-1911.en.md"
+      }
+    },
+    {
+      "slug": "nem-bom-nguyen-tu-hiroshima-1945",
+      "title": {
+        "vi": "Ném bom nguyên tử Hiroshima và Nagasaki",
+        "en": "The Atomic Bombings of Hiroshima and Nagasaki"
+      },
+      "excerpt": {
+        "vi": "Tháng 8/1945, hai quả bom nguyên tử san phẳng hai thành phố Nhật và đưa nhân loại vào kỷ nguyên hạt nhân.",
+        "en": "In August 1945, two atomic bombs levelled two Japanese cities and ushered humanity into the nuclear age."
+      },
+      "year": "1945",
       "region": "world",
       "era": {
         "vi": "Hiện đại",
@@ -571,375 +454,219 @@
       "tags": [
         "thế giới",
         "Thế chiến thứ hai",
-        "quân sự",
+        "vũ khí hạt nhân",
         "Thế kỷ 20"
       ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Into_the_Jaws_of_Death_23-0455M_edit.jpg?width=1600",
-      "credit": "Wikimedia Commons — Robert F. Sargent, US Coast Guard (PD)",
-      "lat": 49.37,
-      "lng": -0.86,
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Atomic_cloud_over_Hiroshima.jpg?width=1600",
+      "credit": "Wikimedia Commons — George R. Caron / US Army (PD)",
+      "lat": 34.3955,
+      "lng": 132.4536,
       "place": {
-        "vi": "Bãi biển Normandy, Pháp",
-        "en": "Normandy beaches, France"
+        "vi": "Hiroshima, Nhật Bản",
+        "en": "Hiroshima, Japan"
       },
-      "file": "posts/d-day-normandy-1944.vi.md",
+      "file": "posts/nem-bom-nguyen-tu-hiroshima-1945.md",
       "lang": "vi",
-      "verified": true,
       "date": "2026-07-27",
-      "files": {
-        "vi": "posts/d-day-normandy-1944.vi.md",
-        "en": "posts/d-day-normandy-1944.en.md"
-      }
-    },
-    {
-      "slug": "khoi-nghia-hai-ba-trung",
-      "title": {
-        "vi": "Khởi nghĩa Hai Bà Trưng",
-        "en": "The Trung Sisters' Uprising"
-      },
-      "excerpt": {
-        "vi": "Năm 40, hai người con gái Lạc tướng đất Mê Linh dựng cờ, giành lại quyền tự chủ trong ba năm giữa nghìn năm Bắc thuộc.",
-        "en": "In AD 40, two daughters of a Me Linh chieftain raised the banner and won three years of self-rule amid a millennium of Chinese domination."
-      },
-      "year": "40",
-      "region": "vietnam",
-      "era": {
-        "vi": "Cổ đại",
-        "en": "Ancient"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "Việt Nam",
-        "Bắc thuộc",
-        "khởi nghĩa",
-        "phụ nữ"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_Hai_B%C3%A0_Tr%C6%B0ng.jpg?width=1600",
-      "credit": "Wikimedia Commons — Guerinf (CC BY-SA 4.0)",
-      "lang": "vi",
-      "lat": 21.1583,
-      "lng": 105.7167,
-      "place": {
-        "vi": "Mê Linh, Hà Nội",
-        "en": "Me Linh, Hanoi"
-      },
       "verified": true,
-      "file": "posts/khoi-nghia-hai-ba-trung.md",
       "files": {
-        "vi": "posts/khoi-nghia-hai-ba-trung.md",
-        "en": "posts/khoi-nghia-hai-ba-trung.en.md"
+        "vi": "posts/nem-bom-nguyen-tu-hiroshima-1945.md",
+        "en": "posts/nem-bom-nguyen-tu-hiroshima-1945.en.md"
       }
     },
     {
-      "slug": "chien-thang-ngoc-hoi-dong-da-1789",
+      "slug": "vu-am-sat-sarajevo-1914",
       "title": {
-        "vi": "Chiến thắng Ngọc Hồi – Đống Đa",
-        "en": "The Victory at Ngoc Hoi – Dong Da"
+        "vi": "Vụ ám sát Sarajevo",
+        "en": "The Assassination at Sarajevo"
       },
       "excerpt": {
-        "vi": "Quang Trung hẹn ăn Tết ở Thăng Long vào mùng 7; ông về sớm hơn hai ngày, sau một cuộc hành quân thần tốc hơn 600 km.",
-        "en": "Quang Trung promised his troops a Lunar New Year feast in Thang Long by the seventh day; he arrived two days early."
+        "vi": "Một phát súng ở Sarajevo tháng 6/1914 châm ngòi cho Thế chiến thứ nhất chỉ sau năm tuần.",
+        "en": "A single shot at Sarajevo in June 1914 ignited the First World War within five weeks."
       },
-      "year": "1789",
-      "region": "vietnam",
-      "era": {
-        "vi": "Cận đại",
-        "en": "Early modern"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "Việt Nam",
-        "Tây Sơn",
-        "Quang Trung",
-        "quân sự"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Quang_Trung_Nguy%E1%BB%85n_Hu%E1%BB%87%2C_G%C3%B2_%C4%90%E1%BB%91ng_%C4%90a.JPG?width=1600",
-      "credit": "Wikimedia Commons — Nguyễn Thanh Quang (CC BY-SA 3.0)",
-      "lang": "vi",
-      "lat": 21.0189,
-      "lng": 105.8262,
-      "place": {
-        "vi": "Gò Đống Đa, Thăng Long (Hà Nội)",
-        "en": "Dong Da Mound, Thang Long (Hanoi)"
-      },
-      "verified": true,
-      "file": "posts/chien-thang-ngoc-hoi-dong-da-1789.md",
-      "files": {
-        "vi": "posts/chien-thang-ngoc-hoi-dong-da-1789.md",
-        "en": "posts/chien-thang-ngoc-hoi-dong-da-1789.en.md"
-      }
-    },
-    {
-      "slug": "ngay-30-4-1975",
-      "title": {
-        "vi": "Ngày 30 tháng 4 năm 1975",
-        "en": "April 30, 1975"
-      },
-      "excerpt": {
-        "vi": "Chiếc xe tăng qua cổng Dinh Độc Lập khép lại ba mươi năm chiến tranh và hai mươi mốt năm chia cắt hai miền.",
-        "en": "The tank passed through the gates of the Independence Palace, ending thirty years of war and twenty-one years of separation between the two regions."
-      },
-      "year": "1975",
-      "region": "vietnam",
+      "year": "1914",
+      "region": "world",
       "era": {
         "vi": "Hiện đại",
         "en": "Modern"
       },
-      "date": "2026-07-24",
       "tags": [
-        "Việt Nam",
-        "thống nhất",
+        "thế giới",
+        "Thế chiến thứ nhất",
         "Thế kỷ 20",
-        "chiến tranh Việt Nam"
-      ],
-      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxgfM2pOHgOUw5iQP3Z-MtwW7FaVbCRCM_7QJXAs9NEByEANxohgZ1_ZE&s=10",
-      "credit": "Wikimedia Commons — Theodor (CC BY-SA 4.0)",
-      "lang": "vi",
-      "lat": 10.7772,
-      "lng": 106.6958,
-      "place": {
-        "vi": "Dinh Độc Lập, Sài Gòn",
-        "en": "Independence Palace, Saigon"
-      },
-      "verified": true,
-      "file": "posts/ngay-30-4-1975.vi.md",
-      "files": {
-        "vi": "posts/ngay-30-4-1975.vi.md",
-        "en": "posts/ngay-30-4-1975.en.md"
-      }
-    },
-    {
-      "slug": "may-in-gutenberg",
-      "title": {
-        "vi": "Máy in của Gutenberg",
-        "en": "Gutenberg's Printing Press"
-      },
-      "excerpt": {
-        "vi": "Một khuôn đúc chữ ở Mainz đã hạ chi phí sao chép tri thức xuống gần bằng không — và làm rung chuyển tôn giáo lẫn khoa học châu Âu.",
-        "en": "A type mould in Mainz drove the cost of copying knowledge towards zero, and shook European religion and science."
-      },
-      "year": "1450",
-      "region": "world",
-      "era": {
-        "vi": "Trung đại",
-        "en": "Medieval"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "thế giới",
-        "công nghệ",
-        "văn hóa",
-        "truyền thông"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg?width=1600",
-      "credit": "Wikimedia Commons — NYC Wanderer / Kevin Eng (CC BY-SA 2.0)",
-      "lang": "vi",
-      "lat": 49.9929,
-      "lng": 8.2473,
-      "place": {
-        "vi": "Mainz, Đức",
-        "en": "Mainz, Germany"
-      },
-      "verified": true,
-      "file": "posts/may-in-gutenberg.md",
-      "files": {
-        "vi": "posts/may-in-gutenberg.md",
-        "en": "posts/may-in-gutenberg.en.md"
-      }
-    },
-    {
-      "slug": "cai-chet-den-1347",
-      "title": {
-        "vi": "Cái chết Đen",
-        "en": "The Black Death"
-      },
-      "excerpt": {
-        "vi": "Mười hai chiếc thuyền cập cảng Messina năm 1347 đã mở đầu thảm họa nhân khẩu lớn nhất lịch sử thành văn.",
-        "en": "Twelve ships docking at Messina in 1347 began the largest demographic catastrophe in recorded history."
-      },
-      "year": "1347",
-      "region": "world",
-      "era": {
-        "vi": "Trung đại",
-        "en": "Medieval"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "thế giới",
-        "dịch bệnh",
-        "xã hội",
-        "kinh tế"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg?width=1600",
-      "credit": "Wikimedia Commons — Pieter Bruegel the Elder (PD)",
-      "lang": "vi",
-      "lat": 38.1938,
-      "lng": 15.554,
-      "place": {
-        "vi": "Messina, Sicilia",
-        "en": "Messina, Sicily"
-      },
-      "verified": true,
-      "file": "posts/cai-chet-den-1347.md",
-      "files": {
-        "vi": "posts/cai-chet-den-1347.md",
-        "en": "posts/cai-chet-den-1347.en.md"
-      }
-    },
-    {
-      "slug": "chien-thang-dien-bien-phu-1954",
-      "title": {
-        "vi": "Chiến thắng Điện Biên Phủ",
-        "en": "The Battle of Dien Bien Phu"
-      },
-      "excerpt": {
-        "vi": "Năm mươi sáu ngày đêm khoét núi, ngủ hầm đã chấm dứt gần một thế kỷ thống trị của thực dân Pháp ở Đông Dương.",
-        "en": "Fifty-six days and nights in the trenches ended nearly a century of French colonial rule in Indochina."
-      },
-      "year": "1954",
-      "region": "vietnam",
-      "era": {
-        "vi": "Hiện đại",
-        "en": "Modern"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "Việt Nam",
-        "kháng chiến chống Pháp",
-        "quân sự",
-        "Thế kỷ 20"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Victory%20in%20Battle%20of%20Dien%20Bien%20Phu.jpg?width=1600",
-      "credit": "Wikimedia Commons — Quân đội Nhân dân Việt Nam (PD)",
-      "lang": "vi",
-      "lat": 21.3833,
-      "lng": 103.0167,
-      "place": {
-        "vi": "Điện Biên Phủ, tỉnh Điện Biên, Việt Nam",
-        "en": "Dien Bien Phu, Dien Bien Province, Vietnam"
-      },
-      "verified": true,
-      "file": "posts/chien-thang-dien-bien-phu-1954.md",
-      "files": {
-        "vi": "posts/chien-thang-dien-bien-phu-1954.md",
-        "en": "posts/chien-thang-dien-bien-phu-1954.en.md"
-      }
-    },
-    {
-      "slug": "buc-tuong-berlin-sup-do-1989",
-      "title": {
-        "vi": "Bức tường Berlin sụp đổ",
-        "en": "The Fall of the Berlin Wall"
-      },
-      "excerpt": {
-        "vi": "Một câu trả lời lúng túng trong buổi họp báo tối 9/11/1989 đã mở toang biên giới mà 28 năm chính trị dựng lên.",
-        "en": "A fumbled answer at a press conference on 9 November 1989 threw open a border that 28 years of politics had built."
-      },
-      "year": "1989",
-      "region": "world",
-      "era": {
-        "vi": "Hiện đại",
-        "en": "Modern"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "thế giới",
-        "Chiến tranh Lạnh",
-        "Đức",
-        "Thế kỷ 20"
-      ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Thefalloftheberlinwall1989.JPG?width=1600",
-      "credit": "Wikimedia Commons — Lear 21 (CC BY-SA 3.0)",
-      "lang": "vi",
-      "lat": 52.5163,
-      "lng": 13.3777,
-      "place": {
-        "vi": "Berlin, Cộng hòa Dân chủ Đức",
-        "en": "Berlin, German Democratic Republic"
-      },
-      "verified": true,
-      "file": "posts/buc-tuong-berlin-sup-do-1989.md",
-      "files": {
-        "vi": "posts/buc-tuong-berlin-sup-do-1989.md",
-        "en": "posts/buc-tuong-berlin-sup-do-1989.en.md"
-      }
-    },
-    {
-      "slug": "cach-mang-phap-1789",
-      "title": {
-        "vi": "Cách mạng Pháp 1789",
-        "en": "The French Revolution of 1789"
-      },
-      "excerpt": {
-        "vi": "Từ một cuộc khủng hoảng ngân sách, nước Pháp bước sang một trật tự mới nơi chủ quyền thuộc về quốc dân chứ không thuộc về nhà vua.",
-        "en": "Out of a budget crisis, France crossed into a new order where sovereignty belonged to the nation, not the king."
-      },
-      "year": "1789",
-      "region": "world",
-      "era": {
-        "vi": "Cận đại",
-        "en": "Early modern"
-      },
-      "date": "2026-07-24",
-      "tags": [
-        "thế giới",
-        "cách mạng tư sản",
-        "Pháp",
         "chính trị"
       ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Prise%20de%20la%20Bastille.jpg?width=1600",
-      "credit": "Wikimedia Commons — Jean-Pierre Houël (PD)",
-      "lang": "vi",
-      "lat": 48.8532,
-      "lng": 2.3692,
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Gavrilo_Princip's_Arrest2.jpg?width=1600",
+      "credit": "Wikimedia Commons (CC0)",
+      "lat": 43.8586,
+      "lng": 18.4286,
       "place": {
-        "vi": "Paris, Pháp",
-        "en": "Paris, France"
+        "vi": "Sarajevo, Bosnia (Áo-Hung)",
+        "en": "Sarajevo, Bosnia (Austria-Hungary)"
       },
+      "file": "posts/vu-am-sat-sarajevo-1914.md",
+      "lang": "vi",
+      "date": "2026-07-27",
       "verified": true,
-      "file": "posts/cach-mang-phap-1789.md",
       "files": {
-        "vi": "posts/cach-mang-phap-1789.md",
-        "en": "posts/cach-mang-phap-1789.en.md"
+        "vi": "posts/vu-am-sat-sarajevo-1914.md",
+        "en": "posts/vu-am-sat-sarajevo-1914.en.md"
       }
     },
     {
-      "slug": "chien-thang-bach-dang-1288",
+      "slug": "hoi-nghi-dien-hong-1284",
       "title": {
-        "vi": "Chiến thắng Bạch Đằng năm 1288",
-        "en": "The Battle of Bach Dang, 1288"
+        "vi": "Hội nghị Diên Hồng",
+        "en": "The Dien Hong Conference"
       },
       "excerpt": {
-        "vi": "Một bãi cọc ngầm, một con nước ròng và toàn bộ thủy quân Nguyên Mông nằm lại trên dòng sông cửa biển.",
-        "en": "A field of hidden stakes, a falling tide, and the entire Mongol fleet left behind on an estuary river."
+        "vi": "Triều đình nhà Trần mời phụ lão cả nước về hỏi nên hòa hay nên đánh trước họa Nguyên Mông — và nhận về một tiếng \"Đánh!\".",
+        "en": "The Tran court summoned the nation's elders to ask peace or war against the Mongols — and heard one answer: \"Fight!\""
       },
-      "year": "1288",
+      "year": "1284",
       "region": "vietnam",
       "era": {
         "vi": "Trung đại",
         "en": "Medieval"
       },
-      "date": "2026-07-24",
       "tags": [
         "Việt Nam",
         "nhà Trần",
         "kháng chiến chống Nguyên Mông",
+        "chính trị"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Den_Tran_Nam_Dinh.jpg?width=1600",
+      "credit": "Wikimedia Commons — Hoangvantoanajc (CC0)",
+      "lat": 21.0245,
+      "lng": 105.8412,
+      "place": {
+        "vi": "Điện Diên Hồng, Thăng Long (Hà Nội)",
+        "en": "Dien Hong Hall, Thang Long (Hanoi)"
+      },
+      "file": "posts/hoi-nghi-dien-hong-1284.md",
+      "lang": "vi",
+      "date": "2026-07-27",
+      "verified": true,
+      "files": {
+        "vi": "posts/hoi-nghi-dien-hong-1284.md",
+        "en": "posts/hoi-nghi-dien-hong-1284.en.md"
+      }
+    },
+    {
+      "slug": "ngo-quyen-bach-dang-938",
+      "title": {
+        "vi": "Chiến thắng Bạch Đằng năm 938",
+        "en": "The Battle of Bach Dang, 938"
+      },
+      "excerpt": {
+        "vi": "Ngô Quyền dùng bãi cọc ngầm nhấn chìm thủy quân Nam Hán, kết thúc hơn một nghìn năm Bắc thuộc.",
+        "en": "Ngo Quyen's hidden stakes sank the Southern Han fleet, ending over a thousand years of Chinese rule."
+      },
+      "year": "938",
+      "region": "vietnam",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "tags": [
+        "Việt Nam",
+        "Ngô Quyền",
+        "Bắc thuộc",
         "quân sự"
       ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Wood%20Stakes%20Used%20to%20Destroy%20Mongol%20Fleet%20at%20Bach%20Dang%2C%201288%20(9732100161).jpg?width=1600",
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngo_Quyen_(897-944)_Defeated_Southern_Han_Invasion_at_Bach_Dang_River%2C_938%2C_Led_to_Viet_Independence_(9732108093).jpg?width=1600",
       "credit": "Wikimedia Commons — Gary Todd (CC0)",
-      "lang": "vi",
       "lat": 20.9269,
       "lng": 106.7803,
       "place": {
-        "vi": "Sông Bạch Đằng, Quảng Yên, Quảng Ninh",
-        "en": "Bach Dang River, Quang Yen, Quang Ninh"
+        "vi": "Cửa sông Bạch Đằng, Quảng Ninh – Hải Phòng",
+        "en": "Bach Dang estuary, Quang Ninh – Hai Phong"
       },
+      "file": "posts/ngo-quyen-bach-dang-938.md",
+      "lang": "vi",
+      "date": "2026-07-27",
       "verified": true,
-      "file": "posts/chien-thang-bach-dang-1288.md",
       "files": {
-        "vi": "posts/chien-thang-bach-dang-1288.md",
-        "en": "posts/chien-thang-bach-dang-1288.en.md"
+        "vi": "posts/ngo-quyen-bach-dang-938.md",
+        "en": "posts/ngo-quyen-bach-dang-938.en.md"
+      }
+    },
+    {
+      "slug": "su-ra-doi-va-troi-day-cua-nvidia",
+      "title": {
+        "vi": "Sự ra đời và trỗi dậy của NVIDIA",
+        "en": "The birth and rise of NVIDIA"
+      },
+      "excerpt": {
+        "vi": "Được thành lập vào năm 1993, NVIDIA ban đầu được biết đến là công ty tiên phong trong lĩnh vực đồ họa máy tính và trò chơi điện tử (GPU). Tuy nhiên, nhờ những quyết định chiến lược xuất sắc, NVIDIA đã chuyển mình trở thành thế lực thống trị tuyệt đối trong kỷ nguyên Trí tuệ nhân tạo (AI), trở thành một trong những công ty giá trị nhất thế giới.",
+        "en": "Founded in 1993, NVIDIA was initially known as a pioneer in the field of computer graphics and video games (GPU). However, thanks to excellent strategic decisions, NVIDIA has transformed itself into an absolute dominant force in the era of Artificial Intelligence (AI), becoming one of the most valuable companies in the world."
+      },
+      "year": "1993",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "NVIDIA",
+        "Công ty công nghệ",
+        "GPU",
+        "AI",
+        "Bán dẫn"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/NVIDIA_Headquarters.jpg?width=1600",
+      "lang": "vi",
+      "file": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md",
+      "files": {
+        "vi": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md",
+        "en": "posts/su-ra-doi-va-troi-day-cua-nvidia.en.md"
+      },
+      "lat": 37.3541,
+      "lng": -121.9552,
+      "place": {
+        "vi": "Santa Clara, California, Hoa Kỳ",
+        "en": "Santa Clara, California, USA"
+      },
+      "credit": "Wikimedia Commons — Coolcaesar (CC BY-SA 4.0)"
+    },
+    {
+      "slug": "cach-mang-thang-muoi-nga",
+      "title": {
+        "vi": "Cách mạng Tháng Mười Nga",
+        "en": "Russian October Revolution"
+      },
+      "excerpt": {
+        "vi": "Cuộc cách mạng vô sản vĩ đại nổ ra vào năm 1917 tại Nga do V. I. Lênin và Đảng Bolshevik lãnh đạo. Sự kiện này đã lật đổ Chính phủ lâm thời tư sản, thiết lập chính quyền Xô-viết và đánh dấu sự ra đời của Nhà nước Xã hội Chủ nghĩa đầu tiên trên thế giới.",
+        "en": "The great proletarian revolution broke out in 1917 in Russia led by V. I. Lenin and the Bolshevik Party. This event overthrew the bourgeois Provisional Government, established the Soviet government and marked the birth of the world's first Socialist State."
+      },
+      "year": "1917",
+      "region": "world",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Cách mạng vô sản",
+        "V. I. Lênin",
+        "Bolshevik",
+        "Liên Xô",
+        "Lịch sử thế giới"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/First_Red_Guards_in_Petrograd%2C_fall_1917_cropped.jpg?width=1600",
+      "lang": "vi",
+      "file": "posts/cach-mang-thang-muoi-nga.md",
+      "lat": 59.9343,
+      "lng": 30.3351,
+      "place": {
+        "vi": "Petrograd (nay là Saint Petersburg), Nga",
+        "en": "Petrograd (now Saint Petersburg), Russia"
+      },
+      "credit": "Wikimedia Commons — Ảnh tư liệu Hồng vệ binh Petrograd 1917 (Public domain)",
+      "files": {
+        "vi": "posts/cach-mang-thang-muoi-nga.md",
+        "en": "posts/cach-mang-thang-muoi-nga.en.md"
       }
     },
     {
@@ -982,55 +709,94 @@
       }
     },
     {
-      "slug": "cach-mang-thang-muoi-nga",
+      "slug": "chien-thang-bach-dang-1288",
       "title": {
-        "vi": "Cách mạng Tháng Mười Nga",
-        "en": "Russian October Revolution"
+        "vi": "Chiến thắng Bạch Đằng năm 1288",
+        "en": "The Battle of Bach Dang, 1288"
       },
       "excerpt": {
-        "vi": "Cuộc cách mạng vô sản vĩ đại nổ ra vào năm 1917 tại Nga do V. I. Lênin và Đảng Bolshevik lãnh đạo. Sự kiện này đã lật đổ Chính phủ lâm thời tư sản, thiết lập chính quyền Xô-viết và đánh dấu sự ra đời của Nhà nước Xã hội Chủ nghĩa đầu tiên trên thế giới.",
-        "en": "The great proletarian revolution broke out in 1917 in Russia led by V. I. Lenin and the Bolshevik Party. This event overthrew the bourgeois Provisional Government, established the Soviet government and marked the birth of the world's first Socialist State."
+        "vi": "Một bãi cọc ngầm, một con nước ròng và toàn bộ thủy quân Nguyên Mông nằm lại trên dòng sông cửa biển.",
+        "en": "A field of hidden stakes, a falling tide, and the entire Mongol fleet left behind on an estuary river."
       },
-      "year": "1917",
-      "region": "world",
+      "year": "1288",
+      "region": "vietnam",
       "era": {
-        "vi": "Hiện đại",
-        "en": "Modern"
+        "vi": "Trung đại",
+        "en": "Medieval"
       },
       "date": "2026-07-24",
       "tags": [
-        "Cách mạng vô sản",
-        "V. I. Lênin",
-        "Bolshevik",
-        "Liên Xô",
-        "Lịch sử thế giới"
+        "Việt Nam",
+        "nhà Trần",
+        "kháng chiến chống Nguyên Mông",
+        "quân sự"
       ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/First_Red_Guards_in_Petrograd%2C_fall_1917_cropped.jpg?width=1600",
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Wood%20Stakes%20Used%20to%20Destroy%20Mongol%20Fleet%20at%20Bach%20Dang%2C%201288%20(9732100161).jpg?width=1600",
+      "credit": "Wikimedia Commons — Gary Todd (CC0)",
       "lang": "vi",
-      "file": "posts/cach-mang-thang-muoi-nga.md",
-      "lat": 59.9343,
-      "lng": 30.3351,
+      "lat": 20.9269,
+      "lng": 106.7803,
       "place": {
-        "vi": "Petrograd (nay là Saint Petersburg), Nga",
-        "en": "Petrograd (now Saint Petersburg), Russia"
+        "vi": "Sông Bạch Đằng, Quảng Yên, Quảng Ninh",
+        "en": "Bach Dang River, Quang Yen, Quang Ninh"
       },
-      "credit": "Wikimedia Commons — Ảnh tư liệu Hồng vệ binh Petrograd 1917 (Public domain)",
+      "verified": true,
+      "file": "posts/chien-thang-bach-dang-1288.md",
       "files": {
-        "vi": "posts/cach-mang-thang-muoi-nga.md",
-        "en": "posts/cach-mang-thang-muoi-nga.en.md"
+        "vi": "posts/chien-thang-bach-dang-1288.md",
+        "en": "posts/chien-thang-bach-dang-1288.en.md"
       }
     },
     {
-      "slug": "su-ra-doi-va-troi-day-cua-nvidia",
+      "slug": "cach-mang-phap-1789",
       "title": {
-        "vi": "Sự ra đời và trỗi dậy của NVIDIA",
-        "en": "The birth and rise of NVIDIA"
+        "vi": "Cách mạng Pháp 1789",
+        "en": "The French Revolution of 1789"
       },
       "excerpt": {
-        "vi": "Được thành lập vào năm 1993, NVIDIA ban đầu được biết đến là công ty tiên phong trong lĩnh vực đồ họa máy tính và trò chơi điện tử (GPU). Tuy nhiên, nhờ những quyết định chiến lược xuất sắc, NVIDIA đã chuyển mình trở thành thế lực thống trị tuyệt đối trong kỷ nguyên Trí tuệ nhân tạo (AI), trở thành một trong những công ty giá trị nhất thế giới.",
-        "en": "Founded in 1993, NVIDIA was initially known as a pioneer in the field of computer graphics and video games (GPU). However, thanks to excellent strategic decisions, NVIDIA has transformed itself into an absolute dominant force in the era of Artificial Intelligence (AI), becoming one of the most valuable companies in the world."
+        "vi": "Từ một cuộc khủng hoảng ngân sách, nước Pháp bước sang một trật tự mới nơi chủ quyền thuộc về quốc dân chứ không thuộc về nhà vua.",
+        "en": "Out of a budget crisis, France crossed into a new order where sovereignty belonged to the nation, not the king."
       },
-      "year": "1993",
+      "year": "1789",
+      "region": "world",
+      "era": {
+        "vi": "Cận đại",
+        "en": "Early modern"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "thế giới",
+        "cách mạng tư sản",
+        "Pháp",
+        "chính trị"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Prise%20de%20la%20Bastille.jpg?width=1600",
+      "credit": "Wikimedia Commons — Jean-Pierre Houël (PD)",
+      "lang": "vi",
+      "lat": 48.8532,
+      "lng": 2.3692,
+      "place": {
+        "vi": "Paris, Pháp",
+        "en": "Paris, France"
+      },
+      "verified": true,
+      "file": "posts/cach-mang-phap-1789.md",
+      "files": {
+        "vi": "posts/cach-mang-phap-1789.md",
+        "en": "posts/cach-mang-phap-1789.en.md"
+      }
+    },
+    {
+      "slug": "buc-tuong-berlin-sup-do-1989",
+      "title": {
+        "vi": "Bức tường Berlin sụp đổ",
+        "en": "The Fall of the Berlin Wall"
+      },
+      "excerpt": {
+        "vi": "Một câu trả lời lúng túng trong buổi họp báo tối 9/11/1989 đã mở toang biên giới mà 28 năm chính trị dựng lên.",
+        "en": "A fumbled answer at a press conference on 9 November 1989 threw open a border that 28 years of politics had built."
+      },
+      "year": "1989",
       "region": "world",
       "era": {
         "vi": "Hiện đại",
@@ -1038,26 +804,260 @@
       },
       "date": "2026-07-24",
       "tags": [
-        "NVIDIA",
-        "Công ty công nghệ",
-        "GPU",
-        "AI",
-        "Bán dẫn"
+        "thế giới",
+        "Chiến tranh Lạnh",
+        "Đức",
+        "Thế kỷ 20"
       ],
-      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/NVIDIA_Headquarters.jpg?width=1600",
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Thefalloftheberlinwall1989.JPG?width=1600",
+      "credit": "Wikimedia Commons — Lear 21 (CC BY-SA 3.0)",
       "lang": "vi",
-      "file": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md",
-      "files": {
-        "vi": "posts/su-ra-doi-va-troi-day-cua-nvidia.vi.md",
-        "en": "posts/su-ra-doi-va-troi-day-cua-nvidia.en.md"
-      },
-      "lat": 37.3541,
-      "lng": -121.9552,
+      "lat": 52.5163,
+      "lng": 13.3777,
       "place": {
-        "vi": "Santa Clara, California, Hoa Kỳ",
-        "en": "Santa Clara, California, USA"
+        "vi": "Berlin, Cộng hòa Dân chủ Đức",
+        "en": "Berlin, German Democratic Republic"
       },
-      "credit": "Wikimedia Commons — Coolcaesar (CC BY-SA 4.0)"
+      "verified": true,
+      "file": "posts/buc-tuong-berlin-sup-do-1989.md",
+      "files": {
+        "vi": "posts/buc-tuong-berlin-sup-do-1989.md",
+        "en": "posts/buc-tuong-berlin-sup-do-1989.en.md"
+      }
+    },
+    {
+      "slug": "chien-thang-dien-bien-phu-1954",
+      "title": {
+        "vi": "Chiến thắng Điện Biên Phủ",
+        "en": "The Battle of Dien Bien Phu"
+      },
+      "excerpt": {
+        "vi": "Năm mươi sáu ngày đêm khoét núi, ngủ hầm đã chấm dứt gần một thế kỷ thống trị của thực dân Pháp ở Đông Dương.",
+        "en": "Fifty-six days and nights in the trenches ended nearly a century of French colonial rule in Indochina."
+      },
+      "year": "1954",
+      "region": "vietnam",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Việt Nam",
+        "kháng chiến chống Pháp",
+        "quân sự",
+        "Thế kỷ 20"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Victory%20in%20Battle%20of%20Dien%20Bien%20Phu.jpg?width=1600",
+      "credit": "Wikimedia Commons — Quân đội Nhân dân Việt Nam (PD)",
+      "lang": "vi",
+      "lat": 21.3833,
+      "lng": 103.0167,
+      "place": {
+        "vi": "Điện Biên Phủ, tỉnh Điện Biên, Việt Nam",
+        "en": "Dien Bien Phu, Dien Bien Province, Vietnam"
+      },
+      "verified": true,
+      "file": "posts/chien-thang-dien-bien-phu-1954.md",
+      "files": {
+        "vi": "posts/chien-thang-dien-bien-phu-1954.md",
+        "en": "posts/chien-thang-dien-bien-phu-1954.en.md"
+      }
+    },
+    {
+      "slug": "cai-chet-den-1347",
+      "title": {
+        "vi": "Cái chết Đen",
+        "en": "The Black Death"
+      },
+      "excerpt": {
+        "vi": "Mười hai chiếc thuyền cập cảng Messina năm 1347 đã mở đầu thảm họa nhân khẩu lớn nhất lịch sử thành văn.",
+        "en": "Twelve ships docking at Messina in 1347 began the largest demographic catastrophe in recorded history."
+      },
+      "year": "1347",
+      "region": "world",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "thế giới",
+        "dịch bệnh",
+        "xã hội",
+        "kinh tế"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Triumph_of_Death_by_Pieter_Bruegel_the_Elder.jpg?width=1600",
+      "credit": "Wikimedia Commons — Pieter Bruegel the Elder (PD)",
+      "lang": "vi",
+      "lat": 38.1938,
+      "lng": 15.554,
+      "place": {
+        "vi": "Messina, Sicilia",
+        "en": "Messina, Sicily"
+      },
+      "verified": true,
+      "file": "posts/cai-chet-den-1347.md",
+      "files": {
+        "vi": "posts/cai-chet-den-1347.md",
+        "en": "posts/cai-chet-den-1347.en.md"
+      }
+    },
+    {
+      "slug": "may-in-gutenberg",
+      "title": {
+        "vi": "Máy in của Gutenberg",
+        "en": "Gutenberg's Printing Press"
+      },
+      "excerpt": {
+        "vi": "Một khuôn đúc chữ ở Mainz đã hạ chi phí sao chép tri thức xuống gần bằng không — và làm rung chuyển tôn giáo lẫn khoa học châu Âu.",
+        "en": "A type mould in Mainz drove the cost of copying knowledge towards zero, and shook European religion and science."
+      },
+      "year": "1450",
+      "region": "world",
+      "era": {
+        "vi": "Trung đại",
+        "en": "Medieval"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "thế giới",
+        "công nghệ",
+        "văn hóa",
+        "truyền thông"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg?width=1600",
+      "credit": "Wikimedia Commons — NYC Wanderer / Kevin Eng (CC BY-SA 2.0)",
+      "lang": "vi",
+      "lat": 49.9929,
+      "lng": 8.2473,
+      "place": {
+        "vi": "Mainz, Đức",
+        "en": "Mainz, Germany"
+      },
+      "verified": true,
+      "file": "posts/may-in-gutenberg.md",
+      "files": {
+        "vi": "posts/may-in-gutenberg.md",
+        "en": "posts/may-in-gutenberg.en.md"
+      }
+    },
+    {
+      "slug": "ngay-30-4-1975",
+      "title": {
+        "vi": "Ngày 30 tháng 4 năm 1975",
+        "en": "April 30, 1975"
+      },
+      "excerpt": {
+        "vi": "Chiếc xe tăng qua cổng Dinh Độc Lập khép lại ba mươi năm chiến tranh và hai mươi mốt năm chia cắt hai miền.",
+        "en": "The tank passed through the gates of the Independence Palace, ending thirty years of war and twenty-one years of separation between the two regions."
+      },
+      "year": "1975",
+      "region": "vietnam",
+      "era": {
+        "vi": "Hiện đại",
+        "en": "Modern"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Việt Nam",
+        "thống nhất",
+        "Thế kỷ 20",
+        "chiến tranh Việt Nam"
+      ],
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxgfM2pOHgOUw5iQP3Z-MtwW7FaVbCRCM_7QJXAs9NEByEANxohgZ1_ZE&s=10",
+      "credit": "Wikimedia Commons — Theodor (CC BY-SA 4.0)",
+      "lang": "vi",
+      "lat": 10.7772,
+      "lng": 106.6958,
+      "place": {
+        "vi": "Dinh Độc Lập, Sài Gòn",
+        "en": "Independence Palace, Saigon"
+      },
+      "verified": true,
+      "file": "posts/ngay-30-4-1975.vi.md",
+      "files": {
+        "vi": "posts/ngay-30-4-1975.vi.md",
+        "en": "posts/ngay-30-4-1975.en.md"
+      }
+    },
+    {
+      "slug": "chien-thang-ngoc-hoi-dong-da-1789",
+      "title": {
+        "vi": "Chiến thắng Ngọc Hồi – Đống Đa",
+        "en": "The Victory at Ngoc Hoi – Dong Da"
+      },
+      "excerpt": {
+        "vi": "Quang Trung hẹn ăn Tết ở Thăng Long vào mùng 7; ông về sớm hơn hai ngày, sau một cuộc hành quân thần tốc hơn 600 km.",
+        "en": "Quang Trung promised his troops a Lunar New Year feast in Thang Long by the seventh day; he arrived two days early."
+      },
+      "year": "1789",
+      "region": "vietnam",
+      "era": {
+        "vi": "Cận đại",
+        "en": "Early modern"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Việt Nam",
+        "Tây Sơn",
+        "Quang Trung",
+        "quân sự"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Quang_Trung_Nguy%E1%BB%85n_Hu%E1%BB%87%2C_G%C3%B2_%C4%90%E1%BB%91ng_%C4%90a.JPG?width=1600",
+      "credit": "Wikimedia Commons — Nguyễn Thanh Quang (CC BY-SA 3.0)",
+      "lang": "vi",
+      "lat": 21.0189,
+      "lng": 105.8262,
+      "place": {
+        "vi": "Gò Đống Đa, Thăng Long (Hà Nội)",
+        "en": "Dong Da Mound, Thang Long (Hanoi)"
+      },
+      "verified": true,
+      "file": "posts/chien-thang-ngoc-hoi-dong-da-1789.md",
+      "files": {
+        "vi": "posts/chien-thang-ngoc-hoi-dong-da-1789.md",
+        "en": "posts/chien-thang-ngoc-hoi-dong-da-1789.en.md"
+      }
+    },
+    {
+      "slug": "khoi-nghia-hai-ba-trung",
+      "title": {
+        "vi": "Khởi nghĩa Hai Bà Trưng",
+        "en": "The Trung Sisters' Uprising"
+      },
+      "excerpt": {
+        "vi": "Năm 40, hai người con gái Lạc tướng đất Mê Linh dựng cờ, giành lại quyền tự chủ trong ba năm giữa nghìn năm Bắc thuộc.",
+        "en": "In AD 40, two daughters of a Me Linh chieftain raised the banner and won three years of self-rule amid a millennium of Chinese domination."
+      },
+      "year": "40",
+      "region": "vietnam",
+      "era": {
+        "vi": "Cổ đại",
+        "en": "Ancient"
+      },
+      "date": "2026-07-24",
+      "tags": [
+        "Việt Nam",
+        "Bắc thuộc",
+        "khởi nghĩa",
+        "phụ nữ"
+      ],
+      "cover": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_Hai_B%C3%A0_Tr%C6%B0ng.jpg?width=1600",
+      "credit": "Wikimedia Commons — Guerinf (CC BY-SA 4.0)",
+      "lang": "vi",
+      "lat": 21.1583,
+      "lng": 105.7167,
+      "place": {
+        "vi": "Mê Linh, Hà Nội",
+        "en": "Me Linh, Hanoi"
+      },
+      "verified": true,
+      "file": "posts/khoi-nghia-hai-ba-trung.md",
+      "files": {
+        "vi": "posts/khoi-nghia-hai-ba-trung.md",
+        "en": "posts/khoi-nghia-hai-ba-trung.en.md"
+      }
     },
     {
       "slug": "cach-mang-thang-tam-1945",

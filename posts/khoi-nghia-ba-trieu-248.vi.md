@@ -2,7 +2,6 @@
 
 Năm 248, giữa đêm trường Bắc thuộc dưới ách cai trị hà khắc của nhà Đông Ngô thời Tam Quốc, một cuộc khởi nghĩa vũ trang quy mô lớn đã bùng nổ tại vùng Cửu Chân (Thanh Hóa ngày nay) do người con gái anh hùng Triệu Thị Trinh cùng anh trai Triệu Quốc Đạt lãnh đạo. Cuộc khởi nghĩa làm rung chuyển chính quyền đô hộ, để lại câu nói bất hủ thể hiện khí phách ngút trời của phụ nữ Việt Nam: "Tôi muốn cưỡi cơn gió mạnh, đạp luồng sóng dữ, chém cá kình ở biển Đông... chứ không thèm bắt chước người đời cúi đầu luồn cúi làm tì thiếp người ta!".[^1]
 
-![Tranh dân gian Bà Triệu](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg "Tranh dân gian Đông Hồ mô tả hình tượng nữ tướng Bà Triệu cưỡi voi xung trận |right")
 
 ## Đêm dài dưới ách thống trị tàn bạo của Đông Ngô
 
