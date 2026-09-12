@@ -2,7 +2,6 @@
 
 Alan Mathison Turing (1912 – 1954) là nhà toán học, nhà logic học, chuyên gia mật mã học và nhà sinh học lý thuyết người Anh. Được tôn vinh là cha đẻ của khoa học máy tính lý thuyết và trí tuệ nhân tạo, Turing đóng vai trò sống còn trong chiến thắng của phe Đồng Minh tại Thế chiến thứ hai khi phá giải thành công cỗ máy mật mã Enigma của Đức Quốc xã, cứu sống hàng triệu sinh mạng và rút ngắn cuộc chiến tranh ở châu Âu ít nhất hai năm.
 
-![Chân dung Alan Turing](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/800px-Alan_Turing_Aged_16.jpg "Chân dung Alan Turing lúc thiếu thời (16 tuổi), một trong những bộ óc toán học vĩ đại nhất thế kỷ XX |right")
 
 ## 1. Thiên tài toán học và khái niệm "Cỗ máy Turing"
 
@@ -21,6 +20,7 @@ Thử thách lớn nhất bấy giờ là cỗ máy mật mã Enigma mà quân �
 Turing đã đi tiên phong trong việc thiết kế cỗ máy điện cơ mang tên **Bombe**. Cỗ máy này sử dụng phương pháp loại trừ logic thần tốc, kiểm tra hàng ngàn cấu hình khả dĩ cùng một lúc để tìm ra khóa giải mã Enigma chỉ trong vài giờ. Công trình của Turing và các đồng nghiệp tại Bletchley Park (chiến dịch "Ultra") đã giúp quân Đồng Minh đọc được các mệnh lệnh quân sự tuyệt mật của Hạm đội Hải quân Đức, đóng vai trò then chốt trong Trận chiến Đại Tây Dương và cuộc đổ bộ Normandy (D-Day). Các sử gia ước tính việc giải mã Enigma đã rút ngắn cuộc chiến từ 2 đến 4 năm và cứu sống hơn 14 triệu người.
 
 ## 3. Khai sinh Trí tuệ Nhân tạo và Phép thử Turing
+![hình ảnh](https://manhattanrarebooks.cdn.bibliopolis.com/pictures/1842.jpg?auto=webp&v=1482265798 " |right")
 
 Sau chiến tranh, Turing làm việc tại Phòng Thí nghiệm Vật lý Quốc gia (NPL), nơi ông thiết kế Động cơ Điện toán Tự động (ACE) — một trong những thiết kế máy tính lưu trữ chương trình đầu tiên trên thế giới.
 
