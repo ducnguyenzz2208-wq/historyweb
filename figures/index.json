@@ -8,7 +8,7 @@
       },
       "role": {
         "vi": "Cha đẻ của khoa học máy tính, nhà mật mã học giải mã Enigma",
-        "en": "Father of theoretical computer science, Enigma codebreaker"
+        "en": "Father of computer science, cryptographer who decoded the Enigma code"
       },
       "field": {
         "vi": "Khoa học máy tính, Toán học, Trí tuệ nhân tạo",
@@ -18,14 +18,14 @@
       "died": "1954",
       "era": {
         "vi": "Hiện đại",
-        "en": "Contemporary"
+        "en": "Modern"
       },
       "region": "world",
       "portrait": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsFTyu5dRdEheIe1NtwHUYl7aGgeq_axTHkXLv18_I0A&s=10",
       "credit": "Wikimedia Commons (Public Domain)",
       "excerpt": {
         "vi": "Thiên tài toán học phá giải mật mã Enigma cứu hàng triệu người, đề xuất Cỗ máy Turing và đặt nền móng cho Trí tuệ Nhân tạo.",
-        "en": "Genius codebreaker who cracked Enigma, conceived the Turing Machine, and laid the foundations of Artificial Intelligence."
+        "en": "The mathematical genius who cracked the Enigma code saved millions of people, proposed the Turing Machine and laid the foundation for Artificial Intelligence."
       },
       "tags": [
         "Thế giới",
@@ -38,7 +38,8 @@
       "file": "figures/alan-turing.vi.md",
       "lang": "vi",
       "files": {
-        "vi": "figures/alan-turing.vi.md"
+        "vi": "figures/alan-turing.vi.md",
+        "en": "figures/alan-turing.en.md"
       }
     },
     {
