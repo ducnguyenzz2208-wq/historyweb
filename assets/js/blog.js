@@ -5,7 +5,8 @@
   "use strict";
   const params = new URLSearchParams(location.search);
   let query = "";
-  let activeTag = params.get("tag") || "__all__";
+  let activeTags = new Set();
+  if (params.get("tag")) activeTags.add(params.get("tag"));
   let activeRegion = params.get("region") || "__all__";
   let activeCentury = params.get("century") || "__all__";
   const REGIONS = ["__all__", "vietnam", "world"];
@@ -91,21 +92,55 @@
     const fbox = document.getElementById("filters");
     if (fbox && !fbox.dataset.built) {
       const tags = Store.allTags(posts);
-      fbox.innerHTML =
-        `<button class="chip ${activeTag === "__all__" ? "active" : ""}" data-tag="__all__">${window.I18N.t("blog.all")}</button>` +
-        tags.map((t) => `<button class="chip ${activeTag === t ? "active" : ""}" data-tag="${t}">${t}</button>`).join("");
+      
+      const btnHtml = `<button class="btn btn--ghost dropdown-btn" id="catFilterBtn" type="button">
+        <span id="catFilterLabel">${window.I18N.t("blog.category") || "Danh mục"}</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>`;
+      
+      const menuHtml = `<div class="dropdown-menu glass" id="catFilterMenu" style="display: none;">
+        ${tags.map(t => `
+          <label>
+            <input type="checkbox" value="${t}" ${activeTags.has(t) ? 'checked' : ''}>
+            ${t}
+          </label>
+        `).join("")}
+      </div>`;
+      
+      fbox.innerHTML = `<div class="category-dropdown">${btnHtml}${menuHtml}</div>`;
       fbox.dataset.built = "1";
-      fbox.addEventListener("click", (e) => {
-        const b = e.target.closest(".chip");
-        if (!b) return;
-        activeTag = b.dataset.tag;
-        fbox.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === b));
-        draw(posts, lang);
+
+      const btn = document.getElementById("catFilterBtn");
+      const menu = document.getElementById("catFilterMenu");
+      
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = menu.style.display === "flex";
+        menu.style.display = isOpen ? "none" : "flex";
+        btn.classList.toggle("open", !isOpen);
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!fbox.contains(e.target) && menu.style.display === "flex") {
+          menu.style.display = "none";
+          btn.classList.remove("open");
+        }
+      });
+
+      menu.addEventListener("change", (e) => {
+        if (e.target.type === "checkbox") {
+          if (e.target.checked) {
+            activeTags.add(e.target.value);
+          } else {
+            activeTags.delete(e.target.value);
+          }
+          draw(posts, lang);
+        }
       });
     } else if (fbox) {
-      // cập nhật nhãn "Tất cả" khi đổi ngôn ngữ
-      const allChip = fbox.querySelector('[data-tag="__all__"]');
-      if (allChip) allChip.textContent = window.I18N.t("blog.all");
+      // cập nhật nhãn khi đổi ngôn ngữ
+      const label = document.getElementById("catFilterLabel");
+      if (label) label.textContent = window.I18N.t("blog.category") || "Danh mục";
     }
 
     draw(posts, lang);
@@ -117,7 +152,7 @@
     const q = query.trim().toLowerCase();
     const filtered = posts.filter((p) => {
       const okRegion = activeRegion === "__all__" || p.region === activeRegion;
-      const okTag = activeTag === "__all__" || (p.tags || []).includes(activeTag);
+      const okTag = activeTags.size === 0 || (p.tags || []).some(t => activeTags.has(t));
       const okCentury = activeCentury === "__all__" || String(centuryOf(p.year)) === activeCentury;
       const hay = (Store.localized(p.title, lang) + " " + Store.localized(p.excerpt, lang) + " " + (p.tags || []).join(" ")).toLowerCase();
       const okQ = !q || hay.includes(q);
