@@ -1,5 +1,7 @@
 # 📜 Dòng Chảy Lịch Sử — Tiến độ & Lộ trình
 
+> **Cập nhật kỹ thuật 2026-10-08:** Roadmap thực thi mới nằm trong [AI_TASKS.md](AI_TASKS.md), gồm 12 task có tiêu chí nghiệm thu và trạng thái. Task 01 đã hoàn thành: lọc URL Markdown, escape thuộc tính/nội dung và mục lục, bảo vệ code khi render, thêm kiểm tra hồi quy vào CI. Các checklist cũ bên dưới chưa được đối chiếu toàn bộ; việc đồng bộ là Task 05.
+
 > Tài liệu này ghi lại **đã làm gì** và **cần làm gì** để đưa trang thành một
 > **bách khoa lịch sử tra cứu được** (giống báo điện tử + Wikipedia), song ngữ Việt–Anh,
 > chạy tĩnh trên GitHub Pages.

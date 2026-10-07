@@ -5,8 +5,30 @@
  */
 /* Tạo slug (id) tiếng Việt cho tiêu đề — dùng cho mục lục/anchor.
    _used đặt lại mỗi lần mdToHtml chạy để id ổn định giữa các lần render. */
+window.hwEscapeHtml = function (s) {
+  return String(s == null ? "" : s).replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+};
+
+// Allow web links and local paths; image previews may use raster base64 data.
+// SVG/HTML data, blob, protocol-relative URLs and control characters are rejected.
+window.hwMarkdownUrl = function (value, image = false) {
+  const url = String(value || "");
+  if (!url || /[\u0000-\u0020\u007f-\u009f\\]/.test(url) || url.startsWith("//")) return "";
+  if (/^data:/i.test(url)) {
+    return image && /^data:image\/(?:png|jpe?g|gif|webp|avif|bmp|x-icon);base64,[a-z0-9+/=]+$/i.test(url) ? url : "";
+  }
+  try {
+    const parsed = new URL(url, "https://markdown.invalid/");
+    if (["http:", "https:"].includes(parsed.protocol)) return url;
+    if (!image && parsed.protocol === "mailto:") return url;
+  } catch (_) { /* Invalid URLs render as plain text. */ }
+  return "";
+};
+
 window.mdSlug = function (s) {
-  const used = window.mdSlug._used || (window.mdSlug._used = {});
+  const used = window.mdSlug._used || (window.mdSlug._used = Object.create(null));
   let base = (s || "")
     .toLowerCase()
     .normalize("NFD").replace(/[̀-ͯ]/g, "")
@@ -19,15 +41,15 @@ window.mdSlug = function (s) {
 
 window.mdToHtml = function (src) {
   if (!src) return "";
-  src = src.replace(/\r\n?/g, "\n"); // chuẩn hóa CRLF/CR → LF (bài đăng qua admin thường là CRLF)
-  window.mdSlug._used = {}; // đặt lại bộ đếm trùng id cho mỗi bài
-  const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  src = String(src).replace(/\u0000/g, "").replace(/\r\n?/g, "\n");
+  window.mdSlug._used = Object.create(null);
+  const esc = window.hwEscapeHtml;
 
   /* ---------- Chú thích nguồn kiểu Wikipedia ----------
      [^1]        → <sup id="fnref:1"><a href="#fn:1">1</a></sup>
      [^1]: text  → gom vào danh sách "Nguồn tham khảo" ở cuối bài  */
   const footnotes = [];                       // [{ id, text }] theo thứ tự xuất hiện
-  const fnIndex = {};                         // id gốc → số thứ tự hiển thị
+  const fnIndex = Object.create(null);        // id gốc → số thứ tự hiển thị
   src = src.replace(/^[ \t]*\[\^([^\]]+)\]:[ \t]*(.+(?:\n(?![ \t]*\[\^)[^\n]+)*)/gm, (_, id, text) => {
     footnotes.push({ id: String(id).trim(), text: text.trim().replace(/\s*\n\s*/g, " ") });
     return "";
@@ -41,8 +63,21 @@ window.mdToHtml = function (src) {
     return `\u0000CODE${codeBlocks.length - 1}\u0000`;
   });
 
-  const inline = (t) =>
-    t
+  const inline = (text) => {
+    // Protect generated tags and code before applying emphasis. Markdown in a
+    // URL/alt/code must never be interpreted as markup inside an HTML attribute.
+    const tokens = [];
+    const keep = (html) => { tokens.push(html); return `\u0000INLINE${tokens.length - 1}\u0000`; };
+    let t = text.replace(/`([^`]+)`/g, (_, code) => keep(`<code>${esc(code)}</code>`));
+    t = t.replace(/!?\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g, (whole, label, value) => {
+      const image = whole.startsWith("!");
+      const url = window.hwMarkdownUrl(value, image);
+      if (!url) return keep(esc(label));
+      return keep(image
+        ? `<img src="${esc(url)}" alt="${esc(label)}" loading="lazy">`
+        : `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>`);
+    });
+    t = esc(t)
       .replace(/\[\^([^\]]+)\]/g, (whole, id) => {
         const key = String(id).trim();
         const n = fnIndex[key];
@@ -50,12 +85,11 @@ window.mdToHtml = function (src) {
           ? `<sup class="fn-ref" id="fnref:${n}"><a href="#fn:${n}">${n}</a></sup>`
           : whole;
       })
-      .replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g, '<img src="$2" alt="$1" loading="lazy">')
-      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-      .replace(/`([^`]+)`/g, (_, c) => `<code>${esc(c)}</code>`)
       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
       .replace(/(^|[^*])\*([^*]+)\*/g, "$1<em>$2</em>")
       .replace(/_([^_]+)_/g, "<em>$1</em>");
+    return t.replace(/\u0000INLINE(\d+)\u0000/g, (_, n) => tokens[+n]);
+  };
 
   const lines = src.split("\n");
   let html = "";
@@ -78,24 +112,24 @@ window.mdToHtml = function (src) {
       closeLists();
       const lvl = m[1].length;
       const id = window.mdSlug(m[2]);
-      html += `<h${lvl} id="${id}">${inline(esc(m[2]))}</h${lvl}>`;
+      html += `<h${lvl} id="${id}">${inline(m[2])}</h${lvl}>`;
       i++; continue;
     }
     if (/^\s*>\s?/.test(line)) {
       closeLists();
       let quote = [];
       while (i < lines.length && /^\s*>\s?/.test(lines[i])) { quote.push(lines[i].replace(/^\s*>\s?/, "")); i++; }
-      html += `<blockquote>${inline(esc(quote.join(" ")))}</blockquote>`;
+      html += `<blockquote>${inline(quote.join(" "))}</blockquote>`;
       continue;
     }
     if ((m = line.match(/^\s*[-*+]\s+(.*)$/))) {
       if (!inUl) { closeLists(); html += "<ul>"; inUl = true; }
-      html += `<li>${inline(esc(m[1]))}</li>`;
+      html += `<li>${inline(m[1])}</li>`;
       i++; continue;
     }
     if ((m = line.match(/^\s*\d+\.\s+(.*)$/))) {
       if (!inOl) { closeLists(); html += "<ol>"; inOl = true; }
-      html += `<li>${inline(esc(m[1]))}</li>`;
+      html += `<li>${inline(m[1])}</li>`;
       i++; continue;
     }
 
@@ -104,15 +138,15 @@ window.mdToHtml = function (src) {
     // Ảnh không có caption vẫn giữ hành vi cũ (rơi xuống xử lý đoạn văn).
     if ((m = line.trim().match(/^!\[([^\]]*)\]\(([^)\s]+)\s+"([^"]*)"\)$/))) {
       closeLists();
-      const url = m[2];
+      const url = window.hwMarkdownUrl(m[2], true);
       const alt = m[1] || "";
       let caption = m[3] || "";
       let dir = "right";
       const dm = caption.match(/^(.*?)\s*\|\s*(left|right)\s*$/i);
       if (dm) { caption = dm[1].trim(); dir = dm[2].toLowerCase(); }
       html += `<figure class="wiki-figure wiki-figure--${dir}">`
-        + `<img class="wiki-figure__img" src="${url}" alt="${esc(alt)}" loading="lazy">`
-        + `<figcaption class="wiki-figure__caption">${inline(esc(caption))}</figcaption>`
+        + (url ? `<img class="wiki-figure__img" src="${esc(url)}" alt="${esc(alt)}" loading="lazy">` : esc(alt))
+        + `<figcaption class="wiki-figure__caption">${inline(caption)}</figcaption>`
         + `</figure>`;
       i++; continue;
     }
@@ -124,7 +158,7 @@ window.mdToHtml = function (src) {
     while (i < lines.length && !/^\s*$/.test(lines[i]) && !/^(#{1,6}\s|\s*>|\s*[-*+]\s|\s*\d+\.\s|\u0000CODE)/.test(lines[i])) {
       para.push(lines[i]); i++;
     }
-    html += `<p>${inline(esc(para.join(" ")))}</p>`;
+    html += `<p>${inline(para.join(" "))}</p>`;
   }
   closeLists();
 
@@ -135,7 +169,7 @@ window.mdToHtml = function (src) {
   if (footnotes.length) {
     const items = footnotes.map((f, i) => {
       const n = i + 1;
-      return `<li id="fn:${n}">${inline(esc(f.text))} <a class="fn-back" href="#fnref:${n}" aria-label="Quay lại nội dung">↩</a></li>`;
+      return `<li id="fn:${n}">${inline(f.text)} <a class="fn-back" href="#fnref:${n}" aria-label="Quay lại nội dung">↩</a></li>`;
     }).join("");
     html += `<hr><div class="footnotes"><ol>${items}</ol></div>`;
   }

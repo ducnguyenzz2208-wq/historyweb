@@ -15,7 +15,7 @@
     if (heads.length < 2) return "";
     const items = heads.map((h, i) => {
       const sub = h.tagName === "H3" ? "toc__item--sub" : "";
-      return `<li class="toc__item ${sub}"><a href="#${h.id}"><span class="toc__num">${i + 1}</span>${h.textContent}</a></li>`;
+      return `<li class="toc__item ${sub}"><a href="#${h.id}"><span class="toc__num">${i + 1}</span>${window.hwEscapeHtml(h.textContent)}</a></li>`;
     }).join("");
     return `<nav class="toc glass" aria-label="Mục lục"><div class="toc__title">${window.I18N.t("article.contents")}</div><ol class="toc__list">${items}</ol></nav>`;
   }
