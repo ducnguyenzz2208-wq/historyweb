@@ -18,5 +18,11 @@ jobs:
         run: node scripts/check-links.mjs
       - name: Kiểm tra an toàn Markdown
         run: node scripts/test-markdown.mjs
+      - name: Kiểm tra token với GitHub API giả lập
+        run: node scripts/test-admin-token.mjs
+      - name: Kiểm tra commit bài viết với GitHub API giả lập
+        run: node scripts/test-admin-git.mjs
       - name: Dựng lại sitemap/RSS (kiểm tra script chạy được)
         run: node scripts/build-feeds.mjs && node scripts/prerender.mjs
+      - name: Kiểm tra HTML tĩnh và hồ sơ nguồn
+        run: python3 scripts/test-static-pages.py

@@ -4,7 +4,7 @@
  * Bài viết luôn được cập nhật khi online; khi mất mạng vẫn đọc lại được trang đã ghé.
  * v2: bỏ cache index.json và .md để luôn lấy dữ liệu mới nhất sau khi đăng bài.
  */
-const CACHE = "hw-cache-v4";
+const CACHE = "hw-cache-v5-p0";
 const CORE = [
   "index.html", "blog.html", "post.html", "figures.html", "figure.html",
   "topics.html", "atlas.html", "gallery.html", "profile.html",
@@ -14,6 +14,7 @@ const CORE = [
   "assets/js/home.js", "assets/js/blog.js", "assets/js/post.js",
   "assets/js/figures.js", "assets/js/figure.js", "assets/js/topics.js",
   "assets/js/atlas.js", "assets/js/gallery.js", "assets/js/profile.js",
+  "assets/js/static-page.js", "assets/js/admin-token.js", "assets/js/source-review.js", "assets/css/static.css",
   "assets/data/world.geo.json", "assets/data/vietnam.geo.json",
   /* Không cache index.json để tránh dữ liệu cũ sau khi đăng bài */
 ];

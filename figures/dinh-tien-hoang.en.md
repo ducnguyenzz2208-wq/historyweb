@@ -2,7 +2,7 @@
 
 Dinh Tien Hoang (924–979), personal name Dinh Bo Linh, was the founding Emperor of the Dinh Dynasty and the visionary architect who solidified the unified independence and sovereignty of Dai Co Viet. Through supreme military genius, he pacified the Anarchy of the Twelve Warlords, proclaimed himself Emperor, and brought an end to decades of chaotic feudal fragmentation following the death of Ngo Quyen.
 
-![Statue of Emperor Dinh Tien Hoang](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Statue_of_King_Dinh_Tien_Hoang.jpg/800px-Statue_of_King_Dinh_Tien_Hoang.jpg "Shrine statue of Emperor Dinh Tien Hoang at the ancient capital of Hoa Lu, Ninh Binh |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## 1. Youth and the Legend of the Reed Flags
 

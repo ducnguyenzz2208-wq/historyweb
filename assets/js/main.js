@@ -67,11 +67,14 @@
     if (m.title) upsertMeta('meta[property="og:title"]', "property", "og:title", m.title);
     if (m.description) upsertMeta('meta[property="og:description"]', "property", "og:description", m.description);
     if (m.image) upsertMeta('meta[property="og:image"]', "property", "og:image", m.image);
-    upsertMeta('meta[property="og:url"]', "property", "og:url", location.href);
+    const slug = new URLSearchParams(location.search).get("slug");
+    const kind = document.body.dataset.page === "figures" ? "figure" : "post";
+    const canonical = slug && window.hwArticleUrl ? new URL(`${kind}/${encodeURIComponent(slug)}${window.I18N.lang === "en" ? ".en" : ""}.html`, cfg.siteUrl.replace(/\/$/, "") + "/").href : location.href;
+    upsertMeta('meta[property="og:url"]', "property", "og:url", canonical);
     // canonical
     let c = document.head.querySelector('link[rel="canonical"]');
     if (!c) { c = document.createElement("link"); c.rel = "canonical"; document.head.appendChild(c); }
-    c.href = location.href;
+    c.href = canonical;
   };
 
   /* ---------- Header ---------- */
@@ -155,7 +158,7 @@
 
   function setTheme(t) {
     document.documentElement.setAttribute("data-theme", t);
-    localStorage.setItem("hw_theme", t);
+    try { localStorage.setItem("hw_theme", t); } catch (_) {}
     const icon = document.getElementById("themeIcon");
     if (icon) icon.innerHTML = t === "dark" ? sun : moon;
   }
@@ -204,7 +207,8 @@
     window.I18N.apply(document);
 
     // theme
-    const saved = localStorage.getItem("hw_theme") || "light";
+    let saved = "light";
+    try { saved = localStorage.getItem("hw_theme") || "light"; } catch (_) {}
     setTheme(saved);
 
     wireHeader();
@@ -223,7 +227,7 @@
       const posts = await (window.Store ? Store.all() : Promise.resolve([]));
       const bodies = await Promise.all(posts.map((p) => (p.file ? fetchText(p.file) : Promise.resolve(""))));
       posts.forEach((p, i) => idx.push({
-        type: "post", slug: p.slug, url: `post.html?slug=${encodeURIComponent(p.slug)}`,
+        type: "post", slug: p.slug, url: `${window.hwArticleUrl("post", p.slug)}`,
         title: p.title, sub: p.excerpt, year: p.year, region: p.region, tags: p.tags || [], body: bodies[i] || "",
       }));
     } catch (e) {}
@@ -233,7 +237,7 @@
         const figs = (await res.json()).figures || [];
         const bodies = await Promise.all(figs.map((f) => (f.file ? fetchText(f.file) : Promise.resolve(""))));
         figs.forEach((f, i) => idx.push({
-          type: "figure", slug: f.slug, url: `figure.html?slug=${encodeURIComponent(f.slug)}`,
+          type: "figure", slug: f.slug, url: `${window.hwArticleUrl("figure", f.slug)}`,
           title: f.name, sub: f.role, year: f.born, region: f.region, tags: f.tags || [], body: bodies[i] || "",
         }));
       }
@@ -249,7 +253,7 @@
     q = q.trim(); if (!q) return;
     let list = getRecent().filter((x) => x.toLowerCase() !== q.toLowerCase());
     list.unshift(q); list = list.slice(0, 6);
-    localStorage.setItem(RECENT_KEY, JSON.stringify(list));
+    try { localStorage.setItem(RECENT_KEY, JSON.stringify(list)); } catch (_) {}
   }
 
   function wireSearch() {

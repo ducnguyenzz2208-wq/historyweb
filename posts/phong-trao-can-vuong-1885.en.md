@@ -2,7 +2,7 @@
 
 In the early hours of July 5, 1885, following an unsuccessful preemptive attack against French colonial forces in the imperial capital of Hue, Regent Ton That Thuyet escorted the adolescent Emperor Ham Nghi out of the citadel to the mountainous sanctuary of Tan So (Quang Tri). There, on July 13, 1885, the historic *Can Vuong Edict* (Save the King) was proclaimed, igniting an impassioned nationwide armed resistance that persisted for over a decade.[^1]
 
-![Emperor Ham Nghi](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/King_Ham_Nghi.jpg/800px-King_Ham_Nghi.jpg "Emperor Ham Nghi (1871–1944), the patriotic young monarch who stood at the forefront of the Can Vuong Movement |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## Context: An Empire Stripped of Sovereignty
 

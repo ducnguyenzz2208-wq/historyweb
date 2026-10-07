@@ -22,7 +22,7 @@
       },
       "region": "world",
       "portrait": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsFTyu5dRdEheIe1NtwHUYl7aGgeq_axTHkXLv18_I0A&s=10",
-      "credit": "Wikimedia Commons (Public Domain)",
+      "credit": "Nguồn gốc / giấy phép ảnh chưa được xác minh",
       "excerpt": {
         "vi": "Thiên tài toán học phá giải mật mã Enigma cứu hàng triệu người, đề xuất Cỗ máy Turing và đặt nền móng cho Trí tuệ Nhân tạo.",
         "en": "The mathematical genius who cracked the Enigma code saved millions of people, proposed the Turing Machine and laid the foundation for Artificial Intelligence."
@@ -40,6 +40,15 @@
       "files": {
         "vi": "figures/alan-turing.vi.md",
         "en": "figures/alan-turing.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "",
+        "author": "",
+        "license": "",
+        "licenseUrl": "",
+        "status": "unverified"
       }
     },
     {
@@ -64,7 +73,7 @@
       },
       "region": "world",
       "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Alexander_the_Great_mosaic_%28cropped%29.jpg/800px-Alexander_the_Great_mosaic_%28cropped%29.jpg",
-      "credit": "Wikimedia Commons (Public Domain)",
+      "credit": "Unknown authorUnknown author — Public domain",
       "excerpt": {
         "vi": "Vị vua trẻ bất bại đã chinh phục Đế chế Ba Tư, mở mang cương thổ tới Ấn Độ và khai sinh Thời kỳ Hy Lạp hóa rực rỡ.",
         "en": "The undefeated conqueror who overthrew the Persian Empire, expanded to India, and inaugurated the Hellenistic Era."
@@ -82,6 +91,15 @@
       "files": {
         "vi": "figures/alexander-dai-de.vi.md",
         "en": "figures/alexander-dai-de.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Alexander_the_Great_mosaic_(cropped).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -106,7 +124,7 @@
       },
       "region": "world",
       "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/GodfreyKneller-IsaacNewton-1689.jpg/800px-GodfreyKneller-IsaacNewton-1689.jpg",
-      "credit": "Sir Godfrey Kneller — Wikimedia Commons (Public Domain)",
+      "credit": "Godfrey Kneller — Public domain",
       "excerpt": {
         "vi": "Bộ óc vĩ đại khai sinh cơ học cổ điển với ba định luật chuyển động và lực hấp dẫn vũ trụ, kiến tạo nền móng khoa học hiện đại.",
         "en": "One of the greatest minds in history, who formulated the laws of motion and universal gravitation, founding modern physics."
@@ -123,6 +141,15 @@
       "files": {
         "vi": "figures/isaac-newton.vi.md",
         "en": "figures/isaac-newton.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:GodfreyKneller-IsaacNewton-1689.jpg",
+        "author": "Godfrey Kneller",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -146,8 +173,8 @@
         "en": "Ancient"
       },
       "region": "vietnam",
-      "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg",
-      "credit": "Tranh dân gian Đông Hồ — Wikimedia Commons (Public Domain)",
+      "portrait": "assets/images/review-pending.svg",
+      "credit": "Dòng Chảy Lịch Sử — Minh họa dự phòng, không phải ảnh tư liệu",
       "excerpt": {
         "vi": "Nữ tướng kiệt xuất cưỡi voi xung trận làm rung chuyển chính quyền đô hộ phương Bắc với chí khí đạp sóng biển Đông ngút trời.",
         "en": "Fearless warrior who led elephant-mounted legions against foreign invaders with the immortal vow to ride the storm."
@@ -164,6 +191,15 @@
       "files": {
         "vi": "figures/ba-trieu.vi.md",
         "en": "figures/ba-trieu.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "assets/images/review-pending.svg",
+        "author": "Dòng Chảy Lịch Sử",
+        "license": "Original project illustration; not historical media",
+        "licenseUrl": "",
+        "status": "project_owned_placeholder"
       }
     },
     {
@@ -187,8 +223,8 @@
         "en": "Medieval"
       },
       "region": "vietnam",
-      "portrait": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Statue_of_King_Dinh_Tien_Hoang.jpg/800px-Statue_of_King_Dinh_Tien_Hoang.jpg",
-      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "portrait": "assets/images/review-pending.svg",
+      "credit": "Dòng Chảy Lịch Sử — Minh họa dự phòng, không phải ảnh tư liệu",
       "excerpt": {
         "vi": "Vị hoàng đế dẹp yên loạn 12 sứ quân, xưng Hoàng đế và đặt quốc hiệu Đại Cồ Việt, mở nền chính thống độc lập cho dân tộc.",
         "en": "The legendary emperor who suppressed the Twelve Warlords, proclaimed himself Emperor, and founded independent Dai Co Viet."
@@ -205,6 +241,15 @@
       "files": {
         "vi": "figures/dinh-tien-hoang.vi.md",
         "en": "figures/dinh-tien-hoang.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "assets/images/review-pending.svg",
+        "author": "Dòng Chảy Lịch Sử",
+        "license": "Original project illustration; not historical media",
+        "licenseUrl": "",
+        "status": "project_owned_placeholder"
       }
     },
     {
@@ -237,13 +282,22 @@
         "Việt Nam",
         "quân sự"
       ],
-      "credit": "Wikimedia Commons — Bùi Thụy Đào Nguyên (CC BY-SA 3.0)",
+      "credit": "Bùi Thụy Đào Nguyên — CC BY-SA 3.0",
       "file": "figures/ngo-quyen.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/ngo-quyen.md",
         "en": "figures/ngo-quyen.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:T%C6%B0%E1%BB%A3ng_Ng%C3%B4_Quy%E1%BB%81n.jpg",
+        "author": "Bùi Thụy Đào Nguyên",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -277,13 +331,22 @@
         "quân sự",
         "nhà Lý"
       ],
-      "credit": "Wikimedia Commons — Gary Todd (CC0)",
+      "credit": "Gary Todd from Xinzheng, China — CC0",
       "file": "figures/ly-thuong-kiet.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/ly-thuong-kiet.md",
         "en": "figures/ly-thuong-kiet.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ly_Thuong_Kiet_(1019-1105)_Defeated_Song_China_Invasion_of_1077_(9732106811).jpg",
+        "author": "Gary Todd from Xinzheng, China",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -317,13 +380,22 @@
         "văn hóa",
         "văn học"
       ],
-      "credit": "Wikimedia Commons — Long Phan (CC BY-SA 4.0)",
+      "credit": "Long Phan ZZZ — CC BY-SA 4.0",
       "file": "figures/nguyen-du.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/nguyen-du.md",
         "en": "figures/nguyen-du.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:T%C6%B0%E1%BB%A3ng_%C4%90%E1%BA%A1i_thi_h%C3%A0o_Nguy%E1%BB%85n_Du.jpg",
+        "author": "Long Phan ZZZ",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -356,13 +428,22 @@
         "thế giới",
         "khoa học"
       ],
-      "credit": "Wikimedia Commons — F. Schmutzer (PD)",
+      "credit": "Ferdinand Schmutzer / Adam Cuerden — Public domain",
       "file": "figures/albert-einstein.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/albert-einstein.md",
         "en": "figures/albert-einstein.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Einstein_1921_by_F_Schmutzer_-_restoration.jpg",
+        "author": "Ferdinand Schmutzer / Adam Cuerden",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -396,13 +477,22 @@
         "chính trị",
         "nhân quyền"
       ],
-      "credit": "Wikimedia Commons — South Africa The Good News (CC BY 2.0)",
+      "credit": "South Africa The Good News — CC BY 2.0",
       "file": "figures/nelson-mandela.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/nelson-mandela.md",
         "en": "figures/nelson-mandela.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Nelson_Mandela-2008_(edit).jpg",
+        "author": "South Africa The Good News",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -436,13 +526,22 @@
         "quân sự",
         "nhà Lê"
       ],
-      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "credit": "Bùi Thụy Đào Nguyên — CC BY-SA 3.0",
       "file": "figures/le-loi.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/le-loi.md",
         "en": "figures/le-loi.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Statue_of_L%C3%AA_L%E1%BB%A3i.jpg",
+        "author": "Bùi Thụy Đào Nguyên",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -476,13 +575,22 @@
         "quân sự",
         "Tây Sơn"
       ],
-      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "credit": "Tượng_đài_Quang_Trung_tại_Bảo_tàng_Quang_Trung.JPG: The original uploader was Liftold at Vietnamese Wikipedia.\nderivative work: Phó Nháy (talk) — CC BY-SA 3.0",
       "file": "figures/quang-trung.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/quang-trung.md",
         "en": "figures/quang-trung.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Quang_Trung_statue_02.jpg",
+        "author": "Tượng_đài_Quang_Trung_tại_Bảo_tàng_Quang_Trung.JPG: The original uploader was Liftold at Vietnamese Wikipedia.\nderivative work: Phó Nháy (talk)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -515,13 +623,22 @@
         "Việt Nam",
         "quân sự"
       ],
-      "credit": "Wikimedia Commons (CC BY 3.0 BR)",
+      "credit": "Ricardo Stuckert (PR/ABr/Brazil) — CC BY 3.0 br",
       "file": "figures/vo-nguyen-giap.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/vo-nguyen-giap.md",
         "en": "figures/vo-nguyen-giap.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Vo_Nguyen_Giap_2008.jpg",
+        "author": "Ricardo Stuckert (PR/ABr/Brazil)",
+        "license": "CC BY 3.0 br",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/br/deed.en",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -555,13 +672,22 @@
         "khoa học",
         "phụ nữ"
       ],
-      "credit": "Wikimedia Commons (PD)",
+      "credit": "Henri Manuel — Public domain",
       "file": "figures/marie-curie.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/marie-curie.md",
         "en": "figures/marie-curie.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Marie_Curie_c._1920s.jpg",
+        "author": "Henri Manuel",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -595,13 +721,22 @@
         "chính trị",
         "bất bạo động"
       ],
-      "credit": "Wikimedia Commons — Elliott & Fry (PD)",
+      "credit": "Elliott & Fry — Public domain",
       "file": "figures/mahatma-gandhi.md",
       "lang": "vi",
       "date": "2026-07-27",
       "files": {
         "vi": "figures/mahatma-gandhi.md",
         "en": "figures/mahatma-gandhi.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Mahatma-Gandhi,_studio,_1931.jpg",
+        "author": "Elliott & Fry",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -635,11 +770,20 @@
         "cách mạng",
         "độc lập"
       ],
-      "credit": "Wikimedia Commons",
+      "credit": "Unknown authorUnknown author — Public domain",
       "file": "figures/ho-chi-minh.md",
       "files": {
         "vi": "figures/ho-chi-minh.md",
         "en": "figures/ho-chi-minh.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_1946.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -672,11 +816,20 @@
         "Việt Nam",
         "quân sự"
       ],
-      "credit": "Wikimedia Commons",
+      "credit": "Rob Kniaz from San Francisco, USA — CC BY 2.0",
       "file": "figures/tran-hung-dao.md",
       "files": {
         "vi": "figures/tran-hung-dao.md",
         "en": "figures/tran-hung-dao.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tran_Hung_Dao_statue.jpg",
+        "author": "Rob Kniaz from San Francisco, USA",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -710,11 +863,20 @@
         "văn hóa",
         "quân sự"
       ],
-      "credit": "Wikimedia Commons",
+      "credit": "Unknown authorUnknown author — Public domain",
       "file": "figures/nguyen-trai.md",
       "files": {
         "vi": "figures/nguyen-trai.md",
         "en": "figures/nguyen-trai.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Nguyen_Trai.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -748,11 +910,20 @@
         "văn hóa",
         "khoa học"
       ],
-      "credit": "Wikimedia Commons",
+      "credit": "Leonardo da Vinci — Public domain",
       "file": "figures/leonardo-da-vinci.md",
       "files": {
         "vi": "figures/leonardo-da-vinci.md",
         "en": "figures/leonardo-da-vinci.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Leonardo_self.jpg",
+        "author": "Leonardo da Vinci",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -786,11 +957,20 @@
         "quân sự",
         "chính trị"
       ],
-      "credit": "Wikimedia Commons",
+      "credit": "Jacques-Louis David — Public domain",
       "file": "figures/napoleon-bonaparte.md",
       "files": {
         "vi": "figures/napoleon-bonaparte.md",
         "en": "figures/napoleon-bonaparte.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg",
+        "author": "Jacques-Louis David",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -823,11 +1003,20 @@
         "thế giới",
         "chính trị"
       ],
-      "credit": "Wikimedia Commons",
+      "credit": "Alexander Gardner — Public domain",
       "file": "figures/abraham-lincoln.md",
       "files": {
         "vi": "figures/abraham-lincoln.md",
         "en": "figures/abraham-lincoln.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln_O-77_matte_collodion_print.jpg",
+        "author": "Alexander Gardner",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -862,10 +1051,19 @@
       ],
       "lang": "vi",
       "file": "figures/vi-lenin.md",
-      "credit": "Wikimedia Commons — Ảnh chính thức của Lenin, 1920 (Public domain)",
+      "credit": "Unknown, presumably official — Public domain",
       "files": {
         "vi": "figures/vi-lenin.md",
         "en": "figures/vi-lenin.en.md"
+      },
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Lenin_in_1920.jpg",
+        "author": "Unknown, presumably official",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "status": "metadata_confirmed_pending_editorial_review"
       }
     },
     {
@@ -903,9 +1101,19 @@
       "lang": "vi",
       "file": "figures/conor-mcgregor.vi.md",
       "files": {
-        "vi": "figures/conor-mcgregor.vi.md"
+        "vi": "figures/conor-mcgregor.vi.md",
+        "en": "figures/conor-mcgregor.en.md"
       },
-      "credit": "Wikimedia Commons — Andrius Petrucenia (CC BY-SA 2.0)"
+      "credit": "Andrius Petrucenia on Flickr (Original version)  UCinternational (Crop) — CC BY-SA 2.0",
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Conor_McGregor_in_2015.jpg",
+        "author": "Andrius Petrucenia on Flickr (Original version)  UCinternational (Crop)",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "status": "metadata_confirmed_pending_editorial_review"
+      }
     },
     {
       "slug": "lionel-messi",
@@ -946,7 +1154,16 @@
         "vi": "figures/lionel-messi.vi.md",
         "en": "figures/lionel-messi.en.md"
       },
-      "credit": "Wikimedia Commons — Hossein Zohrevand (CC BY 4.0)"
+      "credit": "Hossein Zohrevand — CC BY 4.0",
+      "verified": false,
+      "reviewStatus": "pending_claim_review",
+      "imageSource": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Lionel-Messi-Argentina-2022-FIFA-World-Cup_(cropped).jpg",
+        "author": "Hossein Zohrevand",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "status": "metadata_confirmed_pending_editorial_review"
+      }
     }
   ]
 }

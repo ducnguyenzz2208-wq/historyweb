@@ -2,7 +2,7 @@
 
 In 248 AD, amidst the long dark night of Northern domination under the tyrannical rule of Eastern Wu during China's Three Kingdoms era, a major armed uprising erupted in the Cuu Chan region (modern-day Thanh Hoa), led by the heroic young woman Trieu Thi Trinh alongside her brother Trieu Quoc Dat. The rebellion shook the colonial administration to its core and left an immortal declaration that echoes the indomitable spirit of Vietnamese women: "I wish to ride the tempest, tread the roaring waves, slay the giant whales of the Eastern Sea... not to bow my head and serve as a humble concubine to anyone!".[^1]
 
-![Lady Trieu folk art](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg "Dong Ho folk painting depicting warrior Lady Trieu riding an elephant into battle |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## A Long Nightmare under Eastern Wu Tyranny
 

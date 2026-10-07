@@ -2,7 +2,7 @@
 
 Bà Triệu (225 – 248), tên thật là Triệu Thị Trinh, còn được tôn xưng là Triệu Trinh Nương, là vị nữ anh hùng dân tộc vĩ đại đã phất cờ khởi nghĩa chống lại ách đô hộ của triều đình Đông Ngô vào thế kỷ thứ III. Khí phách kiên cường, ý chí quật khởi cùng câu nói "Tôi muốn cưỡi cơn gió mạnh, đạp luồng sóng dữ..." của bà đã trở thành bản tuyên ngôn bất tử về quyền độc lập và phẩm giá người phụ nữ Việt Nam qua ngàn đời.
 
-![Hình tượng Bà Triệu](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg "Tranh dân gian mô tả hình tượng nữ tướng Triệu Thị Trinh uy dũng cưỡi voi xung trận |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## 1. Người con gái núi rừng Cửu Chân
 

@@ -12,7 +12,11 @@
 
   function tileHTML(item, lang) {
     const title = Store.localized(item.title, lang);
-    const credit = item.credit || (item.type === "figure" ? "Wikimedia Commons" : "");
+    const esc = window.hwEscapeHtml || ((text) => String(text || "").replace(/[&<>"']/g, c => ({"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"}[c])));
+    const credit = item.credit || (lang === "en" ? "Image provenance and license unverified" : "Chưa xác minh nguồn gốc / giấy phép ảnh");
+    const source = item.imageSource;
+    const sourceUrl = source?.sourcePage && /^https:\/\/commons\.wikimedia\.org\//.test(source.sourcePage) ? source.sourcePage : "";
+    const licenseUrl = source?.licenseUrl && /^https?:\/\//.test(source.licenseUrl) ? source.licenseUrl : "";
     return `
     <figure class="media-tile glass" data-reveal>
       <a class="media-tile__img" href="${item.url}">
@@ -21,7 +25,10 @@
       <figcaption class="media-tile__cap">
         <span class="media-tile__type">${item.type === "figure" ? window.I18N.t("nav.figures") : window.I18N.t("nav.blog")}</span>
         <b>${title}</b>
-        ${credit ? `<span class="media-tile__src">${window.I18N.t("gallery.source")}: ${credit}</span>` : ""}
+        <span class="media-tile__src">${window.I18N.t("gallery.source")}: ${esc(credit)}</span>
+        ${sourceUrl ? `<a href="${esc(sourceUrl)}" target="_blank" rel="noopener">${lang === "en" ? "File source" : "Trang nguồn ảnh"}</a>` : ""}
+        ${licenseUrl ? `<a href="${esc(licenseUrl)}" target="_blank" rel="noopener">${esc(source.license)}</a>` : ""}
+        <span>${lang === "en" ? "Editorial review pending" : "Chờ duyệt ngữ cảnh và điều kiện sử dụng"}</span>
         <a class="media-tile__link" href="${item.url}">${window.I18N.t("gallery.view")} →</a>
       </figcaption>
     </figure>`;
@@ -36,12 +43,12 @@
 
     const items = [
       ...posts.filter((p) => p.cover).map((p) => ({
-        type: "post", src: p.cover, title: p.title, credit: p.credit,
-        url: `post.html?slug=${encodeURIComponent(p.slug)}`,
+        type: "post", src: p.cover, title: p.title, credit: p.credit, imageSource: p.imageSource,
+        url: `${window.hwArticleUrl("post", p.slug)}`,
       })),
       ...figures.filter((f) => f.portrait).map((f) => ({
-        type: "figure", src: f.portrait, title: f.name, credit: f.credit,
-        url: `figure.html?slug=${encodeURIComponent(f.slug)}`,
+        type: "figure", src: f.portrait, title: f.name, credit: f.credit, imageSource: f.imageSource,
+        url: `${window.hwArticleUrl("figure", f.slug)}`,
       })),
     ];
 

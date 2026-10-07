@@ -185,9 +185,13 @@
       "admin.subtitle": "Viết và xuất bản bài mới trực tiếp lên repo.",
       "admin.token": "GitHub Personal Access Token",
       "admin.tokenhint":
-        "Cần quyền 'repo' (Contents: read & write). Token chỉ lưu trong trình duyệt của bạn.",
+        "Dùng fine-grained token, chỉ cấp repo historyweb và quyền Contents: Read and write. Mặc định token chỉ giữ trong tab hiện tại; đóng tab sẽ kết thúc phiên.",
       "admin.tokensave": "Lưu token",
-      "admin.tokensaved": "Đã lưu token trong máy bạn.",
+      "admin.tokensaved": "Đã lưu token theo lựa chọn của bạn.",
+      "admin.remembertoken": "Ghi nhớ trên thiết bị này (chỉ chọn trên máy riêng)",
+      "admin.forgettoken": "Xóa token",
+      "admin.tokenforgotten": "Đã xóa token và ngắt kết nối.",
+      "admin.tokenmigrated": "Token cũ đã chuyển sang phiên tab; lưu lâu dài chỉ khi chọn Ghi nhớ.",
       "admin.connect": "Kết nối",
       "admin.connected": "Đã kết nối:",
       "admin.load": "Tải bài để sửa",
@@ -448,9 +452,13 @@
       "admin.subtitle": "Write and publish new posts straight to the repo.",
       "admin.token": "GitHub Personal Access Token",
       "admin.tokenhint":
-        "Needs 'repo' scope (Contents: read & write). The token is stored only in your browser.",
+        "Use a fine-grained token scoped to historyweb with Contents: Read and write. By default it stays in this tab session, which ends when the tab closes.",
       "admin.tokensave": "Save token",
-      "admin.tokensaved": "Token saved on your device.",
+      "admin.tokensaved": "Token saved using your selected storage option.",
+      "admin.remembertoken": "Remember on this device (private devices only)",
+      "admin.forgettoken": "Clear token",
+      "admin.tokenforgotten": "Token cleared and disconnected.",
+      "admin.tokenmigrated": "Your old token was moved to this tab session; persistence requires Remember.",
       "admin.connect": "Connect",
       "admin.connected": "Connected:",
       "admin.load": "Load a post to edit",
@@ -538,9 +546,11 @@
 
   const cfg = window.SITE_CONFIG || {};
   const DEFAULT = cfg.defaultLang || "vi";
+  let savedLang = DEFAULT;
+  try { savedLang = localStorage.getItem("hw_lang") || DEFAULT; } catch (_) {}
 
   const I18N = {
-    lang: localStorage.getItem("hw_lang") || DEFAULT,
+    lang: STRINGS[savedLang] ? savedLang : DEFAULT,
     strings: STRINGS,
 
     t(key) {
@@ -575,7 +585,7 @@
     set(lang) {
       if (!STRINGS[lang]) return;
       this.lang = lang;
-      localStorage.setItem("hw_lang", lang);
+      try { localStorage.setItem("hw_lang", lang); } catch (_) {}
       this.apply(document);
       window.dispatchEvent(new CustomEvent("langchange", { detail: { lang } }));
     },

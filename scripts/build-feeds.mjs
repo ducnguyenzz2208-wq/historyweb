@@ -24,6 +24,8 @@ const urls = [
   ...staticPages.map((p) => ({ loc: `${base}/${p}`, lastmod: today, priority: p === "index.html" ? "1.0" : "0.7" })),
   ...posts.map((p) => ({ loc: `${base}/post/${p.slug}.html`, lastmod: p.date || today, priority: "0.8" })),
   ...figures.map((f) => ({ loc: `${base}/figure/${f.slug}.html`, lastmod: today, priority: "0.6" })),
+  ...posts.map((p) => ({ loc: `${base}/post/${p.slug}.en.html`, lastmod: p.date || today, priority: "0.8" })),
+  ...figures.map((f) => ({ loc: `${base}/figure/${f.slug}.en.html`, lastmod: today, priority: "0.6" })),
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

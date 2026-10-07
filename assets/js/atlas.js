@@ -135,11 +135,11 @@
   function collect(lang) {
     const evPosts = POSTS
       .filter((p) => p.lat != null && p.lng != null)
-      .map((p) => ({ type: "post", url: `post.html?slug=${encodeURIComponent(p.slug)}`, title: p.title, place: p.place, year: p.year, region: p.region, lat: p.lat, lng: p.lng }))
+      .map((p) => ({ type: "post", url: `${window.hwArticleUrl("post", p.slug)}`, title: p.title, place: p.place, year: p.year, region: p.region, lat: p.lat, lng: p.lng }))
       .sort((a, b) => historicalYear(a) - historicalYear(b));
     const tl = [
-      ...POSTS.map((p) => ({ type: "post", url: `post.html?slug=${encodeURIComponent(p.slug)}`, title: p.title, year: +p.year || 0, region: p.region })),
-      ...FIGS.map((f) => ({ type: "figure", url: `figure.html?slug=${encodeURIComponent(f.slug)}`, title: f.name, year: +f.born || 0, region: f.region })),
+      ...POSTS.map((p) => ({ type: "post", url: `${window.hwArticleUrl("post", p.slug)}`, title: p.title, year: +p.year || 0, region: p.region })),
+      ...FIGS.map((f) => ({ type: "figure", url: `${window.hwArticleUrl("figure", f.slug)}`, title: f.name, year: +f.born || 0, region: f.region })),
     ].filter((x) => x.year).sort((a, b) => historicalYear(a) - historicalYear(b));
     return { evPosts, tl };
   }

@@ -2,7 +2,7 @@
 
 In the spring of 1077, along the Nhu Nguyet River defense line (today's Cau River), the Dai Viet armed forces under Supreme Commander Ly Thuong Kiet decisively halted and crushed the invasion of 300,000 Song troops led by Guo Kui and Zhao Xie. The victory not only firmly secured the young independence of the Ly Dynasty, but also immortalized the divine poem "Nam quoc son ha" (Mountains and Rivers of the Southern Realm) — revered as the first Declaration of Independence in Vietnamese history.[^1]
 
-![Historic Cau River](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Song_Cau_%28Nhu_Nguyet%29.jpg/1280px-Song_Cau_%28Nhu_Nguyet%29.jpg "The Cau River (Nhu Nguyet River), location of the fortified defense line against Song forces in 1077 |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## Preemptive Strike: A Strategic Masterstroke
 

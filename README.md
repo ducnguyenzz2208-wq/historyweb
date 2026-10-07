@@ -75,7 +75,7 @@ Khuyên dùng **Fine-grained token** (an toàn hơn, chỉ cấp quyền cho đ�
 
 **Đăng bài:** điền tiêu đề, năm, khu vực, thẻ, ảnh bìa, tóm tắt, nội dung (có thanh công cụ Markdown) → **Xem trước** → **Xuất bản lên repo**. Site tự deploy lại sau ít phút.
 
-> ⚠️ Token là chìa khoá ghi vào repo — **không chia sẻ, không commit vào code**. Trang admin chỉ lưu token trong `localStorage` của trình duyệt bạn và chỉ gọi tới `api.github.com`. Nếu lỡ lộ, vào lại trang tokens ở trên và **Revoke**.
+> ⚠️ Token là chìa khoá ghi vào repo — **không chia sẻ, không commit vào code**. Trang admin mặc định giữ token trong phiên tab (`sessionStorage`); chỉ dùng `localStorage` khi bạn chủ động chọn ghi nhớ. Nút xóa token xóa cả hai nơi và chỉ gọi tới `api.github.com`. Nếu lỡ lộ, vào lại trang tokens ở trên và **Revoke**.
 
 ## 🔔 Bật bình luận (Giscus — tuỳ chọn)
 
@@ -98,3 +98,9 @@ python3 -m http.server 8000
 - Đổi tên site, repo, nhánh, ngôn ngữ mặc định trong `config.js`.
 - Thêm/bớt chuỗi dịch trong `assets/js/i18n.js`.
 - Đổi bảng màu / phông chữ trong phần `:root` của `assets/css/style.css`.
+
+## Kiểm tra P0 và nguồn
+
+Chạy `npm run build:seo`, `npm run test:markdown`, `npm run test:token`, `npm run test:admin`, `npm run test:static` và `npm run check-links`. Trang tĩnh VI dùng `post/<slug>.html` / `figure/<slug>.html`; EN dùng `<slug>.en.html`. HTML chứa thân bài kể cả khi không chạy JavaScript.
+
+`python scripts/audit-sources.py` cập nhật hồ sơ ảnh qua API Wikimedia Commons (cần mạng). Xem `SOURCE_AUDIT.md` và `AI_TASKS.md` để biết phần chưa duyệt; metadata ảnh không chứng minh nhận định lịch sử hoặc toàn bộ quyền sử dụng. Không gắn verified trước khi có bằng chứng duyệt.

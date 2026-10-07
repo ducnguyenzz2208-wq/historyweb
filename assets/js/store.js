@@ -5,6 +5,19 @@
  * Hỗ trợ bộ nhớ đệm tức thời (optimistic cache): sau khi đăng bài trên admin,
  * bài mới xuất hiện ngay trên blog/trang chủ mà không cần chờ GitHub Pages deploy lại.
  */
+window.hwArticleUrl = function (kind, slug, lang) {
+  const language = lang || (window.I18N && window.I18N.lang) || "vi";
+  // A just-published draft may not have a static page until deploy finishes.
+  try {
+    const key = kind === "post" ? "hw_pending_posts" : "hw_pending_figures";
+    const tsKey = kind === "post" ? "hw_pending_ts" : "hw_pending_fig_ts";
+    if (Date.now() - Number(localStorage.getItem(tsKey)) < 600000 &&
+      JSON.parse(localStorage.getItem(key) || "[]").some(item => item.slug === slug)) {
+      return `${kind}.html?slug=${encodeURIComponent(slug)}`;
+    }
+  } catch (_) {}
+  return `${kind}/${encodeURIComponent(slug)}${language === "en" ? ".en" : ""}.html`;
+};
 window.Store = (function () {
   "use strict";
   const LOCAL_POSTS_KEY = "hw_pending_posts";

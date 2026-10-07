@@ -32,29 +32,35 @@ Trạng thái: DONE
 
 ## Task 02 — Giảm rủi ro token GitHub (P0)
 
-Trạng thái: TODO
+Trạng thái: DONE
 
 - Mặc định giữ token trong phiên; chỉ lưu lâu dài khi người dùng chủ động chọn. Xử lý token cũ trong localStorage mà không tự xóa dữ liệu ngoài phạm vi.
 - Thêm nút xóa token và hướng dẫn fine-grained token giới hạn đúng repo, quyền Contents cần thiết.
 - Nghiệm thu: kết nối, xuất bản, xóa token hoạt động; không ghi token vào log, URL, repo; xác minh hành vi sau reload/đóng phiên.
 - Không dùng token thật trong kiểm thử tự động; không xuất bản bài thử lên main nếu chưa được yêu cầu.
 
+- Kết quả 2026-10-08: Token mặc định trong sessionStorage; lưu dài hạn chỉ khi chọn; chuyển token cũ đúng phạm vi, nút xóa và lỗi API được xử lý an toàn. Kiểm tra tự động mô phỏng phiên, API và xuất bản một commit nguyên tử; không dùng token thật.
+
 ## Task 03 — Prerender đầy đủ bài viết (P0)
 
-Trạng thái: TODO
+Trạng thái: DONE
 
 - Sinh HTML chứa tiêu đề, thân bài, infobox, mục lục, nguồn tham khảo từ Markdown; bỏ redirect JS bắt buộc trong trang sinh sẵn.
 - Đồng bộ URL tĩnh, liên kết nội bộ, canonical, sitemap và metadata; dùng lại bộ render an toàn thay vì tạo parser thứ hai.
 - Nghiệm thu: tắt JS vẫn đọc được bài; mở URL trực tiếp hoạt động; build toàn bộ bài không lỗi; crawler nhận nội dung thật trong HTML. Chốt thiết kế URL VI/EN trước khi thay đổi toàn site.
 
+- Kết quả 2026-10-08: Sinh 110 trang HTML VI/EN có thân bài, infobox, mục lục và nguồn; đồng bộ link, canonical, hreflang, sitemap. Kiểm tra HTML không chạy JS và trình duyệt local; sửa anchor khi dùng base URL, tiêu đề lặp, cache tài nguyên và tương phản hero.
+
 ## Task 04 — Rà soát nguồn và ảnh (P0)
 
-Trạng thái: TODO
+Trạng thái: IN_PROGRESS
 
 - Lập danh sách nguồn cho 31 sự kiện và 24 nhân vật hiện tại, cập nhật số lượng theo dữ liệu thực tế.
 - Đối chiếu credit với từng ảnh; lưu tác giả, URL trang nguồn và giấy phép. Không suy ra quyền sử dụng chỉ từ tên miền hoặc dòng credit.
 - Bổ sung nguồn cho nhận định quan trọng, số trang/đoạn khi có thể; xác định quy trình gắn nhãn verified. Đánh dấu nguồn chưa đối chiếu thay vì tự nhận đã kiểm chứng.
 - Nghiệm thu: mọi mục có nguồn; mọi ảnh có hồ sơ nguồn/quyền sử dụng; nội dung cần con người duyệt được liệt kê rõ. Không bịa trích dẫn hay giấy phép.
+
+- Kết quả 2026-10-08: Đã lập SOURCE_AUDIT.md và source-audit.json cho 55 mục, 68 ảnh: 46 có metadata Commons, 21 chưa đủ bằng chứng quyền sử dụng, 1 placeholder tự tạo. Thay 13 lượt dùng URL ảnh Commons không tồn tại; lưu URL cũ trong image-remediations.json. Mọi mục có danh sách nguồn, nhưng nguồn đề xuất chưa chứng minh từng nhận định; verified=false và chờ duyệt. Phần kỹ thuật hoàn thành; chưa đạt nghiệm thu quyền sử dụng cho tất cả ảnh và đối chiếu nhận định. AI tiếp theo đọc báo cáo để xử lý các mục pending, không tự gắn verified.
 
 ## Task 05 — Đồng bộ tài liệu tiến độ (P1)
 
@@ -117,3 +123,7 @@ Trạng thái: TODO
 
 - 2026-10-07: Tạo roadmap 12 task; bắt đầu task 01 theo yêu cầu người dùng.
 - 2026-10-08: Task 01 đạt nghiệm thu, cập nhật trạng thái DONE; chuẩn bị commit và push origin/main. Các task 02–12 chưa triển khai.
+
+- 2026-10-08: Theo yêu cầu triển khai cả ba P0 còn lại: task 02/03 DONE; task 04 hoàn thành audit kỹ thuật, IN_PROGRESS vì còn bằng chứng nguồn/quyền ảnh cần duyệt.
+
+- Kiểm tra cuối lượt P0: build 110 trang + sitemap 117 URL; Markdown 9 nhóm/114 file; test:token, test:admin, test:static, check-links, cú pháp toàn bộ JS và diff whitespace đều pass. Trình duyệt local: đổi VI/EN, trích dẫn MLA, link thư viện tĩnh, xóa token; màn hình 390px không tràn ngang ở bài kiểm tra và không có lỗi console được ghi nhận. Xuất bản admin được kiểm tra bằng API giả lập, chưa dùng token thật để ghi bài thử.

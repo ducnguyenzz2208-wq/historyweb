@@ -159,12 +159,12 @@
         <div class="figures-grid">
           ${related.map((r) => {
             const rn = Store.localized(r.name, lang); const rfb = window.figureFallback(rn);
-            return `<article class="figure-card glass"><a class="figure-card__media" href="figure.html?slug=${encodeURIComponent(r.slug)}">
+            return `<article class="figure-card glass"><a class="figure-card__media" href="${window.hwArticleUrl("figure", r.slug)}">
               <span class="figure-card__life">${r.born || "?"} – ${r.died || ""}</span>
               <img src="${r.portrait || rfb}" alt="${rn}" loading="lazy" data-fallback="${window.hwFallback(r.portrait, rfb)}">
               <div class="figure-card__cap"><h3>${rn}</h3><div class="figure-card__role">${Store.localized(r.role, lang)}</div></div></a>
               <div class="figure-card__body"><p class="figure-card__excerpt">${Store.localized(r.excerpt, lang)}</p>
-              <a class="figure-card__link" href="figure.html?slug=${encodeURIComponent(r.slug)}"><span>${window.I18N.t("figures.analyze")}</span>
+              <a class="figure-card__link" href="${window.hwArticleUrl("figure", r.slug)}"><span>${window.I18N.t("figures.analyze")}</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>`;
           }).join("")}
         </div>
@@ -175,6 +175,7 @@
     wireTocHighlight();
     wireLiveTranslate(f, lang);
     autoLinkArticle(f, lang);
+    if (window.hwSourceReview) window.hwSourceReview(f, "figure", lang);
     if (window.hwReveal) window.hwReveal();
     window.scrollTo(0, 0);
   }
@@ -217,13 +218,13 @@
         .filter((x) => x.slug !== f.slug)
         .forEach((x) => entries.push({
           title: Store.localized(x.name, lang),
-          url: `figure.html?slug=${encodeURIComponent(x.slug)}`,
+          url: `${window.hwArticleUrl("figure", x.slug)}`,
         }));
     } catch (e) {}
     try {
       (await Store.all()).forEach((p) => entries.push({
         title: Store.localized(p.title, lang),
-        url: `post.html?slug=${encodeURIComponent(p.slug)}`,
+        url: `${window.hwArticleUrl("post", p.slug)}`,
       }));
     } catch (e) {}
     window.hwAutoLink(prose, entries);

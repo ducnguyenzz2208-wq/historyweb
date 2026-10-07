@@ -2,7 +2,7 @@
 
 Đinh Tiên Hoàng (924 – 979), tên húy là Đinh Bộ Lĩnh, là vị hoàng đế sáng lập triều đại nhà Đinh và là người đặt nền móng vững chắc cho nền độc lập, tự chủ thống nhất của quốc gia Đại Cồ Việt. Bằng tài thao lược quân sự kiệt xuất, ông đã dẹp tan loạn 12 sứ quân, xưng Hoàng đế và chấm dứt thời kỳ phân liệt hỗn loạn kéo dài sau cái chết của Ngô Quyền.
 
-![Tượng vua Đinh Tiên Hoàng](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Statue_of_King_Dinh_Tien_Hoang.jpg/800px-Statue_of_King_Dinh_Tien_Hoang.jpg "Tượng thờ Đinh Tiên Hoàng Đế tại đền vua Đinh ở cố đô Hoa Lư, Ninh Bình |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## 1. Thời niên thiếu và huyền tích cờ lau tập trận
 

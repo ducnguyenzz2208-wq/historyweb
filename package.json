@@ -6,6 +6,9 @@
   "type": "module",
   "scripts": {
     "test:markdown": "node scripts/test-markdown.mjs",
+    "test:token": "node scripts/test-admin-token.mjs",
+    "test:admin": "node scripts/test-admin-git.mjs",
+    "test:static": "python scripts/test-static-pages.py",
     "check-links": "node scripts/check-links.mjs",
     "feeds": "node scripts/build-feeds.mjs",
     "prerender": "node scripts/prerender.mjs",

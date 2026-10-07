@@ -1,0 +1,96 @@
+[
+  {
+    "file": "posts\\index.json",
+    "slug": "tran-nhu-nguyet-1077",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Song_Cau_%28Nhu_Nguyet%29.jpg/1280px-Song_Cau_%28Nhu_Nguyet%29.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "posts\\khoi-nghia-ba-trieu-248.en.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "posts\\phong-trao-can-vuong-1885.en.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/King_Ham_Nghi.jpg/800px-King_Ham_Nghi.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "posts\\phong-trao-can-vuong-1885.vi.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/King_Ham_Nghi.jpg/800px-King_Ham_Nghi.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "posts\\su-ra-doi-cua-internet.en.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ARPANET_logical_map%2C_march_1977.png/1024px-ARPANET_logical_map%2C_march_1977.png",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "posts\\tran-nhu-nguyet-1077.en.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Song_Cau_%28Nhu_Nguyet%29.jpg/1280px-Song_Cau_%28Nhu_Nguyet%29.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "posts\\tran-nhu-nguyet-1077.vi.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Song_Cau_%28Nhu_Nguyet%29.jpg/1280px-Song_Cau_%28Nhu_Nguyet%29.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "figures\\index.json",
+    "slug": "ba-trieu",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "figures\\index.json",
+    "slug": "dinh-tien-hoang",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Statue_of_King_Dinh_Tien_Hoang.jpg/800px-Statue_of_King_Dinh_Tien_Hoang.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "figures\\ba-trieu.en.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "figures\\ba-trieu.vi.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "figures\\dinh-tien-hoang.en.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Statue_of_King_Dinh_Tien_Hoang.jpg/800px-Statue_of_King_Dinh_Tien_Hoang.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  },
+  {
+    "file": "figures\\dinh-tien-hoang.vi.md",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Statue_of_King_Dinh_Tien_Hoang.jpg/800px-Statue_of_King_Dinh_Tien_Hoang.jpg",
+    "replacement": "assets/images/review-pending.svg",
+    "reason": "Commons API: missing file",
+    "checkedAt": "2026-10-08"
+  }
+]

@@ -21,13 +21,13 @@
     const fb = postFallback(p.year);
     return `
     <article class="card" data-reveal>
-      <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="card__media">
+      <a href="${window.hwArticleUrl("post", p.slug)}" class="card__media">
         ${p.year ? `<span class="card__year">${p.year}</span>` : ""}
         <img src="${p.cover || fb}" alt="${title}" loading="lazy" data-fallback="${window.hwFallback(p.cover, fb)}">
       </a>
       <div class="card__body">
         <div class="card__tags">${(p.tags || []).slice(0, 3).map((t) => `<a class="tag" href="topics.html?tag=${encodeURIComponent(t)}">${t}</a>`).join("")}</div>
-        <h3 class="card__title"><a href="post.html?slug=${encodeURIComponent(p.slug)}">${title}</a></h3>
+        <h3 class="card__title"><a href="${window.hwArticleUrl("post", p.slug)}">${title}</a></h3>
         <p class="card__excerpt">${Store.localized(p.excerpt, lang)}</p>
         <div class="card__meta"><span>${window.fmtDate(p.date, lang)}</span></div>
       </div>
@@ -38,14 +38,14 @@
     const fb = figFallback(name);
     return `
     <article class="figure-card glass" data-tilt>
-      <a class="figure-card__media" href="figure.html?slug=${encodeURIComponent(f.slug)}">
+      <a class="figure-card__media" href="${window.hwArticleUrl("figure", f.slug)}">
         <span class="figure-card__life">${f.born || "?"} – ${f.died || ""}</span>
         <img src="${f.portrait || fb}" alt="${name}" loading="lazy" data-fallback="${window.hwFallback(f.portrait, fb)}">
         <div class="figure-card__cap"><h3>${name}</h3><div class="figure-card__role">${Store.localized(f.role, lang)}</div></div>
       </a>
       <div class="figure-card__body">
         <p class="figure-card__excerpt">${Store.localized(f.excerpt, lang)}</p>
-        <a class="figure-card__link" href="figure.html?slug=${encodeURIComponent(f.slug)}"><span>${window.I18N.t("figures.analyze")}</span>
+        <a class="figure-card__link" href="${window.hwArticleUrl("figure", f.slug)}"><span>${window.I18N.t("figures.analyze")}</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </article>`;

@@ -1,6 +1,6 @@
 /*
  * admin.js — trang quản trị: viết/sửa/xóa bài và commit thẳng lên repo qua GitHub API.
- * Token chỉ lưu trong localStorage của trình duyệt, không gửi đi đâu khác ngoài api.github.com.
+ * Token mặc định giữ trong phiên; lưu lâu dài chỉ khi chọn ghi nhớ.
  *
  * Tối ưu v2:
  * - Song song hoá API calls (getFile song song) → giảm ~50% thời gian đăng bài.
@@ -10,13 +10,11 @@
 (function () {
   "use strict";
   const cfg = window.SITE_CONFIG || {};
-  const API = "https://api.github.com";
   const REPO = `${cfg.repoOwner}/${cfg.repoName}`;
   const BRANCH = cfg.branch || "main";
-  const TOKEN_KEY = "hw_gh_token";
 
   const $ = (id) => document.getElementById(id);
-  const token = () => localStorage.getItem(TOKEN_KEY) || "";
+  const token = () => window.AdminToken.get();
 
   /* ---------- base64 UTF-8 ---------- */
   const b64encode = (s) => btoa(unescape(encodeURIComponent(s)));
@@ -24,22 +22,7 @@
 
   /* ---------- GitHub API ---------- */
   async function gh(path, opts = {}) {
-    const res = await fetch(API + path, {
-      ...opts,
-      cache: "no-store", // luôn lấy sha mới nhất, tránh lỗi 409 do trình duyệt cache
-      headers: {
-        Authorization: "token " + token(),
-        Accept: "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-        ...(opts.headers || {}),
-      },
-    });
-    if (!res.ok) {
-      let msg = res.status + " " + res.statusText;
-      try { const j = await res.json(); if (j.message) msg = j.message; } catch (e) {}
-      const err = new Error(msg); err.status = res.status; throw err;
-    }
-    return res.status === 204 ? null : res.json();
+    return window.AdminToken.request(path, opts);
   }
 
   const apiPath = (p) => `/repos/${REPO}/contents/${encodeURIComponent(p).replace(/%2F/g, "/")}`;
@@ -48,7 +31,8 @@
     try {
       return await gh(apiPath(filePath) + `?ref=${BRANCH}&_=${Date.now()}`);
     } catch (e) {
-      return null; // chưa tồn tại
+      if (e.status === 404) return null;
+      throw e; // Authentication/network errors must not look like an empty repo.
     }
   }
 
@@ -143,25 +127,35 @@
   function initToken() {
     const input = $("tokenInput");
     if (token()) input.value = token();
+    if (window.AdminToken.migrated) setStatus(window.I18N.t("admin.tokenmigrated"), "ok");
     $("saveToken").addEventListener("click", () => {
       const v = input.value.trim();
       if (!v) { setStatus(window.I18N.t("admin.needtoken"), "err"); return; }
-      localStorage.setItem(TOKEN_KEY, v);
+      try { window.AdminToken.set(v, $("rememberToken").checked); }
+      catch (e) { setStatus(e.message, "err"); return; }
       setStatus(window.I18N.t("admin.tokensaved"), "ok");
       connect();
     });
     $("connectBtn").addEventListener("click", connect);
+    $("forgetToken").addEventListener("click", () => {
+      try { window.AdminToken.clear(); setStatus(window.I18N.t("admin.tokenforgotten"), "ok"); }
+      catch (e) { setStatus(e.message, "err"); }
+      input.value = ""; $("rememberToken").checked = false; $("connInfo").textContent = "";
+    });
   }
 
   async function connect() {
     if (!token()) { setStatus(window.I18N.t("admin.needtoken"), "err"); return; }
     setStatus("…");
+    const connectionToken = token();
     try {
       const me = await gh("/user");
-      $("connInfo").innerHTML = `<span class="badge">● ${window.I18N.t("admin.connected")} ${me.login}</span> <span class="badge" style="background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold)">${REPO} · ${BRANCH}</span>`;
+      if (token() !== connectionToken) return;
+      $("connInfo").textContent = `● ${window.I18N.t("admin.connected")} ${me.login} · ${REPO} · ${BRANCH}`;
       setStatus("", "");
       loadPostList();
     } catch (e) {
+      if (token() !== connectionToken) return;
       setStatus(window.I18N.t("admin.error") + " " + e.message, "err");
     }
   }
@@ -543,8 +537,11 @@
 
       /* Dựng index.json mới */
       let index = {}; index[meta.key] = [];
-      if (idxFile) { try { index = JSON.parse(b64decode(idxFile.content)); } catch (e) {} }
-      if (!Array.isArray(index[meta.key])) index[meta.key] = [];
+      if (idxFile) {
+        try { index = JSON.parse(b64decode(idxFile.content)); }
+        catch (_) { throw new Error("Invalid index.json; publication stopped to preserve existing content."); }
+        if (!Array.isArray(index[meta.key])) throw new Error("Invalid content index; publication stopped.");
+      }
       const list = index[meta.key];
       const i = list.findIndex((x) => x.slug === slug);
       const mergeBilingual = (prev) => {
@@ -555,6 +552,13 @@
         return merged;
       };
       const mergedItem = i >= 0 ? mergeBilingual(list[i]) : item;
+      mergedItem.verified = false;
+      mergedItem.reviewStatus = "pending_claim_review";
+      const imageKey = isFig() ? "portrait" : "cover";
+      if (i < 0 || list[i][imageKey] !== item[imageKey]) {
+        delete mergedItem.imageSource;
+        mergedItem.credit = "Nguồn gốc / giấy phép ảnh chưa được xác minh";
+      }
       if (i >= 0) list[i] = mergedItem; else list.push(item);
       if (!isFig()) list.sort((a, b) => (a.date < b.date ? 1 : -1));
 

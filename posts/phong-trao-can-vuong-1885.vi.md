@@ -2,7 +2,7 @@
 
 Đêm mùng 4 rạng sáng ngày 5 tháng 7 năm 1885, sau cuộc binh biến bất thành tại kinh thành Huế trước sự lấn lướt của thực dân Pháp, Thượng thư Tôn Thất Thuyết đã phò tá vị vua trẻ Hàm Nghi rời hoàng cung xuất bôn lên vùng sơn phòng Tân Sở (Quảng Trị). Tại đây, ngày 13 tháng 7 năm 1885, bản *Chiếu Cần Vương* lịch sử được ban ra, thổi bùng lên một phong trào vũ trang kháng chiến sôi sục kéo dài suốt hơn một thập kỷ trên khắp ba miền đất nước.[^1]
 
-![Vua Hàm Nghi](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/King_Ham_Nghi.jpg/800px-King_Ham_Nghi.jpg "Vua Hàm Nghi (1871–1944), vị hoàng đế trẻ tuổi yêu nước đứng đầu phong trào Cần Vương |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## Bối cảnh: Khi nền độc lập bị tước đoạt
 

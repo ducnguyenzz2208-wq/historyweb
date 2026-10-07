@@ -194,3 +194,10 @@ Một **thư viện lịch sử mở**, nơi mỗi sự kiện và nhân vật �
 3. **Thêm nhân vật**: thêm mục vào `figures/index.json` và tạo `figures/<slug>.md`.
 4. **Đổi hồ sơ cá nhân**: sửa `profile` trong `config.js`.
 5. **Xuất bản trang**: bật GitHub Pages (Settings → Pages → Source: *GitHub Actions*); mỗi lần push `main` sẽ tự deploy.
+
+## Cập nhật P0 — 2026-10-08
+
+- Task 02: token theo phiên tab, ghi nhớ có lựa chọn, xóa token và kiểm tra API/xuất bản mô phỏng.
+- Task 03: 110 trang tĩnh VI/EN đầy đủ nội dung; kiểm tra link, canonical, mục lục, footnote và giao diện local.
+- Task 04: audit 55 mục/68 ảnh; 46 ảnh có metadata Commons, 21 chưa xác minh quyền, 1 placeholder dự án. Thay 13 lượt URL ảnh hỏng. Tất cả bài chờ đối chiếu nhận định, không có nhãn verified tự nhận. Chi tiết trong SOURCE_AUDIT.md; task này còn IN_PROGRESS.
+- Token admin nên dùng fine-grained chỉ cho repo này với Contents đọc/ghi; mặc định không lưu lâu dài.

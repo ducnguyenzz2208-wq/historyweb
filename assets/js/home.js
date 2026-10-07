@@ -12,13 +12,13 @@
     const cover = p.cover || fb;
     return `
     <article class="card" data-reveal>
-      <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="card__media">
+      <a href="${window.hwArticleUrl("post", p.slug)}" class="card__media">
         ${p.year ? `<span class="card__year">${p.year}</span>` : ""}
         <img src="${cover}" alt="${title}" loading="lazy" data-fallback="${window.hwFallback(p.cover, fb)}">
       </a>
       <div class="card__body">
         <div class="card__tags">${tags}</div>
-        <h3 class="card__title"><a href="post.html?slug=${encodeURIComponent(p.slug)}">${title}</a></h3>
+        <h3 class="card__title"><a href="${window.hwArticleUrl("post", p.slug)}">${title}</a></h3>
         <p class="card__excerpt">${excerpt}</p>
         <div class="card__meta"><span>${window.fmtDate(p.date, lang)}</span></div>
       </div>
@@ -39,7 +39,7 @@
         '<div class="timeline__line"></div>' +
         (withYear.length
           ? withYear.map((p) => `
-            <a class="tl-item" href="post.html?slug=${encodeURIComponent(p.slug)}">
+            <a class="tl-item" href="${window.hwArticleUrl("post", p.slug)}">
               <div class="tl-item__year">${p.year}</div>
               <div class="tl-item__dot"></div>
               <div class="tl-item__label"><b>${Store.localized(p.title, lang)}</b></div>
@@ -54,7 +54,7 @@
       if (fp) {
         feat.innerHTML = `
         <div class="featured" data-reveal>
-          <a class="featured__media" href="post.html?slug=${encodeURIComponent(fp.slug)}">
+          <a class="featured__media" href="${window.hwArticleUrl("post", fp.slug)}">
             <img src="${fp.cover || fallbackCover(fp.year)}" alt="" data-fallback="${window.hwFallback(fp.cover, fallbackCover(fp.year))}">
           </a>
           <div class="featured__body">
@@ -62,7 +62,7 @@
             ${fp.year ? `<div class="featured__year">${fp.year}</div>` : ""}
             <h2 class="featured__title">${Store.localized(fp.title, lang)}</h2>
             <p class="featured__excerpt">${Store.localized(fp.excerpt, lang)}</p>
-            <a class="btn" href="post.html?slug=${encodeURIComponent(fp.slug)}">
+            <a class="btn" href="${window.hwArticleUrl("post", fp.slug)}">
               <span>${window.I18N.t("featured.readmore")}</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>

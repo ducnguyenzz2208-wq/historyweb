@@ -118,7 +118,7 @@
     const fb = window.figureFallback(name);
     return `
     <article class="figure-card glass" data-tilt>
-      <a class="figure-card__media" href="figure.html?slug=${encodeURIComponent(f.slug)}">
+      <a class="figure-card__media" href="${window.hwArticleUrl("figure", f.slug)}">
         <span class="figure-card__life">${life}</span>
         <img src="${f.portrait || fb}" alt="${name}" loading="lazy"
              data-fallback="${window.hwFallback(f.portrait, fb)}">
@@ -129,7 +129,7 @@
       </a>
       <div class="figure-card__body">
         <p class="figure-card__excerpt">${excerpt}</p>
-        <a class="figure-card__link" href="figure.html?slug=${encodeURIComponent(f.slug)}">
+        <a class="figure-card__link" href="${window.hwArticleUrl("figure", f.slug)}">
           <span>${window.I18N.t("figures.analyze")}</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>

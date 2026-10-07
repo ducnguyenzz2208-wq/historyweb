@@ -2,7 +2,7 @@
 
 Mùa xuân năm 1077, trên phòng tuyến sông Như Nguyệt (sông Cầu ngày nay), đại quân Đại Việt dưới sự chỉ huy của Thái úy Lý Thường Kiệt đã chặn đứng và đè bẹp mưu toan xâm lược của 30 vạn quân Tống do Quách Quỳ và Triệu Tiết thống lĩnh. Chiến thắng không chỉ bảo vệ vững chắc nền độc lập non trẻ của triều Lý, mà còn để lại bài thơ thần "Nam quốc sơn hà" — được xem là bản tuyên ngôn độc lập đầu tiên trong lịch sử dân tộc.[^1]
 
-![Sông Cầu lịch sử](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Song_Cau_%28Nhu_Nguyet%29.jpg/1280px-Song_Cau_%28Nhu_Nguyet%29.jpg "Dòng sông Cầu (sông Như Nguyệt), nơi diễn ra phòng tuyến chặn quân Tống năm 1077 |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## Tiên phát chế nhân: Đòn đánh phủ đầu chiến lược
 

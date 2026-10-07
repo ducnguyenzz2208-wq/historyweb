@@ -2,7 +2,7 @@
 
 At 10:30 PM on October 29, 1969, two computers situated nearly 600 kilometers apart at UCLA and the Stanford Research Institute transmitted the very first message across ARPANET: the letters "LO" before the entire network crashed under data strain. That humble beginning marked the opening chapter of the most transformative technological revolution in modern human history — the birth of the Internet, an architecture that flattened the world and interconnected humanity.[^1]
 
-![ARPANET 1977 Map](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ARPANET_logical_map%2C_march_1977.png/1024px-ARPANET_logical_map%2C_march_1977.png "Logical map showing the nascent node structure of ARPANET in March 1977 |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## Cold War Origins: The Imperative of an Indestructible Network
 

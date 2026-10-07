@@ -2,7 +2,7 @@
 
 Lady Trieu (225–248 AD), named Trieu Thi Trinh and honorifically revered as Trieu Trinh Nuong, stands among the greatest female national heroes in Vietnamese history. In the 3rd century AD, she raised the banner of armed rebellion against the oppressive yoke of China's Eastern Wu dynasty. Her legendary proclamation — "I wish to ride the tempest, tread the roaring waves..." — remains an immortal manifesto of female courage and national self-determination.
 
-![Lady Trieu representation](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_Trieu.jpg/800px-Lady_Trieu.jpg "Folk artwork celebrating warrior Lady Trieu riding into battle on an elephant |right")
+![Ảnh tư liệu đang được đối chiếu](assets/images/review-pending.svg "Historical image pending source review |right")
 
 ## 1. Daughter of the Mountains of Cuu Chan
 

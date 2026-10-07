@@ -21,13 +21,13 @@
     const cover = p.cover || fb;
     return `
     <article class="card" data-reveal>
-      <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="card__media">
+      <a href="${window.hwArticleUrl("post", p.slug)}" class="card__media">
         ${p.year ? `<span class="card__year">${p.year}</span>` : ""}
         <img src="${cover}" alt="${title}" loading="lazy" data-fallback="${window.hwFallback(p.cover, fb)}">
       </a>
       <div class="card__body">
         <div class="card__tags">${tags}</div>
-        <h3 class="card__title"><a href="post.html?slug=${encodeURIComponent(p.slug)}">${title}</a></h3>
+        <h3 class="card__title"><a href="${window.hwArticleUrl("post", p.slug)}">${title}</a></h3>
         <p class="card__excerpt">${excerpt}</p>
         <div class="card__meta"><span>${window.fmtDate(p.date, lang)}</span></div>
       </div>

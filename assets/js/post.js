@@ -192,12 +192,12 @@
           <div class="grid">
             ${related.map((r) => `
               <article class="card" data-reveal>
-                <a href="post.html?slug=${encodeURIComponent(r.slug)}" class="card__media">
+                <a href="${window.hwArticleUrl("post", r.slug)}" class="card__media">
                   ${r.year ? `<span class="card__year">${r.year}</span>` : ""}
                   <img src="${r.cover || fallbackCover(r.year)}" alt="" loading="lazy" data-fallback="${window.hwFallback(r.cover, fallbackCover(r.year))}">
                 </a>
                 <div class="card__body">
-                  <h3 class="card__title"><a href="post.html?slug=${encodeURIComponent(r.slug)}">${Store.localized(r.title, lang)}</a></h3>
+                  <h3 class="card__title"><a href="${window.hwArticleUrl("post", r.slug)}">${Store.localized(r.title, lang)}</a></h3>
                   <p class="card__excerpt">${Store.localized(r.excerpt, lang)}</p>
                 </div>
               </article>`).join("")}
@@ -213,6 +213,7 @@
     wireComments(lang);
     wireLiveTranslate(p, lang);
     autoLinkArticle(p, lang);
+    if (window.hwSourceReview) window.hwSourceReview(p, "post", lang);
     if (window.hwReveal) window.hwReveal();
     window.scrollTo(0, 0);
   }
@@ -276,14 +277,14 @@
         .filter((x) => x.slug !== p.slug)
         .forEach((x) => entries.push({
           title: Store.localized(x.title, lang),
-          url: `post.html?slug=${encodeURIComponent(x.slug)}`,
+          url: `${window.hwArticleUrl("post", x.slug)}`,
         }));
     } catch (e) {}
     try {
       const r = await fetch("figures/index.json?_=" + Date.now());
       if (r.ok) ((await r.json()).figures || []).forEach((f) => entries.push({
         title: Store.localized(f.name, lang),
-        url: `figure.html?slug=${encodeURIComponent(f.slug)}`,
+        url: `${window.hwArticleUrl("figure", f.slug)}`,
       }));
     } catch (e) {}
     window.hwAutoLink(prose, entries);
